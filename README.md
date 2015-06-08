@@ -1,27 +1,43 @@
-# Flux-capacitr
+# Video Music Collector App
 
 [Heroku link][heroku]
 
-[heroku]: http://flux-capacitr.herokuapp.com
+[heroku]: TBD
 
 ## Minimum Viable Product
-Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
+Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
+Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
+Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
-- [x] Create accounts
-- [x] Create sessions (log in)
-- [x] Create blogs
-- [x] Create blog posts
-- [ ] View blogs and posts
-- [ ] Subscribe to blogs
-- [ ] View a feed of subscribed blogs
-- [ ] Tag blog posts
-- [ ] Search for blogs by title
-- [ ] Search for posts by tag
+MVP:
+- [ ] Create accounts (sign up)
+- [ ] Create sessions (log in)
+- [ ] Watch videos!
+- [ ] Like Videos
+- [ ] View collection of all your liked videos
+- [ ] "Upload" Videos (=enter links)
+- [ ] View other users (and their list of liked videos)
+- [ ] Explore videos
+
+Expanding:
+
+- [ ] Users can create channels (aka collections/playists)
+- [ ] View other channels (of users) (like playlists)
+- [ ] Search for videos by title, artist, (uploaded user)
+- [ ] Search for users by name/username
+- [ ] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
+- [ ] Feed option: Top Staff picks
+- [ ] Feed option: top liked videos (across entire site)
+- [ ] All videos have nested comments, users can add comments
+- [ ] List of top liked channels, and/or users (across whole site)
+- [ ] Edit profile
+- [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
+
 
 ## Design Docs
-* [View Wireframes][views]
+* [View Wireframes][views] ./docs/wireframes/#
 * [DB schema][schema]
 
 [views]: ./docs/views.md
@@ -29,63 +45,72 @@ Flux-capacitr is a clone of Tumblr built on Rails and Backbone. Users can:
 
 ## Implementation Timeline
 
+### Note on length:
+* I may have to cut out the idea of channels so that users only subscribe to ONE channel
+which is just the user's main channel of liked and posted videos.
+* I may cut out either the search engine or exploring and stick with one.
+
 ### Phase 1: User Authentication, Blog Creation (~1 day)
 I will implement user authentication in Rails based on the practices learned at
-App Academy. By the end of this phase, users will be able to create blogs using
-a simple text form in a Rails view. The most important part of this phase will
+App Academy. I will create all of the necessary rails controllers.
+The most important part of this phase will
 be pushing the app to Heroku and ensuring that everything works before moving on
 to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Blogs and Posts (~2 days)
+### Phase 2: Viewing Channels and Posts (~1.5 days)
 I will add API routes to serve blog and post data as JSON, then add Backbone
-models and collections that fetch data from those routes. By the end of this
-phase, users will be able to create blogs and view both blogs and posts, all
-inside a single Backbone app.
+models and collections that fetch data from those routes. I will create a
+basic navbar. By the end of this
+phase, users will be able to view both channels and videos
+(currently text), all inside a single Backbone app.
 
 [Details][phase-two]
 
-### Phase 3: Editing and Displaying Posts (~2 days)
-I plan to use third-party libraries to add functionality to the `PostForm` and
-`PostShow` views in this phase. First I'll need to add a Markdown editor to the
-`PostForm`, and make sure that the Markdown is properly escaped and formatted in
-the `PostShow` view. I also plan to integrate Filepicker for file upload so
-users can add images to blog posts.
+### Phase 3: Youtube API (~2 days)
+I will work on getting the youtube API to work and creating a video show view.
+I will also create the two subviews that have an image of the video and some
+basic information.
 
 [Details][phase-three]
 
-### Phase 4: User Feeds (~1-2 days)
-I'll start by adding a `feed` route that uses the `current_user`'s
-`subscribed_blogs` association to serve a list of blog posts ordered
-chronologically. On the Backbone side, I'll make a `FeedShow` view whose `posts`
-collection fetches from the new route.  Ultimately, this will be the page users
-see after logging in.
+### Phase 4: Liking Videos and Channels (~1 days)
+I add the button to like videos on each subview and the video show page.
+I add the your_liked_videos view.
+
+Question: Does liking (and following) need backbone models/collections
+or only views (and the rest lives in Rails)
 
 [Details][phase-four]
 
-### Phase 5: Searching for Blogs and Posts (~2 days)
-I'll need to add `search` routes to both the Blogs and Posts controllers. On the
-Backbone side, there will be a `SearchResults` composite view has `BlogsIndex`
-and `PostsIndex` subviews. These views will use plain old `blogs` and `posts`
-collections, but they will fetch from the new `search` routes.
+
+### Phase 5: User Views (~2 days)
+I'll create the user profile view. I will create the other_user_view for
+viewing another user. I add the ability to subscribe to channels and users.
+I will add the ability to create channels in the user view.
 
 [Details][phase-five]
 
-### Bonus Features (TBD)
-- [ ] "Like" button and counter for posts
-- [ ] Custom blog urls
-- [ ] Pagination/infinite scroll
-- [ ] Activity history (e.g. likes, reblogs, taggings)
-- [ ] Post types (image posts, quote posts, etc)
-- [ ] Reblogging
-- [ ] Multiple sessions/session management
-- [ ] User avatars
-- [ ] Typeahead search bar
+### Phase 6: Search and Explore (~2 days)
+I'll need to add `search` routes to both the Channels and Posts controllers. On the
+Backbone side, there will be a `SearchResults` composite view has video
+subviews. I also add an explore page
+
+[Details][phase-six]
+
+### Phase 7: Advanced Views (~2 days)
+I will add the cinema view here and possibly others.
+I might add the ability to change the playback speed and other possibilities
+[Details][phase-seven]
+
+
+[Details][phase-seven]
+
+
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
-

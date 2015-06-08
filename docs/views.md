@@ -1,23 +1,41 @@
 # View Wireframes
+see wireframes.key for notes
 
-## New Session
-![new-session]
+##subviews
+./wireframes/subviews_video
+two version of 'video' subview - with info underneath (compact) and info to the right (more info)
+
+## New Session/New User
+./wireframes/sign_in
 
 ## Feed Show (landing page)
-![feed-show]
+./wireframes/feed
 
-## Blog Show
-![blog-show]
+## Likes
+./wireframes/your_liked_videos
 
-## Post Show
-![post-show]
+## Video Show
+./wireframes/video_normal (and video_cinema)
 
-## Post Form
-![post-form]
+## New Video Form
+!!
 
 ## Search Results
-![search-results]
+./wireframes/search
 
+## Explore
+./wireframes/explore
+
+## Your channel View
+./wireframes/your_channel_view
+
+## Other User's channel view
+./wireframes/other_user_channel_view
+
+## Other User View
+./wireframes/other_user_view
+
+##
 [new-session]: ./wireframes/new_session.png
 [feed-show]: ./wireframes/feed_show.png
 [blog-show]: ./wireframes/blog_show.png

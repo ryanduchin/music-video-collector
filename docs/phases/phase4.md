@@ -1,13 +1,15 @@
-# Phase 4: User Feeds
+# Phase 4: Liking Videos and Channels
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::PostsController (feed)
+Api::LikeController (create, destroy)
+
 
 ### Views
-posts/feed.json.jbuilder
+posts/likes.json.jbuilder
+
 
 ## Backbone
 ### Models
@@ -15,6 +17,7 @@ posts/feed.json.jbuilder
 ### Collections
 
 ### Views
-* FeedShow (composite view, contains PostsIndex subview)
+* YourLikedVideos(Index)
+* Add liked button to subviews
 
 ## Gems/Libraries

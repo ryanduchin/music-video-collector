@@ -1,11 +1,10 @@
-# Phase 5: Searching for Blogs and Posts
+# Phase 5: User Views
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (search)
-Api::PostsController (search)
+Api::FollowController (create, destroy)
 
 ### Views
 
@@ -15,8 +14,8 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* BlogSearchItem
-* SearchShow (composite view, contains BlogsIndex and PostsIndex subviews)
+* UserProfileView
+* UserShow (other user)
+* ChannelCreate (possibly in UserProfileView)
 
 ## Gems/Libraries
-

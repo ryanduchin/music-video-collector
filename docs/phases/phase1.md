@@ -3,20 +3,20 @@
 ## Rails
 ### Models
 * User
-* Blog
+* Channel
 * Post
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* BlogsController (create, new, show)
+* ChannelsController (create, new, show)
 * PostsController (create, new, show)
 
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* blogs/new.html.erb
-* blogs/show.html.erb
+* channels/new.html.erb
+* channels/show.html.erb
 
 ## Backbone
 ### Models

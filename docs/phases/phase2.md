@@ -1,18 +1,18 @@
-# Phase 2: Viewing Blogs and Posts
+# Phase 2: Viewing Channels and Posts
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::BlogsController (create, destroy, index, show)
-Api::PostsController (create, destroy, show, update)
+Api::ChannelsController (create, destroy, index, show)
+Api::PostsController (create, destroy, show, update, index)
 
 ### Views
 * blogs/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Blog (parses nested `posts` association)
+* Channel (parses nested `posts` association)
 * Post
 
 ### Collections
@@ -20,10 +20,9 @@ Api::PostsController (create, destroy, show, update)
 * Posts
 
 ### Views
-* BlogForm
-* BlogShow (composite view, contains PostsIndex subview)
-* PostsIndex (composite view, contains PostsIndexItem subviews)
-* PostsIndexItem
+* navbar
+* ChannelShow
 * PostShow
+
 
 ## Gems/Libraries

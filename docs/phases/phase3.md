@@ -1,4 +1,4 @@
-# Phase 3: Editing and Displaying Posts
+# Phase 3: Youtube API
 
 ## Rails
 ### Models
@@ -13,9 +13,13 @@
 ### Collections
 
 ### Views
-* PostForm
+* Note: these may be composite subviews with separate video/text subviews if needed
+* Video Subview 1 (index item)
+* Video Subview 2 (index item)
+
+* Video Show View
+
 
 ## Gems/Libraries
-* Filepicker
 * Markdown-js
 * Bootstrap Markdown

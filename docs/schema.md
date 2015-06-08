@@ -1,18 +1,20 @@
 # Schema Information
 
-## blogs
+## Channels
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
-title       | string    | not null
+name        | string    | not null
 
-## followings
+## ChannelPosts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-blog_id     | integer   | not null, foreign key (references blogs)
-follower_id | integer   | not null, foreign key (references users)
+poster_id   | integer   | not null, foreign key (references users)
+channel_id  | integer   | not null
+post_id     | integer   | not null, foreign key (references posts)
+
 
 ## posts
 column name | data type | details
@@ -20,20 +22,12 @@ column name | data type | details
 id          | integer   | not null, primary key
 author_id   | integer   | not null, foreign key (references users)
 title       | string    | not null
-body        | string    |
+artist      | string    |
+description | string    |
+album       | string    | optional
+year        | string    | optional
+staff_pick  | boolean   | optional extra feature
 
-## tags
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-label       | string    | not null, unique
-
-## taggings
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-post_id     | integer   | not null, foreign key (references posts)
-tag_id      | integer   | not null, foreign key (references tags)
 
 ## users
 column name     | data type | details
@@ -43,3 +37,40 @@ email           | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
+
+## followings/subscriptions
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+follower_id | integer   | not null, foreign key (references users)
+followed_id | integer   | not null, foreign key (references users)
+// if channel_id is null, the 'following' refers to the user
+channel_id  | integer   | foreign key (references channels)
+
+
+## Likes
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+post_id     | integer   | not null, foreign key (references posts)
+user_id     | integer   | not null, foreign key (references users)
+
+
+
+//optional if time
+## comments
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+post_id         | integer   | not null, foreign key
+author_id       | integer   | not null, foreign key (references users)
+body            | text      | not null, unique
+
+
+//optional bonus for search engine
+## tags
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+post_id     | integer   | not null, foreign key (references posts)
+label       | string    | not null, unique
