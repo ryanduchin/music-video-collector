@@ -1,5 +1,5 @@
 # View Wireframes
-see wireframes.key for notes
+see wireframes.key for an easier to view presentation (emailed to instructors)
 
 ##subviews
 ./wireframes/subviews_video

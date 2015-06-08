@@ -68,7 +68,7 @@ phase, users will be able to view both channels and videos
 
 [Details][phase-two]
 
-### Phase 3: Youtube API (~2 days)
+### Phase 3: Youtube API + Vimeo API (~2 days)
 I will work on getting the youtube API to work and creating a video show view.
 I will also create the two subviews that have an image of the video and some
 basic information.
@@ -114,3 +114,5 @@ I might add the ability to change the playback speed and other possibilities
 [phase-three]: ./docs/phases/phase3.md
 [phase-four]: ./docs/phases/phase4.md
 [phase-five]: ./docs/phases/phase5.md
+[phase-six]: ./docs/phases/phase6.md
+[phase-seven]: ./docs/phases/phase7.md
