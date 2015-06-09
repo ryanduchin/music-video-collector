@@ -1,4 +1,4 @@
-VMCApp.Views.NavView = Backbone.Views.extend({
+VMCApp.Views.NavView = Backbone.View.extend({
   initialize: function (options) {
     this.channels = options.channels;
     this.router = options.router;
