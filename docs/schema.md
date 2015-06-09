@@ -8,6 +8,18 @@ username        | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
+## posts
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+author_id   | integer   | not null, foreign key (references users)
+title       | string    | not null
+url         | string    | not null
+artist      | string    | (add index later)
+description | string    |
+album       | string    | optional (add index later)
+year        | string    | optional
+staff_pick  | boolean   | optional extra feature
 
 ## Playlists
 column name | data type | details
@@ -22,19 +34,6 @@ column name | data type | details
 id          | integer   | not null, primary key
 playlist_id  | integer   | not null
 post_id     | integer   | not null, foreign key (references posts)
-
-
-## posts
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users)
-title       | string    | not null
-artist      | string    |
-description | string    |
-album       | string    | optional
-year        | string    | optional
-staff_pick  | boolean   | optional extra feature
 
 
 ## followings/subscriptions

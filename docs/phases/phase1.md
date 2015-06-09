@@ -3,7 +3,7 @@
 ## Rails
 ### Models
 * User
-* Plyalist
+* Playlist
 * Post
 
 ### Controllers

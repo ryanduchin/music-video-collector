@@ -12,8 +12,8 @@ Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 MVP:
-- [ ] Create accounts (sign up)
-- [ ] Create sessions (log in)
+- [x] Create accounts (sign up)
+- [x] Create sessions (log in)
 - [ ] Watch videos!
 - [ ] Like Videos
 - [ ] View collection of all your liked videos
