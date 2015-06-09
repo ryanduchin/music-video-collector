@@ -16,6 +16,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'underscore-rails'
 gem 'backbone-on-rails'
+gem 'newrelic_rpm'
+
 
 
 
