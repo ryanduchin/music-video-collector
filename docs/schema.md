@@ -1,5 +1,15 @@
 # Schema Information
 
+## users
+column name     | data type | details
+----------------|-----------|-----------------------
+id              | integer   | not null, primary key
+username        | string    | not null, unique
+email           | string    | not null, unique
+password_digest | string    | not null
+session_token   | string    | not null, unique
+
+
 ## Channels
 column name | data type | details
 ------------|-----------|-----------------------
@@ -11,7 +21,6 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-poster_id   | integer   | not null, foreign key (references users)
 channel_id  | integer   | not null
 post_id     | integer   | not null, foreign key (references posts)
 
@@ -27,15 +36,6 @@ description | string    |
 album       | string    | optional
 year        | string    | optional
 staff_pick  | boolean   | optional extra feature
-
-
-## users
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-email           | string    | not null, unique
-password_digest | string    | not null
-session_token   | string    | not null, unique
 
 
 ## followings/subscriptions

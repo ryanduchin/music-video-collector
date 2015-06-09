@@ -48,7 +48,7 @@ Expanding:
 ### Note on length:
 * I may have to cut out the idea of channels so that users only subscribe to ONE channel
 which is just the user's main channel of liked and posted videos.
-* I may cut out either the search engine or exploring and stick with one.
+* I may cut out either the search engine
 
 ### Phase 1: User Authentication, Blog Creation (~1 day)
 I will implement user authentication in Rails based on the practices learned at
