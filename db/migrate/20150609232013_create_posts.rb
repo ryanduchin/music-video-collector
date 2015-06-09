@@ -12,5 +12,10 @@ class CreatePosts < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_index :posts, :author_id
+    add_index :posts, :title
+    add_index :posts, :url
+    add_index :posts, :artist
   end
 end
