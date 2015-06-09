@@ -9,7 +9,7 @@ password_digest | string    | not null
 session_token   | string    | not null, unique
 
 
-## Channels
+## Playlists
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -20,7 +20,7 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-channel_id  | integer   | not null
+playlist_id  | integer   | not null
 post_id     | integer   | not null, foreign key (references posts)
 
 
@@ -43,8 +43,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 follower_id | integer   | not null, foreign key (references users)
 followed_id | integer   | not null, foreign key (references users)
-// if channel_id is null, the 'following' refers to the user
-channel_id  | integer   | foreign key (references channels)
+// if playlist_id is null, the 'following' refers to the user
+playlist_id  | integer   | foreign key (references playlists)
 
 
 ## Likes

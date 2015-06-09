@@ -3,14 +3,14 @@
 ## Rails
 ### Models
 * User
-* Channel
+* Plyalist
 * Post
 
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* ChannelsController (create, new, show)
-* PostsController (create, new, show)
+* PostsController (create, new, show, destroy, update)
+* PlaylistsController (create, new, show, destroy, update)
 
 ### Views
 * users/new.html.erb

@@ -5,10 +5,20 @@ window.VMCApp = {
   Routers: {},
   Mixins: {},
   initialize: function() {
-    // new VMCApp.Routers.Router({
-    //   $navEl: $("#navbar"),
-    //   $rootEl: $("#main"),
-    // });
-    // Backbone.history.start();
+    var posts = new VMCApp.Collections.Posts();
+    var playlists = new VMCApp.Collections.Playlists();
+
+    var router = new VMCApp.Routers.Router({
+      $rootEl: $("#main"),
+    });
+
+    var navbar - new VMCApp.Views.NavView({
+      router: router,
+      collection: posts,
+      playlists: playlists,
+    });
+    $("#navbar").html(navbar.render().$el);
+    
+    Backbone.history.start();
   }
 };
