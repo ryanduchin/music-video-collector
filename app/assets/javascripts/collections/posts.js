@@ -1,10 +1,8 @@
 VMCApp.Collections.Posts = Backbone.Collection.extend({
   url: '/api/posts',
 
-  //!
   model: VMCApp.Models.Board,
 
-  //!
   getOrFetch: function (id) {
     var posts = this;
     var post = this.get(id);

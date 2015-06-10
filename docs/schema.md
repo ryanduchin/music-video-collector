@@ -1,6 +1,6 @@
 # Schema Information
 
-## users
+## users (done)
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
@@ -8,7 +8,7 @@ username        | string    | not null, unique
 password_digest | string    | not null
 session_token   | string    | not null, unique
 
-## posts
+## posts (done)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -21,14 +21,14 @@ album       | string    | optional (add index later)
 year        | string    | optional
 staff_pick  | boolean   | optional extra feature
 
-## Playlists
+## Playlists (done)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 name        | string    | not null
 
-## PlaylistPosts
+## PlaylistPosts (done)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

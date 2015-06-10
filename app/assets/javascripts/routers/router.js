@@ -6,17 +6,17 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "posts_index",
+    "": "users_posts_index",
     // "boards/new" : "boards_new",
     // "boards/:id" : "boards_show",
   },
   //
-  posts_index: function () {
-    // this.posts.fetch();
-    // var view = new VMCApp.Views.PostsIndex({
-    //   collection: this.posts,
-    // });
-    // this.swapView(indexView);
+  users_posts_index: function () {
+    var user_posts = current_user.posts.fetch();
+    var view = new VMCApp.Views.UsersPostsIndex({
+      collection: user_posts,
+    });
+    this.swapView(indexView);
   },
   //
   // boards_show: function (id) {
