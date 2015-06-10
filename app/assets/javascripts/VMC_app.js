@@ -5,12 +5,12 @@ window.VMCApp = {
   Routers: {},
   Mixins: {},
   initialize: function() {
-    console.log('hi');
     var posts = new VMCApp.Collections.Posts();
     // var playlists = new VMCApp.Collections.Playlists();
 
     var router = new VMCApp.Routers.Router({
       $rootEl: $("#main"),
+      user_posts: posts
     });
 
     var navbar = new VMCApp.Views.NavView({

@@ -1,7 +1,7 @@
 VMCApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    // this.boards = new VMCApp.Collections.Posts();
+    this.user_posts = options.user_posts;
     // this.posts.fetch();
   },
 
@@ -12,11 +12,11 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
   //
   users_posts_index: function () {
-    var user_posts = current_user.posts.fetch();
-    var view = new VMCApp.Views.UsersPostsIndex({
-      collection: user_posts,
+    this.user_posts.fetch()
+    var newView = new VMCApp.Views.UsersPostsIndex({
+      collection: this.user_posts,
     });
-    this.swapView(indexView);
+    this.swapView(newView);
   },
   //
   // boards_show: function (id) {
@@ -41,7 +41,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     //remove() function
     this._currentView && this._currentView.remove();
     this._currentView = newView;
-    this.$rootEl.html(this._currentView.render().$el);
+    this.$rootEl.html(this._currentView.$el);
+    this._currentView.render();
   },
 
 });

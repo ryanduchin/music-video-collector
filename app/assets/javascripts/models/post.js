@@ -1,3 +1,3 @@
-VMCApp.Models.Post = Backbone.Collection.extend({
+VMCApp.Models.Post = Backbone.Model.extend({
   urlRoot: '/api/posts'
 });

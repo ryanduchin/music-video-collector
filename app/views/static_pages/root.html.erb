@@ -3,4 +3,8 @@
   <div id="navbar"></div>
   <div id="main"></div>
 </div>
-<script>$(VMCApp.initialize);</script>
+<script>
+  window.CURRENT_USER_ID = "<%= current_user.id %>";
+  window.CURRENT_USER_UN = "<%= current_user.username %>";
+  $(VMCApp.initialize);
+</script>
