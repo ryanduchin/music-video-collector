@@ -15,8 +15,6 @@
 ### Views
 * users/new.html.erb
 * session/new.html.erb
-* channels/new.html.erb
-* channels/show.html.erb
 * api/playlists/show.json.builder
 * api/posts/show.json.builder
 

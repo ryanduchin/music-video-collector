@@ -1,10 +1,10 @@
-# Phase 2: Viewing Channels and Posts
+# Phase 2: Viewing Playlists and Posts
 
 ## Rails
 ### Models
 
 ### Controllers
-Api::ChannelsController (create, destroy, index, show)
+Api::PlaylistsController (create, destroy, index, show)
 Api::PostsController (create, destroy, show, update, index)
 
 ### Views
@@ -23,6 +23,7 @@ Api::PostsController (create, destroy, show, update, index)
 * navbar
 * ChannelShow
 * PostShow
+* Feed homepage
 
 
 ## Gems/Libraries

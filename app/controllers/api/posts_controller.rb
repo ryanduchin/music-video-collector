@@ -1,6 +1,16 @@
 module Api
   class PostsController < ApiController
 
+    def index
+      @posts = current_user.posts
+      render json: @posts
+    end
+
+    def show
+      @post = Post.find(params[:id])
+      render :show
+    end
+
     def create
       @post = current_user.posts.new(post_params)
 
@@ -11,15 +21,10 @@ module Api
       end
     end
 
-    def destroy
-      @post = Post.find(params[:id])
-      @post.destroy
-      render json: {}
-    end
-
     def update
-      @post = current_user.posts.find(params[:id])
+      require_post_owner!
 
+      @post = current_user.posts.find(params[:id])
       if @post.update_attributes(post_params)
         render json: @post
       else
@@ -27,7 +32,25 @@ module Api
       end
     end
 
+    def destroy
+      require_post_owner!
+
+      @post = Post.find(params[:id])
+      @post.destroy
+      render json: {}
+    end
+
     private
+
+    def current_playlist
+      if params[:id]
+        @post = Post.find(params[:id])
+        @playlist = @post.playlist
+      # elsif params[:post]
+      #   @playlist = Playlist.find(params[:post][:playlist_id])
+      end
+    end
+
     def post_params
       params.require(:post).permit(
         :title, :url, :artist, :description, :album, :year
