@@ -18,11 +18,11 @@ VMCApp.Views.UsersPostsIndex = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    this.collection.forEach(function (post) { this.addPost(post); }.bind(this))
+    this.collection.forEach(function (post) { this.addPost(post); }.bind(this));
   },
 
   addPost: function (post) {
-    var subView = new VMCApp.Views.Thumbnail({ model: post });
+    var subView = new VMCApp.Views.PostThumbnail({ model: post });
     this.addSubview('.view-posts', subView);
   },
 

@@ -1,5 +1,6 @@
 youtube key:
-AIzaSyDt7EFzFDr1ivZJZxDm2WG9lvgAxDKojd4
+server: AIzaSyDt7EFzFDr1ivZJZxDm2WG9lvgAxDKojd4
+browser: AIzaSyDoNLaxoOkI1oRe6WgH_IQw3Uv5RFUZ94Q
 
 iframe player instructions (youtube player)
 https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player

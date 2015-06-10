@@ -81,7 +81,8 @@ I add the button to like videos on each subview and the video show page.
 I add the your_liked_videos view.
 
 Question: Does liking (and following) need backbone models/collections
-or only views (and the rest lives in Rails)
+or only views (and the rest lives in Rails). backbone model, no collection,
+rest lives in rails!! see Eric's talk notes.
 
 [Details][phase-four]
 
