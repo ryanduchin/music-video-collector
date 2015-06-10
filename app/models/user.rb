@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :username, :session_token, uniqueness: true
 
+  has_many :posts, foreign_key: :author_id
+  has_many :playlists, foreign_key: :owner_id
+
+
+
   attr_reader :password
 
   # has_many(
