@@ -1,5 +1,5 @@
-u2 = User.create!(email: 'ryanduchin@gmail.com', password: 'asdfasdf')
-u2 = User.create!(email: 'asdf@gmail.com', password: 'asdfasdf')
+u1 = User.create!(username: 'ryanduchin', password: 'asdfasdf')
+u2 = User.create!(username: 'asdf', password: 'asdfasdf')
 
 c1 = u1.playlists.create(name: 'House')
 c2 = u1.playlists.create(name: 'Trance')
