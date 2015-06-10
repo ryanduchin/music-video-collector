@@ -1,4 +1,7 @@
 VMCApp.Views.NavView = Backbone.View.extend({
+  tagName: 'ul',
+  className: 'nav-list',
+
   initialize: function (options) {
     this.channels = options.channels;
     this.router = options.router;

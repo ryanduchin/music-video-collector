@@ -17,6 +17,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'underscore-rails'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
+gem 'font-awesome-rails'
 
 
 

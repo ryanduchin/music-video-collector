@@ -10,6 +10,45 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+// @import "font-awesome";
+
+ul {
+  list-style-type: none
+};
+
+ul.nav-list {
+  // clear: both;
+};
+
+li.nav-item {
+  float: left;
+  position: relative;
+  padding: 15px;
+  margin: 30px;
+};
+
+li.nav-item:last-child {
+  float: right;
+};
+
+ul.view-posts {
+  clear: both;
+  // position: absolute;
+};
+
+li.post-thumbnail {
+  float: left;
+  position: relative;
+  padding: 20px;
+  margin: 10px;
+};
+
+div.user-posts-index {
+  clear: both
+}
