@@ -28,7 +28,7 @@ id          | integer   | not null, primary key
 owner_id    | integer   | not null, foreign key (references users)
 name        | string    | not null
 
-## ChannelPosts
+## PlaylistPosts
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key

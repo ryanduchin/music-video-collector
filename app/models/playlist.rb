@@ -5,6 +5,9 @@ class Playlist < ActiveRecord::Base
   }
 
   belongs_to :user, foreign_key: :owner_id
+  has_many :playlist_posts
+  has_many :posts, through: :playlist_posts
+
 
   def belongs?(user)
     return true if user.id == self.owner_id

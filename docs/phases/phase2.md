@@ -2,6 +2,8 @@
 
 ## Rails
 ### Models
+PlaylistPosts
+
 
 ### Controllers
 Api::PlaylistsController (create, destroy, index, show)
@@ -9,6 +11,7 @@ Api::PostsController (create, destroy, show, update, index)
 
 ### Views
 * playlists/show.json.jbuilder
+* posts/show.json.builder
 
 ## Backbone
 ### Models
@@ -16,7 +19,7 @@ Api::PostsController (create, destroy, show, update, index)
 * Post
 
 ### Collections
-* Blogs
+* Playlists
 * Posts
 
 ### Views
@@ -25,5 +28,7 @@ Api::PostsController (create, destroy, show, update, index)
 * PostShow
 * Feed homepage
 
+## Router
+* Router
 
 ## Gems/Libraries
