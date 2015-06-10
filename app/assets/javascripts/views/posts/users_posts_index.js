@@ -5,7 +5,7 @@ VMCApp.Views.UsersPostsIndex = Backbone.CompositeView.extend({
   template: JST['posts/users_posts_index'],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync add remove reset", this.render);
+    this.listenTo(this.collection, "sync", this.render);
   },
 
   render: function () {
