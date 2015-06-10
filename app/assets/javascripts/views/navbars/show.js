@@ -1,6 +1,6 @@
 VMCApp.Views.NavView = Backbone.View.extend({
-  tagName: 'ul',
-  className: 'nav-list',
+  tagName: 'nav',
+  className: 'navbar navbar-default',
 
   initialize: function (options) {
     this.channels = options.channels;

@@ -34,6 +34,7 @@ Expanding:
 - [ ] List of top liked channels, and/or users (across whole site)
 - [ ] Edit profile
 - [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
+- [ ] ** Add friends, add a feed for posts from friends.
 
 
 ## Design Docs
