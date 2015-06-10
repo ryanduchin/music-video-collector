@@ -11,14 +11,14 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.renderPlaylists();
+    // this.renderPlaylists();
     // setTimeout(this.setHeight.bind(this));
-    this.attachSubviews(); //? needed right? why not?
+    // this.attachSubviews(); //? needed right? why not?
     return this;
   },
 
   renderPlaylists: function () {
-    this.collection.forEach(function (playlist) { this.addPlaylist(playlist); }.bind(this))
+    this.collection.forEach(function (playlist) { this.addPlaylist(playlist); }.bind(this));
   },
 
   addPlaylist: function (playlist) {

@@ -1,4 +1,4 @@
-VMCApp.Views.PlaylistShow = Backbone.View.extend({
+VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   className: 'playlist-show',
   template: JST['playlists/show'],
 
