@@ -9,8 +9,8 @@
 ### Controllers
 * UsersController (create, new)
 * SessionsController (create, new, destroy)
-* PostsController (create, new, show, destroy, update)
-* PlaylistsController (create, new, show, destroy, update)
+* PostsController (create, show, destroy, update)
+* PlaylistsController (create, show, destroy, update)
 
 ### Views
 * users/new.html.erb

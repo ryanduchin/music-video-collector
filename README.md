@@ -59,7 +59,7 @@ to phase 2.
 
 [Details][phase-one]
 
-### Phase 2: Viewing Channels and Posts (~1.5 days)
+### Phase 2: Viewing Channels and Posts (~1 days)
 I will add API routes to serve blog and post data as JSON, then add Backbone
 models and collections that fetch data from those routes. I will create a
 basic navbar. By the end of this
@@ -120,3 +120,4 @@ I might add the ability to change the playback speed and other possibilities
 
 Later to-do-s
 -scope of uniqueness for posts
+-privacy settings for JSON rendering (playlist/post owner != current_user)
