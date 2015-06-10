@@ -1,0 +1,78 @@
+Notes on Eric's talk on liking/following buttons
+
+-going to have a join table that connects liked to likee
+
+
+* class Photo (Rails)
+  has_many :likes
+  has_many :likers, through: :likes, source: :user
+* rails g migration - likes table connects users and photos
+* rails g controller api/likes
+ in the likes controller: (api namespace)
+
+ def create
+  @likes = current_user.likes.new(likes_params)
+  etc. save
+ end
+
+ def destroy
+  @likes = Like.find(params[:id])
+  @like.destroy();
+  render json: {}
+ end
+
+ def likes_params
+  params.require(:like).permit(:photo_id) //dont include user_id
+ end
+
+* generate backbone like model. but NOT a collection.
+all it needs is an id so that it can hit the api controller
+
+* Rails JBuilder can do a lot of that stuff. The logic goes there (Rails
+  jbuilder + rails api controller)
+
+* backbone Like model needs to parse the response
+  parse: function (response) {
+    if (response.like) {
+      this.like().set(response.like);
+      delete(response.like);
+    }
+  }
+
+  like: function () {
+    if (!this._like) {
+      this._like = new LikeDemo.Models.Like()
+    }
+    return this._like
+  }
+backbone will call the parse method to parse the json from the controller
+
+* add button to template
+* add event to view to execute function toggleLike on submit
+  toggleLike: function () {
+    if (this.model.isLiked()) {
+      this.unlikePhoto();
+    } else {
+      this.likePhoto();
+    }
+  }
+
+* method of photo model
+  isLiked: function () {
+    return !this.like().isNew(); //isNew returns true if 'id' doesnt exist in DB
+  }
+
+*back to the photo view
+  likePhoto: function () {
+    this.model.like().save({photo_id: this.model.id});
+  }
+  unlikePhoto: function () {
+    this.model.like().destroy();
+    **this.model.like().clear();
+  }
+  PROBLEM: on third click it tries to unlike again (like/unlike/unlike)
+  REASON: destroy destroys the model but doesnt remove from DB. still has an ID
+  SOLUTION: add ** line (clear())
+
+*now we need to re-render. on photoview initialize,
+this.listenTo(this.model.like(), 'change', this.render)
