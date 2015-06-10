@@ -8,11 +8,11 @@ Api::PlaylistsController (create, destroy, index, show)
 Api::PostsController (create, destroy, show, update, index)
 
 ### Views
-* blogs/show.json.jbuilder
+* playlists/show.json.jbuilder
 
 ## Backbone
 ### Models
-* Channel (parses nested `posts` association)
+* Playlist (parses nested `posts` association)
 * Post
 
 ### Collections

@@ -7,7 +7,7 @@ module Api
     end
 
     def show
-      @playlist = Playlist.includes(:posts).find(params[:id])
+      @playlist = Playlist.find(params[:id])
       render :show
     end
 
