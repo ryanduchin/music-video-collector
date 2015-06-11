@@ -10,10 +10,20 @@
       vidId + "/mqdefault.jpg" %>"></img>
 
   <% } else if (vidSource === "Vimeo") { %>
-    <img id="vimeo-<%=vidId%>" src=""></img>
     <script type="text/javascript">
-      this.VMCApp.Views.PostThumbnail.prototype.vimeoLoadingThumb(vidId);
+      $.ajax({
+          type:'GET',
+          url: 'http://vimeo.com/api/v2/video/' + vidId + '.json',
+          jsonp: 'callback',
+          dataType: 'jsonp',
+          success: function(data){
+              var thumbnail_src = data[0].thumbnail_large;
+              var id_img = "#vimeo-" + data[0].id;
+              $(id_img).html('<img src="' + thumbnail_src + '"/>');
+          }
+      });
     </script>
+    <div id="vimeo-<%= vidId %>"></div>
 
   <% } else if (vidSource === "Vevo") { %>
 
