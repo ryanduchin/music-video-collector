@@ -14,7 +14,7 @@ Users can:
 MVP:
 - [x] Create accounts (sign up)
 - [x] Create sessions (log in)
-- [ ] Watch videos!
+- [X] Watch videos!
 - [ ] Like Videos
 - [ ] View collection of all your liked videos
 - [ ] "Upload" Videos (=enter links)

@@ -12,7 +12,7 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderPlaylists();
     // setTimeout(this.setHeight.bind(this));
-    this.attachSubviews(); //? needed right? why not?
+    this.attachSubviews(); //
     return this;
   },
 

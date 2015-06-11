@@ -13,7 +13,7 @@ VMCApp.Views.UsersPostsIndex = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderPosts();
     // setTimeout(this.setHeight.bind(this));
-    this.attachSubviews(); //? needed right? why not?
+    this.attachSubviews(); //
     return this;
   },
 
