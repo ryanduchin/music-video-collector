@@ -1,13 +1,13 @@
-<h2><%= post.escape('title') %></h2>
-<h4><%= post.escape('artist').toUpperCase() %></h4>
+<h1><%= post.escape('title') %></h1>
+<h3><%= post.escape('artist').toUpperCase() %></h3>
 
 <div>
-  <iframe width="560" height="315"
+  <iframe width="1100" height="614"
     src='<%= post.vidEmbedSrc() + post.vidId() %>'
     frameborder="0" allowfullscreen></iframe>
 </div>
 
 
-<h5>User: <%= post.escape('username') %></h5>
-<h5>Source: <%= post.vidSource() %></h5>
-<h7>Video id: <%= post.vidId() %></h7>
+<h4>User: <%= post.escape('username') %></h4>
+<h4>Source: <%= post.vidSource() %></h4>
+<h6>Video id: <%= post.vidId() %></h6>
