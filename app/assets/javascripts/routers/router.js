@@ -38,6 +38,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   playlists_index: function () {
     this.user_playlists.fetch();
+    this.user_posts.fetch();
     var newView = new VMCApp.Views.PlaylistsIndex({
       collection: this.user_playlists,
     });

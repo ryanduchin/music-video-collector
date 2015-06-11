@@ -3,7 +3,7 @@ module Api
 
     def index
       @playlists = current_user.playlists
-      render json: @playlists
+      render :index
     end
 
     def show
