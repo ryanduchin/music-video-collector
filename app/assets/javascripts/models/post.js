@@ -47,10 +47,3 @@ VMCApp.Models.Post = Backbone.Model.extend({
   },
 
 });
-
-//
-// <% if (vidSource === "Youtube") { %>
-//   <div>
-//     <img src="http://img.youtube.com/vi/<%= vidId; %>/0.jpg"></img>
-//   </div>
-// <% } %>

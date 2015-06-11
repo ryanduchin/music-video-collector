@@ -1,8 +1,10 @@
-<% var vidSource = post._vidSource; %>
-<% var vidId = post._vidId; %>
+<a href="#/posts/<%= post.id %>">
 
-<h4>
-  <a href="#/posts/<%= post.id %>">
-    <%= post.escape('title') %>
-  </a>
-</h4>
+  <h4><%= post.escape('title') %></h4>
+
+  <% if (post.vidSource() === "Youtube") { %>
+    <img src="<%= "http://img.youtube.com/vi/" + post.vidId() + "/0.jpg" %>"></img>
+  <% } %>
+
+
+</a>
