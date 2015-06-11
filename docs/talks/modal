@@ -1,0 +1,67 @@
+<div class='m-backdrop'></div>
+<div class='m-content></div>
+
+that's basically it. you need to style it so that backdrop covers everything
+else (so it gets grayed out) and content covers what you want
+
+in tweets index template
+<button class="btn-compose btn btn-success btn-small">
+  Compose Tweet
+</button>
+
+in tweets index view
+add event listener, : 'openTweetForm"
+
+openTweetForm: function () {
+  //initialize new view, render view, attach to DOM
+  var modal = new BackboneDemo.Views.TweetForm();
+  $('body').prepend(modal.render().$el); //prepending to put it 'outside'
+}
+styling - screw around with it in the console directly to see results instantly
+parent
+position: absolute
+
+.m-backdrop
+position: fixed
+color: red
+left/right/top/bottom: all 0
+z-index: 100
+background-color: black/greyish
+rgba: (redval, greenval, blueval, 0.5); //alpha = transparency
+
+
+.m-content
+z-index: 101
+background-color: blue
+height: 100px
+weight: 100px
+position: relative;
+margin: 0 auto
+margin-top: 66px;
+border-radius: 4px;
+padding: 20px;
+
+how to dismiss a modal
+in Views.TweetForm()
+add a template button to escape
+  <button class='btn btn-danger btn-small pull-right'>&times;</button>
+  OR <button class='close'>&times;</button> (bootstrap!!)
+  and of course the form, submit button, etc.
+on click of close, this.remove() (that's it)
+on click of submit
+  event.preventDefault
+  model.set
+  model.save, on success (.bind(this)) -
+    add to collection
+    close
+
+what about clicking away from modal to close it?
+in Views.TweetForm render
+  $('body').off('click');
+  $('body').on('click', function (event) {
+    if event.target.classList[0] === "m-backdrop"
+      this.close();
+    }
+  }.bind(this));
+OR (version 2)
+listen event on 'click 'm-backdrop' : 'close' (unless divs are nested)

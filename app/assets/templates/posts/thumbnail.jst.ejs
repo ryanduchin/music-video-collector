@@ -1,9 +1,22 @@
+<% vidSource = post.vidSource(); %>
+<% vidId = post.vidId(); %>
+
 <a href="#/posts/<%= post.id %>">
 
   <h4><%= post.escape('title') %></h4>
 
-  <% if (post.vidSource() === "Youtube") { %>
-    <img src="<%= "http://img.youtube.com/vi/" + post.vidId() + "/0.jpg" %>"></img>
+  <% if (vidSource === "Youtube") { %>
+    <img src="<%= "http://img.youtube.com/vi/" +
+      vidId + "/mqdefault.jpg" %>"></img>
+
+  <% } else if (vidSource === "Vimeo") { %>
+    <img id="vimeo-<%=vidId%>" src=""></img>
+    <script type="text/javascript">
+      this.VMCApp.Views.PostThumbnail.prototype.vimeoLoadingThumb(vidId);
+    </script>
+
+  <% } else if (vidSource === "Vevo") { %>
+
   <% } %>
 
 
