@@ -24,8 +24,8 @@ Api::PostsController (create, destroy, show, update, index)
 
 ### Views
 * navbar
-* ChannelShow (todo)
-* PostShow (todo)
+* ChannelShow
+* PostShow
 * Feed homepage (currently just user's posts)
 
 ## Router

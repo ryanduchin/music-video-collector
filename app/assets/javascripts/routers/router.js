@@ -30,7 +30,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   playlist_show: function (id) {
     var playlist = this.user_playlists.getOrFetch(id);
-    var newView = new VMCApp.Views.PlaylistShow({ model: playlist });
+    var newView = new VMCApp.Views.PlaylistShow({
+      model: playlist,
+    });
     this.swapView(newView);
   },
 

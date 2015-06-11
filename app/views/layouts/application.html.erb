@@ -16,7 +16,9 @@
 
 <% if signed_in? %>
   <div class='footer'>
+    <br><br><hr><br>
     <%= current_user.username %>
+    <br><br>
     <%= button_to "Log Out", session_url, method: :delete %>
   </div>
 <% end %>

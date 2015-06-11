@@ -20,4 +20,9 @@ posts/likes.json.jbuilder
 * YourLikedVideos(Index)
 * Add liked button to subviews
 
+* Forms (Modals)
+- video show - add to playlist (new playlistpost)
+- playlist show/uploaded videos - new post
+- playlist index - new playlist
+
 ## Gems/Libraries

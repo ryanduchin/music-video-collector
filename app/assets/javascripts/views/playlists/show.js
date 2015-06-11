@@ -3,11 +3,13 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   template: JST['playlists/show'],
 
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.collection = this.model.posts();
+    this.listenTo(this.model, "sync", this.render);
+    // this.listenTo(this.collection, "add", this.render);
   },
 
   render: function () {
-    var content = this.template({ post: this.model });
+    var content = this.template({ playlist: this.model });
     this.$el.html(content);
     this.renderPosts();
     this.attachSubviews();

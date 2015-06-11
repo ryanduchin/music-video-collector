@@ -1,0 +1,22 @@
+Cloudinary - File Upload (Jeff's lightning talk)
+
+Doesn't seriazlie the image like amazon AWS - instead it gives you a direct URL to embed
+you can keep it in assetts in Rails, but heroku can get bogged down by it.
+
+
+Cloudinary widget - full-screen modal asking for upload
+
+* Add script to application header HTML
+* follow instructions - get API key, get upload preset from the site
+* cloudinary.openUploadWidget({upload_preset: ..., cloud_name: ...})
+* Cloudinary allows you to transform images
+
+Figaro
+* do NOT put cloud name in javascript directly - users can pull it out!
+* do not store API keys on github!!
+* gem: figaro! creates config/application.yml, says do not upload that to github
+* how do we push to heroku for production? 'figaro heroku' or some command (!)
+* inside rails controller, value accessible by ENV["key"] (from application.yml)
+* from inside application.html.erb: (ex.)
+      window.cloud_name: <%= ENV['cloud_name'] %>
+      (inside a <script type="text/javascript" charset="utf-8">window.....</script>)

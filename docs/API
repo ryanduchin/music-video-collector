@@ -1,6 +1,38 @@
-youtube key:
-server: AIzaSyDt7EFzFDr1ivZJZxDm2WG9lvgAxDKojd4
-browser: AIzaSyDoNLaxoOkI1oRe6WgH_IQw3Uv5RFUZ94Q
 
 iframe player instructions (youtube player)
 https://developers.google.com/youtube/iframe_api_reference#Loading_a_Video_Player
+
+How to strip URLs to get the part you want.
+var video_id = <%= URL %>.split('v=')[1];
+var ampersandPosition = video_id.indexOf('&');
+if(ampersandPosition != -1) {
+  video_id = video_id.substring(0, ampersandPosition);
+}
+
+How to embed in the show view
+
+Youtube:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= post.video_id %>" frameborder="0" allowfullscreen></iframe>
+
+Vimeo:
+<iframe src="https://player.vimeo.com/video/129804959?color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+Questions for CJ (or whoever)
+-How do I get the API to give me the title/info? I could just let the user enter into my rails table and not search the site,
+or I could reach into/wrangle the API. which is better?
+-Should I store just the tail ID of the URL, or the full thing?
+-Should I parse the URL for youtube vs vimeo, or should I add an extra column
+-unblock youtube on presentation day?
+
+Other Questions
+- I want users to see my seed posts but NOT other real users
+how do I do this? Create a column in the users table?
+- how to connect database tables from backbone? (uploaded by: username)
+  + Backbone View (for user view page)
+  + Backbone Model (and Collection?)
+  + Rails controller (to serve user info for user view page)
+
+
+thumbnails
+vimeo: http://stackoverflow.com/questions/1361149/get-img-thumbnails-from-vimeo
