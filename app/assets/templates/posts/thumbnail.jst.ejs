@@ -1,13 +1,17 @@
 <% vidSource = post.vidSource(); %>
 <% vidId = post.vidId(); %>
 
-<a href="#/posts/<%= post.id %>">
 
-  <h4><%= post.escape('title') %></h4>
+<a href="#/posts/<%= post.id %>">
+  <h4 class="thumb-title"><%= post.escape('title') %></h4>
+  <h5 class="thumb-artist"><%= post.escape('artist') %></h5>
+
 
   <% if (vidSource === "Youtube") { %>
-    <img src="<%= "http://img.youtube.com/vi/" +
-      vidId + "/mqdefault.jpg" %>"></img>
+    <div class="thumb youtube-thumb">
+      <img src="<%= "http://img.youtube.com/vi/" +
+        vidId + "/mqdefault.jpg" %>"></img>
+    </div>
 
   <% } else if (vidSource === "Vimeo") { %>
     <script type="text/javascript">
@@ -19,15 +23,18 @@
           success: function(data){
               var thumbnail_src = data[0].thumbnail_large;
               var id_img = "#vimeo-" + data[0].id;
-              $(id_img).html('<img src="' + thumbnail_src + '"/>');
+              $(id_img).html('<img src="' + thumbnail_src + '" width="320"/>');
           }
       });
     </script>
-    <div id="vimeo-<%= vidId %>"></div>
+    <div class="thumb vimeo-thumb" id="vimeo-<%= vidId %>"></div>
 
   <% } else if (vidSource === "Vevo") { %>
-
+    <div class="thumb vevo-thumb">
+      <iframe width="320" height="180"
+        src='<%= post.vidEmbedSrc() + post.vidId() %>'
+        frameborder="0" allowfullscreen></iframe>
+    </div>
   <% } %>
-
 
 </a>
