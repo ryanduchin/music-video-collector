@@ -1,3 +1,3 @@
-VMCApp.Models.Playlist = Backbone.Collection.extend({
+VMCApp.Models.Playlist = Backbone.Model.extend({
   urlRoot: '/api/playlists'
 });

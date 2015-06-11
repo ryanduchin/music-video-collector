@@ -1,5 +1,4 @@
 // this is the list of user's playlists
-
 VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   template: JST['playlists/index'],
   className: 'playlists-index',
