@@ -3,10 +3,15 @@
 
 <div>
   <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/<%= post.escape('url') %>"
+    src='<%= post.vidEmbedSrc() + post.vidId() %>'
     frameborder="0" allowfullscreen></iframe>
 </div>
 
 
-<h4>Uploaded by: <%= post.escape('username') %></h4>
-<
+<h5>User: <%= post.escape('username') %></h5>
+<h5>Source: <%= post.vidSource() %></h5>
+<h7>Video id: <%= post.vidId() %></h7>
+
+<!--
+<iframe src="https://player.vimeo.com/video/75755258?color=ffffff" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/75755258">Swedish House Mafia - Greyhound</a> from <a href="https://vimeo.com/biglazyrobot">BLR_VFX</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+-->
