@@ -9,6 +9,14 @@ Cloudinary widget - full-screen modal asking for upload
 * Add script to application header HTML
 * follow instructions - get API key, get upload preset from the site
 * cloudinary.openUploadWidget({upload_preset: ..., cloud_name: ...})
+  + goes in upload function of backbone view, triggered on click
+   change to fnwidget(CLOUDINARY_SETTINGS, function(error, payload) {
+   if (error)
+     asdfasfd
+    } else {
+      asdfasdf
+    });
+   where CLOUDINARY_SETTINGS is an object you make (see below)
 * Cloudinary allows you to transform images
 
 Figaro
@@ -16,7 +24,12 @@ Figaro
 * do not store API keys on github!!
 * gem: figaro! creates config/application.yml, says do not upload that to github
 * how do we push to heroku for production? 'figaro heroku' or some command (!)
+
+
 * inside rails controller, value accessible by ENV["key"] (from application.yml)
 * from inside application.html.erb: (ex.)
       window.cloud_name: <%= ENV['cloud_name'] %>
       (inside a <script type="text/javascript" charset="utf-8">window.....</script>)
+      or better, wrap in CLOUDINARY_SETTINGS object
+* if user cancels, we have an error
+* in view upload function, on success of save, upload to collection and boom!

@@ -23,12 +23,13 @@ Questions for CJ (or whoever)
 or I could reach into/wrangle the API. which is better?
 -Should I store just the tail ID of the URL, or the full thing?
 -Should I parse the URL for youtube vs vimeo, or should I add an extra column
--unblock youtube on presentation day?
 
 Other Questions
 - I want users to see my seed posts but NOT other real users
 how do I do this? Create a column in the users table?
-- how to connect database tables from backbone? (uploaded by: username)
+- how to connect database tables from backbone? I need: (uploaded by: username) & adding friends/subscribing
+****include name in jbuilder
+upload id - click on link to go to their
   + Backbone View (for user view page)
   + Backbone Model (and Collection?)
   + Rails controller (to serve user info for user view page)
@@ -36,3 +37,7 @@ how do I do this? Create a column in the users table?
 
 thumbnails
 vimeo: http://stackoverflow.com/questions/1361149/get-img-thumbnails-from-vimeo
+
+VEVO
+<iframe width='460' height='259' src='http://cache.vevo.com/assets/html/embed.html?video=GBUV71500138&autoplay=0' frameborder='0' allowfullscreen></iframe>
+URL http://www.vevo.com/watch/eric-prydz/generate/GBUV71500138

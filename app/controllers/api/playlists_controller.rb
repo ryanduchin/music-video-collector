@@ -8,6 +8,7 @@ module Api
 
     def show
       @playlist = Playlist.find(params[:id])
+      @owner = User.find(@playlist.owner_id)
       render :show
     end
 

@@ -10,6 +10,7 @@ module Api
 
     def show
       @post = Post.find(params[:id])
+      @author = User.find(@post.author_id)
       render :show
     end
 

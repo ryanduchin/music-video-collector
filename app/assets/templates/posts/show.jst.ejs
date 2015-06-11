@@ -1,9 +1,12 @@
+<h2><%= post.escape('title') %></h2>
+<h4><%= post.escape('artist').toUpperCase() %></h4>
+
 <div>
   <iframe width="560" height="315"
     src="https://www.youtube.com/embed/<%= post.escape('url') %>"
     frameborder="0" allowfullscreen></iframe>
 </div>
 
-<h4><%= post.escape('title') %></h4>
-<h5><%= post.escape('artist') %></h5>
-<h6>Uploaded by: <%= post.escape('
+
+<h4>Uploaded by: <%= post.escape('username') %></h4>
+<
