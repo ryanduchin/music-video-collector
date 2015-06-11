@@ -1,2 +1,6 @@
-<h4><%= post.escape('title') %>, <%= post.id %></h4>
+<h4>
+  <a href="#/posts/<%= post.id %>">
+    <%= post.escape('title') %>, <%= post.id %>
+  </a>
+</h4>
 <div>this is where the youtube API Thumbnail goes</div>

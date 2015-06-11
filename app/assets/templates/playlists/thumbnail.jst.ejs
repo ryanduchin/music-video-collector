@@ -1,2 +1,6 @@
-<h4><%= playlist.escape('name') %>, <%= playlist.id %></h4>
+<h4>
+  <a href="#/playlists/<%= playlist.id %>">
+    <%= playlist.escape('name') %>, <%= playlist.id %>
+  </a>
+</h4>
 <div>this is where a first track (or set) youtube API thumbnail from the playlist would be pulled</div>

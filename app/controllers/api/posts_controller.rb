@@ -1,6 +1,8 @@
 module Api
   class PostsController < ApiController
 
+    # need to add more routes for different feeds!!
+
     def index
       @posts = current_user.posts
       render json: @posts

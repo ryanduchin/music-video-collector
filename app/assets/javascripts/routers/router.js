@@ -9,7 +9,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   routes: {
     "" : "users_posts_index",
     "posts/:id" : "post_show",
-    "posts/" : "users_posts_index",
+    "posts" : "users_posts_index",
     "playlists" : "playlists_index",
     "playlists/:id" : "playlist_show",
   },
