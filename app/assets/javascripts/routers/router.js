@@ -26,60 +26,64 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "playlists/:id" : "playlist_show",
   },
 
-  all_posts_index: function () {
-    this.allPosts.fetch();
-    var newView = new VMCApp.Views.AllPostsIndex({
-      collection: this.allPosts,
+  swapView: function (newView) {
+    this._currentView && this._currentView.remove();
+    this._currentView = newView;
+    this.$rootEl.html(this._currentView.$el);
+    this._currentView.render();
+  },
+
+  /////////////////////////
+
+  posts_index: function (collection) {
+    var newView = new VMCApp.Views.PostsIndex({
+      collection: collection,
     });
     this.swapView(newView);
+  },
 
+  all_posts_index: function () {
+    this.allPosts.fetch();
+    this.posts_index(this.allPosts);
   },
 
   user_posts_index: function () {
     this.userPosts.fetch();
-    var newView = new VMCApp.Views.UserPostsIndex({
-      collection: this.userPosts,
-    });
-    this.swapView(newView);
+    this.posts_index(this.userPosts);
   },
 
   liked_posts_index: function () {
     this.likedPosts.fetch();
-    var newView = new VMCApp.Views.LikedPostsIndex({
-      collection: this.likedPosts,
-    });
-    this.swapView(newView);
+    this.posts_index(this.likedPosts);
   },
 
   staff_posts_index: function () {
     this.staffPosts.fetch();
-    var newView = new VMCApp.Views.StaffPostsIndex({
-      collection: this.staffPosts,
+    this.posts_index(this.staffPosts);
+  },
+
+  /////////////////////////
+
+  playlists_index: function (collection) {
+    var newView = new VMCApp.Views.PlaylistsIndex({
+      collection: collection,
     });
     this.swapView(newView);
   },
 
-
-
   all_playlists_index: function () {
     this.allPlaylists.fetch();
     this.allPosts.fetch(); //??
-    var newView = new VMCApp.Views.AllPlaylistsIndex({
-      collection: this.allPlaylists,
-    });
-    this.swapView(newView);
+    this.playlists_index(this.allPlaylists);
   },
 
   user_playlists_index: function () {
     this.userPlaylists.fetch();
     this.userPosts.fetch(); //??
-    var newView = new VMCApp.Views.UserPlaylistsIndex({
-      collection: this.userPlaylists,
-    });
-    this.swapView(newView);
+    this.playlists_index(this.userPlaylists);
   },
 
-
+  /////////////////////////
 
   post_show: function (id) {
     var post = this.allPosts.getOrFetch(id);
@@ -91,15 +95,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     var playlist = this.allPlaylists.getOrFetch(id);
     var newView = new VMCApp.Views.PlaylistShow({ model: playlist });
     this.swapView(newView);
-  },
-
-
-  swapView: function (newView) {
-    //remove() function
-    this._currentView && this._currentView.remove();
-    this._currentView = newView;
-    this.$rootEl.html(this._currentView.$el);
-    this._currentView.render();
   },
 
 });
