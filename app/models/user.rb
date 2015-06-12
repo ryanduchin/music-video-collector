@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :posts, foreign_key: :author_id
   has_many :playlists, foreign_key: :owner_id
   has_many :likes
-  has_many :liked_posts, through: :likes
+  has_many :liked_posts, through: :likes, source: :post
 
 
 

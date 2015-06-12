@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :posts, except: [:new, :edit]
+    get ":filter/posts", to: "posts#index"
     resources :playlists, except: [:new, :edit]
     resources :likes, except: [:new, :edit]
   end

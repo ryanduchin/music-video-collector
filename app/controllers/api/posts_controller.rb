@@ -4,7 +4,16 @@ module Api
     # need to add more routes for different feeds!!
 
     def index
-      @posts = current_user.posts
+      case params[:filter]
+      when 'all'
+        @posts = Post.all
+      when 'user'
+        @posts = current_user.posts
+      when 'likes'
+        @posts = current_user.liked_posts
+      when 'staff'
+        @posts = Post.all.where(staff: true)
+      end
       render json: @posts
     end
 
