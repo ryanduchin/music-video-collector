@@ -5,15 +5,16 @@ VMCApp.Views.UsersPostsIndex = Backbone.CompositeView.extend({
   className: 'user-posts-index',
 
   initialize: function () {
+    this.renderPosts();
     this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addPost);
+
   },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.renderPosts();
-    // setTimeout(this.setHeight.bind(this));
-    this.attachSubviews(); //
+    this.attachSubviews();
     return this;
   },
 

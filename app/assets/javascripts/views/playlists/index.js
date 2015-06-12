@@ -4,14 +4,15 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   className: 'playlists-index',
 
   initialize: function () {
+    this.renderPlaylists();
     this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addPlaylist);
   },
 
   render: function () {
     var content = this.template();
     this.$el.html(content);
-    this.renderPlaylists();
-    this.attachSubviews(); //
+    this.attachSubviews();
     return this;
   },
 
@@ -29,14 +30,14 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   },
 
   choosePost: function (playlist) {
+
     var posts = playlist.posts();
     var i = 0;
-    var post = posts[i];
-    debugger;
+    var post = posts.at(i)
     //do not use Vevo thumbnail if you can avoid it (loads video)
     while (post.vidSource() === "Vevo" && i < posts.length) {
       i++;
-      post = posts[i];
+      post = posts.at(i);
     }
     return post;
   },
