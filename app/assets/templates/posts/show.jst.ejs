@@ -2,6 +2,8 @@
 <h1><%= post.escape('title') %></h1>
 <h3><%= post.escape('artist').toUpperCase() %></h3>
 
+<button class="btn btn-like-post btn-lg"></button>
+
 <div>
   <iframe width="1100" height="614"
     src='<%= post.vidEmbedSrc() + post.vidId() %>'
@@ -12,5 +14,3 @@
 <h4>User: <%= post.escape('username') %></h4>
 <h4>Source: <%= post.vidSource() %></h4>
 <h6>Video id: <%= post.vidId() %></h6>
-<br>
-<button class="btn btn-like-post"><i class="fa fa-heart"><%= btnText %></i></button>

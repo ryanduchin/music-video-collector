@@ -14,7 +14,6 @@ VMCApp.Views.PostShow = Backbone.View.extend({
   render: function () {
     var content = this.template({
       post: this.model,
-      btnText: this.buttonText(),
     });
     this.$el.html(content);
     this.setBtnColor();
@@ -41,21 +40,14 @@ VMCApp.Views.PostShow = Backbone.View.extend({
     like.clear();
   },
 
-  buttonText: function () {
-    if (this.model.isLiked()) {
-      return "Liked!";
-    } else {
-      return "Like";
-    }
-  },
-
   setBtnColor: function () {
     if (this.model.isLiked()) {
-      this.$('button.btn-like-post').removeClass('btn-primary');
       this.$('button.btn-like-post').addClass('btn-danger');
+      this.$('button.btn-like-post').html("<i class='fa fa-heart'>Liked!</i>");
     } else {
       this.$('button.btn-like-post').removeClass('btn-danger');
-      this.$('button.btn-like-post').addClass('btn-primary');
+      this.$('button.btn-like-post').html('Like');
+
     }
   },
 
