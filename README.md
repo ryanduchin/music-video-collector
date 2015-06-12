@@ -11,13 +11,18 @@ Users can:
 
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
+Main next courses of action:
+* fix jbuilder and controllers to allow for different feeds
+* add modal forms for submitting content
+* implement likes and following
+
 MVP:
 - [x] Create accounts (sign up)
 - [x] Create sessions (log in)
 - [X] Watch videos!
+- [ ] "Upload" Videos (=enter links)
 - [ ] Like Videos
 - [ ] View collection of all your liked videos
-- [ ] "Upload" Videos (=enter links)
 - [ ] View other users (and their list of liked videos)
 - [ ] Explore videos
 
