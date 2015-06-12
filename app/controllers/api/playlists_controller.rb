@@ -6,6 +6,16 @@ module Api
       render :index
     end
 
+    def index
+      case params[:filter]
+      when 'all'
+        @posts = Playlist.all
+      when 'user'
+        @posts = current_user.playlists
+      end
+      render json: @posts
+    end
+
     def show
       @playlist = Playlist.find(params[:id])
       @owner = User.find(@playlist.owner_id)

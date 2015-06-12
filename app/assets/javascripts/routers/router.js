@@ -13,7 +13,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "playlists" : "playlists_index",
     "playlists/:id" : "playlist_show",
   },
-  //
+
+  // posts_index: function () {
+
+
   users_posts_index: function () {
     this.user_posts.fetch();
     var newView = new VMCApp.Views.UsersPostsIndex({

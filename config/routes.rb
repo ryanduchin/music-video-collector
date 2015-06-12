@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: { format: :json } do
-    resources :posts, except: [:new, :edit]
+    resources :posts, except: [:new, :edit, :index]
     get ":filter/posts", to: "posts#index"
-    resources :playlists, except: [:new, :edit]
+    resources :playlists, except: [:new, :edit, :index]
+    get ":filter/playlists", to: "playlists#index"
     resources :likes, except: [:new, :edit]
   end
 
