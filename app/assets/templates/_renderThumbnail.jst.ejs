@@ -8,6 +8,13 @@
       vidId + "/mqdefault.jpg" %>" width="400"></img>
   </div>
 
+<% } else if (vidSource === "Vevo") { %>
+  <div class="thumb vevo-thumb">
+    <iframe width="390" height="225"
+      src='<%= post.vidEmbedSrc() + post.vidId() %>'
+      frameborder="0" allowfullscreen></iframe>
+  </div>
+
 <% } else if (vidSource === "Vimeo") { %>
   <script type="text/javascript">
     $.ajax({
@@ -24,10 +31,4 @@
   </script>
   <div class="thumb vimeo-thumb" id="vimeo-<%= vidId %>"></div>
 
-<% } else if (vidSource === "Vevo") { %>
-  <div class="thumb vevo-thumb">
-    <iframe width="390" height="225"
-      src='<%= post.vidEmbedSrc() + post.vidId() %>'
-      frameborder="0" allowfullscreen></iframe>
-  </div>
 <% } %>

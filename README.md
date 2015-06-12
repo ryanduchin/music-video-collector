@@ -21,8 +21,8 @@ MVP:
 - [x] Create sessions (log in)
 - [X] Watch videos!
 - [ ] "Upload" Videos (=enter links)
-- [ ] Like Videos
-- [ ] View collection of all your liked videos
+- [X] Like Videos
+- [X] View collection of all your liked videos
 - [ ] View other users (and their list of liked videos)
 - [ ] Explore videos
 
