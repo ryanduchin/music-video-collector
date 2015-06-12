@@ -1,5 +1,5 @@
-VMCApp.Collections.Playlists = Backbone.Collection.extend({
-  url: '/api/playlists',
+VMCApp.Collections.UserPlaylists = Backbone.Collection.extend({
+  url: '/api/user/playlists',
 
   model: VMCApp.Models.Playlist,
 

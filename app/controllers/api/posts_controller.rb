@@ -1,8 +1,6 @@
 module Api
   class PostsController < ApiController
 
-    # need to add more routes for different feeds!!
-
     def index
       case params[:filter]
       when 'all'

@@ -1,5 +1,5 @@
-VMCApp.Collections.Posts = Backbone.Collection.extend({
-  url: '/api/posts',
+VMCApp.Collections.AllPosts = Backbone.Collection.extend({
+  url: '/api/all/posts',
 
   model: VMCApp.Models.Post,
 
