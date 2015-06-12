@@ -19,19 +19,20 @@ VMCApp.Views.PostShow = Backbone.View.extend({
 
   toggleLike: function () {
     if (this.model.isLiked()) {
+      console.log('unliking');
       this.unlikePost();
     } else {
+      console.log('liking');
       this.likePost(); //
     }
-    console.log(this.model._like)
   },
 
-  unlikePost: function () {
+  likePost: function () {
     this.model.like().save({ post_id: this.model.id });
     //is the like method in the backbone post model instead???
   },
 
-  likePost: function () {
+  unlikePost: function () {
     var like = this.model.like();
     like.destroy();
     like.clear();

@@ -38,7 +38,7 @@ module Api
 
     private
 
-    def post_params
+    def like_params
       params.require(:like).permit(:post_id)
     end
   end
