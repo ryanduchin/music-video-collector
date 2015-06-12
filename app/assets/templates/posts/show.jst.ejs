@@ -1,3 +1,4 @@
+
 <h1><%= post.escape('title') %></h1>
 <h3><%= post.escape('artist').toUpperCase() %></h3>
 
@@ -12,4 +13,4 @@
 <h4>Source: <%= post.vidSource() %></h4>
 <h6>Video id: <%= post.vidId() %></h6>
 <br>
-<button class="btn btn-primary btn-danger btn-like-post"><i class="fa fa-heart">Like</i></button>
+<button class="btn btn-primary btn-danger btn-like-post"><i class="fa fa-heart"><%= btnText %></i></button>

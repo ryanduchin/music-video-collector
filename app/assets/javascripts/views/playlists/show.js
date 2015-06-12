@@ -4,9 +4,9 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.collection = this.model.posts();
-    // this.collection.fetch() //?? because not called from router
-    // this.renderPosts(); //dont use, there are no posts...
-    // this.listenTo(this.collection, "sync", this.render); //why is this extra??
+    // this.collection.fetch() //?? causes ALL posts to display?? Why?
+    this.renderPosts(); //needed for revisit of page
+    // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPost);
   },
 
@@ -19,15 +19,13 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   renderPosts: function () {
     posts = this.model.posts();
-    // if (posts.length === 0) { console.log('no posts'); return; }
+    if (posts.length === 0) { return; }
     this.model.posts().forEach(function (post) {
       this.addPost(post);
     }.bind(this));
   },
 
   addPost: function (post) {
-    //post when called from renderPosts, but
-    console.log(post.toJSON());
     var subView = new VMCApp.Views.PostThumbnail({ model: post });
     this.addSubview('.view-posts', subView);
   },

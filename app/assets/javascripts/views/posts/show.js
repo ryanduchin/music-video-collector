@@ -12,15 +12,20 @@ VMCApp.Views.PostShow = Backbone.View.extend({
   },
 
   render: function () {
-    var content = this.template({ post: this.model });
+    var content = this.template({
+      post: this.model,
+      btnText: this.buttonText(),
+    });
     this.$el.html(content);
     return this;
   },
 
   toggleLike: function () {
     if (this.model.isLiked()) {
+      console.log('unliking');
       this.unlikePost();
     } else {
+      console.log('liking');
       this.likePost(); //
     }
   },
@@ -33,5 +38,13 @@ VMCApp.Views.PostShow = Backbone.View.extend({
     var like = this.model.like();
     like.destroy();
     like.clear();
+  },
+
+  buttonText: function () {
+    if (this.model.isLiked()) {
+      return "Liked!";
+    } else {
+      return "Like";
+    }
   },
 });

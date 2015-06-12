@@ -9,6 +9,7 @@ VMCApp.Models.Post = Backbone.Model.extend({
   },
 
   parse: function (response) {
+    debugger;
     if (response.like) {
       this.like().set(response.like);
       delete response.like;
@@ -63,9 +64,7 @@ VMCApp.Models.Post = Backbone.Model.extend({
   },
 
   isLiked: function () {
-    //being called from toggleLike fn in show
-    var x = this.like().isNew();
-    return !x;
+    return !this.like().isNew();
   },
 
 });

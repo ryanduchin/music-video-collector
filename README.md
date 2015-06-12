@@ -14,10 +14,12 @@ Users can:
 Main next courses of action:
 * fix jbuilder and controllers to allow for different feeds (!!!!) (DONE)
 * implement likes and following (mostly done)
-    * fix unliking problem
-    * render unlike different than liked
+    * fix unliking problem (done)
+    * render unlike different than liked (!)
 * get views to show what type of feed they are (how to do this without separate views?)
 * add modal forms for submitting content
+* sorting feeds?
+* grid system for feeds
 
 MVP:
 - [x] Create accounts (sign up)
