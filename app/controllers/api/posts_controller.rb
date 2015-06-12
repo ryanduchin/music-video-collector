@@ -7,7 +7,7 @@ module Api
         @posts = Post.all
       when 'user'
         @posts = current_user.posts
-      when 'likes'
+      when 'liked'
         @posts = current_user.liked_posts
       when 'staff'
         @posts = Post.all.where(staff: true)
