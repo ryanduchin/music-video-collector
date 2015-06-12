@@ -6,13 +6,12 @@ class Post < ActiveRecord::Base
   has_many :likes
   has_many :liking_users, through: :likes, source: :user
 
-
-  def getUserLike
-    var likesArr = self.likes.where(user_id: current_user.id); #no current_user
-    if likesArr.empty?
+  def get_user_like(current_user_id)
+    likes_arr = self.likes.where(user_id: current_user_id)
+    if likes_arr.empty?
       return
     else
-      return likesArr.first.id
+      return likes_arr.first
     end
   end
 end
