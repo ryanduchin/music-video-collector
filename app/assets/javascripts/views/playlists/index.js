@@ -23,6 +23,8 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   },
 
   addPlaylist: function (playlist) {
+    var featuredPost = this.choosePost(playlist);
+    // if (featuredPost === undefined) { return; }
     var subView = new VMCApp.Views.PlaylistThumbnail({
       model: playlist,
       featuredPost: this.choosePost(playlist),
@@ -32,6 +34,7 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
 
   choosePost: function (playlist) {
     var posts = playlist.posts();
+    // if (posts.length === 0) { console.log('no post'); return; }
     var i = 0;
     var post = posts.at(i)
     //do not use Vevo thumbnail if you can avoid it (loads video)

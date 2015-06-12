@@ -2,18 +2,13 @@ module Api
   class PlaylistsController < ApiController
 
     def index
-      @playlists = current_user.playlists
-      render :index
-    end
-
-    def index
       case params[:filter]
       when 'all'
-        @posts = Playlist.all
+        @playlists = Playlist.all
       when 'user'
-        @posts = current_user.playlists
+        @playlists = current_user.playlists
       end
-      render json: @posts
+      render :index
     end
 
     def show

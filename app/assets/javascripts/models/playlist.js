@@ -3,7 +3,7 @@ VMCApp.Models.Playlist = Backbone.Model.extend({
 
   posts: function () {
     if (!this._posts) {
-      this._posts = new VMCApp.Collections.Posts([], { playlist: this });
+      this._posts = new VMCApp.Collections.AllPosts([], { playlist: this });
     }
 
     return this._posts;
