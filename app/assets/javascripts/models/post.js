@@ -1,23 +1,6 @@
 VMCApp.Models.Post = Backbone.Model.extend({
   urlRoot: '/api/posts',
 
-  like: function () {
-    if (!this._like) {
-      this._like = new VMCApp.Models.Like();
-    }
-    return this._like;
-  },
-
-  parse: function (response) {
-    debugger;
-    if (response.like) {
-      this.like().set(response.like);
-      delete response.like;
-    }
-
-    return response;
-  },
-
   vidSource: function () {
     //take everything before '.com'
     if (this.escape('url') === "") { return; }
@@ -67,4 +50,21 @@ VMCApp.Models.Post = Backbone.Model.extend({
     return !this.like().isNew();
   },
 
+
+  like: function () {
+    if (!this._like) {
+      this._like = new VMCApp.Models.Like();
+    }
+    return this._like;
+  },
+
+  parse: function (response) {
+    debugger;
+    if (response.like) {
+      this.like().set(response.like);
+      delete response.like;
+    }
+
+    return response;
+  },
 });

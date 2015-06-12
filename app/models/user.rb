@@ -8,12 +8,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
 
-
-
   attr_reader :password
-
-  # has_many(
-  # )
 
   after_initialize :ensure_session_token
 
