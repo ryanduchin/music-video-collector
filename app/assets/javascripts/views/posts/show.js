@@ -21,7 +21,7 @@ VMCApp.Views.PostShow = Backbone.View.extend({
     if (this.model.isLiked()) {
       this.unlikePost();
     } else {
-      this.likePost();
+      this.likePost(); //
     }
   },
 
@@ -31,7 +31,8 @@ VMCApp.Views.PostShow = Backbone.View.extend({
   },
 
   likePost: function () {
-    this.model.like().destroy();
-    this.model.like().clear();
+    var like = this.model.like();
+    like.destroy();
+    like.clear();
   },
 });

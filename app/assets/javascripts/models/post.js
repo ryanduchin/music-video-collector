@@ -1,6 +1,24 @@
 VMCApp.Models.Post = Backbone.Model.extend({
   urlRoot: '/api/posts',
 
+  like: function () {
+    console.log('called model::like()');
+    if (!this._like) {
+      this._like = new VMCApp.Models.Like();
+    }
+
+    return this._like;
+  },
+
+  parse: function (response) {
+    if (response.like) {
+      this.likes().set(response.like);
+      delete response.like;
+    }
+
+    return response;
+  },
+
   vidSource: function () {
     //take everything before '.com'
     if (this.escape('url') === "") { return; }
@@ -44,23 +62,6 @@ VMCApp.Models.Post = Backbone.Model.extend({
     } else if (_vidSource === 'Vimeo') {
       return 'https://player.vimeo.com/video/';
     }
-  },
-
-  posts: function () {
-    if (!this._like) {
-      this._like = new VMCApp.Models.Like();
-    }
-
-    return this._like;
-  },
-
-  parse: function (response) {
-    if (response.like) {
-      this.likes().set(response.like);
-      delete response.like;
-    }
-
-    return response;
   },
 
   isLiked: function () {
