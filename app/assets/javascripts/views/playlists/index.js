@@ -29,7 +29,4 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
     this.addSubview('.view-playlists', subView);
   },
 
-
-
-
 });

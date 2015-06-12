@@ -3,8 +3,11 @@ VMCApp.Views.PostThumbnail = Backbone.View.extend({
   className: 'thumbnail-container post-thumbnail',
   template: JST['posts/thumbnail'],
 
+  initialize: function () {
+    debugger;
+  },
+
   render: function () {
-    console.log(this.model.toJSON());
     var content = this.template({ post: this.model });
     this.$el.html(content);
     return this;
