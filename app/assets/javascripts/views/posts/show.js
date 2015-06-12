@@ -23,6 +23,7 @@ VMCApp.Views.PostShow = Backbone.View.extend({
     } else {
       this.likePost(); //
     }
+    console.log(this.model._like)
   },
 
   unlikePost: function () {

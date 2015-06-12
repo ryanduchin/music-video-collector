@@ -1,17 +1,23 @@
 VMCApp.Models.Post = Backbone.Model.extend({
   urlRoot: '/api/posts',
 
+  _like: function () {
+    return this._like;
+  },
+
   like: function () {
-    console.log('called model::like()');
+    console.log('ping');
     if (!this._like) {
       this._like = new VMCApp.Models.Like();
     }
-
+    console.log(this._like); //returning a function instead of an instance???
     return this._like;
   },
 
   parse: function (response) {
+      console.log('parsing!');
     if (response.like) {
+      console.log('response had a like');
       this.likes().set(response.like);
       delete response.like;
     }
@@ -65,7 +71,11 @@ VMCApp.Models.Post = Backbone.Model.extend({
   },
 
   isLiked: function () {
-    return !this.like().isNew();
+    //being called from toggleLike fn in show
+    //isNew is not a function
+    var x = this.like().isNew();
+    console.log(x);
+    return !x;
   },
 
 });
