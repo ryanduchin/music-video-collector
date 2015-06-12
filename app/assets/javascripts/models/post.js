@@ -46,4 +46,25 @@ VMCApp.Models.Post = Backbone.Model.extend({
     }
   },
 
+  posts: function () {
+    if (!this._like) {
+      this._like = new VMCApp.Models.Like();
+    }
+
+    return this._like;
+  },
+
+  parse: function (response) {
+    if (response.like) {
+      this.likes().set(response.like);
+      delete response.like;
+    }
+
+    return response;
+  },
+
+  isLiked: function () {
+    return !this.like().isNew();
+  },
+
 });

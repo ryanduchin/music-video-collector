@@ -31,7 +31,7 @@ all it needs is an id so that it can hit the api controller
 * Rails JBuilder can do a lot of that stuff. The logic goes there (Rails
   jbuilder + rails api controller)
 
-* backbone Like model needs to parse the response
+* backbone Like model needs to parse the response (in photo model??)
   parse: function (response) {
     if (response.like) {
       this.like().set(response.like);
