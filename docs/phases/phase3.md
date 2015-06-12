@@ -22,5 +22,3 @@
 
 
 ## Gems/Libraries
-* Markdown-js
-* Bootstrap Markdown

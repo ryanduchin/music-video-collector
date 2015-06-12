@@ -12,7 +12,7 @@ Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 Main next courses of action:
-* fix jbuilder and controllers to allow for different feeds
+* fix jbuilder and controllers to allow for different feeds (!!!!)
 * add modal forms for submitting content
 * implement likes and following
 
@@ -78,6 +78,12 @@ phase, users will be able to view both channels and videos
 I will work on getting the youtube API to work and creating a video show view.
 I will also create the two subviews that have an image of the video and some
 basic information.
+
+[Details][phase-three]
+
+### Phase 3.5: Feeds, Users
+Adding in late - will add the controllers/routes in Rails for new feeds
+Will create show pages for other users
 
 [Details][phase-three]
 

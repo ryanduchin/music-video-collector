@@ -29,7 +29,7 @@ Other Questions
 how do I do this? Create a column in the users table?
 - how to connect database tables from backbone? I need: (uploaded by: username) & adding friends/subscribing
 ****include name in jbuilder
-upload id - click on link to go to their
+upload id - click on link to go to their page
   + Backbone View (for user view page)
   + Backbone Model (and Collection?)
   + Rails controller (to serve user info for user view page)

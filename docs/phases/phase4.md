@@ -5,6 +5,8 @@
 
 ### Controllers
 Api::LikeController (create, destroy)
+Api::FollowController (create, destroy)
+
 
 
 ### Views

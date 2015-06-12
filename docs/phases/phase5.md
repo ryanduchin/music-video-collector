@@ -4,7 +4,6 @@
 ### Models
 
 ### Controllers
-Api::FollowController (create, destroy)
 
 ### Views
 
@@ -19,3 +18,5 @@ Api::FollowController (create, destroy)
 * ChannelCreate (possibly in UserProfileView)
 
 ## Gems/Libraries
+* Markdown-js
+* Bootstrap Markdown
