@@ -8,15 +8,15 @@ c4 = u1.playlists.create!(name: 'Pop')
 
 
 
-p1 = u1.posts.create!(title: 'Generate', url: 'http://www.vevo.com/watch/eric-prydz/generate/GBUV71500138', artist: 'Eric Prydz')
+p1 = u1.posts.create!(title: 'Generate', url: 'http://www.vevo.com/watch/eric-prydz/generate/GBUV71500138', artist: 'Eric Prydz', staff: true)
 p2 = u1.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watch?v=eilZug1R4Es', artist: 'Above & Beyond')
 p3 = u1.posts.create!(title: 'Melba', url: 'https://www.youtube.com/watch?v=QYvZ8TUyn9w', artist: 'Sunny Lax')
 p4 = u1.posts.create!(title: 'Ruby', url: 'https://www.youtube.com/watch?v=LH_15HVH5Yc', artist: 'Cirez D')
 p5 = u1.posts.create!(title: 'Greyhound', url: 'https://vimeo.com/75755258', artist: 'Swedish House Mafia')
 
 p6 = u1.posts.create(title: 'Monument', url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI', artist: 'Royskopp & Robyn')
-p7 = u1.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn')
-p8 = u1.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
+p7 = u1.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
+p8 = u2.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
 
 
 
