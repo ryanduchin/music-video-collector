@@ -1,7 +1,3 @@
-<% vidSource = post.vidSource(); %>
-<% vidId = post.vidId(); %>
-
-
 <a href="#/posts/<%= post.id %>">
   <h4 class="thumb-title">
     <%= post.escape('title') %>
@@ -10,7 +6,6 @@
   <h5 class="thumb-artist">
     <%= post.escape('artist').toUpperCase() %>
   </h5>
-
 
   <%= JST['_renderThumbnail']({ post: post }) %>
 

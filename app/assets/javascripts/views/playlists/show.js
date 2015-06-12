@@ -5,8 +5,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.collection = this.model.posts();
     this.renderPosts();
-    this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.model, "add", this.addPost);
+    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "add", this.addPost);
   },
 
   render: function () {
@@ -17,12 +17,17 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    this.collection.forEach(function (post) {
+    posts = this.model.posts();
+    if (posts.length === 0) { console.log('no posts'); return; }
+    console.log('has posts');
+    this.model.posts().forEach(function (post) {
       this.addPost(post);
     }.bind(this));
   },
 
   addPost: function (post) {
+    //post when called from renderPosts, but
+    console.log(post.toJSON());
     var subView = new VMCApp.Views.PostThumbnail({ model: post });
     this.addSubview('.view-posts', subView);
   },

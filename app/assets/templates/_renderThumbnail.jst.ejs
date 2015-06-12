@@ -1,5 +1,6 @@
-<% vidSource = post.vidSource(); %>
-<% vidId = post.vidId(); %>
+<% var vidSource = post.vidSource(); %>
+<% var vidId = post.vidId(); %>
+<% console.log(vidId) %>
 
 
 <% if (vidSource === "Youtube") { %>
@@ -11,7 +12,7 @@
 <% } else if (vidSource === "Vevo") { %>
   <div class="thumb vevo-thumb">
     <iframe width="390" height="225"
-      src='<%= post.vidEmbedSrc() + post.vidId() %>'
+      src='<%= post.vidEmbedSrc() + vidId %>'
       frameborder="0" allowfullscreen></iframe>
   </div>
 
