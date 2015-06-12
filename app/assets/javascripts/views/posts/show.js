@@ -3,7 +3,7 @@ VMCApp.Views.PostShow = Backbone.View.extend({
   template: JST['posts/show'],
 
   events: {
-    "click button.like-post" : "toggleLike",
+    "click button.btn-like-post" : "toggleLike",
   },
 
   initialize: function () {
