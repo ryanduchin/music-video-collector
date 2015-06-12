@@ -3,8 +3,8 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
   className: 'thumbnail-container playlist-thumbnail',
   template: JST['playlists/thumbnail'],
 
-  initialize: function (options) {
-    this.featuredPost = options.featuredPost;
+  initialize: function () {
+    this.featuredPost = this.choosePost(this.model);
   },
 
   render: function () {
@@ -14,6 +14,19 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  choosePost: function (playlist) {
+    var posts = playlist.posts();
+    // if (posts.length === 0) { console.log('no post'); return; }
+    var i = 0;
+    var post = posts.at(i)
+    //do not use Vevo thumbnail if you can avoid it (loads video)
+    while (post.vidSource() === "Vevo" && i < posts.length) {
+      i++;
+      post = posts.at(i);
+    }
+    return post;
   },
 
 });
