@@ -18,6 +18,7 @@ gem 'underscore-rails'
 gem 'backbone-on-rails'
 gem 'newrelic_rpm'
 gem 'figaro'
+gem "font-awesome-rails"
 
 
 

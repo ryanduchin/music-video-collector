@@ -3,7 +3,6 @@ VMCApp.Models.Post = Backbone.Model.extend({
 
   like: function () {
     if (!this._like) {
-      console.log('new like model');
       this._like = new VMCApp.Models.Like();
     }
     return this._like;
@@ -66,8 +65,6 @@ VMCApp.Models.Post = Backbone.Model.extend({
   isLiked: function () {
     //being called from toggleLike fn in show
     var x = this.like().isNew();
-    console.log(this.like());
-    console.log(x);
     return !x;
   },
 
