@@ -27,7 +27,6 @@ VMCApp.Views.PostShow = Backbone.View.extend({
 
   likePost: function () {
     this.model.like().save({ post_id: this.model.id });
-    //is the like method in the backbone post model instead???
   },
 
   unlikePost: function () {
