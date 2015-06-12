@@ -1,8 +1,8 @@
 // this is the feed of the user's uploaded videos
 
-VMCApp.Views.UsersPostsIndex = Backbone.CompositeView.extend({
-  template: JST['posts/users_posts_index'],
-  className: 'user-posts-index',
+VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
+  template: JST['posts/index'],
+  className: 'posts-index',
 
   initialize: function () {
     this.renderPosts();
