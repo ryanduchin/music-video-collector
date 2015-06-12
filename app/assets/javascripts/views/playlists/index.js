@@ -23,14 +23,14 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   },
 
   addPlaylist: function (playlist) {
-    var subView = new VMCApp.Views.PostThumbnail({
-      model: this.choosePost(playlist)
+    var subView = new VMCApp.Views.PlaylistThumbnail({
+      model: playlist,
+      featuredPost: this.choosePost(playlist),
     });
     this.addSubview('.view-playlists', subView);
   },
 
   choosePost: function (playlist) {
-
     var posts = playlist.posts();
     var i = 0;
     var post = posts.at(i)

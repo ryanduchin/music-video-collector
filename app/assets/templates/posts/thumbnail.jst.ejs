@@ -3,38 +3,15 @@
 
 
 <a href="#/posts/<%= post.id %>">
-  <h4 class="thumb-title"><%= post.escape('title') %></h4>
-  <h5 class="thumb-artist"><%= post.escape('artist').toUpperCase() %></h5>
+  <h4 class="thumb-title">
+    <%= post.escape('title') %>
+  </h4>
+
+  <h5 class="thumb-artist">
+    <%= post.escape('artist').toUpperCase() %>
+  </h5>
 
 
-  <% if (vidSource === "Youtube") { %>
-    <div class="thumb youtube-thumb">
-      <img src="<%= "http://img.youtube.com/vi/" +
-        vidId + "/mqdefault.jpg" %>" width="400"></img>
-    </div>
-
-  <% } else if (vidSource === "Vimeo") { %>
-    <script type="text/javascript">
-      $.ajax({
-          type:'GET',
-          url: 'http://vimeo.com/api/v2/video/' + vidId + '.json',
-          jsonp: 'callback',
-          dataType: 'jsonp',
-          success: function(data){
-              var thumbnail_src = data[0].thumbnail_large;
-              var id_img = "#vimeo-" + data[0].id;
-              $(id_img).html('<img src="' + thumbnail_src + '" width="400"/>');
-          }
-      });
-    </script>
-    <div class="thumb vimeo-thumb" id="vimeo-<%= vidId %>"></div>
-
-  <% } else if (vidSource === "Vevo") { %>
-    <div class="thumb vevo-thumb">
-      <iframe width="390" height="225"
-        src='<%= post.vidEmbedSrc() + post.vidId() %>'
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-  <% } %>
+  <%= JST['_renderThumbnail']({ post: post }) %>
 
 </a>

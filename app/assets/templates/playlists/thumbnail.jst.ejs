@@ -1,0 +1,12 @@
+<a href="#/posts/<%= post.id %>">
+  <h2 class="thumb-playlist-title">
+    <%= playlist.escape('name') %>
+  </h2>
+
+  <h6 class="thumb-title">
+    <%= post.escape('title') + "/" + post.escape('artist')%>
+  </h6>
+
+  <%= JST['_renderThumbnail']({ post: post }) %>
+
+</a>
