@@ -73,7 +73,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   all_playlists_index: function () {
     this.allPlaylists.fetch();
-    this.allPosts.fetch(); //??
+    // this.allPosts.fetch(); //??
     this.playlists_index(this.allPlaylists);
   },
 

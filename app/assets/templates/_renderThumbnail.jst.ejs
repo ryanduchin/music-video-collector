@@ -1,6 +1,5 @@
 <% var vidSource = post.vidSource(); %>
-<% var vidId = post.vidId(); %>
-<% console.log(vidId) %>
+<% vidId = post.vidId(); %>
 
 
 <% if (vidSource === "Youtube") { %>
@@ -17,6 +16,7 @@
   </div>
 
 <% } else if (vidSource === "Vimeo") { %>
+
   <script type="text/javascript">
     $.ajax({
         type:'GET',

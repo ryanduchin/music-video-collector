@@ -4,8 +4,9 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   initialize: function () {
     this.collection = this.model.posts();
-    this.renderPosts();
-    this.listenTo(this.collection, "sync", this.render);
+    // this.collection.fetch() //?? because not called from router
+    // this.renderPosts(); //dont use, there are no posts...
+    // this.listenTo(this.collection, "sync", this.render); //why is this extra??
     this.listenTo(this.collection, "add", this.addPost);
   },
 
@@ -18,8 +19,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   renderPosts: function () {
     posts = this.model.posts();
-    if (posts.length === 0) { console.log('no posts'); return; }
-    console.log('has posts');
+    // if (posts.length === 0) { console.log('no posts'); return; }
     this.model.posts().forEach(function (post) {
       this.addPost(post);
     }.bind(this));
