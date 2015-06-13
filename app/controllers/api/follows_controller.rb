@@ -39,7 +39,7 @@ module Api
     private
 
     def follow_params
-      params.require(:follow).permit(:followed_id, :followed_type)
+      params.require(:follow).permit(:followable_id, :followable_type)
     end
   end
 
