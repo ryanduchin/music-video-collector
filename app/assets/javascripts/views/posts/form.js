@@ -10,6 +10,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
   },
 
   render: function () {
+    console.log('hi from modal render');
     var content = this.template();
     this.$el.html(content);
     return this;
