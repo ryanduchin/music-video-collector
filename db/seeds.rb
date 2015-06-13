@@ -30,6 +30,6 @@ j8 = PlaylistPost.create!(playlist_id: c4.id, post_id: p7.id)
 j9 = PlaylistPost.create!(playlist_id: c4.id, post_id: p8.id)
 
 # user 1 follows user 2
-f1 = Follow.create(follower_id: 1, followable_id: 2, followable_type: "user")
+f1 = Follow.create(follower_id: 1, followable_id: 2, followable_type: "User")
 # user 2 follows 'house' playlist
-f1 = Follow.create(follower_id: 2, followable_id: 1, followable_type: "playlist")
+f1 = Follow.create(follower_id: 2, followable_id: 1, followable_type: "Playlist")

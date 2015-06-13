@@ -14,11 +14,13 @@ class User < ActiveRecord::Base
   has_many :user_follows,
             through: :follows,
             source: :followable,
+            foreign_key: :follower_id,
             source_type: 'User'
 
   has_many :playlist_follows,
             through: :follows,
             source: :followable,
+            foreign_key: :follower_id,
             source_type: 'Playlist'
 
 
@@ -29,8 +31,7 @@ class User < ActiveRecord::Base
 
   has_many :following_users,
             through: :followings,
-            source: :user,
-            source_type: 'User'
+            source: :user
 
   attr_reader :password
 

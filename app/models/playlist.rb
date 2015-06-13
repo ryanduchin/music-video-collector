@@ -15,8 +15,7 @@ class Playlist < ActiveRecord::Base
 
   has_many :following_users,
             through: :followings,
-            source: :user,
-            source_type: 'User'
+            source: :user
 
   def belongs?(user)
     return true if user.id == self.owner_id
