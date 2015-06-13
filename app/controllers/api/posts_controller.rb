@@ -11,6 +11,13 @@ module Api
         @posts = current_user.liked_posts
       when 'staff'
         @posts = Post.all.where(staff: true)
+      when 'followed'
+        playlists = []
+        @posts = []
+        followed_users = current_user.user_follows
+        followed_users.each { |user| playlists.concat(user.playlists) }
+        playlists.concat(current_user.playlist_follows)
+        playlists.each { |playlist| @posts.concat(playlist.posts) }
       end
       render json: @posts
     end

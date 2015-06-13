@@ -6,18 +6,20 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.userPosts = new VMCApp.Collections.UserPosts();
     this.likedPosts = new VMCApp.Collections.LikedPosts();
     this.staffPosts = new VMCApp.Collections.StaffPosts();
+    this.followedPosts = new VMCApp.Collections.FollowedPosts();
 
     this.allPlaylists = new VMCApp.Collections.AllPlaylists();
     this.userPlaylists = new VMCApp.Collections.UserPlaylists();
   },
 
   routes: {
-    "" : "all_posts_index", //
+    "" : "followed_posts_index", //
 
     "all/posts" : "all_posts_index",
     "user/posts" : "user_posts_index",
     "liked/posts" : "liked_posts_index",
     "staff/posts" : "staff_posts_index",
+    "followed/posts" : "followed_posts_index",
 
     "all/playlists" : "all_playlists_index",
     "user/playlists" : "user_playlists_index",
@@ -35,9 +37,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
-  posts_index: function (collection) {
+  posts_index: function (options) {
     var newView = new VMCApp.Views.PostsIndex({
-      collection: collection,
+      collection: options.collection,
+      title: options.title,
       // title: options.title || "Posts Index",
     });
     this.swapView(newView);
@@ -45,29 +48,50 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   all_posts_index: function () {
     this.allPosts.fetch();
-    this.posts_index(this.allPosts);
+    this.posts_index({
+      collection: this.allPosts,
+      title: "All Posts",
+    });
   },
 
   user_posts_index: function () {
     this.userPosts.fetch();
-    this.posts_index(this.userPosts);
+    this.posts_index({
+      collection: this.userPosts,
+      title: "Your Posts"
+    });
   },
 
   liked_posts_index: function () {
     this.likedPosts.fetch();
-    this.posts_index(this.likedPosts);
+    this.posts_index({
+      collection: this.likedPosts,
+      title: "Liked Posts"
+    });
   },
 
   staff_posts_index: function () {
     this.staffPosts.fetch();
-    this.posts_index(this.staffPosts);
+    this.posts_index({
+      collection: this.staffPosts,
+      title: "Staff Picks"
+    });
+  },
+
+  followed_posts_index: function () {
+    this.followedPosts.fetch();
+    this.posts_index({
+      collection: this.followedPosts,
+      title: "Followed"
+    });
   },
 
   /////////////////////////
 
-  playlists_index: function (collection) {
+  playlists_index: function (options) {
     var newView = new VMCApp.Views.PlaylistsIndex({
-      collection: collection,
+      collection: options.collection,
+      title: options.title,
     });
     this.swapView(newView);
   },
@@ -75,13 +99,19 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   all_playlists_index: function () {
     this.allPlaylists.fetch();
     // this.allPosts.fetch(); //??
-    this.playlists_index(this.allPlaylists);
+    this.playlists_index({
+      collection: this.allPlaylists,
+      title: "All Playlists"
+    });
   },
 
   user_playlists_index: function () {
     this.userPlaylists.fetch();
     // this.userPosts.fetch(); //??
-    this.playlists_index(this.userPlaylists);
+    this.playlists_index({
+      collection: this.userPlaylists,
+      title: "Your Playlists"
+    });
   },
 
   /////////////////////////
