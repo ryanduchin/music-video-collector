@@ -12,8 +12,6 @@ Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 Main next courses of action:
-** get views to show what type of feed they are (how to do this without separate views?)
-->pass in title from router
 
 * add modal forms for submitting content
 
@@ -23,8 +21,7 @@ Main next courses of action:
 takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
 
-** following - two separate tables for user or playlist, OR just have one column null? (OR doesnt matter?)
--> polymorphic association
+
 * grid system for feeds
 
 MVP:

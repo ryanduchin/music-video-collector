@@ -5,6 +5,8 @@ module Api
       case params[:filter]
       when 'all'
         @posts = Post.all
+      when 'top'
+        @posts = Post.all.order
       when 'user'
         @posts = current_user.posts
       when 'liked'
