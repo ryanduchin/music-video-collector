@@ -5,8 +5,18 @@ class User < ActiveRecord::Base
 
   has_many :posts, foreign_key: :author_id
   has_many :playlists, foreign_key: :owner_id
+
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
+
+  # user follows something
+  has_many :follows, foreign_key: :follower_id
+  has_many :followed_items, through: :follows, source: :followable
+
+  # someone else follows user
+  has_many :followed, as: :followable
+  has_many :following_users, through: :followed, source: :user
+
 
   attr_reader :password
 

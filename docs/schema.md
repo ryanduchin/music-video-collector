@@ -36,7 +36,7 @@ playlist_id  | integer   | not null
 post_id     | integer   | not null, foreign key (references posts)
 
 
-## Likes
+## Likes (done)
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -44,13 +44,11 @@ post_id     | integer   | not null, foreign key (references posts)
 user_id     | integer   | not null, foreign key (references users)
 
 ## followings/subscriptions
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-follower_id | integer   | not null, foreign key (references users)
-//follow user OR playlist (or both - separate entries
-followed_id | integer   | not null, foreign key (references users)
-playlist_id  | integer   | foreign key (references playlists)
+column name   | data type | details
+--------------|-----------|-----------------------
+id            | integer   | not null, primary key
+follower_id   | integer   | not null, foreign key (references users)
+followed_id   | integer   | not null, foreign key (references users OR playlist)
 
 
 

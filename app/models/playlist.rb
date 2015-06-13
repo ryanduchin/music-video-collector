@@ -5,8 +5,13 @@ class Playlist < ActiveRecord::Base
   }
 
   belongs_to :user, foreign_key: :owner_id
+
   has_many :playlist_posts
   has_many :posts, through: :playlist_posts
+
+  # someone else follows playlist
+  has_many :followed, as: :followable
+  has_many :following_users, through: :followed, source: :user
 
 
   def belongs?(user)
