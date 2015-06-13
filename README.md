@@ -17,6 +17,8 @@ Main next courses of action:
 * grid system for feeds
 * other user views
 
+** modal creating form - how to handle successful save and adding to collection?
+
 ** sorting feeds? -> need input on monday re: ordering in controller
 ->easy way: add function .order in routes, creating different routes for different ordering
 ->hard way: in view, add an event listener. click sort : sortPosts.
