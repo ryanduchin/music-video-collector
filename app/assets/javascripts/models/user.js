@@ -1,5 +1,5 @@
 VMCApp.Models.User = Backbone.Model.extend({
-  urlRoot: '/api/likes',
+  urlRoot: '/api/users',
 
 
   parse: function (response) {

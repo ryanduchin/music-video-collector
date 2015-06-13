@@ -1,3 +1,3 @@
-VMCApp.Models.User = Backbone.Model.extend({
-  urlRoot: '/api/users',
+VMCApp.Models.Like = Backbone.Model.extend({
+  urlRoot: '/api/likes',
 });
