@@ -3,6 +3,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.$rootEl = options.$rootEl;
 
     this.allPosts = new VMCApp.Collections.AllPosts();
+    this.topPosts = new VMCApp.Collections.TopPosts();
     this.userPosts = new VMCApp.Collections.UserPosts();
     this.likedPosts = new VMCApp.Collections.LikedPosts();
     this.staffPosts = new VMCApp.Collections.StaffPosts();
@@ -16,6 +17,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "" : "followed_posts_index", //
 
     "all/posts" : "all_posts_index",
+    "top/posts" : "top_posts_index",
     "user/posts" : "user_posts_index",
     "liked/posts" : "liked_posts_index",
     "staff/posts" : "staff_posts_index",
@@ -51,6 +53,14 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.posts_index({
       collection: this.allPosts,
       title: "All Posts",
+    });
+  },
+
+  top_posts_index: function () {
+    this.topPosts.fetch();
+    this.posts_index({
+      collection: this.topPosts,
+      title: "Top Posts",
     });
   },
 
