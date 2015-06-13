@@ -7,4 +7,4 @@ json.posts @playlist.posts do |post|
                 :description, :album, :year, :staff
 end
 
-json.follow @follow, :id, :follower_id, :followed_id, :followed_type unless @follow.nil?
+json.follow @follow, :id, :follower_id, :followable_id, :followable_type unless @follow.nil?

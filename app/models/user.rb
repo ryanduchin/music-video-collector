@@ -59,11 +59,11 @@ class User < ActiveRecord::Base
   end
 
   def get_user_follow(current_user_id)
-    followed_arr = self.followed.where(follower_id: current_user_id)
-    if followed_arr.empty?
+    following_arr = self.followings.where(follower_id: current_user_id)
+    if following_arr.empty?
       return
     else
-      return followed_arr.first
+      return following_arr.first
     end
   end
 
