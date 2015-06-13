@@ -15,6 +15,24 @@ VMCApp.Models.Playlist = Backbone.Model.extend({
       delete response.posts;
     }
 
+    if (response.follow) {
+      this.follow().set(response.follow);
+      delete response.follow;
+    }
+
     return response;
   },
+
+  isFollowed: function () {
+    return !this.follow().isNew();
+  },
+
+
+  follow: function () {
+    if (!this._follow) {
+      this._follow = new VMCApp.Models.Follow();
+    }
+    return this._follow;
+  },
+
 });

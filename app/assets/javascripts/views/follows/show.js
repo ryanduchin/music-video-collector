@@ -9,7 +9,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   render: function () {
     var content = this.template({ model: this.model });
     this.$el.html(content);
-    this.setBtnColor();
+    this.setButton();
     return this;
   },
 
@@ -31,7 +31,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     follow.clear();
   },
 
-  setBtnColor: function () {
+  setButton: function () {
     if (this.model.isLiked()) {
       this.$('button.btn-follow').addClass('btn-primary');
       this.$('button.btn-follow').html("<i class='fa'>Followed!</i>");
@@ -45,4 +45,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
 // need to change models of playlist/user to copy likes added to post model
 // need to copy view adding subview of button (copy postshow->like to playlist/user->follow)
 // now I also need a user model!
+
+// user and playlist API needs to return follow
+// user also needs to have playlists
 });
