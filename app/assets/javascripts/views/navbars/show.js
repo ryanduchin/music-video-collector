@@ -25,7 +25,8 @@ VMCApp.Views.NavView = Backbone.View.extend({
   openForm: function () {
     var modal = new VMCApp.Views.PostForm();
     modalContent = modal.render();
-    $('m-content').html(modalContent.$el); //
+    $('backdrop').addClass('m-backdrop');
+    $('m-content').html(modalContent.$el);
   },
 
 });
