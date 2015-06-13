@@ -4,7 +4,8 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
   template: JST['posts/index'],
   className: 'posts-index',
 
-  initialize: function () {
+  initialize: function (options) {
+    this.title = options.title;
     this.renderPosts();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPost);
@@ -13,7 +14,7 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
 
 
   render: function () {
-    var content = this.template();
+    var content = this.template({ title: this.title });
     this.$el.html(content);
     this.attachSubviews();
     return this;
