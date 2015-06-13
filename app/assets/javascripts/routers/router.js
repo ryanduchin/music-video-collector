@@ -92,7 +92,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.followedPosts.fetch();
     this.posts_index({
       collection: this.followedPosts,
-      title: "Followed"
+      title: "Feed (followed)"
     });
   },
 

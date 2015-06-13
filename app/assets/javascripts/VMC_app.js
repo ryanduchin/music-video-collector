@@ -8,12 +8,12 @@ window.VMCApp = {
     var allPosts = new VMCApp.Collections.AllPosts();
     var router = new VMCApp.Routers.Router({
       $rootEl: $("#main"),
-      allPosts: allPosts;
+      allPosts: allPosts,
     });
 
     var navbar = new VMCApp.Views.NavView({
       router: router,
-      allPosts: allPosts;
+      allPosts: allPosts,
     });
     $("#navbar").html(navbar.render().$el);
 
