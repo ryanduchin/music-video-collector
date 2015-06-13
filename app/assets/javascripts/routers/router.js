@@ -35,9 +35,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
-  posts_index: function (collection) {
+  posts_index: function (options) {
     var newView = new VMCApp.Views.PostsIndex({
-      collection: collection,
+      collection: options.collection,
+      title: options.title || "Posts Index",
     });
     this.swapView(newView);
   },

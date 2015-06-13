@@ -12,9 +12,19 @@ Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
 
 Main next courses of action:
-* get views to show what type of feed they are (how to do this without separate views?)
+** get views to show what type of feed they are (how to do this without separate views?)
+->pass in title from router
+
 * add modal forms for submitting content
-* sorting feeds?
+
+** sorting feeds?
+->easy way: add function .order in routes, creating different routes for different ordering
+->hard way: in view, add an event listener. click sort : sortPosts.
+takes the eventCurrentTarget and overwrites the collection.comparator method
+bad way would then rerender the whole page
+
+** following - two separate tables for user or playlist, OR just have one column null? (OR doesnt matter?)
+-> polymorphic association
 * grid system for feeds
 
 MVP:
@@ -34,13 +44,14 @@ Expanding:
 - [ ] Search for videos by title, artist, (uploaded user)
 - [ ] Search for users by name/username
 - [ ] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
-- [ ] Feed option: Top Staff picks
+- [X] Feed option: Top Staff picks
 - [ ] Feed option: top liked videos (across entire site)
 - [ ] All videos have nested comments, users can add comments
 - [ ] List of top liked channels, and/or users (across whole site)
 - [ ] Edit profile
 - [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
-- [ ] ** Add friends, add a feed for posts from friends.
+- [ ] *** Playback speed controls!
+- [ ] *** Add friends, add a feed for posts from friends.
 
 
 ## Design Docs
@@ -82,7 +93,7 @@ basic information.
 
 [Details][phase-three]
 
-### Phase 3.5: Feeds, Users
+### Phase 3.5: Feeds, Users (1 day)
 Adding in late - will add the controllers/routes in Rails for new feeds
 Will create show pages for other users
 
@@ -91,10 +102,6 @@ Will create show pages for other users
 ### Phase 4: Liking Videos and Channels (~1 days)
 I add the button to like videos on each subview and the video show page.
 I add the your_liked_videos view.
-
-Question: Does liking (and following) need backbone models/collections
-or only views (and the rest lives in Rails). backbone model, no collection,
-rest lives in rails!! see Eric's talk notes.
 
 [Details][phase-four]
 
