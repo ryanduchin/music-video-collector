@@ -14,15 +14,16 @@ Users can:
 Main next courses of action:
 
 * add modal forms for submitting content
+* grid system for feeds
+* other user views
 
-** sorting feeds?
+** sorting feeds? -> need input on monday re: ordering in controller
 ->easy way: add function .order in routes, creating different routes for different ordering
 ->hard way: in view, add an event listener. click sort : sortPosts.
 takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
 
-
-* grid system for feeds
+** David - how do I get to these options? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
 MVP:
 - [x] Create accounts (sign up)

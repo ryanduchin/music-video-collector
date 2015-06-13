@@ -2,6 +2,10 @@ VMCApp.Views.NavView = Backbone.View.extend({
   tagName: 'nav',
   className: 'navbar navbar-default',
 
+  events: {
+    "click a.upload-video" : "openForm"
+  },
+
   initialize: function (options) {
     this.channels = options.channels;
     this.router = options.router;
@@ -17,4 +21,9 @@ VMCApp.Views.NavView = Backbone.View.extend({
     this.$el.html(renderedContent);
     return this;
   },
+
+  openForm: function () {
+    
+  },
+
 });
