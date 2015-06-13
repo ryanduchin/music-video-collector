@@ -15,7 +15,6 @@ VMCApp.Models.User = Backbone.Model.extend({
     return response;
   },
 
-
   playlists: function () {
     if (!this._playlists) {
       this._playlists = new VMCApp.Collections.AllPlaylists([], { user: this });

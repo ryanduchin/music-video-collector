@@ -42,10 +42,8 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     }
   },
 
-// need to change models of playlist/user to copy likes added to post model
 // need to copy view adding subview of button (copy postshow->like to playlist/user->follow)
-// now I also need a user model!
 
 // user and playlist API needs to return follow
-// user also needs to have playlists
+// user API also needs to have playlists
 });

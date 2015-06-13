@@ -18,4 +18,13 @@ class Playlist < ActiveRecord::Base
     return true if user.id == self.owner_id
   end
 
+  def get_playlist_follow(current_user_id)
+    followed_arr = self.followed.where(follower_id: current_user_id)
+    if followed_arr.empty?
+      return
+    else
+      return followed_arr.first
+    end
+  end
+
 end

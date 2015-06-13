@@ -43,6 +43,15 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def get_user_follow(current_user_id)
+    followed_arr = self.followed.where(follower_id: current_user_id)
+    if followed_arr.empty?
+      return
+    else
+      return followed_arr.first
+    end
+  end
+
   private
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)

@@ -8,7 +8,8 @@ module Api
 
     def show
       @user = User.find(params[:id])
-      render json: @user
+      @follow = @user.get_user_follow(current_user.id)
+      render :show
     end
 
     # def create

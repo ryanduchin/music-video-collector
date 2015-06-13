@@ -14,6 +14,7 @@ module Api
     def show
       @playlist = Playlist.find(params[:id])
       @owner = User.find(@playlist.owner_id)
+      @follow = @playlist.get_playlist_follow(current_user.id)
       render :show
     end
 
