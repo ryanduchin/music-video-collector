@@ -4,7 +4,7 @@ u2 = User.create!(username: 'asdf', password: 'asdfasdf')
 c1 = u1.playlists.create!(name: 'House')
 c2 = u1.playlists.create!(name: 'Trance')
 c3 = u1.playlists.create!(name: 'Techno')
-c4 = u1.playlists.create!(name: 'Pop')
+c4 = u2.playlists.create!(name: 'Pop')
 
 
 
@@ -13,9 +13,8 @@ p2 = u1.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watc
 p3 = u1.posts.create!(title: 'Melba', url: 'https://www.youtube.com/watch?v=QYvZ8TUyn9w', artist: 'Sunny Lax')
 p4 = u1.posts.create!(title: 'Ruby', url: 'https://www.youtube.com/watch?v=LH_15HVH5Yc', artist: 'Cirez D')
 p5 = u1.posts.create!(title: 'Greyhound', url: 'https://vimeo.com/75755258', artist: 'Swedish House Mafia')
-
 p6 = u1.posts.create(title: 'Monument', url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI', artist: 'Royskopp & Robyn')
-p7 = u1.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
+p7 = u2.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
 p8 = u2.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
 
 
@@ -29,3 +28,8 @@ j6 = PlaylistPost.create!(playlist_id: c1.id, post_id: p5.id)
 j7 = PlaylistPost.create!(playlist_id: c4.id, post_id: p6.id)
 j8 = PlaylistPost.create!(playlist_id: c4.id, post_id: p7.id)
 j9 = PlaylistPost.create!(playlist_id: c4.id, post_id: p8.id)
+
+# user 1 follows user 2
+f1 = Following.create(follower_id: 1, followed_id: 2, followed_type: "user")
+# user 2 follows 'house' playlist
+f1 = Following.create(follower_id: 2, followed_id: 1, followed_type: "playlist")
