@@ -6,6 +6,10 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     "click button.btn-follow" : "toggleFollow",
   },
 
+  initialize: function (options) {
+    this.type = options.type;
+  },
+
   render: function () {
     var content = this.template({ model: this.model });
     this.$el.html(content);
@@ -13,7 +17,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     return this;
   },
 
-  toggleLike: function () {
+  toggleFollow: function () {
     if (this.model.isFollowed()) {
       this.unfollow();
     } else {
@@ -22,7 +26,10 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
   follow: function () { // how do i differentiate with model type??
-    this.model.follow().save({ post_id: this.model.id });
+    this.model.follow().save({
+      followable_id: this.model.id,
+      followable_type: this.type,
+    });
   },
 
   unfollow: function () {
@@ -32,7 +39,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
   setButton: function () {
-    if (this.model.isLiked()) {
+    if (this.model.isFollowed()) {
       this.$('button.btn-follow').addClass('btn-primary');
       this.$('button.btn-follow').html("<i class='fa'>Followed!</i>");
     } else {
