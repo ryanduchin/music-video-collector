@@ -38,7 +38,8 @@ VMCApp.Views.PostForm = Backbone.View.extend({
   },
 
   closeModal: function () {
-    $('.backdrop').removeClass('m-backdrop');
+    $('.m-content').removeClass('active');
+    $('.m-backdrop').removeClass('inactive');
     this.remove();
   },
 

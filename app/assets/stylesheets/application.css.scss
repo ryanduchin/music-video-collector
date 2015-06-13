@@ -59,22 +59,23 @@ div.footer {
   clear: both;
 };
 
-.m-content {
+.m-content.active {
   z-index: 100;
-  height: 100px;
-  weight: 100px;
+  height: 500px;
+  width: 400px;
   position: relative;
-  margin: 0 auto;
-  margin-top: 66px;
-  border-radius: 4px;
+  margin: 0px auto;
+  margin-top: 157px;
+  border-radius: 10px;
   padding: 20px;
+  background-color: white;
 };
 
-.m-backdrop {
+.m-backdrop.inactive {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
 };
