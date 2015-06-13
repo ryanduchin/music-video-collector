@@ -1,5 +1,5 @@
 module Api
-  class LikesController < ApiController
+  class UsersController < ApiController
 
     def index
       @likes = current_user.likes
