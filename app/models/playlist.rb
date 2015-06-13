@@ -9,10 +9,14 @@ class Playlist < ActiveRecord::Base
   has_many :playlist_posts
   has_many :posts, through: :playlist_posts
 
-  # someone else follows playlist
-  has_many :followed, as: :followable
-  has_many :following_users, through: :followed, source: :user
+  has_many :followings,
+            as: :followable,
+            class_name: "Follow"
 
+  has_many :following_users,
+            through: :followings,
+            source: :user,
+            source_type: 'User'
 
   def belongs?(user)
     return true if user.id == self.owner_id

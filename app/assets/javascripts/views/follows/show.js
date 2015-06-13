@@ -43,7 +43,5 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
 // need to copy view adding subview of button (copy postshow->like to playlist/user->follow)
-
-// user and playlist API needs to return follow
-// user API also needs to have playlists
+// follow's save function needs to save the type
 });

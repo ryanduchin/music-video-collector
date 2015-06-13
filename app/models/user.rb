@@ -9,14 +9,28 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_posts, through: :likes, source: :post
 
-  # user follows something
+  # user follows something / Follow:user
   has_many :follows, foreign_key: :follower_id
-  has_many :followed_items, through: :follows, source: :followable
+  has_many :user_follows,
+            through: :follows,
+            source: :followable,
+            source_type: 'User'
 
-  # someone else follows user
-  has_many :followed, as: :followable
-  has_many :following_users, through: :followed, source: :user
+  has_many :playlist_follows,
+            through: :follows,
+            source: :followable,
+            source_type: 'Playlist'
 
+
+  # someone else follows user / Follow:followable
+  has_many :followings,
+            as: :followable,
+            class_name: "Follow"
+
+  has_many :following_users,
+            through: :followings,
+            source: :user,
+            source_type: 'User'
 
   attr_reader :password
 

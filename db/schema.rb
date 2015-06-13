@@ -11,20 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613040318) do
+ActiveRecord::Schema.define(version: 20150613155525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "follows", force: :cascade do |t|
-    t.integer  "follower_id",   null: false
-    t.integer  "followed_id",   null: false
-    t.string   "followed_type", null: false
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "follower_id",     null: false
+    t.integer  "followable_id",   null: false
+    t.string   "followable_type", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  add_index "follows", ["followed_type", "followed_id"], name: "index_follows_on_followed_type_and_followed_id", using: :btree
+  add_index "follows", ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
   add_index "follows", ["follower_id"], name: "index_follows_on_follower_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
