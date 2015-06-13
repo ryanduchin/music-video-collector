@@ -2,7 +2,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
 
-    this.allPosts = new VMCApp.Collections.AllPosts();
+    this.allPosts = options.allPosts;
     this.topPosts = new VMCApp.Collections.TopPosts();
     this.userPosts = new VMCApp.Collections.UserPosts();
     this.likedPosts = new VMCApp.Collections.LikedPosts();

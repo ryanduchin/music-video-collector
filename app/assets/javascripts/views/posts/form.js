@@ -27,7 +27,8 @@ VMCApp.Views.PostForm = Backbone.View.extend({
       success: function () {
         console.log('saved');
         // what collection do I add it to? There are multiple 'post' collections.
-        // that.collection.add(this.model);
+        // right now being added to "allPosts"
+        that.collection.add(this.model);
 
         // do i just do a hard refresh? I don't actually want to navigate anywhere
         // Backbone.history.navigate('posts/' + this.id, {trigger: true});
