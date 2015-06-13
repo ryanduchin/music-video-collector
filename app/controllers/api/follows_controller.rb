@@ -1,5 +1,5 @@
 module Api
-  class FollowingsController < ApiController
+  class FollowsController < ApiController
 
     def index
       @follows = current_user.follows
@@ -7,7 +7,7 @@ module Api
     end
 
     def show
-      @follow = Following.find(params[:id])
+      @follow = Follow.find(params[:id])
       render json: @follow
     end
 
@@ -31,7 +31,7 @@ module Api
     end
 
     def destroy
-      @follow = Following.find(params[:id])
+      @follow = Follow.find(params[:id])
       @follow.destroy
       render json: {}
     end
