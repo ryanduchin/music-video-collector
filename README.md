@@ -10,12 +10,15 @@ Primary focus of the site is on posting **music videos** (or just music on youtu
 Users can:
 
 Main next courses of action:
-
 * add modal forms for submitting content
   + **close backdrop actions not working
-  + ** how to I only show for current_user? need to add 'delete post' button to posts and playlists
-  + need to create 'add this song to playlist' and/or 'add song to this playlist'
-  + need to redirect new post/playlist -> new post/playlist show
+  + need to add 'delete post' button to posts and playlists
+    ** how to I only show for current_user?
+O  + need to create 'add this song to playlist' and/or 'add song to this playlist'
+  -look up dropdown menu
+  =add dropdown menu to song show view
+  -add a dropdown menu to new post modal
+  -no 'add song to playlist' option
 * grid system for feeds
   + need to add image for thumbnail when no posts in playlist
 * other user views

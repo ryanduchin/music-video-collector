@@ -31,6 +31,17 @@ ul, nav {
   list-style-type: none
 };
 
+.navbar a {
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 65px;
+};
+
+.navbar-right a {
+  margin-left: 60px;
+  margin-right: 5px;
+};
+
 li.nav-item {
   float: left;
   position: relative;
@@ -41,13 +52,6 @@ li.nav-item {
 
 ul.view-posts {
   clear: both;
-};
-
-li.post-thumbnail {
-  float: left;
-  position: relative;
-  padding: 20px;
-  margin: 10px;
 };
 
 div.user-posts-index {

@@ -1,6 +1,6 @@
 VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
   tagName: 'li',
-  className: 'thumbnail-container playlist-thumbnail',
+  className: 'thumbnail-container playlist-thumbnail col-md-4',
   template: JST['playlists/thumbnail'],
   template_no_posts: JST['playlists/thumbnail_no_posts'],
 
