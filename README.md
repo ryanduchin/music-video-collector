@@ -13,9 +13,8 @@ Main next courses of action:
 
 * add modal forms for submitting content
   + **close backdrop actions not working
-  + need to add 'create playlist' modal
+  + ** how to I only show for current_user? need to add 'delete post' button to posts and playlists
   + need to create 'add this song to playlist' and/or 'add song to this playlist'
-  + need to add 'delete post' button to posts
   + need to redirect new post/playlist -> new post/playlist show
 * grid system for feeds
   + need to add image for thumbnail when no posts in playlist

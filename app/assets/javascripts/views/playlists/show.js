@@ -2,14 +2,14 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   className: 'playlist-show',
   template: JST['playlists/show'],
 
-  initialize: function () {
+  initialize: function (options) {
+    this.userPlaylists = options.userPlaylists;
     this.collection = this.model.posts();
     // this.collection.fetch() //?? causes ALL posts to display?? Why?
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist"
     });
-
     this.addFollow();
     this.renderPosts(); //needed for revisit of page
     // this.listenTo(this.collection, "sync", this.render);
@@ -18,6 +18,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    // need to deal with delete button if in userPlaylists!!
     var content = this.template({ playlist: this.model });
     this.$el.html(content);
     this.attachSubviews();

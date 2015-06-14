@@ -128,13 +128,21 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   post_show: function (id) {
     var post = this.allPosts.getOrFetch(id);
-    var newView = new VMCApp.Views.PostShow({ model: post });
+    this.userPosts.fetch();
+    var newView = new VMCApp.Views.PostShow({
+      model: post,
+      userPosts: this.userPosts,
+      });
     this.swapView(newView);
   },
 
   playlist_show: function (id) {
     var playlist = this.allPlaylists.getOrFetch(id);
-    var newView = new VMCApp.Views.PlaylistShow({ model: playlist });
+    this.userPlaylists.fetch();
+    var newView = new VMCApp.Views.PlaylistShow({
+      model: playlist,
+      userPlaylists: this.userPlaylists,
+    });
     this.swapView(newView);
   },
 
