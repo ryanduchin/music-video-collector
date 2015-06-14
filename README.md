@@ -9,15 +9,16 @@ Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
 Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
 Users can:
 
-<!-- This is a Markdown checklist. Use it to keep track of your progress! -->
-
 Main next courses of action:
 
 * add modal forms for submitting content
-  + close actions not working
+  + **close backdrop actions not working
   + need to add 'create playlist' modal
   + need to create 'add this song to playlist' and/or 'add song to this playlist'
+  + need to add 'delete post' button to posts
+  + need to redirect new post/playlist -> new post/playlist show
 * grid system for feeds
+  + need to add image for thumbnail when no posts in playlist
 * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?
@@ -28,13 +29,20 @@ Main next courses of action:
 takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
 
-** David - how do I get to these options? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+
+Code Review Major Questions:
+- ** above
+- validating URL on save of post. (Possible refactoring of database URL to
+  database URL_ID + URL_Source)
+- render_thumbnail template logic with ajax request - ok?
+
 
 MVP:
 - [x] Create accounts (sign up)
 - [x] Create sessions (log in)
 - [X] Watch videos!
-- [ ] "Upload" Videos (=enter links)
+- [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
 - [ ] View other users (and their list of liked videos)

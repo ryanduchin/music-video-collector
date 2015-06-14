@@ -22,17 +22,21 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
-        console.log('saved');
         // what collection do I add it to? There are multiple 'post' collections.
         // right now being added to "allPosts"
-        that.collection.add(this.model);
-        that.closeModal();
+        that.collection.add(that.model);
+        that.removeModal();
+        Backbone.history.navigate("#/posts/" + that.model.id, { trigger: true });
       }
     });
   },
 
   closeModal: function (event) {
     event.preventDefault();
+    this.removeModal();
+  },
+
+  removeModal: function () {
     $('.m-content').removeClass('active');
     $('.m-backdrop').removeClass('inactive');
     this.remove();

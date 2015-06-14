@@ -6,7 +6,7 @@ window.VMCApp = {
   Mixins: {},
   initialize: function() {
     var allPosts = new VMCApp.Collections.AllPosts();
-    var allPlaylists = new VMCApp.Collections.allPlaylists();
+    var allPlaylists = new VMCApp.Collections.AllPlaylists();
 
     var router = new VMCApp.Routers.Router({
       $rootEl: $("#main"),
