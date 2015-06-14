@@ -1,6 +1,8 @@
 <h4>Playlist: <%= playlist.escape('name') %></h4>
 
-<div class="delete-button"></div>
+<% if (deleteButton) { %>
+  <button class="btn btn-danger">Delete Playlist</button>
+<% } %>
 
 <div class="follow-button"></div>
 

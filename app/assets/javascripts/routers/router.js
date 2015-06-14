@@ -39,15 +39,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
-  posts_index: function (options) {
-    var newView = new VMCApp.Views.PostsIndex({
-      collection: options.collection,
-      title: options.title,
-      // title: options.title || "Posts Index",
-    });
-    this.swapView(newView);
-  },
-
   all_posts_index: function () {
     this.allPosts.fetch();
     this.posts_index({
@@ -96,15 +87,16 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
   },
 
-  /////////////////////////
-
-  playlists_index: function (options) {
-    var newView = new VMCApp.Views.PlaylistsIndex({
+  posts_index: function (options) {
+    var newView = new VMCApp.Views.PostsIndex({
       collection: options.collection,
       title: options.title,
+      // title: options.title || "Posts Index",
     });
     this.swapView(newView);
   },
+
+  /////////////////////////
 
   all_playlists_index: function () {
     this.allPlaylists.fetch();
@@ -122,6 +114,14 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       collection: this.userPlaylists,
       title: "Your Playlists"
     });
+  },
+
+  playlists_index: function (options) {
+    var newView = new VMCApp.Views.PlaylistsIndex({
+      collection: options.collection,
+      title: options.title,
+    });
+    this.swapView(newView);
   },
 
   /////////////////////////

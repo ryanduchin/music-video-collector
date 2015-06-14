@@ -18,8 +18,12 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    var checkOwner = this.checkOwner();
     // need to deal with delete button if in userPlaylists!!
-    var content = this.template({ playlist: this.model });
+    var content = this.template({
+      playlist: this.model,
+      deleteButton: checkOwner
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;
@@ -41,5 +45,13 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   addFollow: function () {
     this._followView.remove();
     this.addSubview('.follow-button', this._followView);
+  },
+
+  checkOwner: function () {
+    if (this.userPlaylists.indexOf(this.model) !== -1) {
+      return true
+    } else {
+      return false
+    }
   },
 });
