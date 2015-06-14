@@ -3,16 +3,16 @@
 
 <div class="like-button"></div>
 
-<li class="dropdown">
+<div class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add to Playlist<span class="caret"></span></a>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#/user/playlists">Your Playlists</a></li>
-    <li class="divider"></li>
-    <li><a href="#/all/playlists">All Playlists</a></li>
-    <li class="divider"></li>
-    <li><a href="#" class="upload-playlist">Add Playlist</a></li>
+
+    <% userPlaylists.forEach(function (playlist) { %>
+      <li><a><%= playlist.name %></a></li>
+    <% }); %>
+
   </ul>
-</li>
+</div>
 
 <div>
   <iframe width="1100" height="614"

@@ -131,7 +131,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.userPosts.fetch();
     var newView = new VMCApp.Views.PostShow({
       model: post,
-      userPosts: this.userPosts,
+      userPlaylists: this.userPlaylists,
       });
     this.swapView(newView);
   },
