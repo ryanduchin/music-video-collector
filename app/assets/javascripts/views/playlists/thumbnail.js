@@ -2,7 +2,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
   tagName: 'li',
   className: 'thumbnail-container playlist-thumbnail col-md-4',
   template: JST['playlists/thumbnail'],
-  template_no_posts: JST['playlists/thumbnail_no_posts'],
 
 
   initialize: function () {
@@ -12,12 +11,14 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
   render: function () {
     var content;
     if (this.featuredPost === "none") {
-      content = this.template_no_posts({
+      content = this.template({
         playlist: this.model,
+        noPosts: true,
       });
     } else {
       content = this.template({
         playlist: this.model,
+        noPosts: false,
         post: this.featuredPost,
       });
     }

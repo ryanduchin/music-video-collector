@@ -3,10 +3,23 @@
     <%= playlist.escape('name') %>
   </h2>
 
-  <h6 class="thumb-title">
-    <%= post.escape('title') + "/" + post.escape('artist')%>
-  </h6>
+  <% if (noPosts) { %>
 
-  <%= JST['_renderThumbnail']({ post: post }) %>
+    <h6 class="thumb-title">&nbsp;</h6>
+
+    <div class="thumb blank-thumb">
+      <img width="400" height="225"
+        src='/images/headphones3.svg'></img>
+    </div>
+
+  <% } else { %>
+
+    <h6 class="thumb-title">
+      <%= post.escape('title') + "/" + post.escape('artist')%>
+    </h6>
+
+    <%= JST['_renderThumbnail']({ post: post }) %>
+
+  <% } %>
 
 </a>
