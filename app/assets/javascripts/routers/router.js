@@ -9,7 +9,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.staffPosts = new VMCApp.Collections.StaffPosts();
     this.followedPosts = new VMCApp.Collections.FollowedPosts();
 
-    this.allPlaylists = new VMCApp.Collections.AllPlaylists();
+    this.allPlaylists = options.allPlaylists;
     this.userPlaylists = new VMCApp.Collections.UserPlaylists();
   },
 

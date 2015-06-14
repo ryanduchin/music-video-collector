@@ -14,6 +14,9 @@ Users can:
 Main next courses of action:
 
 * add modal forms for submitting content
+  + close actions not working
+  + need to add 'create playlist' modal
+  + need to create 'add this song to playlist' and/or 'add song to this playlist'
 * grid system for feeds
 * other user views
 

@@ -1,10 +1,10 @@
-VMCApp.Views.PostForm = Backbone.View.extend({
+VMCApp.Views.PlaylistForm = Backbone.View.extend({
   tagName: 'form',
-  className: 'post-form',
-  template: JST['posts/form'],
+  className: 'playlist-form',
+  template: JST['playlists/form'],
 
   events: {
-    'click button.create-post' : 'createPost',
+    'click button.create-playlist' : 'createPlaylist',
     'click button.close' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
   },
@@ -15,7 +15,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     return this;
   },
 
-  createPost: function (event) {
+  createPlaylist: function (event) {
     event.preventDefault();
     var that = this;
     var attrs = this.$el.serializeJSON();
@@ -23,8 +23,8 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     this.model.save({}, {
       success: function () {
         console.log('saved');
-        // what collection do I add it to? There are multiple 'post' collections.
-        // right now being added to "allPosts"
+        // what collection do I add it to? There are multiple 'playlist' collections.
+        // right now being added to "allPlaylists"
         that.collection.add(this.model);
         that.closeModal();
       }

@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">V|M|C
+      <a class="navbar-brand" href="#">V|M|C <i class="fa fa-play"></i>
 <!--        <img alt="V|M|C" src="V-M-C-logo-2.png">  -->
       </a>
     </div>
@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Feed <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Feeds <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#/user/posts">Your Videos</a></li>
             <li class="divider"></li>
@@ -29,9 +29,17 @@
             <li><a href="#/staff/posts">Staff Picks</a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Playlists <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#/user/playlists">Your Playlists</a></li>
+            <li class="divider"></li>
+            <li><a href="#/all/playlists">All Playlists</a></li>
+            <li class="divider"></li>
+            <li><a href="#" class="upload-playlist">Add Playlist</a></li>
+          </ul>
+        </li>
         <li><a href="#/liked/posts">Likes<span class="sr-only">(current)</span></a></li>
-        <li><a href="#/user/playlists">Playlists</a></li>
-        <li><a href="#/all/playlists">All Playlists</a></li>
         <li><a href="#">Explore (X)</a></li>
       </ul>
 
@@ -44,7 +52,7 @@
       </form>
 -->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" class="upload-video">Upload Video</a></li>
+        <li><a href="#" class="upload-video">Add Video</a></li>
         <li class="divider"></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= window.CURRENT_USER_UN %><span class="caret"></span></a>
