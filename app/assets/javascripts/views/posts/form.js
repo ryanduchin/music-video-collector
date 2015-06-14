@@ -9,8 +9,14 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     'click .m-backdrop' : 'closeModal',
   },
 
+  initialize: function (options) {
+    this.userPlaylists = options.userPlaylists;
+  },
+
   render: function () {
-    var content = this.template();
+    var content = this.template({
+      userPlaylists: this.userPlaylists,
+    });
     this.$el.html(content);
     return this;
   },

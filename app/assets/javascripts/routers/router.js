@@ -10,7 +10,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.followedPosts = new VMCApp.Collections.FollowedPosts();
 
     this.allPlaylists = options.allPlaylists;
-    this.userPlaylists = new VMCApp.Collections.UserPlaylists();
+    this.userPlaylists = options.userPlaylists;
   },
 
   routes: {

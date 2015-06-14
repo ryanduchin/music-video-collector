@@ -3,16 +3,8 @@
 
 <div class="like-button"></div>
 
-<div class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add to Playlist<span class="caret"></span></a>
-  <ul class="dropdown-menu" role="menu">
+<%= JST['_addPost']({ userPlaylists: userPlaylists }) %>
 
-    <% userPlaylists.forEach(function (playlist) { %>
-      <li><a><%= playlist.name %></a></li>
-    <% }); %>
-
-  </ul>
-</div>
 
 <div>
   <iframe width="1100" height="614"

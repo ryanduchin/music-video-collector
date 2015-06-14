@@ -14,8 +14,7 @@ Main next courses of action:
   + **close backdrop actions not working
   + need to add 'delete post' button to posts and playlists
     ** how do I fetch userPlaylists/userPosts correctly?
-O  + need to create 'add this song to playlist' and/or 'add song to this playlist'
-  -look up dropdown menu
+  + need to create 'add this song to playlist' and/or 'add song to this playlist'
   =add dropdown menu to song show view
   -add a dropdown menu to new post modal
   -no 'add song to playlist' option

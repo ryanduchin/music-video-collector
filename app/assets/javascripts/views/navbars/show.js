@@ -1,6 +1,7 @@
 VMCApp.Views.NavView = Backbone.View.extend({
   tagName: 'nav',
   className: 'navbar navbar-default',
+  template: JST['navbars/show'],
 
   events: {
     "click a.upload-video" : "openPostForm",
@@ -13,16 +14,14 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
     this.allPosts = options.allPosts;
     this.allPlaylists = options.allPlaylists;
-    this.channels = options.channels;
+    this.userPlaylists = options.userPlaylists;
     this.router = options.router;
   },
 
-  template: JST['navbars/show'],
 
   render: function () {
     var renderedContent = this.template({
       posts: this.collection,
-      channels: this.channels,
     });
     this.$el.html(renderedContent);
     return this;
@@ -33,6 +32,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
     var modal = new VMCApp.Views.PostForm({
       model: new VMCApp.Models.Post(),
       collection: this.allPosts,
+      userPlaylists: this.userPlaylists,
     });
     modalContent = modal.render();
     $('.m-backdrop').addClass('inactive');
