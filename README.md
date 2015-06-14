@@ -13,7 +13,7 @@ Main next courses of action:
 * add modal forms for submitting content
   + **close backdrop actions not working
   + need to add 'delete post' button to posts and playlists
-    ** how to I only show for current_user?
+    ** how do I fetch userPlaylists/userPosts correctly?
 O  + need to create 'add this song to playlist' and/or 'add song to this playlist'
   -look up dropdown menu
   =add dropdown menu to song show view
