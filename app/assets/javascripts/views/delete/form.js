@@ -30,8 +30,9 @@ VMCApp.Views.DeleteForm = Backbone.View.extend({
     event.preventDefault();
     // this.collection.remove(this.model);
     this.model.destroy();
-    // this.model.clear();
-    window.history.back();
+    this.removeModal();
+    Backbone.history.navigate('#/user/' + this.type + 's', {trigger: true});
+    window.location.reload();
   },
 
   closeModal: function (event) {
