@@ -29,11 +29,13 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
     "all/playlists" : "all_playlists_index",
     "user/playlists" : "user_playlists_index",
+    "followed/playlists" : "followed_playlists_index",
 
     "posts/:id" : "post_show",
     "playlists/:id" : "playlist_show",
 
-    "users" : "users_index",
+    "all/users" : "all_users_index",
+    "followed/users" : "followed_users_index",
     "users/:id" : "users_show",
   },
 
@@ -90,7 +92,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.followedPosts.fetch();
     this.posts_index({
       collection: this.followedPosts,
-      title: "Playlists and People You Follow"
+      title: "Followed Posts / Feed"
     });
   },
 
@@ -141,6 +143,32 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
+  all_users_index: function () {
+    this.allUsers.fetch();
+    this.users_index({
+      collection: this.allUsers,
+      title: "All Users",
+    });
+  },
+
+  followed_users_index: function () {
+    this.followedUsers.fetch();
+    this.users_index({
+      collection: this.followedUsers,
+      title: "Followed Users",
+    });
+  },
+
+  users_index: function(options) {
+    var newView = new VMCApp.Views.UsersIndex({
+      collection: options.collection,
+    });
+    this.swapView(newView);
+  },
+
+
+  /////////////////////////
+
   post_show: function (id) {
     var post = this.allPosts.getOrFetch(id);
     var newView = new VMCApp.Views.PostShow({
@@ -163,29 +191,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     var user = this.allUsers.getOrFetch(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
-    });
-    this.swapView(newView);
-  },
-
-  /////////////////////////
-
-  all_users_index: function () {
-    this.allUsers.fetch();
-    this.users_index({
-      collection: this.allUsers,
-    });
-  },
-
-  followed_users_index: function () {
-    this.followedUsers.fetch();
-    this.users_index({
-      collection: this.followedUsers,
-    });
-  },
-
-  users_index: function(options) {
-    var newView = new VMCApp.Views.UsersIndex({
-      collection: options.collection,
     });
     this.swapView(newView);
   },
