@@ -11,7 +11,7 @@ VMCApp.Models.Playlist = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.posts) {
-      this.posts().set(response.posts, {parse: true});
+      this.posts().set(response.posts, { parse: true });
       delete response.posts;
     }
     if (response.following) {

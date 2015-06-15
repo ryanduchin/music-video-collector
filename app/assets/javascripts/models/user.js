@@ -4,12 +4,17 @@ VMCApp.Models.User = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.playlists) {
-      this.posts().set(response.posts, {parse: true});
+      this.playlists().set(response.playlists, { parse: true });
       delete response.posts;
     }
 
-    if (response.follow) {
-      this.follow().set(response.follow);
+    if (response.posts) {
+      this.posts().set(response.posts, { parse: true });
+      delete response.posts;
+    }
+
+    if (response.following) {
+      this.follow().set(response.following[0]);
       delete response.follow;
     }
     return response;
@@ -31,15 +36,15 @@ VMCApp.Models.User = Backbone.Model.extend({
     return this._posts;
   },
 
-  isFollowed: function () {
-    return !this.follow().isNew();
-  },
-
-
   follow: function () {
     if (!this._follow) {
       this._follow = new VMCApp.Models.Follow();
     }
     return this._follow;
   },
+
+  isFollowed: function () {
+    return !this.follow().isNew();
+  },
+
 });

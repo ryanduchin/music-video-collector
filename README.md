@@ -5,7 +5,7 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O1 * followed playlist/user views
+O1 * follows are working for playlists but not users
 
 O2 * heroku
 

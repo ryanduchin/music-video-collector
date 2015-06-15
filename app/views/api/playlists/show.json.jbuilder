@@ -7,8 +7,6 @@ json.posts @playlist.posts do |post|
                       :description, :album, :year, :staff
 end
 
-# json.follow @follow, :id, :follower_id, :followable_id, :followable_type unless @follow.nil?
-
 unless @playlist.followings.nil?
   json.following @playlist.followings do |following|
     if following.follower_id == current_user.id

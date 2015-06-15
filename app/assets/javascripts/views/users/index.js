@@ -2,7 +2,8 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   template: JST['users/index'],
   className: 'users-index',
 
-  initialize: function () {
+  initialize: function (options) {
+    this.title = options.title
     this.renderUsers();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addUser);
@@ -10,7 +11,7 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
 
 
   render: function () {
-    var content = this.template();
+    var content = this.template({ title: this.title });
     this.$el.html(content);
     this.attachSubviews();
     return this;

@@ -13,9 +13,8 @@ VMCApp.Views.NavView = Backbone.View.extend({
     $('m-backdrop').removeClass('inactive');
 
     this.allPosts = options.allPosts;
-    // this.allPlaylists = options.allPlaylists;
     this.userPlaylists = options.userPlaylists;
-    this.userPlaylists.fetch(); //fetches for the whole app
+    this.userPlaylists.fetch();
     this.router = options.router;
   },
 
