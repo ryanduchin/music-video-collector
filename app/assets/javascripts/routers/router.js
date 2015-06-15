@@ -13,6 +13,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.followedPosts = new VMCApp.Collections.FollowedPosts();
 
     this.allPlaylists = options.allPlaylists;
+    this.otherPlaylists = options.otherPlaylists;
     this.userPlaylists = options.userPlaylists;
     this.followedPlaylists = new VMCApp.Collections.FollowedPlaylists();
   },
@@ -27,7 +28,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "staff/posts" : "staff_posts_index",
     "followed/posts" : "followed_posts_index",
 
-    "all/playlists" : "all_playlists_index",
+    "other/playlists" : "other_playlists_index",
     "user/playlists" : "user_playlists_index",
     "followed/playlists" : "followed_playlists_index",
 
@@ -107,12 +108,12 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
-  all_playlists_index: function () {
-    this.allPlaylists.fetch();
+  other_playlists_index: function () {
+    this.otherPlaylists.fetch();
     // this.allPosts.fetch(); //?
     this.playlists_index({
-      collection: this.allPlaylists,
-      title: "All Playlists"
+      collection: this.otherPlaylists,
+      title: "V|M|C Playlists"
     });
   },
 

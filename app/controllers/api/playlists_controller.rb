@@ -5,6 +5,8 @@ module Api
       case params[:filter]
       when 'all'
         @playlists = Playlist.all
+      when 'other'
+        @playlists = Playlist.all.where('owner_id != ?', current_user.id)
       when 'user'
         @playlists = current_user.playlists
       when 'followed'

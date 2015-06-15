@@ -22,6 +22,7 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   },
 
   addUser: function (user) {
+    if (user.id.toString() === CURRENT_USER_ID) { return; }
     var subView = new VMCApp.Views.UserThumbnail({
       model: user,
       size: 'user',
