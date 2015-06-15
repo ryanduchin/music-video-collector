@@ -2,7 +2,12 @@ module Api
   class UsersController < ApiController
 
     def index
-      @users = User.all
+      case params[:filter]
+      when 'all'
+        @users = User.all
+      when 'followed'
+        @users = current_user.user_follows
+      end
       render :index
     end
 

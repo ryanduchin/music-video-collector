@@ -5,7 +5,7 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O1 * user show view
+O1 * followed playlist/user views
 
 O2 * heroku
 

@@ -7,6 +7,8 @@ module Api
         @playlists = Playlist.all
       when 'user'
         @playlists = current_user.playlists
+      when 'followed'
+        @playlists = current_user.playlist_follows
       end
 
       render :index
