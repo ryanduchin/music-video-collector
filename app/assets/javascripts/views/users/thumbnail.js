@@ -34,7 +34,7 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   },
 
   choosePost: function (playlist) {
-    var posts = playlist.posts();
+    var posts = user.posts();
     if (posts.length === 0) { return "none"; }
     var i = 0;
     var post = posts.at(i)

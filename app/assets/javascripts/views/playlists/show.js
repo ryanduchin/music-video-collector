@@ -5,7 +5,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.userPlaylists = options.userPlaylists;
     this.collection = this.model.posts();
-    // this.collection.fetch() //?? causes ALL posts to display?? Why?
+    // this.collection.fetch() //? causes ALL posts to display?? Why?
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",

@@ -6,10 +6,10 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "User",
-      btnSm: true,
+      btnSm: false,
     });
     this.addFollow();
-    this.renderPosts(); //needed for revisit of page
+    this.renderPosts();
     // this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPost);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
