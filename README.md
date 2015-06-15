@@ -5,18 +5,16 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O1 * follows are working for playlists but not users
-
 O2 * heroku
 
-O4  + need to add 'delete post' button to posts and playlists
+O3  + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
     modal _addPosts is not showing options for userPlaylists
     -> needed to fetch in navbar initialize
 
     playlist-show debugger on checkOwner shows blank this.userPlaylists
 
-O3 -after fetch problem, optimize new post modal and song show view - looks
+O4 -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
 
 

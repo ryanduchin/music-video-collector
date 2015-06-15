@@ -13,6 +13,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     this.addFollow();
     this.renderPosts(); //needed for revisit of page
     // this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.collection, "add", this.addPost);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
