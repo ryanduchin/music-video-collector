@@ -1,10 +1,10 @@
-<div class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add to Playlist<span class="caret"></span></a>
-  <ul class="dropdown-menu" role="menu">
+<form class="form-post-to-playlist">
+<select name="Add to Playlist">
+<option value="">Add to Playlist</option>
+<% userPlaylists.forEach(function (playlist) { %>
+  <option value="<%= playlist.id %>"><%= playlist.escape('name') %></option>
+<% }); %>
 
-    <% userPlaylists.forEach(function (playlist) { %>
-      <li><a><%= playlist.escape('name') %></a></li>
-    <% }); %>
-
-  </ul>
-</div>
+</select>
+<input class="submit-post-to-playlist" type="submit">
+</form>

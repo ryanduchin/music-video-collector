@@ -9,8 +9,6 @@
 * user show view is showing ALL posts and playlists
 --> need to nest route resource and make new collection
 
-** delete logic is not working/saving to database
-
 O4 - add logic to submit to the modals to the database
  -after fetch problem, optimize new post modal and song show view - looks
 
