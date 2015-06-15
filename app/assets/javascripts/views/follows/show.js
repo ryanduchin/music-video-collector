@@ -9,7 +9,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   initialize: function (options) {
     this.type = options.type;
     this.btnSm = options.btnSm;
-    // this.listenTo(this.model, 'sync change', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
   },
 
   render: function () {
@@ -23,6 +23,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
   toggleFollow: function () {
+    console.log('toggle');
     if (this.model.isFollowed()) {
       this.unfollow();
     } else {
