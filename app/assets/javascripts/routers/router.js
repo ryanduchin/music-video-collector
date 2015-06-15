@@ -1,7 +1,9 @@
 VMCApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-    this.users = new VMCApp.Collections.Users();
+
+    this.allUsers = new VMCApp.Collections.AllUsers();
+    this.followedUsers = new VMCApp.Collections.FollowedUsers();
 
     this.allPosts = options.allPosts;
     this.topPosts = new VMCApp.Collections.TopPosts();
@@ -12,6 +14,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
     this.allPlaylists = options.allPlaylists;
     this.userPlaylists = options.userPlaylists;
+    this.followedPlaylists = new VMCApp.Collections.FollowedPlaylists();
   },
 
   routes: {
@@ -120,6 +123,14 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
   },
 
+  followed_playlists_index: function () {
+    this.followedPlaylists.fetch();
+    this.playlists_index({
+      collection: this.followedPlaylists,
+      title: "Followed Playlists"
+    });
+  },
+
   playlists_index: function (options) {
     var newView = new VMCApp.Views.PlaylistsIndex({
       collection: options.collection,
@@ -148,20 +159,33 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
   },
 
-  /////////////////////////
-
   users_show: function (id) {
-    var user = this.users.getOrFetch(id);
+    var user = this.allUsers.getOrFetch(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
     });
     this.swapView(newView);
   },
 
-  users_index: function() {
-    this.users.fetch();
+  /////////////////////////
+
+  all_users_index: function () {
+    this.allUsers.fetch();
+    this.users_index({
+      collection: this.allUsers,
+    });
+  },
+
+  followed_users_index: function () {
+    this.followedUsers.fetch();
+    this.users_index({
+      collection: this.followedUsers,
+    });
+  },
+
+  users_index: function(options) {
     var newView = new VMCApp.Views.UsersIndex({
-      collection: this.users,
+      collection: options.collection,
     });
     this.swapView(newView);
   },

@@ -1,5 +1,5 @@
-VMCApp.Collections.Users = Backbone.Collection.extend({
-  url: '/api/users',
+VMCApp.Collections.FollowedUsers = Backbone.Collection.extend({
+  url: '/api/followed/users',
 
   model: VMCApp.Models.User,
 
