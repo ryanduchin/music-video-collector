@@ -1,6 +1,6 @@
 VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   tagName: 'li',
-  className: 'thumbnail-container user-thumbnail col-md-3',
+  className: 'thumbnail-container user-thumbnail col-md-2',
   template: JST['users/thumbnail'],
 
   initialize: function (options) {
@@ -15,19 +15,10 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content;
-    if (this.featuredPost === "none") {
-      content = this.template({
-        playlist: this.model,
-        noPosts: true,
-      });
-    } else {
-      content = this.template({
-        playlist: this.model,
-        noPosts: false,
-        post: this.featuredPost,
-      });
-    }
+    var content = this.template({
+      user: this.model,
+      post: this.featuredPost,
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;
@@ -37,7 +28,8 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
     var posts = user.posts();
     if (posts.length === 0) { return "none"; }
     var i = 0;
-    var post = posts.at(i)
+    var startInd = Math.floor(Math.random() * posts.length);
+    var post = posts.at(startInd);
     //do not use Vevo thumbnail if you can avoid it (loads video)
     while (post.vidSource() === "Vevo" && i < posts.length) {
       i++;

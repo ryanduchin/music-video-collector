@@ -28,7 +28,7 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     var posts = playlist.posts();
     if (posts.length === 0) { return "none"; }
     var i = 0;
-    var post = posts.at(i)
+    var post = posts.at(i);
     //do not use Vevo thumbnail if you can avoid it (loads video)
     while (post.vidSource() === "Vevo" && i < posts.length) {
       i++;
