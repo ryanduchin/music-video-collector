@@ -7,13 +7,10 @@ json.array! @playlists do |playlist|
                         :description, :album, :year, :staff
   end
 
-
-
- # call method in controller?
-  # json.follow playlist.follow, :id, :follower_id, :followable_id, :followable_type unless @follow.nil?
-
- #call method in jbuilder?
-  # json.follow playlist.get_playlist_follow(window.CURRENT_USER_ID) :id, :follower_id, :followable_id, :followable_type unless post.follow.nil?
-
-# use playlist.followings??
+  unless playlist.followings.nil?
+    json.followings playlist.followings do |following|
+      json.extract! following, :id, :follower_id, :followable_id, :followable_type
+    end
+  end
+  
 end
