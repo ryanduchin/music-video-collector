@@ -1,11 +1,11 @@
-VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
+VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
   tagName: 'li',
   className: 'thumbnail-container playlist-thumbnail col-md-4',
   template: JST['playlists/thumbnail'],
 
   initialize: function (options) {
     this.featuredPost = this.choosePost(this.model);
-    this._followView = new VMCApp.Views.LikeShow({
+    this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",
       btnSm: true,

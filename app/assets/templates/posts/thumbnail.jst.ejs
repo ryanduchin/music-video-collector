@@ -7,7 +7,10 @@
     <%= post.escape('artist').toUpperCase() %>
   </h5>
 
+</a>
   <div class="like-button"></div>
+<a href="#/posts/<%= post.id %>">
+
 
   <%= JST['_renderThumbnail']({ post: post }) %>
 
