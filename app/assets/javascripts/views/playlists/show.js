@@ -2,9 +2,17 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   className: 'playlist-show',
   template: JST['playlists/show'],
 
+  events: {
+    'click button.btn-delete' : 'openDeleteForm',
+  },
+
   initialize: function (options) {
-    // this.userPlaylists = options.userPlaylists;
-    this.collection = this.model.posts();
+    $('m-content').removeClass('active');
+    $('m-backdrop').removeClass('inactive');
+
+    this.userPlaylists = options.userPlaylists;
+    this.playlistPosts = this.model.posts();
+
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",
@@ -13,17 +21,17 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     // this.addFollow();
     this.renderPosts(); //needed for revisit of page
 
-    // this.listenTo(this.collection, "sync", this.render);
+    // this.listenTo(this.playlistPosts, "sync", this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addFollow);
-    this.listenTo(this.collection, "add", this.addPost);
+    this.listenTo(this.playlistPosts, "add", this.addPost);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
   render: function () {
     var content = this.template({
       playlist: this.model,
-      deleteButton: this.isOwner()
+      isOwner: this.isOwner()
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -31,9 +39,9 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    var posts = this.model.posts();
-    if (posts.length === 0) { return; }
-    posts.forEach(function (post) {
+    // var posts = this.model.posts();
+    if (this.playlistPosts.length === 0) { return; }
+    this.playlistPosts.forEach(function (post) {
       this.addPost(post);
     }.bind(this));
   },
@@ -59,5 +67,20 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     } else {
       return false
     }
+  },
+
+  openDeleteForm: function (event) {
+    event.preventDefault();
+    this.userPlaylists.fetch();
+
+    var modal = new VMCApp.Views.deleteForm({
+      model: this.model,
+      collection: this.userPlaylists,
+    });
+
+    modalContent = modal.render();
+    $('.m-backdrop').addClass('inactive');
+    $('.m-content').addClass('active');
+    $('.m-content').html(modalContent.$el);
   },
 });

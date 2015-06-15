@@ -2,8 +2,17 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
   className: 'post-show',
   template: JST['posts/show'],
 
+  events: {
+    'click button.btn-delete' : 'openDeleteForm',
+  },
+
+
   initialize: function (options) {
-    this.userPlaylists = options.userPlaylists;
+    $('m-content').removeClass('active');
+    $('m-backdrop').removeClass('inactive');
+    
+    this.userPosts = options.userPosts; //NEED for delete
+    this.userPlaylists = options.userPlaylists; //add post to playlist partial
     this.listenTo(this.model, 'sync', this.render);
 
     this._likeView = new VMCApp.Views.LikeShow({
@@ -19,6 +28,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       post: this.model,
       userPlaylists: this.userPlaylists,
       size: 'normal',
+      isOwner: this.isOwner(),
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -28,6 +38,29 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
   addLike: function () {
     this._likeView.remove();
     this.addSubview('.like-button', this._likeView);
+  },
+
+  isOwner: function () {
+    if (this.model.escape('author_id') && this.model.escape('author_id') === CURRENT_USER_ID) {
+      return true
+    } else {
+      return false
+    }
+  },
+
+  openDeleteForm: function (event) {
+    event.preventDefault();
+    this.userPosts.fetch();
+
+    var modal = new VMCApp.Views.deleteForm({
+      model: this.model,
+      collection: this.userPosts, //
+    });
+
+    modalContent = modal.render();
+    $('.m-backdrop').addClass('inactive');
+    $('.m-content').addClass('active');
+    $('.m-content').html(modalContent.$el);
   },
 
 });

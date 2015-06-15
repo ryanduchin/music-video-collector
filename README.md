@@ -5,9 +5,7 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O2 * NO follow button if playlist = self.playlist)
-
-O3  + need to add 'delete post' button to posts and playlists
+O3  + need to add 'delete post' button to posts and playlists - SHOW only (no thumbs)
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
     modal _addPosts is not showing options for userPlaylists
     -> needed to fetch in navbar initialize
