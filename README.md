@@ -5,6 +5,8 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
+O1 * user show view
+
 O2  + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
     modal _addPosts is not showing options for userPlaylists
@@ -16,7 +18,6 @@ O2  + need to add 'delete post' button to posts and playlists
   -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
 
-O1 * other user views
 
 O3 *** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
@@ -27,13 +28,13 @@ bad way would then rerender the whole page
 
 ** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
-** VIMEO Ajax request not always rerendering thumbnail (posts index)
 
-Code Review Questions:
+## Code Review Questions:
 * validating URL on save of post. (Possible refactoring of database URL to
   database URL_ID + URL_Source)
 * render_thumbnail template logic with ajax request - ok?
 * is my modal save adding to the correct collection? (allposts vs userposts?)
+** VIMEO Ajax request not always rerendering thumbnail (posts index)
 
 
 
