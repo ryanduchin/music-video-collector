@@ -4,4 +4,7 @@ json.playlists @user.playlists do |playlist|
   json.extract! playlist, :name, :id, :owner_id
 end
 
-json.follow @follow, :id, :follower_id, :followable_id, :followable_type unless @follow.nil?
+json.posts @user.posts do |post|
+  json.extract! post, :title, :id, :url, :author_id, :artist,
+                       :description, :album, :year, :staff
+end
