@@ -10,11 +10,13 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     });
     this.addLike();
     this.listenTo(this.model.like(), 'change', this.addLike);
+
   },
 
   render: function () {
     var content = this.template({ post: this.model });
     this.$el.html(content);
+    this.attachSubviews();
     return this;
   },
 

@@ -8,6 +8,7 @@ VMCApp.Views.LikeShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.btnSm = options.btnSm;
+    // this.listenTo(this.model, 'sync change', this.render);
   },
 
   render: function () {
@@ -41,9 +42,9 @@ VMCApp.Views.LikeShow = Backbone.View.extend({
     if (this.model.isLiked()) {
       this.$('button.btn-like-post').addClass('btn-danger');
       if (this.btnSm) {
-        this.$('button.btn-like-post').html("<i class='fa fa-heart'>Liked!</i>");
-      } else {
         this.$('button.btn-like-post').html("<i class='fa fa-heart'></i>");
+      } else {
+        this.$('button.btn-like-post').html("<i class='fa fa-heart'>Liked!</i>");
       }
     } else {
       this.$('button.btn-like-post').removeClass('btn-danger');

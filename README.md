@@ -19,7 +19,9 @@ Main next courses of action:
   -also add logic to submit to the database
   -no 'add song to playlist' option (my decision)
 
-O * small like/follow buttons on thumbnails
+* small like/follow buttons on thumbnails
+  + ** why dont the small buttons fetch from database?
+  
  * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?
