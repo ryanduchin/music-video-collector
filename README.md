@@ -22,8 +22,8 @@ Main next courses of action:
 * small like/follow buttons on thumbnails
   + ** why dont the small buttons fetch from database? API/model parse is correct, does collection need parse??
 
-O ** post/playlist controller needs to send likes/follows
- * other user views
+ ** post/playlist controller needs to send likes/follows
+O * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?
 (which collection?)
@@ -52,8 +52,7 @@ MVP:
 - [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
-- [ ] View other users (and their list of liked videos)
-- [ ] Explore videos
+- [ ] View other users (and their list of liked videos) ('Explore')
 
 Expanding:
 

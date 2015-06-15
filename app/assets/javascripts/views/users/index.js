@@ -3,51 +3,26 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   className: 'users-index',
 
   initialize: function () {
-    this.renderPosts();
+    this.renderUsers();
     this.listenTo(this.collection, "sync", this.render);
-
+    this.listenTo(this.collection, "add", this.addPlaylist);
   },
 
 
   render: function () {
-    var content = this.template({ title: this.title });
+    var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     return this;
   },
 
-  renderPosts: function () {
-    this.collection.forEach(function (user) { this.addPost(user); }.bind(this));
+  renderUsers: function () {
+    this.collection.forEach(function (user) { this.addUser(user); }.bind(this));
   },
 
-  addPost: function (user) {
+  addUser: function (user) {
     var subView = new VMCApp.Views.PostThumbnail({ model: user });
     this.addSubview('.view-users', subView);
   },
-
-});
-
-initialize: function (options) {
-  this._likeView = new VMCApp.Views.FollowShow({
-    model: this.model,
-    btnSm: true,
-  });
-  this.addLike();
-  this.listenTo(this.model.like(), 'change', this.addLike);
-
-},
-
-render: function () {
-  var content = this.template({ post: this.model });
-  this.$el.html(content);
-  this.attachSubviews();
-  return this;
-},
-
-addLike: function () {
-  this._likeView.remove();
-  this.addSubview('.like-button', this._likeView);
-},
-
 
 });
