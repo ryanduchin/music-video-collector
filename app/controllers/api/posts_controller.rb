@@ -27,7 +27,6 @@ module Api
     def show
       @post = Post.find(params[:id])
       @author = User.find(@post.author_id)
-      @like = @post.get_user_like(current_user.id)
       render :show
     end
 

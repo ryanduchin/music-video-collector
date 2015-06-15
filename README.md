@@ -20,7 +20,7 @@ Main next courses of action:
   -no 'add song to playlist' option (my decision)
 
 * small like/follow buttons on thumbnails
-  + ** why dont the small buttons fetch from database?
+  + ** why dont the small buttons fetch from database? API/model parse is correct, does collection need parse??
 
 O ** post/playlist controller needs to send likes/follows
  * other user views

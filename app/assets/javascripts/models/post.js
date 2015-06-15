@@ -15,7 +15,7 @@ VMCApp.Models.Post = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.like) {
-      this.like().set(response.like);
+      this.like().set(response.like[0]);
       delete response.like;
     }
 

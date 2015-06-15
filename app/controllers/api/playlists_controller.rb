@@ -9,18 +9,12 @@ module Api
         @playlists = current_user.playlists
       end
 
-    # needs setter method..
-      # @playlists.each do |playlist|
-      #   playlist.follow = playlist.get_playlist_follow(current_user.id)
-      # end
-
       render :index
     end
 
     def show
       @playlist = Playlist.find(params[:id])
       @owner = User.find(@playlist.owner_id)
-      @follow = @playlist.get_playlist_follow(current_user.id)
       render :show
     end
 
