@@ -26,7 +26,7 @@ module Api
     end
 
     def show
-      @post = Post.find(params[:id])
+      @post = current_post
       @author = User.find(@post.author_id)
       render :show
     end
@@ -41,10 +41,11 @@ module Api
       end
     end
 
-    def update
+    def updates
       require_post_owner!
 
       @post = current_user.posts.find(params[:id])
+      
       if @post.update_attributes(post_params)
         render json: @post
       else
@@ -55,20 +56,19 @@ module Api
     def destroy
       require_post_owner!
 
-      @post = Post.find(params[:id])
+      @post = current_post
       @post.destroy
       render json: {}
     end
 
     private
 
-    def current_playlist
-      if params[:id]
-        @post = Post.find(params[:id])
-        @playlist = @post.playlist
-      # elsif params[:post]
-      #   @playlist = Playlist.find(params[:post][:playlist_id])
-      end
+    def require_post_owner!
+      redirect_to new_session_url unless current_post.author_id == current_user.id
+    end
+
+    def current_post
+      Post.find(params[:id])
     end
 
     def post_params

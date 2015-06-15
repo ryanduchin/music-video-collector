@@ -19,7 +19,7 @@ module Api
     end
 
     def show
-      @playlist = Playlist.find(params[:id])
+      @playlist = current_playlist
       @owner = User.find(@playlist.owner_id)
       render :show
     end
@@ -35,6 +35,8 @@ module Api
     end
 
     def update
+      require_playlist_owner!
+
       @playlist = current_user.playlists.find(params[:id])
 
       if @playlist.update_attributes(playlist_params)
@@ -45,12 +47,22 @@ module Api
     end
 
     def destroy
-      @playlist = current_user.playlists.find(params[:id])
-      @playlist.try(:destroy)
+      require_playlist_owner!
+
+      @playlist = current_playlist
+      @playlist.destroy
       render json: {}
     end
 
     private
+
+    def require_playlist_owner!
+      redirect_to new_session_url unless current_playlist.owner_id == current_user.id
+    end
+
+    def current_playlist
+      Playlist.find(params[:id])
+    end
 
     def playlist_params
       params.require(:playlist).permit(:name)

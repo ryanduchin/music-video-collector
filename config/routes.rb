@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :likes, except: [:new, :edit]
     resources :follows, except: [:new, :edit]
     resources :users, only: [:show]
+
     get ":filter/users", to: "users#index"
 
   end

@@ -6,6 +6,9 @@
 
 ## Next actions and list of questions
 
+* user show view is showing ALL posts and playlists
+--> need to nest route resource and make new collection
+
 ** delete logic is not working/saving to database
 
 O4 - add logic to submit to the modals to the database
