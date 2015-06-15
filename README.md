@@ -7,7 +7,9 @@
 ## Next actions and list of questions
 O1 * user show view
 
-O3  + need to add 'delete post' button to posts and playlists
+O2 * heroku
+
+O4  + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
     modal _addPosts is not showing options for userPlaylists
     -> needed to fetch in navbar initialize
@@ -18,12 +20,14 @@ O3 -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
 
 
-O4 *** sorting feeds? -> need input on monday re: ordering in controller
+O5 *** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
 --> SQL query in controller
 - hard way: in view, add an event listener. click sort : sortPosts.
 takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
+
+O6 * user index and show view optimization (tile size, layout, side scroll)
 
 ** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
