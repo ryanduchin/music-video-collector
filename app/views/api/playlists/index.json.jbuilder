@@ -8,7 +8,7 @@ json.array! @playlists do |playlist|
   end
 
   unless playlist.followings.nil?
-    json.followings playlist.followings do |following|
+    json.following playlist.followings do |following|
       if following.follower_id == current_user.id
         json.extract! following, :id, :follower_id, :followable_id, :followable_type
       end

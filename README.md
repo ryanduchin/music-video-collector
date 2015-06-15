@@ -1,28 +1,24 @@
 # Video Music Collector App
 
-[Heroku link][heroku]
+[Heroku link][http://video-music-collector.herokuapp.com/]
 
 [heroku]: TBD
 
-## Minimum Viable Product
-Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
-Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
-Users can:
-
-Main next courses of action:
+## Next actions and list of questions
 * add modal forms for submitting content
-  + **close backdrop actions not working
+  + ***close backdrop actions not working
+
   + need to add 'delete post' button to posts and playlists
-    ** how do I fetch userPlaylists/userPosts correctly?
+    *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
+    playlist-show debugger on checkOwner shows blank this.userPlaylists
+
   + need to create 'add this song to playlist' and/or 'add song to this playlist'
   -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
-  -no 'add song to playlist' option (my decision)
 
 * small like/follow buttons on thumbnails
-  + ** why dont the small buttons fetch from database? API/model parse is correct, does collection need parse??
+  + *** why dont the small buttons fetch from database? API/model parse is correct,                     does collection need parse??
 
- ** post/playlist controller needs to send likes/follows
 O * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?
@@ -39,10 +35,19 @@ bad way would then rerender the whole page
 ** Vimeo Ajax request not always rerendering thumbnail (posts index)
 
 Code Review Major Questions:
-- ** above
-- validating URL on save of post. (Possible refactoring of database URL to
+* ** above
+* validating URL on save of post. (Possible refactoring of database URL to
   database URL_ID + URL_Source)
-- render_thumbnail template logic with ajax request - ok?
+* render_thumbnail template logic with ajax request - ok?
+
+
+
+
+## Minimum Viable Product
+Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
+Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
+Users can:
+
 
 
 MVP:
@@ -52,7 +57,7 @@ MVP:
 - [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
-- [ ] View other users (and their list of liked videos) ('Explore')
+- [ ] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
 
 Expanding:
 

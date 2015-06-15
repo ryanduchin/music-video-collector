@@ -6,7 +6,7 @@ module Api
       when 'all'
         @posts = Post.all
       when 'top'
-        @posts = Post.all.where('num_likes' > 1).order('num_likes')
+        @posts = Post.all.where('num_likes' > 1)#.order('num_likes')
       when 'user'
         @posts = current_user.posts
       when 'liked'
