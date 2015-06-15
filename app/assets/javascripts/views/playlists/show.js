@@ -10,7 +10,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     $('m-content').removeClass('active');
     $('m-backdrop').removeClass('inactive');
 
-    this.userPlaylists = options.userPlaylists;
+    // this.userPlaylists = options.userPlaylists;
     this.playlistPosts = this.model.posts();
 
     this._followView = new VMCApp.Views.FollowShow({
@@ -71,11 +71,11 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   openDeleteForm: function (event) {
     event.preventDefault();
-    this.userPlaylists.fetch();
+    // this.userPlaylists.fetch();
 
     var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
-      collection: this.userPlaylists,
+      // collection: this.userPlaylists,
       type: 'playlist',
     });
 
