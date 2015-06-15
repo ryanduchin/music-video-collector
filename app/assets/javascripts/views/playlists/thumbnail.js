@@ -19,7 +19,7 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     var content = this.template({
       playlist: this.model,
       post: this.featuredPost,
-      size: this.size;
+      size: this.size,
     });
     this.$el.html(content);
     this.attachSubviews();
