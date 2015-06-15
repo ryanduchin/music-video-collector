@@ -4,15 +4,15 @@ module Api
     def index
       case params[:filter]
       when 'all'
-        @posts = Post.all
+        @posts = Post.all.order(created_at: :desc)
       when 'top'
-        @posts = Post.all.where('num_likes' > 1)#.order('num_likes')
+        @posts = Post.all.where(num_likes > 1)#.order('num_likes')
       when 'user'
-        @posts = current_user.posts
+        @posts = current_user.posts.order(created_at: :desc)
       when 'liked'
-        @posts = current_user.liked_posts
+        @posts = current_user.liked_posts#.order('post.like.created_at')
       when 'staff'
-        @posts = Post.all.where(staff: true)
+        @posts = Post.all.where(staff: true).order(created_at: :desc)
       when 'followed'
         playlists = []
         @posts = []
@@ -20,8 +20,9 @@ module Api
         followed_users.each { |user| playlists.concat(user.playlists) }
         playlists.concat(current_user.playlist_follows)
         playlists.each { |playlist| @posts.concat(playlist.posts) }
+        @posts#.order(created_at: :desc)
       end
-      render json: @posts
+      render :index
     end
 
     def show

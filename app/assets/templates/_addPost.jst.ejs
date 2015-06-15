@@ -3,7 +3,7 @@
   <ul class="dropdown-menu" role="menu">
 
     <% userPlaylists.forEach(function (playlist) { %>
-      <li><a><%= playlist.name %></a></li>
+      <li><a><%= playlist.escape('name') %></a></li>
     <% }); %>
 
   </ul>

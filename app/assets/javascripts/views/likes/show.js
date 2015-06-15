@@ -8,7 +8,6 @@ VMCApp.Views.LikeShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.btnSm = options.btnSm;
-    // this.listenTo(this.model, 'sync change', this.render);
   },
 
   render: function () {

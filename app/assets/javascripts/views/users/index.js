@@ -17,6 +17,8 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   },
 
   renderUsers: function () {
+    debugger;
+
     this.collection.forEach(function (user) { this.addUser(user); }.bind(this));
   },
 

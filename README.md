@@ -7,9 +7,13 @@
 ## Next actions and list of questions
 * add modal forms for submitting content
   + ***close backdrop actions not working
+  -> fixed with click listeners
 
   + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
+    modal _addPosts is not showing options for userPlaylists
+    -> needed to fetch in navbar initialize
+
     playlist-show debugger on checkOwner shows blank this.userPlaylists
 
   + need to create 'add this song to playlist' and/or 'add song to this playlist'
@@ -18,15 +22,17 @@
 
 * small like/follow buttons on thumbnails
   + *** why dont the small buttons fetch from database? API/model parse is correct,                     does collection need parse??
+  --> no they dont need parse. API not sending likes on index. why??
 
 O * other user views
 
-** modal creating form - how to handle successful save and adding to collection?
+*** modal creating form - how to handle successful save and adding to collection?
 (which collection?)
 
-** sorting feeds? -> need input on monday re: ordering in controller
-->easy way: add function .order in routes, creating different routes for different ordering
-->hard way: in view, add an event listener. click sort : sortPosts.
+*** sorting feeds? -> need input on monday re: ordering in controller
+- easy way:
+--> SQL query in controller
+- hard way: in view, add an event listener. click sort : sortPosts.
 takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
 
@@ -34,8 +40,7 @@ bad way would then rerender the whole page
 
 ** Vimeo Ajax request not always rerendering thumbnail (posts index)
 
-Code Review Major Questions:
-* ** above
+Code Review Questions:
 * validating URL on save of post. (Possible refactoring of database URL to
   database URL_ID + URL_Source)
 * render_thumbnail template logic with ajax request - ok?

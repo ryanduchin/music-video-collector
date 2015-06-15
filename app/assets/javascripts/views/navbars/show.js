@@ -29,6 +29,9 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
   openPostForm: function (event) {
     event.preventDefault();
+    this.allPosts.fetch();
+    this.userPlaylists.fetch();
+
     var modal = new VMCApp.Views.PostForm({
       model: new VMCApp.Models.Post(),
       collection: this.allPosts,
@@ -42,6 +45,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
   openPlaylistForm: function (event) {
     event.preventDefault();
+    this.allPlaylists.fetch();
     var modal = new VMCApp.Views.PlaylistForm({
       model: new VMCApp.Models.Playlist(),
       collection: this.allPlaylists

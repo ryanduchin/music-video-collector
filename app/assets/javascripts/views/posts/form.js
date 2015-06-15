@@ -11,6 +11,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
 
   initialize: function (options) {
     this.userPlaylists = options.userPlaylists;
+    this.listenTo(this.userPlaylists, 'sync', this.render);
   },
 
   render: function () {
@@ -18,6 +19,10 @@ VMCApp.Views.PostForm = Backbone.View.extend({
       userPlaylists: this.userPlaylists,
     });
     this.$el.html(content);
+    setTimeout(function () {
+      $('.m-backdrop').on('click', this.closeModal.bind(this));
+    }.bind(this), 0);
+
     return this;
   },
 
@@ -39,6 +44,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
 
   closeModal: function (event) {
     event.preventDefault();
+    $('.m-backdrop').off('click');
     this.removeModal();
   },
 
