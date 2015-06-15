@@ -20,10 +20,6 @@
   -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
 
-* small like/follow buttons on thumbnails
-  + *** why dont the small buttons fetch from database? API/model parse is correct,                     does collection need parse??
-  --> no they dont need parse. API not sending likes on index. why??
-
 O * other user views
 
 *** modal creating form - how to handle successful save and adding to collection?

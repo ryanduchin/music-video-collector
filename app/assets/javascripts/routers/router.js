@@ -12,7 +12,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
     this.allPlaylists = options.allPlaylists;
     this.userPlaylists = options.userPlaylists;
-
   },
 
   routes: {
@@ -133,7 +132,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   post_show: function (id) {
     var post = this.allPosts.getOrFetch(id);
-    this.userPosts.fetch();
+    // this.userPlaylists.fetch();
     var newView = new VMCApp.Views.PostShow({
       model: post,
       userPlaylists: this.userPlaylists,
@@ -143,7 +142,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   playlist_show: function (id) {
     var playlist = this.allPlaylists.getOrFetch(id);
-    this.userPlaylists.fetch();
+    // this.userPlaylists.fetch(); //
     var newView = new VMCApp.Views.PlaylistShow({
       model: playlist,
       userPlaylists: this.userPlaylists,

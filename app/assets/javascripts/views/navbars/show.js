@@ -13,8 +13,9 @@ VMCApp.Views.NavView = Backbone.View.extend({
     $('m-backdrop').removeClass('inactive');
 
     this.allPosts = options.allPosts;
-    this.allPlaylists = options.allPlaylists;
+    // this.allPlaylists = options.allPlaylists;
     this.userPlaylists = options.userPlaylists;
+    this.userPlaylists.fetch(); //fetches for the whole app
     this.router = options.router;
   },
 
@@ -45,10 +46,10 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
   openPlaylistForm: function (event) {
     event.preventDefault();
-    this.allPlaylists.fetch();
+    this.userPlaylists.fetch();
     var modal = new VMCApp.Views.PlaylistForm({
       model: new VMCApp.Models.Playlist(),
-      collection: this.allPlaylists
+      collection: this.userPlaylists
     });
     modalContent = modal.render();
     $('.m-backdrop').addClass('inactive');

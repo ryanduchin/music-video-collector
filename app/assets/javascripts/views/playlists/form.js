@@ -12,6 +12,9 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
   render: function () {
     var content = this.template();
     this.$el.html(content);
+    setTimeout(function () {
+      $('.m-backdrop').on('click', this.closeModal.bind(this));
+    }.bind(this), 0);
     return this;
   },
 
@@ -33,6 +36,7 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
 
   closeModal: function (event) {
     event.preventDefault();
+    $('.m-backdrop').off('click');
     this.removeModal();
   },
 
