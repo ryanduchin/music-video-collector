@@ -7,7 +7,9 @@ json.extract! @author, :username
 
 
 unless @post.likes.nil?
-  json.likes @post.likes do |like|
-    json.extract! like, :id, :post_id, :user_id
+  json.like @post.likes do |like|
+    if like.user_id == current_user.id
+      json.extract! like, :id, :post_id, :user_id
+    end
   end
 end
