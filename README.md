@@ -7,19 +7,18 @@
 ## Next actions and list of questions
 O1 * user show view
 
-O2  + need to add 'delete post' button to posts and playlists
+O3  + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
     modal _addPosts is not showing options for userPlaylists
     -> needed to fetch in navbar initialize
 
     playlist-show debugger on checkOwner shows blank this.userPlaylists
 
-  + need to create 'add this song to playlist' and/or 'add song to this playlist'
-  -after fetch problem, optimize new post modal and song show view - looks
+O3 -after fetch problem, optimize new post modal and song show view - looks
   -also add logic to submit to the database
 
 
-O3 *** sorting feeds? -> need input on monday re: ordering in controller
+O4 *** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
 --> SQL query in controller
 - hard way: in view, add an event listener. click sort : sortPosts.

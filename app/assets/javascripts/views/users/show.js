@@ -8,14 +8,16 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
       type: "User",
       btnSm: false,
     });
-//
-    this.addFollow();
-    this.renderPosts();
-    this.renderPlaylists();
 
-    // this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.posts, "add", this.addPost);
-    this.listenTo(this.playlists, "add", this.addPlaylist);
+    this.addFollow();
+    this.renderPlaylists();
+    this.renderPosts();
+
+    this.model.posts().fetch();
+    this.model.playlists().fetch();
+
+    this.listenTo(this.model.posts(), "add", this.addPost);
+    this.listenTo(this.model.playlists(), "add", this.addPlaylist);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
@@ -44,13 +46,20 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     }.bind(this));
   },
 
-  renderPosts: function () {
-    this.collection.forEach(function (post) { this.addPost(post); }.bind(this));
+  addPost: function (post) {
+    var subView = new VMCApp.Views.PostThumbnail({
+      model: post,
+      size: "normal"
+    });
+    this.addSubview('.view-user-posts', subView);
   },
 
-  addPost: function (post) {
-    var subView = new VMCApp.Views.PostThumbnail({ model: post });
-    this.addSubview('.view-posts', subView);
+  addPlaylist: function (playlist) {
+    var subView = new VMCApp.Views.PlaylistThumbnail({
+      model: playlist,
+      size: "normal"
+    });
+    this.addSubview('.view-user-playlists', subView);
   },
 
 
