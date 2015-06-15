@@ -4,13 +4,15 @@ module Api
     def index
       case params[:filter]
       when 'all'
-        @playlists = Playlist.all
+        @playlists = Playlist.all.order(:name)
       when 'other'
-        @playlists = Playlist.all.where('owner_id != ?', current_user.id)
+        @playlists = Playlist.all
+                             .where('owner_id != ?', current_user.id)
+                             .order(created_at: :desc)
       when 'user'
-        @playlists = current_user.playlists
+        @playlists = current_user.playlists.order(:name)
       when 'followed'
-        @playlists = current_user.playlist_follows
+        @playlists = current_user.playlist_follows.order(:name) #or .order(follow_created_at)
       end
 
       render :index
