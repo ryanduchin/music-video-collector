@@ -3,9 +3,15 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
   className: 'thumbnail-container playlist-thumbnail col-md-4',
   template: JST['playlists/thumbnail'],
 
-
-  initialize: function () {
+  initialize: function (options) {
     this.featuredPost = this.choosePost(this.model);
+    this._followView = new VMCApp.Views.LikeShow({
+      model: this.model,
+      type: "Playlist",
+      btnSm: true,
+    });
+    this.addFollow();
+    this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
   render: function () {
@@ -37,6 +43,11 @@ VMCApp.Views.PlaylistThumbnail = Backbone.View.extend({
       post = posts.at(i);
     }
     return post;
+  },
+
+  addFollow: function () {
+    this._followView.remove();
+    this.addSubview('.follow-button', this._followView);
   },
 
 });

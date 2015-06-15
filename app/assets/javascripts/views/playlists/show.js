@@ -8,7 +8,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     // this.collection.fetch() //?? causes ALL posts to display?? Why?
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
-      type: "Playlist"
+      type: "Playlist",
+      btnSm: false,
     });
     this.addFollow();
     this.renderPosts(); //needed for revisit of page

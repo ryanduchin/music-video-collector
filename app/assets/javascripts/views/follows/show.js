@@ -8,10 +8,14 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
 
   initialize: function (options) {
     this.type = options.type;
+    this.btnSm = options.btnSm;
   },
 
   render: function () {
-    var content = this.template({ model: this.model });
+    var content = this.template({
+      model: this.model,
+      btnSm: this.btnSm,
+    });
     this.$el.html(content);
     this.setButton();
     return this;
@@ -41,7 +45,11 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   setButton: function () {
     if (this.model.isFollowed()) {
       this.$('button.btn-follow').addClass('btn-primary');
-      this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'> Followed!</i>");
+      if (btnSm) {
+        this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'></i>");
+      } else {
+        this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'> Followed!</i>");
+      }
     } else {
       this.$('button.btn-follow').removeClass('btn-primary');
       this.$('button.btn-follow').html('Follow');

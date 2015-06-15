@@ -15,14 +15,15 @@ Main next courses of action:
   + need to add 'delete post' button to posts and playlists
     ** how do I fetch userPlaylists/userPosts correctly?
   + need to create 'add this song to playlist' and/or 'add song to this playlist'
-  =add dropdown menu to song show view
-  -add a dropdown menu to new post modal
-  -no 'add song to playlist' option
-* grid system for feeds
-  + need to add image for thumbnail when no posts in playlist
-* other user views
+  -after fetch problem, optimize new post modal and song show view - looks
+  -also add logic to submit to the database
+  -no 'add song to playlist' option (my decision)
+
+O * small like/follow buttons on thumbnails
+ * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?
+(which collection?)
 
 ** sorting feeds? -> need input on monday re: ordering in controller
 ->easy way: add function .order in routes, creating different routes for different ordering
@@ -31,6 +32,8 @@ takes the eventCurrentTarget and overwrites the collection.comparator method
 bad way would then rerender the whole page
 
 ** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+
+** Vimeo Ajax request not always rerendering thumbnail (posts index)
 
 Code Review Major Questions:
 - ** above
