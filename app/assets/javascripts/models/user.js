@@ -25,10 +25,10 @@ VMCApp.Models.User = Backbone.Model.extend({
 
   posts: function () {
     if (!this._posts) {
-      this._posts = new VMCApp.Collections.all_posts([], { user: this });
+      this._posts = new VMCApp.Collections.AllPosts([], { user: this });
     }
 
-    return this._playlists;
+    return this._posts;
   },
 
   isFollowed: function () {
