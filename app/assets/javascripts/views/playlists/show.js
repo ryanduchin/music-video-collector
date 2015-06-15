@@ -73,9 +73,10 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     event.preventDefault();
     this.userPlaylists.fetch();
 
-    var modal = new VMCApp.Views.deleteForm({
+    var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
       collection: this.userPlaylists,
+      type: 'playlist',
     });
 
     modalContent = modal.render();

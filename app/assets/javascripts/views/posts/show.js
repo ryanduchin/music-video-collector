@@ -10,7 +10,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
   initialize: function (options) {
     $('m-content').removeClass('active');
     $('m-backdrop').removeClass('inactive');
-    
+
     this.userPosts = options.userPosts; //NEED for delete
     this.userPlaylists = options.userPlaylists; //add post to playlist partial
     this.listenTo(this.model, 'sync', this.render);
@@ -52,9 +52,10 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     event.preventDefault();
     this.userPosts.fetch();
 
-    var modal = new VMCApp.Views.deleteForm({
+    var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
       collection: this.userPosts, //
+      type: 'post',
     });
 
     modalContent = modal.render();
