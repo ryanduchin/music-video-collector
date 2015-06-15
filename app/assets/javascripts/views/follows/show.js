@@ -23,7 +23,6 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
   toggleFollow: function () {
-    console.log('toggle');
     if (this.model.isFollowed()) {
       this.unfollow();
     } else {

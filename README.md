@@ -5,7 +5,7 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O2 * NO follow button if user = self (or playlist = self.playlist)
+O2 * NO follow button if playlist = self.playlist)
 
 O3  + need to add 'delete post' button to posts and playlists
     *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)

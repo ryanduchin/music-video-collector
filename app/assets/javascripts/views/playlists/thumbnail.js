@@ -12,6 +12,7 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
       btnSm: true,
     });
     this.addFollow();
+    this.listenTo(this.model, 'sync', this.addFollow);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
@@ -40,8 +41,18 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
   },
 
   addFollow: function () {
+    if (this.isOwner()) { return; }
     this._followView.remove();
     this.addSubview('.follow-button', this._followView);
+  },
+
+  isOwner: function () {
+    // if (this.userPlaylists.indexOf(this.model) !== -1) {
+    if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
+      return true
+    } else {
+      return false
+    }
   },
 
 });
