@@ -1,7 +1,7 @@
 <a href="#/users/<%= user.id %>">
-  <h2 class="thumb-user-name">
+  <h4 class="thumb-user-name">
     <%= user.escape('username') %>
-  </h2>
+  </h4>
 
 </a>
   <div class="follow-button"></div>
@@ -10,13 +10,13 @@
   <% if (post === "none") { %>
 
     <div class="thumb blank-thumb">
-      <img width="400" height="225"
-        src=''></img>
+      <img width="250" height="140"
+        src='/images/usericon3.png'></img>
     </div>
 
   <% } else { %>
 
-    <%= JST['_renderThumbnail']({ post: post }) %>
+    <%= JST['_renderThumbnail']({ post: post, size: "user" }) %>
 
   <% } %>
 

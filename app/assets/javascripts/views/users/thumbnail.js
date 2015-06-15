@@ -1,6 +1,6 @@
 VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   tagName: 'li',
-  className: 'thumbnail-container user-thumbnail col-md-2',
+  className: 'user-thumbnail col-md-2',
   template: JST['users/thumbnail'],
 
   initialize: function (options) {

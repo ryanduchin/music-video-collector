@@ -1,18 +1,21 @@
 <% var vidSource = post.vidSource(); %>
 <% vidId = post.vidId(); %>
 
-<!-- NOTE: Should i move this logic to the thumbnail views? -->
-
+<% if (size === "normal") { %>
+  <% var width = 400; %>
+<% } else { %>
+  <% var width = 250; %>
+<% } %>
 
 <% if (vidSource === "Youtube") { %>
   <div class="thumb youtube-thumb">
     <img src="<%= "http://img.youtube.com/vi/" +
-      vidId + "/mqdefault.jpg" %>" width="400"></img>
+      vidId + "/mqdefault.jpg" %>" width="<%= width %>"></img>
   </div>
 
 <% } else if (vidSource === "Vevo") { %>
   <div class="thumb vevo-thumb">
-    <iframe width="390" height="225"
+    <iframe width="<%= width - 10 %>" height="<%= height * 225/400 %>"
       src='<%= post.vidEmbedSrc() + vidId %>'
       frameborder="0" allowfullscreen></iframe>
   </div>
@@ -28,7 +31,7 @@
         success: function(data){
             var thumbnail_src = data[0].thumbnail_large;
             var id_img = "#vimeo-" + data[0].id;
-            $(id_img).html('<img src="' + thumbnail_src + '" width="400"/>');
+            $(id_img).html('<img src="' + thumbnail_src + '" width="<%= width %>"/>');
         }
     });
   </script>

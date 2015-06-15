@@ -5,7 +5,7 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   initialize: function () {
     this.renderUsers();
     this.listenTo(this.collection, "sync", this.render);
-    this.listenTo(this.collection, "add", this.addPlaylist);
+    this.listenTo(this.collection, "add", this.addUser);
   },
 
 
@@ -17,8 +17,6 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   },
 
   renderUsers: function () {
-    debugger;
-
     this.collection.forEach(function (user) { this.addUser(user); }.bind(this));
   },
 
