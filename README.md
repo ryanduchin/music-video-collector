@@ -5,15 +5,9 @@
 [heroku]: TBD
 
 ## Next actions and list of questions
-O3  + need to add 'delete post' button to posts and playlists - SHOW only (no thumbs)
-    *** how do I fetch userPlaylists/userPosts correctly? (form.js this.collection?)
-    modal _addPosts is not showing options for userPlaylists
-    -> needed to fetch in navbar initialize
 
-    playlist-show debugger on checkOwner shows blank this.userPlaylists
-
-O4 -after fetch problem, optimize new post modal and song show view - looks
-  -also add logic to submit to the database
+O4 - add logic to submit to the modals to the database
+ -after fetch problem, optimize new post modal and song show view - looks
 
 
 O5 *** sorting feeds? -> need input on monday re: ordering in controller

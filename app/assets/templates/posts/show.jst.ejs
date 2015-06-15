@@ -1,8 +1,8 @@
 <h1><%= post.escape('title') %></h1>
 <h3><%= post.escape('artist').toUpperCase() %></h3>
 
-<% if (isOwner) {
-  <button class="btn btn-delete btn-danger">Delete</button>
+<% if (isOwner) { %>
+  <button class="btn btn-delete btn-danger btn-sm">Delete</button>
 <% } %>
 
 <div class="like-button"></div>
