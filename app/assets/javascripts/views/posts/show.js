@@ -18,6 +18,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     var content = this.template({
       post: this.model,
       userPlaylists: this.userPlaylists,
+      size: 'normal',
     });
     this.$el.html(content);
     this.attachSubviews();

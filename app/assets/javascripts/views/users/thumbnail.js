@@ -4,10 +4,11 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   template: JST['users/thumbnail'],
 
   initialize: function (options) {
+    this.size = options.size;
     this.featuredPost = this.choosePost(this.model);
     this._followView = new VMCApp.Views.FollowShow({
       model: this.model,
-      type: "User",
+      type: 'User',
       btnSm: true,
     });
     this.addFollow();
@@ -18,6 +19,7 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
     var content = this.template({
       user: this.model,
       post: this.featuredPost,
+      size: this.size,
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -26,12 +28,12 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
 
   choosePost: function (playlist) {
     var posts = this.model.posts();
-    if (posts.length === 0) { return "none"; }
+    if (posts.length === 0) { return 'none'; }
     var i = 0;
     var startInd = Math.floor(Math.random() * posts.length);
     var post = posts.at(startInd);
     //do not use Vevo thumbnail if you can avoid it (loads video)
-    while (post.vidSource() === "Vevo" && i < posts.length) {
+    while (post.vidSource() === 'Vevo' && i < posts.length) {
       i++;
       post = posts.at(i);
     }

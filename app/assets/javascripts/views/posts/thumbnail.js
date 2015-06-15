@@ -4,6 +4,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   template: JST['posts/thumbnail'],
 
   initialize: function (options) {
+    this.size = options.size;
     this._likeView = new VMCApp.Views.LikeShow({
       model: this.model,
       btnSm: true,
@@ -14,7 +15,10 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template({ post: this.model });
+    var content = this.template({
+      post: this.model,
+      size: this.size,
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;

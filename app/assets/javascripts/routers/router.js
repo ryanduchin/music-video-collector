@@ -152,7 +152,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   users_show: function (id) {
     var user = this.users.getOrFetch(id);
-    user.fetch();
     var newView = new VMCApp.Views.UserShow({
       model: user,
     });
