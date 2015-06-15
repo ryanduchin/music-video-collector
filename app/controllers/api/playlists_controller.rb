@@ -8,6 +8,12 @@ module Api
       when 'user'
         @playlists = current_user.playlists
       end
+
+    # needs setter method..
+      # @playlists.each do |playlist|
+      #   playlist.follow = playlist.get_playlist_follow(current_user.id)
+      # end
+
       render :index
     end
 

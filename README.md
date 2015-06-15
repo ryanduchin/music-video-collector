@@ -21,7 +21,8 @@ Main next courses of action:
 
 * small like/follow buttons on thumbnails
   + ** why dont the small buttons fetch from database?
-  
+
+O ** post/playlist controller needs to send likes/follows
  * other user views
 
 ** modal creating form - how to handle successful save and adding to collection?

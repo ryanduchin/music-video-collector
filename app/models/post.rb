@@ -18,4 +18,7 @@ class Post < ActiveRecord::Base
       return likes_arr.first
     end
   end
+
+
+
 end

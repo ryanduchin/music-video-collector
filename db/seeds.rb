@@ -19,12 +19,12 @@ p8 = u1.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?
 
 
 
-j2 = PlaylistPost.create!(playlist_id: c1.id, post_id: p2.id)
 j3 = PlaylistPost.create!(playlist_id: c2.id, post_id: p2.id)
 j4 = PlaylistPost.create!(playlist_id: c2.id, post_id: p3.id)
 j5 = PlaylistPost.create!(playlist_id: c3.id, post_id: p4.id)
 j1 = PlaylistPost.create!(playlist_id: c1.id, post_id: p1.id)
 j6 = PlaylistPost.create!(playlist_id: c1.id, post_id: p5.id)
+j2 = PlaylistPost.create!(playlist_id: c1.id, post_id: p2.id)
 j7 = PlaylistPost.create!(playlist_id: c4.id, post_id: p6.id)
 j8 = PlaylistPost.create!(playlist_id: c4.id, post_id: p7.id)
 j9 = PlaylistPost.create!(playlist_id: c4.id, post_id: p8.id)
