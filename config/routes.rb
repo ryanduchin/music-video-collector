@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     get ":filter/playlists", to: "playlists#index"
     resources :likes, except: [:new, :edit]
     resources :follows, except: [:new, :edit]
-    resources :users, only: [:show]
+    resources :users, only: [:index, :show]
   end
 
 
