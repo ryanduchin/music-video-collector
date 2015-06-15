@@ -157,7 +157,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     var user = this.users.getOrFetch(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
-      collection: this.users,
     });
     this.swapView(newView);
   },

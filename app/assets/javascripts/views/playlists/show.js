@@ -31,9 +31,9 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    posts = this.model.posts();
+    var posts = this.model.posts();
     if (posts.length === 0) { return; }
-    this.model.posts().forEach(function (post) {
+    posts.forEach(function (post) {
       this.addPost(post);
     }.bind(this));
   },
