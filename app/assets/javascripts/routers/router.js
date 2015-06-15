@@ -19,7 +19,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "followed_posts_index", //
+    "" : "user/posts", //
 
     "all/posts" : "all_posts_index",
     "top/posts" : "top_posts_index",
@@ -53,7 +53,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.allPosts.fetch();
     this.posts_index({
       collection: this.allPosts,
-      title: "All Posts",
+      title: "All Videos",
     });
   },
 
@@ -61,7 +61,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.topPosts.fetch();
     this.posts_index({
       collection: this.topPosts,
-      title: "Top Posts",
+      title: "Top Videos",
     });
   },
 
@@ -69,7 +69,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.userPosts.fetch();
     this.posts_index({
       collection: this.userPosts,
-      title: "Your Posts"
+      title: "Your Videos"
     });
   },
 
@@ -77,7 +77,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.likedPosts.fetch();
     this.posts_index({
       collection: this.likedPosts,
-      title: "Liked Posts"
+      title: "Liked Videos"
     });
   },
 
@@ -93,7 +93,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.followedPosts.fetch();
     this.posts_index({
       collection: this.followedPosts,
-      title: "Followed Posts / Feed"
+      title: "Followed Videos / Feed"
     });
   },
 
@@ -175,6 +175,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     var newView = new VMCApp.Views.PostShow({
       model: post,
       userPlaylists: this.userPlaylists,
+      userPosts: this.userPosts,
       });
     this.swapView(newView);
   },

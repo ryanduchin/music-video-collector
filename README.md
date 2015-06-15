@@ -6,6 +6,8 @@
 
 ## Next actions and list of questions
 
+** delete logic is not working/saving to database
+
 O4 - add logic to submit to the modals to the database
  -after fetch problem, optimize new post modal and song show view - looks
 

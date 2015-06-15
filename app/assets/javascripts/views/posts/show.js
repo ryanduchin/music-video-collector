@@ -8,11 +8,12 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
-    $('m-content').removeClass('active');
-    $('m-backdrop').removeClass('inactive');
+    // $('m-content').removeClass('active');
+    // $('m-backdrop').removeClass('inactive');
 
-    this.userPosts = options.userPosts; //NEED for delete
-    this.userPlaylists = options.userPlaylists; //add post to playlist partial
+    this.userPosts = options.userPosts;
+    this.userPlaylists = options.userPlaylists;
+
     this.listenTo(this.model, 'sync', this.render);
 
     this._likeView = new VMCApp.Views.LikeShow({
