@@ -1,6 +1,7 @@
 VMCApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
+    this.users = new VMCApp.Collections.Users();
 
     this.allPosts = options.allPosts;
     this.topPosts = new VMCApp.Collections.TopPosts();
@@ -11,6 +12,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
     this.allPlaylists = options.allPlaylists;
     this.userPlaylists = options.userPlaylists;
+
   },
 
   routes: {
@@ -28,6 +30,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
     "posts/:id" : "post_show",
     "playlists/:id" : "playlist_show",
+
+    "users" : "users_index",
+    "users/:id" : "users_show",
   },
 
   swapView: function (newView) {
@@ -100,7 +105,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   all_playlists_index: function () {
     this.allPlaylists.fetch();
-    // this.allPosts.fetch(); //??
+    // this.allPosts.fetch(); //?
     this.playlists_index({
       collection: this.allPlaylists,
       title: "All Playlists"
@@ -109,7 +114,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   user_playlists_index: function () {
     this.userPlaylists.fetch();
-    // this.userPosts.fetch(); //??
+    // this.userPosts.fetch(); //?
     this.playlists_index({
       collection: this.userPlaylists,
       title: "Your Playlists"
@@ -145,5 +150,25 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
   },
+
+  /////////////////////////
+
+  users_show: function (id) {
+    var user = this.users.getOrFetch(id);
+    var newView = new VMCApp.Views.UserShow({
+      model: user,
+      collection: this.users,
+    });
+    this.swapView(newView);
+  },
+
+  users_index: function() {
+    this.users.fetch();
+    var newView = new VMCApp.Views.UsersIndex({
+      collection: this.users,
+    });
+    this.swapView(newView);
+  },
+
 
 });
