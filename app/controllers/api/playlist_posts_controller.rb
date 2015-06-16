@@ -20,7 +20,7 @@ module Api
     private
 
     def playlist_post_params
-      params.require(:playlist_post).permit(:playlist_id)
+      params.require(:playlistpost).permit(:playlist_id)
     end
 
     def current_post

@@ -70,24 +70,20 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var that = this;
     var formAttr = $('.form-post-to-playlist').serializeJSON();
-    var playlistID = Number(formAttr.playlist_id);
-    var playlist = this.userPlaylists.getOrFetch(playlistID);
-    playlist.add(this.model);
-    console.log('saved')
+    // var playlistID = Number(formAttr.playlist_id);
+    // var playlist = this.userPlaylists.getOrFetch(playlistID);
+    // playlist.add(this.model);
+    // console.log('saved')
     // do i need to generate a playlistpost??
+    $.ajax({
+        type:'POST',
+        url: '/api/playlistposts.json',
+        data: formAttr,
+        dataType: 'json',
+        success: function (resp) {
+            console.log(resp)
+        },
+    });
   },
-
-    // $.ajax({
-    //     type:'GET',
-    //     url: 'http://vimeo.com/api/v2/video/' + vidId + '.json',
-    //     jsonp: 'callback',
-    //     dataType: 'jsonp',
-    //     success: function(data){
-    //         var thumbnail_src = data[0].thumbnail_large;
-    //         var id_img = "#vimeo-" + data[0].id;
-    //         $(id_img).html('<img src="' + thumbnail_src + '" width="<%= width %>"/>');
-    //     }
-    // });
-
 
 });
