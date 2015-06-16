@@ -14,7 +14,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
     this.allPosts = options.allPosts;
     this.userPlaylists = options.userPlaylists;
-    // this.userPlaylists.fetch(); //cause problems in user show view
+    this.userPlaylists.fetch(); //cause problems in user show view BUT fetches for post show dropdown
     this.router = options.router;
   },
 
