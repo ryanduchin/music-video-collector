@@ -9,10 +9,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
-    // $('m-content').removeClass('active');
-    // $('m-backdrop').removeClass('inactive');
-
-    // this.userPosts = options.userPosts;
     this.userPlaylists = options.userPlaylists;
 
     this.listenTo(this.model, 'sync', this.render);

@@ -40,7 +40,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   addLike: function () {
     var likeView = new VMCApp.Views.LikeShow({
       model: this.model,
-      btnSm: false,
+      btnSm: true,
     });
     this.addSubview('.like-button', likeView);
   },

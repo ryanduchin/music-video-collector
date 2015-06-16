@@ -40,7 +40,7 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     var followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",
-      btnSm: false,
+      btnSm: true,
     });
     this.addSubview('.follow-button', followView);
   },
