@@ -24,7 +24,8 @@ class Post < ActiveRecord::Base
     when 'all'
       return Post.all.order(created_at: :desc)
     when 'top'
-      return Post.all.where(num_likes > 1)#.order('num_likes')
+      return Post.all.where(
+      # where(num_likes > 1)#.order('num_likes')
     when 'user'
       return current_user.posts.order(created_at: :desc)
     when 'liked'

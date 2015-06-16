@@ -1,3 +1,3 @@
-VMCApp.Models.Playlistpost = Backbone.Model.extend({
+VMCApp.Models.PlaylistPost = Backbone.Model.extend({
   urlRoot: '/api/playlistposts',
 });
