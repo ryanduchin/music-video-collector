@@ -6,45 +6,24 @@
 
 ## Next actions and list of questions
 
-broken:
--add and delete from playlists
--playlist likes thumbnails not rendering (but not elsewhere)
--post followed and likes SQL entries
-
-O1 cloudinary
-
-* look for incorrect collection references
-* fix post.rb followed (with user.rb associations)
-
-*** user show page shows extra playlist icon??
-
-T1
-*** Adding post to playlist - weird logic in my post form, how to fix it? (needs to work with post show and post form, currently only for post show)
- -later:
-  + only show playlists that the post is not a part of!
-
-  + playlist show thumbnails have 'remove from playlist' buttons
 *** What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model
 
-  + post show have 'remove from playlist' dropdown (??)
+broken:
+-playlist likes thumbnails not rendering (but not elsewhere)
+-post followed and likes SQL entries
+-user show page
+-add and remove from playlists
+ + only show playlists that the post is not a part of!
 
-T2
-** sorting feeds? -> need input on monday re: ordering in controller
-- easy way:
---> SQL query in controller
-<!-- - hard way: in view, add an event listener. click sort : sortPosts.
-takes the eventCurrentTarget and overwrites the collection.comparator method
-bad way would then rerender the whole page -->
-
-T3
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
 
 ## Styling
 * user index and show view optimization (tile size, layout, side scroll)
-* https://github.com/ChanChar/unsplash_pictures
-
+* https://github.com/ChanChar/unsplash_pictures + cloudinary = background images
+* Thumbnail icon locations!!
+* Thumbnail spacing from each other!
 
 ## Code Review Questions:
 * validating URL on save of post. (Possible refactoring of database URL to
@@ -68,7 +47,7 @@ MVP:
 - [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
-- [bug] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
+- [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
 
 Expanding:
 
@@ -76,14 +55,15 @@ Expanding:
 - [X] View other channels (of users) (like playlists)
 - [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
 - [X] Feed option: Top Staff picks
-- [bug ] Feed option: top liked videos (across entire site)
-- [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
+- [bug] Feed option: top liked videos (across entire site)
 - [ ] *** Playback speed controls!
-- [ ] *** Add friends, add a feed for posts from friends.
+- [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
+- [ ] Search for users/playlists/posts by any fields (if time)
+
+Not going to get to:
+- [ ] Edit profile with tagline
 - [ ] All videos have nested comments, users can add comments
-- [ ] Search for users by name/username
-- [ ] Search for videos by title, artist, (uploaded user)
-- [ ] Edit profile - no
+- [ ] Add friends, add a feed for posts from friends.
 
 
 ## Design Docs
