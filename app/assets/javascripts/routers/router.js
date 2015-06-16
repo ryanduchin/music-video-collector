@@ -1,43 +1,52 @@
 VMCApp.Routers.Router = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
-
-    this.allUsers = new VMCApp.Collections.AllUsers();
-    this.followedUsers = new VMCApp.Collections.FollowedUsers();
-
     this.allPosts = options.allPosts;
-    this.topPosts = new VMCApp.Collections.TopPosts();
-    this.userPosts = new VMCApp.Collections.UserPosts();
-    this.likedPosts = new VMCApp.Collections.LikedPosts();
-    this.staffPosts = new VMCApp.Collections.StaffPosts();
-    this.followedPosts = new VMCApp.Collections.FollowedPosts();
-
-    this.allPlaylists = new VMCApp.Collections.AllPlaylists();
-    this.otherPlaylists = new VMCApp.Collections.OtherPlaylists();
     this.userPlaylists = options.userPlaylists;
-    this.followedPlaylists = new VMCApp.Collections.FollowedPlaylists();
+
+
+    // this.allUsers = new VMCApp.Collections.AllUsers();
+    // this.followedUsers = new VMCApp.Collections.FollowedUsers();
+    //
+    // this.topPosts = new VMCApp.Collections.TopPosts();
+    // this.userPosts = new VMCApp.Collections.UserPosts();
+    // this.likedPosts = new VMCApp.Collections.LikedPosts();
+    // this.staffPosts = new VMCApp.Collections.StaffPosts();
+    // this.followedPosts = new VMCApp.Collections.FollowedPosts();
+    //
+    // this.allPlaylists = new VMCApp.Collections.AllPlaylists();
+    // this.otherPlaylists = new VMCApp.Collections.OtherPlaylists();
+    // this.followedPlaylists = new VMCApp.Collections.FollowedPlaylists();
   },
 
   routes: {
     "" : "user/posts", //
 
-    "all/posts" : "all_posts_index",
-    "top/posts" : "top_posts_index",
-    "user/posts" : "user_posts_index",
-    "liked/posts" : "liked_posts_index",
-    "staff/posts" : "staff_posts_index",
-    "followed/posts" : "followed_posts_index",
-
-    "other/playlists" : "other_playlists_index",
-    "user/playlists" : "user_playlists_index",
-    "followed/playlists" : "followed_playlists_index",
+    ":filter/posts" : "posts_index",
+    ":filter/playlists" : "playlists_index",
+    ":filter/users" : "users_index",
 
     "posts/:id" : "post_show",
     "playlists/:id" : "playlist_show",
+    "users/:id" : "users_show"
 
-    "all/users" : "all_users_index",
-    "followed/users" : "followed_users_index",
-    "users/:id" : "users_show",
+    // "all/posts" : "all_posts_index",
+    // "top/posts" : "top_posts_index",
+    // "user/posts" : "user_posts_index",
+    // "liked/posts" : "liked_posts_index",
+    // "staff/posts" : "staff_posts_index",
+    // "followed/posts" : "followed_posts_index",
+    //
+    // "other/playlists" : "other_playlists_index",
+    // "user/playlists" : "user_playlists_index",
+    // "followed/playlists" : "followed_playlists_index",
+    //
+    // "posts/:id" : "post_show",
+    // "playlists/:id" : "playlist_show",
+    //
+    // "all/users" : "all_users_index",
+    // "followed/users" : "followed_users_index",
+    // "users/:id" : "users_show",
   },
 
   swapView: function (newView) {
@@ -49,120 +58,125 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   /////////////////////////
 
-  all_posts_index: function () {
-    this.allPosts.fetch();
-    this.posts_index({
-      collection: this.allPosts,
-      title: "All Videos",
-    });
-  },
+  // all_posts_index: function () {
+  //   this.allPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.allPosts,
+  //     title: "All Videos",
+  //   });
+  // },
+  //
+  // top_posts_index: function () {
+  //   this.topPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.topPosts,
+  //     title: "Top Videos",
+  //   });
+  // },
+  //
+  // user_posts_index: function () {
+  //   this.userPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.userPosts,
+  //     title: "Your Videos"
+  //   });
+  // },
+  //
+  // liked_posts_index: function () {
+  //   this.likedPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.likedPosts,
+  //     title: "Liked Videos"
+  //   });
+  // },
+  //
+  // staff_posts_index: function () {
+  //   this.staffPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.staffPosts,
+  //     title: "Staff Picks"
+  //   });
+  // },
+  //
+  // followed_posts_index: function () {
+  //   this.followedPosts.fetch();
+  //   this.posts_index({
+  //     collection: this.followedPosts,
+  //     title: "Followed Videos / Feed"
+  //   });
+  // },
 
-  top_posts_index: function () {
-    this.topPosts.fetch();
-    this.posts_index({
-      collection: this.topPosts,
-      title: "Top Videos",
-    });
-  },
-
-  user_posts_index: function () {
-    this.userPosts.fetch();
-    this.posts_index({
-      collection: this.userPosts,
-      title: "Your Videos"
-    });
-  },
-
-  liked_posts_index: function () {
-    this.likedPosts.fetch();
-    this.posts_index({
-      collection: this.likedPosts,
-      title: "Liked Videos"
-    });
-  },
-
-  staff_posts_index: function () {
-    this.staffPosts.fetch();
-    this.posts_index({
-      collection: this.staffPosts,
-      title: "Staff Picks"
-    });
-  },
-
-  followed_posts_index: function () {
-    this.followedPosts.fetch();
-    this.posts_index({
-      collection: this.followedPosts,
-      title: "Followed Videos / Feed"
-    });
-  },
-
-  posts_index: function (options) {
+  posts_index: function (filter) {
+    var posts = new VMCApp.Collections.Posts({ filter: filter })
+    posts.fetch();
     var newView = new VMCApp.Views.PostsIndex({
-      collection: options.collection,
-      title: options.title,
-      // title: options.title || "Posts Index",
+      collection: posts,
+      filter: filter,
     });
     this.swapView(newView);
   },
 
   /////////////////////////
 
-  other_playlists_index: function () {
-    this.otherPlaylists.fetch();
-    // this.allPosts.fetch(); //?
-    this.playlists_index({
-      collection: this.otherPlaylists,
-      title: "V|M|C Playlists"
-    });
-  },
+  // other_playlists_index: function () {
+  //   this.otherPlaylists.fetch();
+  //   // this.allPosts.fetch(); //?
+  //   this.playlists_index({
+  //     collection: this.otherPlaylists,
+  //     title: "V|M|C Playlists"
+  //   });
+  // },
+  //
+  // user_playlists_index: function () {
+  //   this.userPlaylists.fetch();
+  //   // this.userPosts.fetch(); //?
+  //   this.playlists_index({
+  //     collection: this.userPlaylists,
+  //     title: "Your Playlists"
+  //   });
+  // },
+  //
+  // followed_playlists_index: function () {
+  //   this.followedPlaylists.fetch();
+  //   this.playlists_index({
+  //     collection: this.followedPlaylists,
+  //     title: "Followed Playlists"
+  //   });
+  // },
 
-  user_playlists_index: function () {
-    this.userPlaylists.fetch();
-    // this.userPosts.fetch(); //?
-    this.playlists_index({
-      collection: this.userPlaylists,
-      title: "Your Playlists"
-    });
-  },
-
-  followed_playlists_index: function () {
-    this.followedPlaylists.fetch();
-    this.playlists_index({
-      collection: this.followedPlaylists,
-      title: "Followed Playlists"
-    });
-  },
-
-  playlists_index: function (options) {
+  playlists_index: function (filter) {
+    var playlists = new VMCApp.Collections.Playlists({ filter: filter })
+    playlists.fetch();
     var newView = new VMCApp.Views.PlaylistsIndex({
-      collection: options.collection,
-      title: options.title,
+      collection: playlists,
+      filter: filter,
     });
     this.swapView(newView);
   },
 
   /////////////////////////
 
-  all_users_index: function () {
-    this.allUsers.fetch();
-    this.users_index({
-      collection: this.allUsers,
-      title: "All Users",
-    });
-  },
+  // all_users_index: function () {
+  //   this.allUsers.fetch();
+  //   this.users_index({
+  //     collection: this.allUsers,
+  //     title: "All Users",
+  //   });
+  // },
+  //
+  // followed_users_index: function () {
+  //   this.followedUsers.fetch();
+  //   this.users_index({
+  //     collection: this.followedUsers,
+  //     title: "Followed Users",
+  //   });
+  // },
 
-  followed_users_index: function () {
-    this.followedUsers.fetch();
-    this.users_index({
-      collection: this.followedUsers,
-      title: "Followed Users",
-    });
-  },
-
-  users_index: function(options) {
+  users_index: function(filter) {
+    var users = new VMCApp.Collections.Users({ filter: filter })
     var newView = new VMCApp.Views.UsersIndex({
-      collection: options.collection,
+      collection: users,
+      filter: filter,
     });
     this.swapView(newView);
   },

@@ -4,14 +4,16 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   className: 'playlists-index',
 
   initialize: function (options) {
-    this.title = options.title;
+    this.filter = options.filter;
     this.renderPlaylists();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPlaylist);
   },
 
   render: function () {
-    var content = this.template({ title: this.title });
+    var content = this.template({
+      title: this.getTitle(this.filter)
+    });
     this.$el.html(content);
     this.attachSubviews();
     return this;
@@ -30,5 +32,15 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
     });
     this.addSubview('.view-playlists', subView);
   },
+
+  getTitle: function (filter) {
+    var titles = {
+      'all' : 'All Playlists',
+      'other' : 'Other Playlists',
+      'user' : 'Your Playlists',
+    };
+    return titles[filter];
+  },
+
 
 });

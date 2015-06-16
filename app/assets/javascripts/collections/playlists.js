@@ -3,6 +3,9 @@ VMCApp.Collections.UserPlaylists = Backbone.Collection.extend({
     if (options.user) {
       this.user = options.user;
     }
+    if (options.filter) {
+      this.filter = options.filter;
+    }
   },
 
   url: function () {
