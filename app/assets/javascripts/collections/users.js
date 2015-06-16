@@ -7,7 +7,7 @@ VMCApp.Collections.Users = Backbone.Collection.extend({
   },
 
   url: function () {
-    return '/api/' + filter + '/users';
+    return '/api/' + this.filter + '/users';
   },
 
   model: VMCApp.Models.User,

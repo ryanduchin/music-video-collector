@@ -13,7 +13,7 @@ VMCApp.Collections.Posts = Backbone.Collection.extend({
     if (this.user) {
       return 'api/users/' + this.user.id + '/posts';
     } else {
-      return '/api/' + filter + '/posts';
+      return '/api/' + this.filter + '/posts';
     }
   },
 

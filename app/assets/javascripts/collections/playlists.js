@@ -12,7 +12,7 @@ VMCApp.Collections.Playlists = Backbone.Collection.extend({
     if (this.user) {
       return 'api/users/' + this.user.id + '/playlists';
     } else {
-      return 'api/' + filter + '/playlists';
+      return 'api/' + this.filter + '/playlists';
     }
   },
 
