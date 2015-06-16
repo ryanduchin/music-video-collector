@@ -22,42 +22,16 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
 
 
   addToPlaylist: function (event) {
-    debugger;
+    event.preventDefault();
+    var formAttr = this.$el.serializeJSON();
+    formAttr[playlist_post][post_id] = this.model.id;
+    // var attr = $.extend({}, formAttr, playlist_post{post_id: this.model.id});
     $.ajax({
-        type:'DELETE',
-        url: '/api/playlistposts/' + this.playlistPost.id + '.json',
-        data: this.playlistPost.toJSON(),
+        type:'POST',
+        url: '/api/playlistposts.json',
+        data: formAttr,
         dataType: 'json',
-        success: function () {
-          this.removeModal();
-          window.location.reload();
-        }
-    });//.bind(this));
-
+    });
   },
 
 });
-
-
-// addToPlaylist: function (event) {
-//   event.preventDefault();
-//   var formAttr = $('.form-post-to-playlist').serializeJSON();
-//   if (formAttr === "") { return; }
-//   var attr = $.extend({}, formAttr, {post_id: this.model.id});
-//   $.ajax({
-//       type:'POST',
-//       url: '/api/playlistposts.json',
-//       data: attr,
-//       dataType: 'json',
-//   });
-// },
-
-
-
-  // openAddToPlaylistForm: function (event) {
-  //   event.preventDefault();
-  //   var modal = new VMCApp.Views.AddPostToPlaylistForm({
-  //     model: this.model,
-  //   });
-  //   this.renderModal(modal);
-  // },

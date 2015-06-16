@@ -8,7 +8,8 @@
 
 O1 cloudinary
 
-
+* refactor collections
+* fix post.rb followed (with user.rb associations)
 
 *** user show page shows extra playlist icon??
 
