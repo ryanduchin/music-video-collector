@@ -25,8 +25,6 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
-        // what collection do I add it to? There are multiple 'playlist' collections.
-        // right now being added to "allPlaylists"
         that.collection.add(that.model);
         that.removeModal();
         Backbone.history.navigate("#/playlists/" + that.model.id, { trigger: true });

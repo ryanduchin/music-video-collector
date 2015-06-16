@@ -14,7 +14,7 @@ window.VMCApp = {
 
     var navbar = new VMCApp.Views.NavView({
       router: router,
-      allPosts: new VMCApp.Collections.Posts({ filter: 'all' });
+      allPosts: new VMCApp.Collections.Posts({ filter: 'all' }),
       userPlaylists: userPlaylists,
     });
     $("#navbar").html(navbar.render().$el);

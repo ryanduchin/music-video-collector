@@ -30,7 +30,6 @@ VMCApp.Views.DeleteForm = Backbone.View.extend({
     this.model.destroy();
     this.removeModal();
     Backbone.history.navigate('#/user/' + this.type + 's', {trigger: true});
-    //not very ideal. can i force a reload on first trigger?
     window.location.reload();
   },
 
