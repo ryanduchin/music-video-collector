@@ -6,6 +6,11 @@
 
 ## Next actions and list of questions
 
+O1 cloudinary
+
+
+
+
 *** why is my user show page rendering all posts and playlists?
 
 T1
@@ -57,23 +62,22 @@ MVP:
 - [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
-- [ ] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
+- [bug] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
 
 Expanding:
 
-- [ ] Users can create channels (aka collections/playists)
-- [ ] View other channels (of users) (like playlists)
-- [ ] Search for videos by title, artist, (uploaded user)
-- [ ] Search for users by name/username
-- [ ] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
+- [X] Users can create channels (aka collections/playists)
+- [X] View other channels (of users) (like playlists)
+- [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
 - [X] Feed option: Top Staff picks
-- [ ] Feed option: top liked videos (across entire site)
-- [ ] All videos have nested comments, users can add comments
-- [ ] List of top liked channels, and/or users (across whole site)
-- [ ] Edit profile
+- [bug ] Feed option: top liked videos (across entire site)
 - [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
 - [ ] *** Playback speed controls!
 - [ ] *** Add friends, add a feed for posts from friends.
+- [ ] All videos have nested comments, users can add comments
+- [ ] Search for users by name/username
+- [ ] Search for videos by title, artist, (uploaded user)
+- [ ] Edit profile - no
 
 
 ## Design Docs
