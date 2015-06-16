@@ -11,6 +11,8 @@
 
 O4 - add logic to submit to the modals to the database
  -after fetch problem, optimize new post modal and song show view - looks
+ -currently working on the add to playlist form and getting the attributes set
+ -later: only show playlists that the post is not a part of!
 
 
 O5 *** sorting feeds? -> need input on monday re: ordering in controller

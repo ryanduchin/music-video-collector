@@ -4,6 +4,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   events: {
     'click button.btn-delete' : 'openDeleteForm',
+    'click .submit-post-to-playlist' : 'addToPlaylist',
   },
 
 
@@ -64,5 +65,15 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
   },
+
+  addToPlaylist: function (event) {
+    event.preventDefault();
+    var that = this;
+    var attrs = this.$el.serializeJSON();
+    debugger;
+    // this.model.set
+    var playlist = this.allPlaylists.getOrFetch(attrs.playlist);
+  },
+
 
 });
