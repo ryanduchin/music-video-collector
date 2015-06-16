@@ -77,5 +77,17 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     // do i need to generate a playlistpost??
   },
 
+    // $.ajax({
+    //     type:'GET',
+    //     url: 'http://vimeo.com/api/v2/video/' + vidId + '.json',
+    //     jsonp: 'callback',
+    //     dataType: 'jsonp',
+    //     success: function(data){
+    //         var thumbnail_src = data[0].thumbnail_large;
+    //         var id_img = "#vimeo-" + data[0].id;
+    //         $(id_img).html('<img src="' + thumbnail_src + '" width="<%= width %>"/>');
+    //     }
+    // });
+
 
 });

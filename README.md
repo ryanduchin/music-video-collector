@@ -8,28 +8,28 @@
 
 *** why is my user show page rendering all posts and playlists?
 
-O4 - add logic to submit to the modals to the database
- -after fetch problem, optimize new post modal and song show view - looks
- -currently working on the add to playlist form and getting the attributes set
- -later: only show playlists that the post is not a part of!
-
+T1
 *** How do I add post to playlist in backbone??? Do i need to add new models/collections for playlistposts??
 //javascript ajax manually or make active record request and post with both ids
+- submit add-to-playlist to database
+- confirm working with submitting a new post
+ -later: only show playlists that the post is not a part of!
 
-*** How do I deal with nested routes in controller?
--- got it working BUT doing this wrong. need to have it all go to user show page.
-
-
-O5 ** sorting feeds? -> need input on monday re: ordering in controller
+T2
+** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
 --> SQL query in controller
-- hard way: in view, add an event listener. click sort : sortPosts.
+<!-- - hard way: in view, add an event listener. click sort : sortPosts.
 takes the eventCurrentTarget and overwrites the collection.comparator method
-bad way would then rerender the whole page
+bad way would then rerender the whole page -->
 
-O6 * user index and show view optimization (tile size, layout, side scroll)
-
+T3
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+
+
+## Styling
+* user index and show view optimization (tile size, layout, side scroll)
+* https://github.com/ChanChar/unsplash_pictures
 
 
 ## Code Review Questions:
@@ -39,8 +39,6 @@ O6 * user index and show view optimization (tile size, layout, side scroll)
 * is my modal save adding to the correct collection? (allposts vs userposts?)
 ** VIMEO Ajax request not always rerendering thumbnail (posts index)
 
-Styling -
-https://github.com/ChanChar/unsplash_pictures
 
 ## Minimum Viable Product
 Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
