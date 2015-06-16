@@ -14,7 +14,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
     this.allPosts = options.allPosts;
     this.userPlaylists = options.userPlaylists;
-    this.userPlaylists.fetch();
+    // this.userPlaylists.fetch(); //cause problems in user show view
     this.router = options.router;
   },
 

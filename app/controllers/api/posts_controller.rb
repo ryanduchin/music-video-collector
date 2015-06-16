@@ -3,7 +3,7 @@ module Api
 
     def index
       if params[:filter]
-        @posts = Post.get_collection(params[:filter])
+        @posts = Post.get_collection(params[:filter], current_user)
       elsif params[:user_id]
         @posts = User.where('id=?', params[:user_id])[0].posts
       end

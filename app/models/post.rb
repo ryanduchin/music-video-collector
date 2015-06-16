@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
     end
   end
 
-  def self.get_collection(filter)
+  def self.get_collection(filter, current_user)
     case filter
     when 'all'
       return Post.all.order(created_at: :desc)

@@ -3,7 +3,7 @@ module Api
 
     def index
       if params[:filter]
-        @playlists = Playlist.get_collection(params[:filter])
+        @playlists = Playlist.get_collection(params[:filter], current_user)
       elsif params[:user_id]
         @playlists = User.where('id=?', params[:user_id])[0].playlists
       end

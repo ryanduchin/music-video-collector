@@ -6,6 +6,8 @@
 
 ## Next actions and list of questions
 
+!!!!NAVBAR INSTANCE VARIABLE IS FUCKING THINGS UP
+
 * user show view is showing ALL posts and playlists
 --> need to nest route resource and make new collection
 
