@@ -25,6 +25,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
     event.preventDefault();
     var formAttr = this.$el.serializeJSON();
     formAttr[playlist_post][post_id] = this.model.id;
+    debugger;
     // var attr = $.extend({}, formAttr, playlist_post{post_id: this.model.id});
     $.ajax({
         type:'POST',
