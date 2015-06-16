@@ -1,5 +1,17 @@
 VMCApp.Collections.UserPlaylists = Backbone.Collection.extend({
-  url: '/api/user/playlists',
+  initialize: function (options) {
+    if (options) {
+      this.user = options.user;
+    }
+  },
+
+  url: function () {
+    if (this.id) {
+      return 'api/users/' + this.user.id + '/playlists';
+    } else {
+      return 'api/user/playlists';
+    }
+  },
 
   model: VMCApp.Models.Playlist,
 

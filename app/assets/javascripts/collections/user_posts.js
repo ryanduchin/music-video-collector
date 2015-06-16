@@ -1,5 +1,18 @@
 VMCApp.Collections.UserPosts = Backbone.Collection.extend({
-  url: '/api/user/posts',
+
+  initialize: function (options) {
+    if (options) {
+      this.user = options.user;
+    }
+  },
+
+  url: function () {
+    if (this.id) {
+      return 'api/users/' + this.user.id + '/posts';
+    } else {
+      return '/api/user/posts';
+    }
+  },
 
   model: VMCApp.Models.Post,
 
