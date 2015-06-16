@@ -14,6 +14,7 @@ O4 - add logic to submit to the modals to the database
  -currently working on the add to playlist form and getting the attributes set
  -later: only show playlists that the post is not a part of!
 
+*** How do I add post to playlist in backbone??? Do i need to add new models/collections for playlistposts??
 
 O5 *** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
@@ -24,7 +25,7 @@ bad way would then rerender the whole page
 
 O6 * user index and show view optimization (tile size, layout, side scroll)
 
-** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+*** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
 
 ## Code Review Questions:

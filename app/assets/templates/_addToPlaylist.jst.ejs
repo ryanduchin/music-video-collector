@@ -1,5 +1,5 @@
 <form class="form-post-to-playlist">
-<select name="playlist">
+<select name="playlist_id">
 <option value="">Add to Playlist</option>
 <% userPlaylists.forEach(function (playlist) { %>
   <option value="<%= playlist.id %>"><%= playlist.escape('name') %></option>
