@@ -22,7 +22,7 @@ VMCApp.Models.User = Backbone.Model.extend({
 
   playlists: function () {
     if (!this._playlists) {
-      this._playlists = new VMCApp.Collections.Playlists({ user: this });
+      this._playlists = new VMCApp.Collections.Playlists([], { user: this });
     }
 
     return this._playlists;
@@ -30,7 +30,7 @@ VMCApp.Models.User = Backbone.Model.extend({
 
   posts: function () {
     if (!this._posts) {
-      this._posts = new VMCApp.Collections.Posts({ user: this });
+      this._posts = new VMCApp.Collections.Posts([], { user: this });
     }
 
     return this._posts;

@@ -7,7 +7,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     this.size = options.size;
     this.featuredPost = this.choosePost(this.model);
     this.addFollow();
-    this.listenTo(this.model, 'sync', this.addFollow);
   },
 
   render: function () {
@@ -27,11 +26,10 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     if (posts.length === 0) { return "none"; }
     var i = 0;
     var post = posts.at(i);
-    //do not use Vevo thumbnail if you can avoid it (loads video)
-    while (post.vidSource() === "Vevo" && i < posts.length) {
-      i++;
-      post = posts.at(i);
-    }
+    // while (post.vidSource() === "Vevo" && i < posts.length) {
+    //   i++;
+    //   post = posts.at(i);
+    // }
     return post;
   },
 

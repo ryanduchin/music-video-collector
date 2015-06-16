@@ -6,13 +6,9 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.size = options.size;
     this.featuredPost = this.choosePost(this.model);
-    this._followView = new VMCApp.Views.FollowShow({
-      model: this.model,
-      type: 'User',
-      btnSm: true,
-    });
+    // this.featuredPost.fetch()
     this.addFollow();
-    this.listenTo(this.model.follow(), 'change', this.addFollow);
+    // this.listenTo(this.featuredPost, 'sync add', this.render);
   },
 
   render: function () {
@@ -26,23 +22,28 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
     return this;
   },
 
-  choosePost: function (playlist) {
-    var posts = this.model.posts();
+  choosePost: function (user) {
+    var posts = user.posts();
+    // debugger;
     if (posts.length === 0) { return 'none'; }
-    var i = 0;
+    // var i = 0;
     var startInd = Math.floor(Math.random() * posts.length);
     var post = posts.at(startInd);
-    //do not use Vevo thumbnail if you can avoid it (loads video)
-    while (post.vidSource() === 'Vevo' && i < posts.length) {
-      i++;
-      post = posts.at(i);
-    }
+    // while (post.vidSource() === 'Vevo' && i < posts.length) {
+    //   i++;
+    //   startInd++;
+    //   post = posts.at(startInd);
+    // }
     return post;
   },
 
   addFollow: function () {
-    this._followView.remove();
-    this.addSubview('.follow-button', this._followView);
+    var followView = new VMCApp.Views.FollowShow({
+      model: this.model,
+      type: 'User',
+      btnSm: true,
+    });
+    this.addSubview('.follow-button', followView);
   },
 
 });
