@@ -24,7 +24,7 @@ module Api
     end
 
     def current_post
-      Post.find(params[:id])
+      Post.find(params[:post_id])
     end
 
   end
