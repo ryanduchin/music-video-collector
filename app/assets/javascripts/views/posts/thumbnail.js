@@ -16,7 +16,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     });
     this.addLike();
     this.listenTo(this.model.like(), 'change', this.addLike);
-
   },
 
   render: function () {

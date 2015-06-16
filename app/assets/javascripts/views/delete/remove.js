@@ -1,6 +1,6 @@
 VMCApp.Views.RemoveForm = Backbone.View.extend({
   className: 'remove-form',
-  template: JST['remove/form'],
+  template: JST['delete/remove'],
 
   events: {
     'click button.submit-remove' : 'removeFromPlaylist',
@@ -12,6 +12,12 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
   initialize: function (options) {
     this.post = options.post;
     this.playlist = options.playlist;
+
+    this.playlistpost = new VMCApp.Models.Playlistpost({
+      post_id: this.post.id,
+      playlist_id: this.playlist.id
+    });
+    this.playlistpost.fetch();
   },
 
   render: function () {
@@ -39,17 +45,21 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
   },
 
   removeFromPlaylist: function (event) {
-    var attr = { post_id: this.post.id, playlist_id: this.playlist.id };
+    debugger;
+    var attr = {
+      post_id: this.post.id,
+      playlist_id: this.playlist.id,
+    };
     $.ajax({
         type:'DELETE',
-        url: '/api/playlistposts.json',
+        url: '/api/playlistposts/' + this.playlistpost.id + '.json',
         data: attr,
         dataType: 'json',
         success: function () {
           this.removeModal();
           window.location.reload();
         }
-    });
+    });//.bind(this));
 
   },
 

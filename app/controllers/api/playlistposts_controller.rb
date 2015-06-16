@@ -1,6 +1,14 @@
 module Api
   class PlaylistpostsController < ApiController
 
+    def index
+      @playlist_posts = current_user.playlists.playlist_posts
+      render json: @playlist_posts
+    end
+
+    # def show
+    #   @playlist_post = Playlist.find(
+
     def create
       @playlist_post = current_post.playlist_posts.new(playlist_post_params)
 
@@ -24,7 +32,7 @@ module Api
     end
 
     def current_post
-      Post.find(params[:post_id])
+      Playlist.find(params[:playlist_id])
     end
 
   end

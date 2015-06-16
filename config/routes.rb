@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
     resources :likes, except: [:new, :edit]
     resources :follows, except: [:new, :edit]
-    resources :playlistposts, only: [:create, :destroy]
+    resources :playlistposts, only: [:create, :destroy, :index]
 
     resources :users, only: [:show] do
       resources :posts, only: [:index]
