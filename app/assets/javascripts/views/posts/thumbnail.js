@@ -10,11 +10,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   initialize: function (options) {
     this.playlist = options.playlist;
     this.size = options.size;
-    var likeView = new VMCApp.Views.LikeShow({
-      model: this.model,
-      btnSm: true,
-    });
-    this.addSubview('.like-button', likeView);
+    this.addLike();
   },
 
   render: function () {
@@ -39,6 +35,14 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
+  },
+
+  addLike: function () {
+    var likeView = new VMCApp.Views.LikeShow({
+      model: this.model,
+      btnSm: false,
+    });
+    this.addSubview('.like-button', likeView);
   },
 
 });

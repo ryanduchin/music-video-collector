@@ -17,12 +17,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
     this.listenTo(this.model, 'sync', this.render);
 
-    var likeView = new VMCApp.Views.LikeShow({
-      model: this.model,
-      btnSm: false,
-    });
-    this.addSubview('.like-button', likeView);
-
+    this.addLike();
 
     this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
       model: this.model,
@@ -41,6 +36,14 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.attachSubviews();
     return this;
+  },
+
+  addLike: function () {
+    var likeView = new VMCApp.Views.LikeShow({
+      model: this.model,
+      btnSm: false,
+    });
+    this.addSubview('.like-button', likeView);
   },
 
 
