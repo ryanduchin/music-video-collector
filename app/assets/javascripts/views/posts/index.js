@@ -4,7 +4,7 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.filter = options.filter;
-    this.renderPosts();
+    // this.renderPosts();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPost);
   },

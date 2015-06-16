@@ -35,6 +35,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   users_index: function(filter) {
     var users = new VMCApp.Collections.Users({ filter: filter })
+    users.fetch();
     var newView = new VMCApp.Views.UsersIndex({
       collection: users,
       filter: filter,

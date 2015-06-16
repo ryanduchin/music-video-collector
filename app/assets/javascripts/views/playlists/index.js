@@ -5,7 +5,7 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.filter = options.filter;
-    this.renderPlaylists();
+    // this.renderPlaylists();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPlaylist);
   },
