@@ -9,18 +9,21 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
       btnSm: false,
     });
 
+    this._userPosts = this.model.posts();
+    this._userPlaylists = this.model.playlists();
+
     this.addFollow();
     this.renderPlaylists();
     this.renderPosts();
 
     this.model.fetch();
-    this.model.posts().fetch();
-    this.model.playlists().fetch();
+    this._userPosts.fetch();
+    this._userPlaylists.fetch();
 
     this.listenTo(this.model, 'sync', this.render);
 
-    this.listenTo(this.model.posts(), "add", this.addPost);
-    this.listenTo(this.model.playlists(), "add", this.addPlaylist);
+    this.listenTo(this._userPosts, "add", this.addPost);
+    this.listenTo(this._userPlaylists, "add", this.addPlaylist);
     this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
@@ -34,17 +37,15 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   renderPlaylists: function () {
-    var playlists = this.model.playlists();
-    if (playlists.length === 0) { return; }
-    playlists.forEach(function (playlist) {
+    if (this._userPlaylists.length === 0) { return; }
+    this._userPlaylists.forEach(function (playlist) {
       this.addPlaylist(playlist);
     }.bind(this));
   },
 
   renderPosts: function () {
-    var posts = this.model.posts();
-    if (posts.length === 0) { return; }
-    posts.forEach(function (post) {
+    if (this._userPosts.length === 0) { return; }
+    this._userPosts.forEach(function (post) {
       this.addPost(post);
     }.bind(this));
   },
