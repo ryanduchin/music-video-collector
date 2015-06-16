@@ -14,8 +14,8 @@ p4 = u1.posts.create!(title: 'Ruby', url: 'https://www.youtube.com/watch?v=LH_15
 p5 = u1.posts.create!(title: 'Greyhound', url: 'https://vimeo.com/75755258', artist: 'Swedish House Mafia')
 p1 = u1.posts.create!(title: 'Generate', url: 'http://www.vevo.com/watch/eric-prydz/generate/GBUV71500138', artist: 'Eric Prydz', staff: true)
 p6 = u1.posts.create(title: 'Monument', url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI', artist: 'Royskopp & Robyn')
-p7 = u1.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
-p8 = u1.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
+p7 = u2.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
+p8 = u2.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
 
 
 

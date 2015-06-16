@@ -10,8 +10,7 @@ O1 cloudinary
 
 
 
-
-*** why is my user show page rendering all posts and playlists?
+*** user show page shows extra playlist icon??
 
 T1
 *** Adding post to playlist - weird logic in my post form, how to fix it? (needs to work with post show and post form, currently only for post show)
@@ -20,6 +19,7 @@ T1
 
   + playlist show thumbnails have 'remove from playlist' buttons
 *** What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
+-backbone model
 
   + post show have 'remove from playlist' dropdown (??)
 

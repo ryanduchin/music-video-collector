@@ -1,0 +1,39 @@
+<form class="form-post-to-playlist">
+<select name="playlist_posts[playlist_id]">
+<option value="">Add to Playlist</option>
+<% userPlaylists.forEach(function (playlist) { %>
+  <option value="<%= playlist.id %>"><%= playlist.escape('name') %></option>
+<% }); %>
+
+</select>
+
+<% if (submit) { %>
+  <input class="submit-post-to-playlist" type="submit">
+<% } %>
+
+</form>
+
+
+<div class="container">
+
+  <p>Add to Playlists:</p>
+  <form role="form">
+
+
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Option 1</label>
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" value="">Option 2</label>
+    </div>
+    <div class="checkbox disabled">
+      <label><input type="checkbox" value="" disabled>Option 3</label>
+    </div>
+  </form>
+</div>
+
+
+<%= JST['_addToPlaylist']({
+  userPlaylists: userPlaylists,
+  submit: true,
+}) %>

@@ -4,7 +4,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   events: {
     'click button.btn-delete' : 'openDeleteForm',
-    'click .submit-post-to-playlist' : 'addToPlaylist',
+    'click button.add-post-to-playlist' : 'toggleAddToPlaylistForm',
   },
 
 
@@ -21,7 +21,14 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       model: this.model,
       btnSm: false,
     });
+
+    this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
+      model: this.model,
+      userPlaylists: this.userPlaylists,
+    });
+
     this.addLike();
+
     this.listenTo(this.model.like(), 'change', this.addLike);
   },
 
@@ -42,41 +49,42 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.addSubview('.like-button', this._likeView);
   },
 
+  toggleAddToPlaylistForm: function () {
+    //add toggle functionality
+    this.addFormToPlaylist();
+  },
+
+  addFormToPlaylist: function () {
+    this._addToPlaylistView.remove();
+    this.addSubview('.add-post-to-playlist', this._addToPlaylistView);
+  },
+
   isOwner: function () {
     if (this.model.escape('author_id') && this.model.escape('author_id') === CURRENT_USER_ID) {
-      return true
+      return true;
     } else {
-      return false
+      return false;
     }
   },
 
   openDeleteForm: function (event) {
     event.preventDefault();
-    // this.userPosts.fetch();
-
     var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
       // collection: this.userPosts, //
       type: 'post',
     });
+    this.renderModal(modal);
+  },
 
+
+  renderModal: function (modal) {
     modalContent = modal.render();
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
   },
 
-  addToPlaylist: function (event) {
-    event.preventDefault();
-    var formAttr = $('.form-post-to-playlist').serializeJSON();
-    if (formAttr === "") { return; }
-    var attr = $.extend({}, formAttr, {post_id: this.model.id});
-    $.ajax({
-        type:'POST',
-        url: '/api/playlistposts.json',
-        data: attr,
-        dataType: 'json',
-    });
-  },
+
 
 });

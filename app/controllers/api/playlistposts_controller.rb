@@ -15,6 +15,7 @@ module Api
     #   @playlist_post = Playlist.find(
 
     def create
+      PlaylistPost.find({playlist_id: params[:playlist_id]
       @playlist_post = current_post.playlist_posts.new(playlist_post_params)
 
       if @playlist_post.save

@@ -16,9 +16,9 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     this.renderPlaylists();
     this.renderPosts();
 
-    this.model.fetch();
-    this._userPosts.fetch();
+    // this.model.fetch();
     this._userPlaylists.fetch();
+    this._userPosts.fetch();
 
     this.listenTo(this.model, 'sync', this.render);
 
@@ -38,6 +38,7 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
 
   renderPlaylists: function () {
     if (this._userPlaylists.length === 0) { return; }
+    debugger;
     this._userPlaylists.forEach(function (playlist) {
       this.addPlaylist(playlist);
     }.bind(this));
@@ -59,6 +60,7 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   addPlaylist: function (playlist) {
+    debugger;
     var subView = new VMCApp.Views.PlaylistThumbnail({
       model: playlist,
       size: 'user'

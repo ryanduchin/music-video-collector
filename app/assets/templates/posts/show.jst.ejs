@@ -3,13 +3,6 @@
 
 <div class="like-button"></div>
 
-
-<%= JST['_addToPlaylist']({
-  userPlaylists: userPlaylists,
-  submit: true,
-}) %>
-
-
 <div>
   <iframe width="1100" height="614"
     src='<%= post.vidEmbedSrc() + post.vidId() %>'
@@ -23,3 +16,6 @@
 <% if (isOwner) { %>
   <button class="btn btn-delete btn-danger btn-sm">Delete</button>
 <% } %>
+
+<button class="btn add-post-to-playlist">[+]</button>
+<div class="render-add-to-playlist-form"</div>

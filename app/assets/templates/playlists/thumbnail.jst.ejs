@@ -1,3 +1,11 @@
+<% if (size === "normal") { %>
+  <% var width = 400; %>
+<% } else { %>
+  <% var width = 250; %>
+<% } %>
+
+
+
 <a href="#/playlists/<%= playlist.id %>">
   <h2 class="thumb-playlist-title">
     <%= playlist.escape('name') %>
@@ -12,8 +20,9 @@
   <% if (post === "none") { %>
 
     <h6 class="thumb-title">&nbsp;</h6>
+
     <div class="thumb blank-thumb">
-      <img width="400" height="225"
+      <img width="<%= width %>" height="<%= 225 * width / 400 %>"
         src='/images/headphones3.svg'></img>
     </div>
 
@@ -22,6 +31,7 @@
     <h6 class="thumb-title">
       <%= post.escape('title') + "/" + post.escape('artist') %>
     </h6>
+
     <%= JST['_renderThumbnail']({ post: post, size: size }) %>
 
   <% } %>
