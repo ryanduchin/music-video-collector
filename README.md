@@ -6,10 +6,7 @@
 
 ## Next actions and list of questions
 
-!!!!NAVBAR INSTANCE VARIABLE IS FUCKING THINGS UP
-
-* user show view is showing ALL posts and playlists
---> need to nest route resource and make new collection
+*** why is my user show page rendering all posts and playlists?
 
 O4 - add logic to submit to the modals to the database
  -after fetch problem, optimize new post modal and song show view - looks
