@@ -9,11 +9,11 @@
 *** why is my user show page rendering all posts and playlists?
 
 T1
-*** How do I add post to playlist in backbone??? Do i need to add new models/collections for playlistposts??
-//javascript ajax manually or make active record request and post with both ids
-- submit add-to-playlist to database
-- confirm working with submitting a new post
- -later: only show playlists that the post is not a part of!
+*** Adding post to playlist - weird logic in my post form, how to fix it? (needs to work with post show and post form)
+ -later:
+  + only show playlists that the post is not a part of!
+  + playlist show thumbnails have 'remove from playlist' buttons
+  + post show have 'remove from playlist' dropdown (??)
 
 T2
 ** sorting feeds? -> need input on monday re: ordering in controller
@@ -26,7 +26,6 @@ bad way would then rerender the whole page -->
 T3
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
-* REMOVE POST FROM PLAYLIST
 
 ## Styling
 * user index and show view optimization (tile size, layout, side scroll)

@@ -49,7 +49,10 @@
     id="post-description"
   ></textarea><br>
 
-  <%= JST['_addToPlaylist']({ userPlaylists: userPlaylists }) %>
+  <%= JST['_addToPlaylist']({
+    userPlaylists: userPlaylists,
+    submit: false,
+  }) %>
 
 
 </div>

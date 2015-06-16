@@ -3,7 +3,12 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   className: 'thumbnail-container post-thumbnail col-md-4',
   template: JST['posts/thumbnail'],
 
+  events: {
+    'click button.remove-playlist' : 'openRemoveForm',
+  },
+
   initialize: function (options) {
+    this.playlist = options.playlist;
     this.size = options.size;
     this._likeView = new VMCApp.Views.LikeShow({
       model: this.model,
@@ -18,6 +23,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     var content = this.template({
       post: this.model,
       size: this.size,
+      playlist: this.playlist
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -27,6 +33,19 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   addLike: function () {
     this._likeView.remove();
     this.addSubview('.like-button', this._likeView);
+  },
+
+  openRemoveForm: function (event) {
+    event.preventDefault();
+    var modal = new VMCApp.Views.RemoveForm({
+      post: this.model,
+      playlist: this.playlist,
+    });
+
+    modalContent = modal.render();
+    $('.m-backdrop').addClass('inactive');
+    $('.m-content').addClass('active');
+    $('.m-content').html(modalContent.$el);
   },
 
 });

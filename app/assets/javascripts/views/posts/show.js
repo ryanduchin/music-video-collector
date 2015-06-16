@@ -68,23 +68,14 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   addToPlaylist: function (event) {
     event.preventDefault();
-    var that = this;
     var formAttr = $('.form-post-to-playlist').serializeJSON();
+    if (formAttr === "") { return; }
     var attr = $.extend({}, formAttr, {post_id: this.model.id});
-    debugger;
-    // var playlistID = Number(formAttr.playlist_id);
-    // var playlist = this.userPlaylists.getOrFetch(playlistID);
-    // playlist.add(this.model);
-    // console.log('saved')
-    // do i need to generate a playlistpost??
     $.ajax({
         type:'POST',
         url: '/api/playlistposts.json',
         data: attr,
         dataType: 'json',
-        success: function (resp) {
-            console.log(resp)
-        },
     });
   },
 

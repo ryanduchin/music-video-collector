@@ -1,5 +1,4 @@
 VMCApp.Views.DeleteForm = Backbone.View.extend({
-  tagName: 'form',
   className: 'delete-form',
   template: JST['delete/form'],
 
