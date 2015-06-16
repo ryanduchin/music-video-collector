@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: playlists
+#
+#  id         :integer          not null, primary key
+#  owner_id   :integer          not null
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Playlist < ActiveRecord::Base
   validates :owner_id, :name, presence: true
   validates :name, uniqueness: {

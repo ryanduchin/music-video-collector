@@ -1,4 +1,5 @@
 VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
+  tagName: 'form',
   className: 'add-post-form',
   template: JST['posts/addtoplaylist'],
 
@@ -8,6 +9,8 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
   },
 
   initialize: function (options) {
+    //only add to your own playlists
+    //later, filter so its only playlists without this post
     this.userPlaylists = options.userPlaylists;
   },
 
@@ -23,8 +26,9 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
   addToPlaylists: function (event) {
     event.preventDefault();
     var formAttr = this.$el.serializeJSON();
-    formAttr[playlist_post][post_id] = this.model.id;
     debugger;
+    formAttr["playlist_posts"]["post_id"] = this.model.id;
+
     // var attr = $.extend({}, formAttr, playlist_post{post_id: this.model.id});
     $.ajax({
         type:'POST',

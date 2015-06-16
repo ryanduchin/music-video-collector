@@ -6,15 +6,16 @@
 
 ## Next actions and list of questions
 
-*** What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
+* What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model
+@-> right now trying to get formAttr out of checkbox form
 
 broken:
--playlist likes thumbnails not rendering (but not elsewhere)
--post followed and likes SQL entries
--user show page
+@-playlist show page - likes not rendering, not fetched (but ok elsewhere)/jbuilder
+@-post followed and likes feeds in .rb - SQL entries
 -add and remove from playlists
  + only show playlists that the post is not a part of!
+-user show page -> help from Charlie. overflow-x and white-space
 
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
@@ -22,7 +23,7 @@ broken:
 ## Styling
 * user index and show view optimization (tile size, layout, side scroll)
 * https://github.com/ChanChar/unsplash_pictures + cloudinary = background images
-* Thumbnail icon locations!!
+* icons within each thumbnail
 * Thumbnail spacing from each other!
 
 ## Code Review Questions:

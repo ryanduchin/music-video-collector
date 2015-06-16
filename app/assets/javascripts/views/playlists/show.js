@@ -7,19 +7,14 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    // $('m-content').removeClass('active');
-    // $('m-backdrop').removeClass('inactive');
-    // this.userPlaylists = options.userPlaylists;
+    this.model.fetch({ wait: true});
 
     this.playlistPosts = this.model.posts();
-
     this.addFollow();
-
     this.renderPosts(); //needed for revisit of page
 
-    // this.listenTo(this.playlistPosts, "sync", this.render);
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model, 'sync', this.addFollow);
+    // this.listenTo(this.playlistPosts, "sync", this.render);
     this.listenTo(this.playlistPosts, "add", this.addPost);
   },
 
@@ -52,6 +47,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   addFollow: function () {
     if (this.isOwner()) { return; }
+    // debugger;
     var followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",
@@ -61,7 +57,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
-    // if (this.userPlaylists.indexOf(this.model) !== -1) {
     if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
       return true
     } else {

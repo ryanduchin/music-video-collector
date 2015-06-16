@@ -13,16 +13,16 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
     this.post = options.post;
     this.playlist = options.playlist;
 
-    this.playlistPost = new VMCApp.Models.PlaylistPost({
+    this.model = new VMCApp.Models.PlaylistPost({
       post_id: this.post.id,
       playlist_id: this.playlist.id
     });
-    this.playlistPost.fetch();
+    this.model.save();
   },
 
   render: function () {
     var content = this.template({
-      post: this.post,
+      post: this.model,
       playlist: this.playlist,
     });
     this.$el.html(content);
@@ -47,17 +47,22 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
   },
 
   removeFromPlaylist: function (event) {
-    debugger;
-    $.ajax({
-        type:'DELETE',
-        url: '/api/playlistposts/' + this.playlistPost.id + '.json',
-        data: this.playlistPost.toJSON(),
-        dataType: 'json',
-        success: function () {
-          this.removeModal();
-          window.location.reload();
-        }
-    });//.bind(this));
+    event.preventDefault();
+    this.model.destroy();
+    this.removeModal();
+    window.location.reload();
+  },
+
+    // $.ajax({
+    //     type:'DELETE',
+    //     url: '/api/playlistposts/' + this.playlistPost.id + '.json',
+    //     data: this.playlistPost.toJSON(),
+    //     dataType: 'json',
+    //     success: function () {
+    //       this.removeModal();
+    //       window.location.reload();
+    //     }
+    // });//.bind(this));
 
   },
 

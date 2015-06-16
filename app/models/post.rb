@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id          :integer          not null, primary key
+#  author_id   :integer          not null
+#  title       :string           not null
+#  url         :string           not null
+#  artist      :string
+#  description :text
+#  album       :string
+#  year        :string
+#  staff       :boolean          default(FALSE)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Post < ActiveRecord::Base
   validates :author_id, :title, :url, presence: true
   belongs_to :user, foreign_key: :author_id
@@ -22,15 +39,16 @@ class Post < ActiveRecord::Base
   def self.get_collection(filter, current_user)
     case filter
     when 'all'
-      return Post.all.order(created_at: :desc)
+      return Post.all.order(created_at: :desc).limit(30)
     when 'top'
-      return Post.joins(:likes)
-      # count > 1????
-
+      return Post.joins(:likes).group("posts.id").order('count(likes.id) desc').limit(30)
     when 'user'
-      return current_user.posts.order(created_at: :desc)
+      return current_user.posts.order(created_at: :desc).limit(30)
     when 'liked'
-      return current_user.liked_posts#.order('post.like.created_at')
+      return Post.where("author_id=?", current_user.id)
+      # .joins(:likes).order('created_at desc')
+
+      # return current_user.posts.join(:likes).order('created_at desc').limit(30)
     when 'staff'
       return Post.all.where(staff: true).order(created_at: :desc)
     when 'followed'
