@@ -12,7 +12,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
     $('m-content').removeClass('active');
     $('m-backdrop').removeClass('inactive');
 
-    this.allPosts = options.allPosts;
+    this.userPosts = new VMCApp.Collections.Posts({ filter: 'user' });
     this.userPlaylists = options.userPlaylists;
     this.userPlaylists.fetch(); //cause problems in user show view BUT fetches for post show dropdown
     this.router = options.router;
@@ -34,7 +34,7 @@ VMCApp.Views.NavView = Backbone.View.extend({
 
     var modal = new VMCApp.Views.PostForm({
       model: new VMCApp.Models.Post(),
-      collection: this.allPosts,
+      collection: this.userPosts,
       userPlaylists: this.userPlaylists,
     });
     modalContent = modal.render();

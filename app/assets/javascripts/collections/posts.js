@@ -3,9 +3,10 @@ VMCApp.Collections.Posts = Backbone.Collection.extend({
   initialize: function (options) {
     if (options.user) {
       this.user = options.user;
-    }
-    if (options.filter) {
+    } else if (options.filter) {
       this.filter = options.filter;
+    } else {
+      this.filter = 'all'; //needed?
     }
   },
 
