@@ -1,9 +1,10 @@
 VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
   className: 'add-post-form',
-  template: JST['posts/add_post_to_playlist'],
+  template: JST['posts/addtoplaylist'],
 
   events: {
     'click button.submit-remove' : 'removeFromPlaylist',
+    'click .submit-playlists' : 'addToPlaylists',
   },
 
   initialize: function (options) {
@@ -14,14 +15,12 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
     var content = this.template({
       post: this.model,
       userPlaylists: this.userPlaylists,
-      submit: true,
     });
     this.$el.html(content);
     return this;
   },
 
-
-  addToPlaylist: function (event) {
+  addToPlaylists: function (event) {
     event.preventDefault();
     var formAttr = this.$el.serializeJSON();
     formAttr[playlist_post][post_id] = this.model.id;

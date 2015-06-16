@@ -58,7 +58,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   addFormToPlaylist: function () {
     this._addToPlaylistView.remove();
-    this.addSubview('.add-post-to-playlist', this._addToPlaylistView);
+    this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
   },
 
   isOwner: function () {

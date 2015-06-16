@@ -8,7 +8,10 @@
 
 O1 cloudinary
 
+* broken addtoplaylist functionality
+
 * refactor collections
+* refactor like buttons like post show
 * fix post.rb followed (with user.rb associations)
 
 *** user show page shows extra playlist icon??

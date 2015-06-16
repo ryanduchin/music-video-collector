@@ -1,13 +1,16 @@
 <p>Add to Playlists:</p>
 <form class="form-post-to-playlist">
-<select name="playlist_posts[playlist_id]">
 
 <% userPlaylists.forEach(function (playlist) { %>
   <div class="checkbox">
-    <label><input type="checkbox" value="<%= playlist.id %>">
+    <label><input type="checkbox"
+                  name="playlist_posts[playlist_id]"
+                  value="<%= playlist.id %>">
       <%= playlist.escape('name') %>
     </label>
   </div>
 <% }); %>
+
+<input type="submit" class="submit-playlists" value="Submit">
 
 </form>
