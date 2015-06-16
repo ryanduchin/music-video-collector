@@ -56,7 +56,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
 
   post_show: function (id) {
-    var post = this.allPosts.getOrFetch(id);
+    var posts = new VMCApp.Collections.Posts({ filter: 'all' })
+    var post = posts.getOrFetch(id);
     var newView = new VMCApp.Views.PostShow({
       model: post,
       userPlaylists: this.userPlaylists,
@@ -65,7 +66,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlist_show: function (id) {
-    var playlist = this.allPlaylists.getOrFetch(id);
+    var playlists = new VMCApp.Collections.Playlists({ filter: 'all' })
+    var playlist = playlists.getOrFetch(id);
     var newView = new VMCApp.Views.PlaylistShow({
       model: playlist,
     });
@@ -73,6 +75,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_show: function (id) {
+    var users = new VMCApp.Collections.Users({ filter: 'all' })
     var user = this.allUsers.getOrFetch(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
