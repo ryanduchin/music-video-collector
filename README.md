@@ -26,6 +26,7 @@ bad way would then rerender the whole page -->
 T3
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
+* REMOVE POST FROM PLAYLIST
 
 ## Styling
 * user index and show view optimization (tile size, layout, side scroll)

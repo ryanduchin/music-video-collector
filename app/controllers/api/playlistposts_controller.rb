@@ -1,5 +1,5 @@
 module Api
-  class PlaylistPostsController < ApiController
+  class PlaylistpostsController < ApiController
 
     def create
       @playlist_post = current_post.playlist_posts.new(playlist_post_params)
@@ -20,7 +20,7 @@ module Api
     private
 
     def playlist_post_params
-      params.require(:playlistpost).permit(:playlist_id)
+      params.permit(:playlist_id, :post_id)
     end
 
     def current_post

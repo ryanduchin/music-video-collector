@@ -70,6 +70,8 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var that = this;
     var formAttr = $('.form-post-to-playlist').serializeJSON();
+    var attr = $.extend({}, formAttr, {post_id: this.model.id});
+    debugger;
     // var playlistID = Number(formAttr.playlist_id);
     // var playlist = this.userPlaylists.getOrFetch(playlistID);
     // playlist.add(this.model);
@@ -78,7 +80,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     $.ajax({
         type:'POST',
         url: '/api/playlistposts.json',
-        data: formAttr,
+        data: attr,
         dataType: 'json',
         success: function (resp) {
             console.log(resp)
