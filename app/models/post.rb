@@ -24,8 +24,9 @@ class Post < ActiveRecord::Base
     when 'all'
       return Post.all.order(created_at: :desc)
     when 'top'
-      return Post.all#.where(
-      # where(num_likes > 1)#.order('num_likes')
+      return Post.joins(:likes)
+      # count > 1????
+
     when 'user'
       return current_user.posts.order(created_at: :desc)
     when 'liked'
@@ -34,8 +35,8 @@ class Post < ActiveRecord::Base
       return Post.all.where(staff: true).order(created_at: :desc)
     when 'followed'
       posts = []
-      users = current_user.user_follows
-      playlists = current_user.playlist_follows
+      users = current_user.user_follows.order(created_at: :desc)
+      playlists = current_user.playlist_follows.order(created_at: :desc)
       users.each { |item| posts.concat(item.posts) }
       playlists.each { |item| posts.concat(item.posts) }
       return posts #.order(created_at: :desc)

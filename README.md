@@ -7,11 +7,12 @@
 ## Next actions and list of questions
 
 broken:
--playlist likes (but not elsewhere)
+-add and delete from playlists
+-playlist likes thumbnails not rendering (but not elsewhere)
+-post followed and likes SQL entries
 
 O1 cloudinary
 
-* broken addtoplaylist functionality
 * look for incorrect collection references
 * fix post.rb followed (with user.rb associations)
 
