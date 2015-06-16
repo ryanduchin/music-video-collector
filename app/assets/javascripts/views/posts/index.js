@@ -19,7 +19,9 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    this.collection.forEach(function (post) { this.addPost(post); }.bind(this));
+    this.collection.forEach(function (post) {
+      this.addPost(post);
+    }.bind(this));
   },
 
   addPost: function (post) {

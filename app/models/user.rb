@@ -23,6 +23,12 @@ class User < ActiveRecord::Base
             foreign_key: :follower_id,
             source_type: 'Playlist'
 
+  # Association through user_follows to playlist_posts
+  # Association through playlist_follows to posts
+
+  # has_many :all_follows, through: :follows, source: :followable
+  # has_many :all_followed_posts, through: :all_follows, source: :post
+
 
   # someone else follows user / Follow:followable
   has_many :followings,

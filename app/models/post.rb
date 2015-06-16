@@ -38,7 +38,7 @@ class Post < ActiveRecord::Base
       followed_users = current_user.user_follows
       followed_users.each { |user| playlists.concat(user.playlists) }
       playlists.concat(current_user.playlist_follows)
-      playlists.each { |playlist| @posts.concat(playlist.posts) }
+      playlists.each { |playlist| posts.concat(playlist.posts) }
       posts#.order(created_at: :desc)
       return posts
     end
