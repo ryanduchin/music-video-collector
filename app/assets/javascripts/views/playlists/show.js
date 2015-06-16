@@ -7,10 +7,10 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    $('m-content').removeClass('active');
-    $('m-backdrop').removeClass('inactive');
-
+    // $('m-content').removeClass('active');
+    // $('m-backdrop').removeClass('inactive');
     // this.userPlaylists = options.userPlaylists;
+
     this.playlistPosts = this.model.posts();
 
     this.addFollow();

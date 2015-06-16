@@ -34,10 +34,12 @@ VMCApp.Views.PlaylistsIndex = Backbone.CompositeView.extend({
   },
 
   getTitle: function (filter) {
+    // debugger;
     var titles = {
       'all' : 'All Playlists',
       'other' : 'Other Playlists',
       'user' : 'Your Playlists',
+      'followed' : 'Followed Playlists',
     };
     return titles[filter];
   },
