@@ -2,17 +2,10 @@ module Api
   class PlaylistsController < ApiController
 
     def index
-      case params[:filter]
-      when 'all'
-        @playlists = Playlist.all.order(:name)
-      when 'other'
-        @playlists = Playlist.all
-                             .where('owner_id != ?', current_user.id)
-                             .order(created_at: :desc)
-      when 'user'
-        @playlists = current_user.playlists.order(:name)
-      when 'followed'
-        @playlists = current_user.playlist_follows.order(:name) #or .order(follow_created_at)
+      if params[:filter]
+        @playlists = Playlist.get_collection(params[:filter])
+      elsif params[:user_id]
+        @playlists = User.where('id=?', params[:user_id])[0].playlists
       end
 
       render :index

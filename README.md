@@ -15,8 +15,12 @@ O4 - add logic to submit to the modals to the database
  -later: only show playlists that the post is not a part of!
 
 *** How do I add post to playlist in backbone??? Do i need to add new models/collections for playlistposts??
+//javascript ajax manually or make active record request and post with both ids
 
-O5 *** sorting feeds? -> need input on monday re: ordering in controller
+*** How do I deal with nested routes in controller?
+
+
+O5 ** sorting feeds? -> need input on monday re: ordering in controller
 - easy way:
 --> SQL query in controller
 - hard way: in view, add an event listener. click sort : sortPosts.
