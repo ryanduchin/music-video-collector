@@ -9,6 +9,7 @@
 * What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model
 @-> right now trying to get formAttr out of checkbox form
+-> switch to dropdown again.
 
 broken:
 @-playlist show page - likes not rendering, not fetched (but ok elsewhere)/jbuilder
