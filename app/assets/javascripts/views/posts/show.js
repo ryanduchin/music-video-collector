@@ -29,9 +29,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       userPlaylists: this.userPlaylists,
     });
 
-    // this.addLike();
-
-    // this.listenTo(this.model.like(), 'change', this.addLike);
   },
 
   render: function () {
@@ -46,10 +43,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  // addLike: function () {
-  //   this._likeView.remove();
-  //   this.addSubview('.like-button', this._likeView);
-  // },
 
   toggleAddToPlaylistForm: function () {
     //add toggle functionality

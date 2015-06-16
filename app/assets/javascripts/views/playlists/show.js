@@ -13,19 +13,14 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     // this.userPlaylists = options.userPlaylists;
     this.playlistPosts = this.model.posts();
 
-    this._followView = new VMCApp.Views.FollowShow({
-      model: this.model,
-      type: "Playlist",
-      btnSm: false,
-    });
-    // this.addFollow();
+    this.addFollow();
+
     this.renderPosts(); //needed for revisit of page
 
     // this.listenTo(this.playlistPosts, "sync", this.render);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addFollow);
     this.listenTo(this.playlistPosts, "add", this.addPost);
-    this.listenTo(this.model.follow(), 'change', this.addFollow);
   },
 
   render: function () {
@@ -57,8 +52,12 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   addFollow: function () {
     if (this.isOwner()) { return; }
-    this._followView.remove();
-    this.addSubview('.follow-button', this._followView);
+    var followView = new VMCApp.Views.FollowShow({
+      model: this.model,
+      type: "Playlist",
+      btnSm: false,
+    });
+    this.addSubview('.follow-button', followView);
   },
 
   isOwner: function () {
