@@ -5,6 +5,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    "" : "posts_index",
     ":filter/posts" : "posts_index",
     ":filter/playlists" : "playlists_index",
     ":filter/users" : "users_index",
@@ -14,21 +15,13 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "users/:id" : "users_show"
   },
 
-  swapView: function (newView) {
-    this._currentView && this._currentView.remove();
-    this._currentView = newView;
-    this.$rootEl.html(this._currentView.$el);
-    this._currentView.render();
-  },
-
-
-
   posts_index: function (filter) {
-    var posts = new VMCApp.Collections.Posts({ filter: filter })
+    var _filter = filter || 'followed';
+    var posts = new VMCApp.Collections.Posts({ filter: _filter })
     posts.fetch();
     var newView = new VMCApp.Views.PostsIndex({
       collection: posts,
-      filter: filter,
+      filter: _filter,
     });
     this.swapView(newView);
   },
@@ -52,7 +45,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
   },
-
 
 
   post_show: function (id) {
@@ -82,5 +74,13 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
   },
+
+  swapView: function (newView) {
+    this._currentView && this._currentView.remove();
+    this._currentView = newView;
+    this.$rootEl.html(this._currentView.$el);
+    this._currentView.render();
+  },
+
 
 });
