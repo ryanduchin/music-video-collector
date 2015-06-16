@@ -10,16 +10,14 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.userPlaylists = options.userPlaylists;
+    this.addLike();
 
     this.listenTo(this.model, 'sync', this.render);
-
-    this.addLike();
 
     this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
       model: this.model,
       userPlaylists: this.userPlaylists,
     });
-
   },
 
   render: function () {

@@ -33,14 +33,25 @@ class Post < ActiveRecord::Base
     when 'staff'
       return Post.all.where(staff: true).order(created_at: :desc)
     when 'followed'
-      playlists = []
       posts = []
-      followed_users = current_user.user_follows
-      followed_users.each { |user| playlists.concat(user.playlists) }
-      playlists.concat(current_user.playlist_follows)
-      playlists.each { |playlist| posts.concat(playlist.posts) }
-      posts#.order(created_at: :desc)
-      return posts
+      users = current_user.user_follows
+      playlists = current_user.playlist_follows
+      users.each { |item| posts.concat(item.posts) }
+      playlists.each { |item| posts.concat(item.posts) }
+      return posts #.order(created_at: :desc)
+
+      # not ordering!
+      # duplicate posts?
+
+
+      # playlists = []
+      # posts = []
+      # followed_users = current_user.user_follows
+      # followed_users.each { |user| playlists.concat(user.playlists) }
+      # playlists.concat(current_user.playlist_follows)
+      # playlists.each { |playlist| posts.concat(playlist.posts) }
+      # posts#.order(created_at: :desc)
+      # return posts
     end
   end
 

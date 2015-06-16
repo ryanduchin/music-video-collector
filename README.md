@@ -6,6 +6,9 @@
 
 ## Next actions and list of questions
 
+broken:
+-playlist likes (but not elsewhere)
+
 O1 cloudinary
 
 * broken addtoplaylist functionality

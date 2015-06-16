@@ -8,8 +8,9 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.playlist = options.playlist;
+    this.playlist = options.playlist; //if exists
     this.size = options.size;
+
     this.addLike();
   },
 
