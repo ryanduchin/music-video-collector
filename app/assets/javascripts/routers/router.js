@@ -191,8 +191,12 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
   users_show: function (id) {
     var user = this.allUsers.getOrFetch(id);
+    var userIDPosts = new VMCApp.Collections.UserIDPosts(id);
+    var userIDPlaylists = new VMCApp.Collections.UserIDPlaylists(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
+      userIDPosts: userIDPosts,
+      userIDPlaylists : userIDPlaylists,
     });
     this.swapView(newView);
   },

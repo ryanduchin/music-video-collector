@@ -18,6 +18,7 @@ O4 - add logic to submit to the modals to the database
 //javascript ajax manually or make active record request and post with both ids
 
 *** How do I deal with nested routes in controller?
+-- got it working BUT doing this wrong. need to have it all go to user show page.
 
 
 O5 ** sorting feeds? -> need input on monday re: ordering in controller
@@ -39,7 +40,8 @@ O6 * user index and show view optimization (tile size, layout, side scroll)
 * is my modal save adding to the correct collection? (allposts vs userposts?)
 ** VIMEO Ajax request not always rerendering thumbnail (posts index)
 
-
+Styling -
+https://github.com/ChanChar/unsplash_pictures
 
 ## Minimum Viable Product
 Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.

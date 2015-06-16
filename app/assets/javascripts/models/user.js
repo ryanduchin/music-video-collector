@@ -4,12 +4,12 @@ VMCApp.Models.User = Backbone.Model.extend({
 
   parse: function (response) {
     if (response.playlists) {
-      this.playlists().set(response.playlists, { parse: true });
+      this.playlists().set(response.playlists);
       delete response.posts;
     }
 
     if (response.posts) {
-      this.posts().set(response.posts, { parse: true });
+      this.posts().set(response.posts);
       delete response.posts;
     }
 
