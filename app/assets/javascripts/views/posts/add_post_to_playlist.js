@@ -1,4 +1,4 @@
-VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
+VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
   tagName: 'form',
   className: 'add-post-form',
   template: JST['posts/addtoplaylist'],
@@ -32,15 +32,20 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
   addToPlaylists: function (event) {
     event.preventDefault();
     if (this.playlistID === "") { return; }
-    var attr = {
+    var attrs = {
       playlist_posts: {
         post_id: this.model.id,
         playlist_id: this.playlistID,
       }
     };
-    debugger;
+    var that = this;
     var playlistPost = new VMCApp.Models.PlaylistPost();
-    playlistPost.save();
+    playlistPost.set(attrs);
+    playlistPost.save({}, {
+      success: function () {
+        that.remove();
+      }
+    });
   },
 
 

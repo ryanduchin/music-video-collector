@@ -5,10 +5,11 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   events: {
     'click button.remove-playlist' : 'openRemoveForm',
+    'click button.btn-delete' : 'openDeleteForm',
   },
 
   initialize: function (options) {
-    // this.playlist = options.playlist; //if exists
+    this.playlist = options.playlist; //if exists
     this.isOwner = options.isOwner; //if exists
     this.size = options.size;
 

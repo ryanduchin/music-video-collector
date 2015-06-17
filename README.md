@@ -8,6 +8,8 @@
 
 T1
 add and remove from playlist functionality
+*** why isnt addToPlaylists function saving (add_post_to_playlist.js)
+
 * What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model
 @-> right now trying to get formAttr out of checkbox form
@@ -58,7 +60,9 @@ Expanding:
 - [X] Feed option: Top Staff picks
 - [bug] Feed option: top liked videos (across entire site)
 - [ ] *** Playback speed controls!
-- [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
+- [ ] *** Advanced video views - cinema view(background dark)
+- [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
+
 - [ ] Search for users/playlists/posts by any fields (if time)
 
 Advanced Optimization

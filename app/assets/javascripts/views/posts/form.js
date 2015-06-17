@@ -46,7 +46,6 @@ VMCApp.Views.PostForm = Backbone.View.extend({
 
   addToPlaylist: function (playlistAttr, id) {
     if (formAttr === "") { return; }
-    debugger;
     var attr = $.extend({}, playlistAttr, {post_id: id});
     $.ajax({
         type:'POST',
