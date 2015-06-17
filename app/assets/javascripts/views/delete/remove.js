@@ -1,4 +1,4 @@
-VMCApp.Views.RemoveForm = Backbone.View.extend({
+VMCApp.Views.RemoveForm = Backbone.CompositeView.extend({
   className: 'remove-form',
   template: JST['delete/remove'],
 
@@ -13,16 +13,22 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
     this.post = options.post;
     this.playlist = options.playlist;
 
-    this.model = new VMCApp.Models.PlaylistPost({
-      post_id: this.post.id,
-      playlist_id: this.playlist.id
+    var attrs = {
+      "post_id": this.post.id,
+      "playlist_id": this.playlist.id,
+    };
+    this.playlistPost = new VMCApp.Models.PlaylistPost();
+    this.playlistPost.set(attrs);
+    this.playlistPost.save({
+      success: function () {
+        debugger;
+      }
     });
-    this.model.save();
   },
 
   render: function () {
     var content = this.template({
-      post: this.model,
+      post: this.post,
       playlist: this.playlist,
     });
     this.$el.html(content);
@@ -48,7 +54,7 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
 
   removeFromPlaylist: function (event) {
     event.preventDefault();
-    this.model.destroy();
+    this.playlistPost.destroy();
     this.removeModal();
     window.location.reload();
   },

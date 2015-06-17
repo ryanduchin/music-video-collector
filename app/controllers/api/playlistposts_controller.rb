@@ -12,8 +12,8 @@ module Api
     end
 
     def create
-      @playlistpost = PlaylistPost.find_by(playlist_post_params)
-      if @playlistpost
+      @playlist_post = PlaylistPost.find_by(playlist_post_params)
+      if @playlist_post
         render json: @playlist_post
 
       else
@@ -28,7 +28,7 @@ module Api
     end
 
     def destroy
-      @playlist_post = PlaylistPost.where(playlist_post_params)
+      @playlist_post = PlaylistPost.find(params[:id])
       @playlist_post.destroy
       render json: {}
     end
