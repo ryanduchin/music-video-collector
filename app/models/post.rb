@@ -48,7 +48,7 @@ class Post < ActiveRecord::Base
       return Post.where("author_id=?", current_user.id)
                 .joins(:likes).order('likes.created_at desc').limit(30)
     when 'staff'
-      return Post.all.where(staff: true).order(created_at: :desc)
+      return Post.all.where(staff: true).order(created_at: :desc).limit(30)
     when 'followed'
       posts = []
       users = current_user.user_follows.order(created_at: :desc)
@@ -59,16 +59,6 @@ class Post < ActiveRecord::Base
 
       # not ordering!
       # duplicate posts?
-
-
-      # playlists = []
-      # posts = []
-      # followed_users = current_user.user_follows
-      # followed_users.each { |user| playlists.concat(user.playlists) }
-      # playlists.concat(current_user.playlist_follows)
-      # playlists.each { |playlist| posts.concat(playlist.posts) }
-      # posts#.order(created_at: :desc)
-      # return posts
     end
   end
 

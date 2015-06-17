@@ -8,11 +8,10 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.playlistPosts = this.model.posts();
-    this.addFollow();
     this.renderPosts(); //needed for revisit of page
 
     this.listenTo(this.model, 'sync', this.render);
-    // this.listenTo(this.playlistPosts, "sync", this.render);
+    this.listenToOnce(this.model, 'sync', this.addFollow);
     this.listenTo(this.playlistPosts, "add", this.addPost);
   },
 
@@ -56,7 +55,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
-    debugger;
     return (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID)
   },
 

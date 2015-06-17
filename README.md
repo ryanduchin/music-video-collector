@@ -6,24 +6,20 @@
 
 ## Next actions and list of questions
 
+T1
+add and remove from playlist functionality
 * What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model
 @-> right now trying to get formAttr out of checkbox form
 -> switch to dropdown again.
 
-broken:
-@-playlist show page - isOwner is not working!
-- but it does for playlist thumbnails from playlist index!!
-
-@-post followed and likes feeds in .rb - SQL entries
--add and remove from playlists
- + only show playlists that the post is not a part of!
--user show page -> help from Charlie. overflow-x and white-space
 
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
 
 ## Styling
+-user show page -> help from Charlie. overflow-x and white-space
+* sign-in and landing pages
 * user index and show view optimization (tile size, layout, side scroll)
 * https://github.com/ChanChar/unsplash_pictures + cloudinary = background images
 * icons within each thumbnail
@@ -52,6 +48,7 @@ MVP:
 - [X] Like Videos
 - [X] View collection of all your liked videos
 - [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
+- [ ] Add and Remove posts to playlists
 
 Expanding:
 
@@ -63,6 +60,9 @@ Expanding:
 - [ ] *** Playback speed controls!
 - [ ] *** Advanced video views - cinema view, other fancier views (dynamic background color?)
 - [ ] Search for users/playlists/posts by any fields (if time)
+
+Advanced Optimization
+- [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
 
 Not going to get to:
 - [ ] Edit profile with tagline

@@ -6,7 +6,7 @@ module Api
       when 'all'
         @users = User.all
       when 'followed'
-        @users = current_user.user_follows
+        @users = current_user.user_follows.order(:name)
       end
       render :index
     end

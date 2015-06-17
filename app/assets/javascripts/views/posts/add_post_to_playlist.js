@@ -5,6 +5,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
 
   events: {
     'click button.submit-remove' : 'removeFromPlaylist',
+    'change .playlist-dropdown' : 'selectPlaylist',
     'click .submit-playlists' : 'addToPlaylists',
   },
 
@@ -12,6 +13,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
     //only add to your own playlists
     //later, filter so its only playlists without this post
     this.userPlaylists = options.userPlaylists;
+    this.playlistID = "";
   },
 
   render: function () {
@@ -23,19 +25,24 @@ VMCApp.Views.AddToPlaylistForm = Backbone.View.extend({
     return this;
   },
 
+  selectPlaylist: function (event) {
+    this.playlistID = event.target.value;
+  },
+
   addToPlaylists: function (event) {
     event.preventDefault();
-    var formAttr = this.$el.serializeJSON();
+    if (this.playlistID === "") { return; }
+    var attr = {
+      playlist_posts: {
+        post_id: this.model.id,
+        playlist_id: this.playlistID,
+      }
+    };
     debugger;
-    formAttr["playlist_posts"]["post_id"] = this.model.id;
-
-    // var attr = $.extend({}, formAttr, playlist_post{post_id: this.model.id});
-    $.ajax({
-        type:'POST',
-        url: '/api/playlistposts.json',
-        data: formAttr,
-        dataType: 'json',
-    });
+    var playlistPost = new VMCApp.Models.PlaylistPost();
+    playlistPost.save();
   },
+
+
 
 });

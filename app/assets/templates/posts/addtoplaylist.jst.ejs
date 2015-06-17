@@ -1,3 +1,4 @@
+<!--
 <% userPlaylists.forEach(function (playlist) { %>
   <div class="checkbox">
     <label><input type="checkbox"
@@ -7,5 +8,18 @@
     </label>
   </div>
 <% }); %>
+-->
 
-<input type="submit" class="submit-playlists" value="Submit">
+<select class="playlist-dropdown">
+  <option value="">
+
+  <% userPlaylists.forEach(function (playlist) { %>
+
+    <option name="playlist_post[playlist_id]" value="<%= playlist.id %>">
+      <%= playlist.escape('name') %>
+    </option>
+
+  <% }); %>
+
+</select>
+<input type="submit" class="submit-playlists" value="Add to Playlist">

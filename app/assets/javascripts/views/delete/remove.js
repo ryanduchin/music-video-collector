@@ -64,6 +64,5 @@ VMCApp.Views.RemoveForm = Backbone.View.extend({
     //     }
     // });//.bind(this));
 
-  },
 
 });
