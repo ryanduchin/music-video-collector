@@ -4,7 +4,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   events: {
     'click button.btn-delete' : 'openDeleteForm',
-    'click button.add-post-to-playlist' : 'addFormToPlaylist',
+    'click button.add-post-to-playlist' : 'openPlaylistForm',
   },
 
 
@@ -17,11 +17,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.addLike();
 
     this.listenTo(this.model, 'sync', this.render);
-
-    this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
-      model: this.model,
-      userPlaylists: this.userPlaylists,
-    });
   },
 
   render: function () {
@@ -44,9 +39,14 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.addSubview('.like-button', likeView);
   },
 
-  addFormToPlaylist: function () {
-    this._addToPlaylistView.remove();
-    this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
+  openPlaylistForm: function (event) {
+    event.preventDefault();
+
+    var modal = new VMCApp.Views.AddToPlaylistForm({
+      model: this.model,
+      userPlaylists: this.userPlaylists,
+    });
+    this.renderModal(modal);
   },
 
   isOwner: function () {
