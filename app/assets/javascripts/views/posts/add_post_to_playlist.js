@@ -33,9 +33,9 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
     event.preventDefault();
     if (this.playlistID === "") { return; }
     var attrs = {
-      playlist_posts: {
-        post_id: this.model.id,
-        playlist_id: this.playlistID,
+      "playlist_posts": {
+        "post_id": this.model.id,
+        "playlist_id": this.playlistID,
       }
     };
     var that = this;

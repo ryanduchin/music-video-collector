@@ -9,20 +9,14 @@
 T1
 add and remove from playlist functionality
 Add
-*** why isnt addToPlaylists function saving (add_post_to_playlist.js)
+*** why isnt addToPlaylists function saving (add_post_to_playlist.js) && (remove.js)!
 
 Remove
 *** why isn't isOwner being passed(postthumbnail view) (prevent 'remove' icon from being displayed in other playlists)
 
-
-* What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
--backbone model
-@-> right now trying to get formAttr out of checkbox form
--> switch to dropdown again.
-
-
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
+* followed users
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space
