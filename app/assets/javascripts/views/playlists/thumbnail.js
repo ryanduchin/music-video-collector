@@ -5,7 +5,7 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.size = options.size;
-    this.featuredPost = this.choosePost(this.model);
+    this.featuredPost = this.choosePost();
     this.addFollow();
   },
 
@@ -21,8 +21,9 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     return this;
   },
 
-  choosePost: function (playlist) {
-    var posts = playlist.posts();
+  choosePost: function () {
+    var posts = this.model.posts();
+    debugger;
     if (posts.length === 0) { return "none"; }
     var i = 0;
     var post = posts.at(i);
