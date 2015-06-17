@@ -67,6 +67,8 @@ Expanding:
 
 Advanced Optimization
 - [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
+- [ ] add 'add-to-playlist' button onto thumbnails
+- [ ] user show page has that user's likes (might be a bit hard with little payoff)
 
 Not going to get to:
 - [ ] Edit profile with tagline

@@ -9,7 +9,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.playlist = options.playlist; //if exists
-    // this.isOwner = options.isOwner; //if exists
     this.size = options.size;
 
     this.addLike();
@@ -51,7 +50,9 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
-    if (this.playlist.escape('owner_id') && this.playlist.escape('owner_id') === CURRENT_USER_ID) {
+    if (this.playlist &&
+        this.playlist.escape('owner_id') &&
+        this.playlist.escape('owner_id') === CURRENT_USER_ID) {
       return true;
     } else {
       return false;

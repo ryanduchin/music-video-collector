@@ -19,11 +19,7 @@ VMCApp.Views.RemoveForm = Backbone.CompositeView.extend({
     };
     this.playlistPost = new VMCApp.Models.PlaylistPost();
     this.playlistPost.set(attrs);
-    this.playlistPost.save({
-      success: function () {
-        debugger;
-      }
-    });
+    this.playlistPost.save();
   },
 
   render: function () {
