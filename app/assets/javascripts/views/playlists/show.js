@@ -16,6 +16,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    // debugger;
     var content = this.template({
       playlist: this.model,
       isOwner: this.isOwner()
@@ -55,7 +56,11 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
-    return (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID)
+    if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
+      return true;
+    } else {
+      return false;
+    }
   },
 
   openDeleteForm: function (event) {

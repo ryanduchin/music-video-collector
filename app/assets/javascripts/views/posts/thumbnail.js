@@ -9,11 +9,12 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.playlist = options.playlist; //if exists
-    this.isOwner = options.isOwner; //if exists
+    // this.isOwner = options.isOwner; //if exists
     this.size = options.size;
 
     this.addLike();
     this.listenTo(this.model, 'add', this.render);
+    this.listenTo(this.playlist, 'sync', this.render);
   },
 
   render: function () {
@@ -21,7 +22,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
       post: this.model,
       size: this.size,
       playlist: this.playlist,
-      isOwner: this.isOwner,
+      isOwner: this.isOwner(),
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -49,8 +50,12 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     this.addSubview('.like-button', likeView);
   },
 
-  // isOwner: function () {
-  //   return (this.playlist.escape('owner_id') && this.playlist.escape('owner_id') === CURRENT_USER_ID)
-  // },
+  isOwner: function () {
+    if (this.playlist.escape('owner_id') && this.playlist.escape('owner_id') === CURRENT_USER_ID) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 
 });
