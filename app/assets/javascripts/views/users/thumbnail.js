@@ -5,14 +5,15 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.size = options.size;
-    this.featuredPost = this.choosePost();
+    this.model.posts().fetch();
     this.addFollow();
+    this.listenTo(this.model.posts(), 'sync', this.render)
   },
 
   render: function () {
     var content = this.template({
       user: this.model,
-      post: this.featuredPost,
+      post: this.choosePost(),
       size: this.size,
     });
     this.$el.html(content);
