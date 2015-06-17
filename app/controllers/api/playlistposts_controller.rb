@@ -12,13 +12,12 @@ module Api
     end
 
     def create
-      @playlistpost = PlaylistPost.where(playlist_post_params)
-
+      @playlistpost = PlaylistPost.find_by(playlist_post_params)
       if @playlistpost
         render json: @playlist_post
 
       else
-        @playlist_post = current_playlist.playlist_posts.new(playlist_post_params)
+        @playlist_post = PlaylistPost.new(playlist_post_params)
 
         if @playlist_post.save
           render json: @playlist_post
@@ -38,10 +37,6 @@ module Api
 
     def playlist_post_params
       params.require(:playlistpost).permit(:playlist_id, :post_id)
-    end
-
-    def current_playlist
-      Playlist.find(params[:playlist_id])
     end
 
   end

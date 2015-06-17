@@ -23,7 +23,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
 
   choosePost: function () {
     var posts = this.model.posts();
-    debugger;
     if (posts.length === 0) { return "none"; }
     var i = 0;
     var post = posts.at(i);
