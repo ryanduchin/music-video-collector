@@ -7,6 +7,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
     'click button.submit-remove' : 'removeFromPlaylist',
     'change .playlist-dropdown' : 'selectPlaylist',
     'click .submit-playlists' : 'addToPlaylists',
+    'click .cancel-submit' : 'removeThis',
   },
 
   initialize: function (options) {
@@ -45,6 +46,11 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
         that.remove();
       }
     });
+  },
+
+  removeThis: function (event) {
+    event.preventDefault();
+    this.remove();
   },
 
 
