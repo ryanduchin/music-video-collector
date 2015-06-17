@@ -127,10 +127,23 @@ button.close {
 //   width: auto;
 // };
 //
-// .btn-sm {
-//   position: relative;
-//   float: left;
-// };
+.btn-sm {
+  position: relative;
+  float: right;
+};
+
+.thumb-buttons {
+  padding: 0px;
+};
+
+.thumb-artist {
+  padding: 0px;
+};
+
+.thumb-title {
+  margin-bottom: 0px;
+};
+
 //
 // .thumbnail-image {
 //   float: left;

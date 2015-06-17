@@ -1,11 +1,18 @@
 <div class="container">
-  <div class="thumbnail-top row">
-    <div class="thumbnail-titles col-md-2">
+  <div class="thumb-top-1 row">
+    <div class="thumb-title">
       <a href="#/posts/<%= post.id %>">
 
         <h4 class="thumb-title">
           <%= post.escape('title') %>
         </h4>
+      </a>
+    </div>
+  </div>
+
+  <div class="thumb-top-2 row">
+    <div class="thumb-artist col-md-2">
+      <a href="#/posts/<%= post.id %>">
 
         <h5 class="thumb-artist">
           <%= post.escape('artist').toUpperCase() %>
@@ -13,7 +20,7 @@
       </a>
     </div>
 
-    <div class="thumbnail-buttons col-md-2">
+    <div class="thumb-buttons col-md-2">
 
       <div class="like-button"></div>
 
@@ -27,7 +34,7 @@
     </div>
   </div>
 
-  <div class="thumbnail-image row">
+  <div class="thumb-image row">
     <a href="#/posts/<%= post.id %>">
       <%= JST['_renderThumbnail']({ post: post, size: size }) %>
     </a>
