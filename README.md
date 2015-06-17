@@ -16,7 +16,7 @@ Remove
 
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
-* followed users
+* User show page
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space
@@ -50,6 +50,7 @@ MVP:
 - [X] View collection of all your liked videos
 - [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
 - [ ] Add and Remove posts to playlists
+- [ ] Guest sign-in
 
 Expanding:
 

@@ -5,7 +5,8 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.size = options.size;
-    this.featuredPost = this.choosePost(this.model);
+    this.featuredPost = this.choosePost();
+    debugger;
     this.addFollow();
   },
 
@@ -20,8 +21,8 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
     return this;
   },
 
-  choosePost: function (user) {
-    var posts = user.posts();
+  choosePost: function () {
+    var posts = this.model.posts();
     if (posts.length === 0) { return 'none'; }
     // var i = 0;
     var startInd = Math.floor(Math.random() * posts.length);
