@@ -26,7 +26,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
   },
 
   selectPlaylist: function (event) {
-    this.playlistID = event.target.value;
+    this.playlistID = Number(event.target.value);
   },
 
   addToPlaylists: function (event) {
@@ -34,7 +34,7 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
     if (this.playlistID === "") { return; }
     var attrs = {
       "post_id": this.model.id,
-      "playlist_id": Number(this.playlistID),
+      "playlist_id": this.playlistID,
     };
     var that = this;
     var playlistPost = new VMCApp.Models.PlaylistPost();
