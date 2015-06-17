@@ -56,12 +56,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
-    // debugger;
-    if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
-      return true
-    } else {
-      return false
-    }
+    debugger;
+    return (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID)
   },
 
   openDeleteForm: function (event) {
