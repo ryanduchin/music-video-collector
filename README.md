@@ -8,7 +8,12 @@
 
 T1
 add and remove from playlist functionality
+Add
 *** why isnt addToPlaylists function saving (add_post_to_playlist.js)
+
+Remove
+*** why isn't isOwner being passed(postthumbnail view) (prevent 'remove' icon from being displayed in other playlists)
+
 
 * What is wrong with my remove.js playlistpost? this.playlistpost is 10x nested!
 -backbone model

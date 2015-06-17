@@ -5,7 +5,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   events: {
     'click button.remove-playlist' : 'openRemoveForm',
-    'click button.btn-delete' : 'openDeleteForm',
   },
 
   initialize: function (options) {
@@ -14,13 +13,14 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     this.size = options.size;
 
     this.addLike();
+    this.listenTo(this.model, 'add', this.render);
   },
 
   render: function () {
     var content = this.template({
       post: this.model,
       size: this.size,
-      // playlist: this.playlist,
+      playlist: this.playlist,
       isOwner: this.isOwner,
     });
     this.$el.html(content);
@@ -36,9 +36,9 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     });
 
     modalContent = modal.render();
+    $('.m-content').html(modalContent.$el);
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
-    $('.m-content').html(modalContent.$el);
   },
 
   addLike: function () {
@@ -48,5 +48,9 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     });
     this.addSubview('.like-button', likeView);
   },
+
+  // isOwner: function () {
+  //   return (this.playlist.escape('owner_id') && this.playlist.escape('owner_id') === CURRENT_USER_ID)
+  // },
 
 });
