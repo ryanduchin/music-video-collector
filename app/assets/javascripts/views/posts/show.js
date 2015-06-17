@@ -4,12 +4,16 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
   events: {
     'click button.btn-delete' : 'openDeleteForm',
-    'click button.add-post-to-playlist' : 'toggleAddToPlaylistForm',
+    'click button.add-post-to-playlist' : 'addFormToPlaylist',
   },
 
 
   initialize: function (options) {
-    this.userPlaylists = options.userPlaylists;
+    // this.userPlaylists = options.userPlaylists;
+
+    this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
+    this.userPlaylists.fetch();
+
     this.addLike();
 
     this.listenTo(this.model, 'sync', this.render);
@@ -18,14 +22,13 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       model: this.model,
       userPlaylists: this.userPlaylists,
     });
-    this._toggleOn = true;
   },
 
   render: function () {
     var content = this.template({
       post: this.model,
-      userPlaylists: this.userPlaylists,
-      size: 'normal',
+      // userPlaylists: this.userPlaylists,
+      // size: 'normal',
       isOwner: this.isOwner(),
     });
     this.$el.html(content);
@@ -41,25 +44,9 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.addSubview('.like-button', likeView);
   },
 
-
-  toggleAddToPlaylistForm: function () {
-    if (this._toggleOn) {
-      this.addFormToPlaylist();
-    } else {
-      this.removeFormToPlaylist();
-    }
-  },
-
   addFormToPlaylist: function () {
-    this._toggleOn = false;
     this._addToPlaylistView.remove();
     this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
-  },
-
-  removeFormToPlaylist: function () {
-    this._toggleOn = true;
-    this._addToPlaylistView.remove();
-    this.removeSubview('.render-add-to-playlist-form', this._addToPlaylistView);
   },
 
   isOwner: function () {

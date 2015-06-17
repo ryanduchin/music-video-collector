@@ -49,8 +49,9 @@ MVP:
 - [X] Like Videos
 - [X] View collection of all your liked videos
 - [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
-- [ ] Add and Remove posts to playlists
+- [X] Add and Remove posts to playlists
 - [ ] Guest sign-in
+- [ ] submission validation (url must be good)
 
 Expanding:
 
@@ -58,16 +59,14 @@ Expanding:
 - [X] View other channels (of users) (like playlists)
 - [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
 - [X] Feed option: Top Staff picks
-- [bug] Feed option: top liked videos (across entire site)
+- [X] Feed option: top liked videos (across entire site)
 - [ ] *** Playback speed controls!
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 
 - [ ] Search for users/playlists/posts by any fields (if time)
-
-Advanced Optimization
 - [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
-- [ ] add 'add-to-playlist' button onto thumbnails
+- [X] add 'add-to-playlist' button onto thumbnails
 - [ ] user show page has that user's likes (might be a bit hard with little payoff)
 
 Not going to get to:

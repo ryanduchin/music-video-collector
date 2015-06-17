@@ -5,13 +5,23 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   events: {
     'click button.remove-playlist' : 'openRemoveForm',
+    'click button.add-post-to-playlist' : 'addFormToPlaylist',
   },
 
   initialize: function (options) {
     this.playlist = options.playlist; //if exists
     this.size = options.size;
 
+    this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
+    this.userPlaylists.fetch();
+
     this.addLike();
+
+    this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
+      model: this.model,
+      userPlaylists: this.userPlaylists,
+    });
+
     this.listenTo(this.model, 'add', this.render);
     this.listenTo(this.playlist, 'sync', this.render);
   },
@@ -57,6 +67,11 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     } else {
       return false;
     }
+  },
+
+  addFormToPlaylist: function () {
+    this._addToPlaylistView.remove();
+    this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
   },
 
 });
