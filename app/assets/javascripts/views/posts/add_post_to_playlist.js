@@ -4,10 +4,13 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
   template: JST['posts/addtoplaylist'],
 
   events: {
-    'click button.submit-remove' : 'removeFromPlaylist',
+    'click button.submit-playlist' : 'addToPlaylist',
+    'click button.close' : 'closeModal',
+    'click button.cancel' : 'closeModal',
+    'click .m-backdrop' : 'closeModal',
+
     'change .playlist-dropdown' : 'selectPlaylist',
-    'click .submit-playlists' : 'addToPlaylists',
-    'click .cancel-submit' : 'removeThis',
+    'click .submit-playlist' : 'addToPlaylist',
   },
 
   initialize: function (options) {
@@ -23,15 +26,33 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
       userPlaylists: this.userPlaylists,
     });
     this.$el.html(content);
+
+    setTimeout(function () {
+      $('.m-backdrop').on('click', this.closeModal.bind(this));
+    }.bind(this), 0);
+
     return this;
+  },
+
+  closeModal: function (event) {
+    event.preventDefault();
+    $('.m-backdrop').off('click');
+    this.removeModal();
+  },
+
+  removeModal: function () {
+    $('.m-content').removeClass('active');
+    $('.m-backdrop').removeClass('inactive');
+    this.remove();
   },
 
   selectPlaylist: function (event) {
     this.playlistID = Number(event.target.value);
   },
 
-  addToPlaylists: function (event) {
+  addToPlaylist: function (event) {
     event.preventDefault();
+    debugger;
     if (this.playlistID === "") { return; }
 
     var attrs = {
@@ -41,16 +62,8 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
     var that = this;
     var playlistPost = new VMCApp.Models.PlaylistPost();
     playlistPost.set(attrs);
-    playlistPost.save({}, {
-      success: function () {
-        that.remove();
-      }
-    });
-  },
-
-  removeThis: function (event) {
-    event.preventDefault();
-    this.remove();
+    playlistPost.save();
+    this.removeModal();
   },
 
 

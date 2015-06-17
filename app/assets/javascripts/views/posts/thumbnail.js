@@ -5,7 +5,7 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   events: {
     'click button.remove-playlist' : 'openRemoveForm',
-    'click button.add-post-to-playlist' : 'addFormToPlaylist',
+    'click button.add-post-to-playlist' : 'openPlaylistForm',
   },
 
   initialize: function (options) {
@@ -16,11 +16,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     this.userPlaylists.fetch();
 
     this.addLike();
-
-    this._addToPlaylistView = new VMCApp.Views.AddToPlaylistForm({
-      model: this.model,
-      userPlaylists: this.userPlaylists,
-    });
 
     this.listenTo(this.model, 'add', this.render);
     this.listenTo(this.playlist, 'sync', this.render);
@@ -38,14 +33,27 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     return this;
   },
 
+  openPlaylistForm: function (event) {
+    event.preventDefault();
+
+    var modal = new VMCApp.Views.AddToPlaylistForm({
+      model: this.model,
+      userPlaylists: this.userPlaylists,
+    });
+    this.renderModal(modal);
+  },
+
   openRemoveForm: function (event) {
     event.preventDefault();
     var modal = new VMCApp.Views.RemoveForm({
       post: this.model,
       playlist: this.playlist,
     });
+    this.renderModal(modal);
+  },
 
-    modalContent = modal.render();
+  renderModal: function (modal) {
+    var modalContent = modal.render();
     $('.m-content').html(modalContent.$el);
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
@@ -67,11 +75,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     } else {
       return false;
     }
-  },
-
-  addFormToPlaylist: function () {
-    this._addToPlaylistView.remove();
-    this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
   },
 
 });

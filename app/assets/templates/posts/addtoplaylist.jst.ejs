@@ -1,3 +1,7 @@
+<button class='close'>&times;</button>
+
+<h3>Add <%= post.escape('title') %> to a playlist:</h3>
+
 <select class="playlist-dropdown">
   <option value="">
 
@@ -10,5 +14,7 @@
   <% }); %>
 
 </select>
-<input type="submit" class="submit-playlists" value="Add to Playlist">
-<input type="submit" class="cancel-submit" value="X">
+
+
+<button class='submit-playlist btn btn-success'>Submit</button>
+<button class='cancel btn btn-danger'>Cancel</button>

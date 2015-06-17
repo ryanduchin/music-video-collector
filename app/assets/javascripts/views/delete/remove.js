@@ -55,16 +55,4 @@ VMCApp.Views.RemoveForm = Backbone.CompositeView.extend({
     window.location.reload();
   },
 
-    // $.ajax({
-    //     type:'DELETE',
-    //     url: '/api/playlistposts/' + this.playlistPost.id + '.json',
-    //     data: this.playlistPost.toJSON(),
-    //     dataType: 'json',
-    //     success: function () {
-    //       this.removeModal();
-    //       window.location.reload();
-    //     }
-    // });//.bind(this));
-
-
 });
