@@ -6,17 +6,8 @@
 
 ## Next actions and list of questions
 
-T1
-add and remove from playlist functionality
-Add
-*** why isnt addToPlaylists function saving (add_post_to_playlist.js) && (remove.js)!
-
-Remove
-*** why isn't isOwner being passed(postthumbnail view) (prevent 'remove' icon from being displayed in other playlists)
-
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
-* User show page
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space
@@ -25,13 +16,6 @@ Remove
 * https://github.com/ChanChar/unsplash_pictures + cloudinary = background images
 * icons within each thumbnail
 * Thumbnail spacing from each other!
-
-## Code Review Questions:
-* validating URL on save of post. (Possible refactoring of database URL to
-  database URL_ID + URL_Source)
-* render_thumbnail template logic with ajax request - ok?
-* is my modal save adding to the correct collection? (allposts vs userposts?)
-** VIMEO Ajax request not always rerendering thumbnail (posts index)
 
 
 ## Minimum Viable Product
@@ -60,13 +44,15 @@ Expanding:
 - [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
 - [X] Feed option: Top Staff picks
 - [X] Feed option: top liked videos (across entire site)
+- [X] add 'add-to-playlist' button onto thumbnails
 - [ ] *** Playback speed controls!
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
-
 - [ ] Search for users/playlists/posts by any fields (if time)
+
+Optimization:
+- [ ] add to playlist toggle subview on/off
 - [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
-- [X] add 'add-to-playlist' button onto thumbnails
 - [ ] user show page has that user's likes (might be a bit hard with little payoff)
 
 Not going to get to:

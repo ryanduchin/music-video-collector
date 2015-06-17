@@ -1,4 +1,5 @@
 <a href="#/posts/<%= post.id %>">
+
   <h4 class="thumb-title">
     <%= post.escape('title') %>
   </h4>
@@ -6,20 +7,22 @@
   <h5 class="thumb-artist">
     <%= post.escape('artist').toUpperCase() %>
   </h5>
-
+  
 </a>
+
+<div class="thumbnail-buttons">
+
   <div class="like-button"></div>
 
-<% if (isOwner) { %>
-    <button class="btn btn-sm remove-playlist"><i class="fa fa-trash-o"></i></button>
-<% } %>
+  <% if (isOwner) { %>
+      <button class="btn remove-playlist close"></button>
+  <% } %>
 
-<button class="btn add-post-to-playlist">[+]</button>
-<div class="render-add-to-playlist-form"</div>
+  <button class="btn add-post-to-playlist">[+]</button>
+  <div class="render-add-to-playlist-form"</div>
+
+</div>
 
 <a href="#/posts/<%= post.id %>">
-
-
   <%= JST['_renderThumbnail']({ post: post, size: size }) %>
-
 </a>
