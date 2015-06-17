@@ -18,6 +18,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       model: this.model,
       userPlaylists: this.userPlaylists,
     });
+    this._toggleOn = true;
   },
 
   render: function () {
@@ -42,13 +43,23 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
 
   toggleAddToPlaylistForm: function () {
-    //add toggle functionality
-    this.addFormToPlaylist();
+    if (this._toggleOn) {
+      this.addFormToPlaylist();
+    } else {
+      this.removeFormToPlaylist();
+    }
   },
 
   addFormToPlaylist: function () {
+    this._toggleOn = false;
     this._addToPlaylistView.remove();
     this.addSubview('.render-add-to-playlist-form', this._addToPlaylistView);
+  },
+
+  removeFormToPlaylist: function () {
+    this._toggleOn = true;
+    this._addToPlaylistView.remove();
+    this.removeSubview('.render-add-to-playlist-form', this._addToPlaylistView);
   },
 
   isOwner: function () {
