@@ -127,7 +127,7 @@ button.close {
 //   width: auto;
 // };
 //
-.btn-sm {
+.thumb-button {
   position: relative;
   float: right;
 };
@@ -142,6 +142,15 @@ button.close {
 
 .thumb-title {
   margin-bottom: 0px;
+};
+
+.playlist-title {
+  text-align: center;
+};
+
+.playlist-delete {
+  margin-top: 20px;
+  float: right;
 };
 
 //

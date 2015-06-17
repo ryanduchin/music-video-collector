@@ -1,11 +1,24 @@
-<h4>Playlist: <%= playlist.escape('name') %></h4>
+<div class="container-fluid">
+  <div class="playlist-show-row-1 row">
+    <div class="col-md-4 col-md-offset-4">
+      <h1 class="playlist-title">
+        <%= playlist.escape('name') %>
+      </h1>
+    </div>
+    <div class="col-md-4">
 
-<% if (!isOwner) { %>
-  <div class="follow-button"></div>
-<% } %>
+      <% if (!isOwner) { %>
+        <div class="follow-button"></div>
+      <% } %>
 
-<ul class="view-posts"></ul>
+      <% if (isOwner) { %>
+        <button class="btn btn-delete btn-danger btn-sm playlist-delete">Delete Playlist</button>
+      <% } %>
+    </div>
+  </div>
 
-<% if (isOwner) { %>
-  <button class="btn btn-delete btn-danger btn-sm">Delete</button>
-<% } %>
+  <div class="playlist-show-row-2 row">
+    <ul class="view-posts"></ul>
+  </div>
+
+</div>
