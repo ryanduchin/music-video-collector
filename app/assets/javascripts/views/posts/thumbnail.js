@@ -8,7 +8,8 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.playlist = options.playlist; //if exists
+    // this.playlist = options.playlist; //if exists
+    this.isOwner = options.isOwner; //if exists
     this.size = options.size;
 
     this.addLike();
@@ -18,7 +19,8 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
     var content = this.template({
       post: this.model,
       size: this.size,
-      playlist: this.playlist
+      // playlist: this.playlist,
+      isOwner: this.isOwner,
     });
     this.$el.html(content);
     this.attachSubviews();

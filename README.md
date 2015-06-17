@@ -12,7 +12,8 @@
 -> switch to dropdown again.
 
 broken:
-@-playlist show page - likes not rendering, not fetched (but ok elsewhere)/jbuilder
+@-playlist show page - isOwner is not working!
+- but it does for playlist thumbnails!!
 @-post followed and likes feeds in .rb - SQL entries
 -add and remove from playlists
  + only show playlists that the post is not a part of!

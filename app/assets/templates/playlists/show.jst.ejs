@@ -1,6 +1,8 @@
 <h4>Playlist: <%= playlist.escape('name') %></h4>
 
-<div class="follow-button"></div>
+<% if (!isOwner) { %>
+  <div class="follow-button"></div>
+<% } %>
 
 <ul class="view-posts"></ul>
 

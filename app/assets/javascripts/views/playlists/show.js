@@ -7,8 +7,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    this.model.fetch({ wait: true});
-
     this.playlistPosts = this.model.posts();
     this.addFollow();
     this.renderPosts(); //needed for revisit of page
@@ -40,7 +38,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     var subView = new VMCApp.Views.PostThumbnail({
       model: post,
       size: 'normal',
-      playlist: this.model,
+      // playlist: this.model,
+      isOwner: this.isOwner(),
     });
     this.addSubview('.view-posts', subView);
   },
@@ -57,6 +56,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   isOwner: function () {
+    // debugger;
     if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
       return true
     } else {
