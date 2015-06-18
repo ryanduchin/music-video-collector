@@ -31,7 +31,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     }
   },
 
-  follow: function () { // how do i differentiate with model type??
+  follow: function () {
     this.model.follow().save({
       followable_id: this.model.id,
       followable_type: this.type,
@@ -54,8 +54,11 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
       }
     } else {
       this.$('button.btn-follow').removeClass('btn-primary');
-      this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'></i>");
-
+      if (this.btnSm) {
+        this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'></i>");
+      } else {
+        this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'> Follow</i>");
+      }
     }
   },
 
