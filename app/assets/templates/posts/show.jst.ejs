@@ -17,7 +17,7 @@
   <div class='post-show-row-2 row'>
 
     <div class='col-md-5 col-md-offset-2'>
-      <h3 class='post-show-title'>
+      <h3 class='post-show-artist'>
         <%= post.escape('artist').toUpperCase() %>
       </h3>
     </div>
@@ -47,4 +47,21 @@
       <button class='btn add-post-to-playlist'>[+]</button>
     </div>
   </div>
+
+  <div class='post-show-row-5 row'>
+    <div class='col-md-5 col-md-offset-2'>
+
+      <% if (!!post.escape('album')) { %>
+        <h4>Album: <%= post.escape('album').toUpperCase() %></h4>
+      <% } %>
+
+      <% if (!!post.escape('description')) { %>
+        <p>Description:
+          <%= post.escape('description') %>
+        </p>
+      <% } %>
+
+    </div>
+  </div>
+
 </div>

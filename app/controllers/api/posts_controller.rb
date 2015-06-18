@@ -59,7 +59,7 @@ module Api
 
     def post_params
       params.require(:post).permit(
-        :title, :url, :artist, :description, :album, :year
+        :title, :url, :artist, :description, :album
       )
     end
   end
