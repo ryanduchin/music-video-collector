@@ -1,7 +1,8 @@
-VMCApp.Views.ExploreSubNav = Backbone.CompositeView.extend({
+VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   tagName: 'nav',
   className: 'navbar subnav',
-  template: JST['navbars/explore'],
+  template_explore: JST['navbars/explore'],
+  template_you: JST['navbars/you'],
 
   render: function () {
     var renderedContent = this.template();
