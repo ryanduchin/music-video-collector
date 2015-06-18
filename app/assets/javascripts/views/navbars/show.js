@@ -1,4 +1,4 @@
-VMCApp.Views.NavView = Backbone.View.extend({
+VMCApp.Views.NavView = Backbone.CompositeView.extend({
   tagName: 'nav',
   className: 'navbar navbar-default',
   template: JST['navbars/show'],
@@ -6,6 +6,9 @@ VMCApp.Views.NavView = Backbone.View.extend({
   events: {
     "click a.upload-video" : "openPostForm",
     "click a.upload-playlist" : "openPlaylistForm",
+    'click li#feed' : 'closeSubNav',
+    'click li#explore' : 'exploreSubNav',
+    'click li#you' : 'youSubNav',
   },
 
   initialize: function (options) {
@@ -16,6 +19,9 @@ VMCApp.Views.NavView = Backbone.View.extend({
     this.userPosts = new VMCApp.Collections.Posts({ filter: 'user' });
 
     this.router = options.router;
+
+    this._exploreSubNav = new VMCApp.Views.ExploreSubNav();
+    this._youSubNav = new VMCApp.Views.YouSubNav();
   },
 
 
@@ -55,5 +61,20 @@ VMCApp.Views.NavView = Backbone.View.extend({
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
   },
+
+  exploreSubNav: function (event) {
+    var subContent = this._exploreSubNav.render();
+    $('#subnav').html(subContent.$el);
+  },
+
+  youSubNav: function (event) {
+    var  subContent = this._youSubNav.render();
+    $('#subnav').html(subContent.$el);
+  },
+
+  closeSubNav: function (event) {
+    $('#subnav').html();
+  },
+
 
 });
