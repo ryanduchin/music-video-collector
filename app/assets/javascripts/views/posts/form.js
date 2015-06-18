@@ -55,7 +55,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
   },
 
   renderError: function () {
-    this.$('.render-error').html("invalid submission<br>We support Youtube, Vevo, and Vimeo")
+    this.$('.render-error').html("invalid submission")
   },
 
   // addToPlaylist: function (playlistAttr, id) {

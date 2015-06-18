@@ -7,10 +7,19 @@
 ## Next actions and list of questions
 
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
+--> can't jquery select the video? not affecting the playback rate?
 
 *** Database resetting? Users only see seeds + their account?
+*** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
 
-* post show page must show album, year, description.
+** horizontal scroll user show page
+
+
+* make it more obvious what following does and what goes into your feed (help from allan)
+* video submission should say the supported types! not in error
+* seed db with more users so you can play around with the user index page and the user show page
+
+
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space
