@@ -1,6 +1,6 @@
 VMCApp.Views.NavView = Backbone.CompositeView.extend({
   tagName: 'nav',
-  className: 'navbar navbar-default',
+  className: 'navbar',
   template: JST['navbars/show'],
 
   events: {
