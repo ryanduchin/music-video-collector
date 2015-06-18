@@ -16,7 +16,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   posts_index: function (filter) {
-    var _filter = filter || 'all';
+    var _subFilter = filter || 'none'
+    var _filter = filter || 'followed';
+
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
     posts.fetch();
     var newView = new VMCApp.Views.PostsIndex({
@@ -24,6 +26,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: _filter,
     });
     this.swapView(newView);
+
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: _subFilter });
+    this.swapNavView(newNavView);
   },
 
   users_index: function(filter) {
@@ -34,6 +39,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: filter,
     });
     this.swapView(newView);
+
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: filter });
+    this.swapNavView(newNavView);
   },
 
   playlists_index: function (filter) {
@@ -44,6 +52,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: filter,
     });
     this.swapView(newView);
+
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: filter });
+    this.swapNavView(newNavView);
   },
 
 
@@ -54,6 +65,9 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: post,
       });
     this.swapView(newView);
+
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    this.swapNavView(newNavView);
   },
 
   playlist_show: function (id) {
@@ -63,6 +77,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: playlist,
     });
     this.swapView(newView);
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    this.swapNavView(newNavView);
   },
 
   users_show: function (id) {
@@ -72,6 +88,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: user,
     });
     this.swapView(newView);
+    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    this.swapNavView(newNavView);
   },
 
   swapView: function (newView) {
@@ -79,6 +97,13 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this._currentView = newView;
     this.$rootEl.html(this._currentView.$el);
     this._currentView.render();
+  },
+
+  swapNavView: function (newNavView) {
+    this._currentNavView && this._currentNavView.remove();
+    this._currentNavView = newNavView;
+    this.$rootEl.html(this._currentNavView.$el);
+    this._currentNavView.render();
   },
 
 
