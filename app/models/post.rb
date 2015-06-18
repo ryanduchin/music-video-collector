@@ -38,16 +38,16 @@ class Post < ActiveRecord::Base
   def self.get_collection(filter, current_user)
     case filter
     when 'all'
-      return Post.all.order(created_at: :desc).limit(30)
+      return Post.all.order(created_at: :desc)#.limit(30)
     when 'top'
-      return Post.joins(:likes).group("posts.id").order('count(likes.id) desc').limit(30)
+      return Post.joins(:likes).group("posts.id").order('count(likes.id) desc')#.limit(30)
     when 'user'
-      return current_user.posts.order(created_at: :desc).limit(30)
+      return current_user.posts.order(created_at: :desc)#.limit(30)
     when 'liked'
       return Post.where("author_id=?", current_user.id)
-                .joins(:likes).order('likes.created_at desc').limit(30)
+                .joins(:likes).order('likes.created_at desc')#.limit(30)
     when 'staff'
-      return Post.all.where(staff: true).order(created_at: :desc).limit(30)
+      return Post.all.where(staff: true).order(created_at: :desc)#.limit(30)
     when 'followed'
       posts = []
       users = current_user.user_follows.order(created_at: :desc)

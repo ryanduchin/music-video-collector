@@ -15,8 +15,11 @@
 ** horizontal scroll user show page
 ** Edit post,playlist
 
+* add click username link on post show to user show
 * make it more obvious what following does and what goes into your feed (help from allan)
 * seed db with more users so you can play around with the user index page and the user show page
+* seed db with likes, follows, playlistposts (ugh)
+* fetch more from DB after reaching bottom (what is gem called)
 
 ## Allan's Feedback
 Navbar will have HOME, YOU, EXPLORE

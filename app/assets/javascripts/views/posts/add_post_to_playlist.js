@@ -52,7 +52,6 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
 
   addToPlaylist: function (event) {
     event.preventDefault();
-    debugger;
     if (this.playlistID === "") { return; }
 
     var attrs = {

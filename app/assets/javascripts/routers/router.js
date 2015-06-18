@@ -16,7 +16,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   posts_index: function (filter) {
-    var _filter = filter || 'followed';
+    var _filter = filter || 'all';
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
     posts.fetch();
     var newView = new VMCApp.Views.PostsIndex({
