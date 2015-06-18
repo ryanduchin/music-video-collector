@@ -32,6 +32,13 @@
 //   background-color: #E5E34D;
 // };
 
+body {
+  // background-image: image-url('concert3.JPG');
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-color: yellow;
+};
+
 ul, nav {
   list-style-type: none
 };
@@ -123,10 +130,6 @@ button.close {
   white-space: nowrap
 };
 
-// .thumbnail-title {
-//   width: auto;
-// };
-//
 .thumb-button {
   position: relative;
   float: right;
@@ -160,8 +163,3 @@ button.close {
 .post-show-btn button {
   float: right;
 };
-
-//
-// .thumbnail-image {
-//   float: left;
-// };
