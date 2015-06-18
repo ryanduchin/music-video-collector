@@ -10,7 +10,8 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
 
   chooseTemplate: function () {
     if (this.filter === 'none') {
-      return ('<div>&nbsp;</div>')
+      // return ('<div>&nbsp;</div>')
+      return;
     } else if (this.filter === 'followed' ||
                this.filter === 'user' ||
                this.filter === 'liked') {
