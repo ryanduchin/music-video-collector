@@ -15,6 +15,21 @@
 ** horizontal scroll user show page
 ** Edit post,playlist
 
+## Feedback from Chris Review
+* artist validation on submission
+* submissions clicking ENTER i dont know what happens (event listener was to 'submit')
+* fix profile link
+* posts not clear to user what those are -> change name
+* no playlist to add to on new user. maybe on user creation make an auto playlist?
+* follow button not obvious
+* grid spacing - more vertical margin to separate videos
+* if no posts, say something - add video (not just a blank page) (post index, playlist show)
+* followed button on user page must say 'follow', not just have the icon
+* specify 'full url' or something
+*** rendering errors on modals (ex. blank playlist title on add playlist)
+* background divs for each thumbnail (defines their space and allows background color)
+
+* likes/follows broken
 * broken follow button
 * make it more obvious what following does and what goes into your feed (help from allan)
 * seed db with more users so you can play around with the user index page and the user show page
@@ -56,8 +71,8 @@ MVP:
 - [X] View collection of all your liked videos
 - [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
 - [X] Add and Remove posts to playlists
+- [X] submission validation (url must be good)
 - [ ] Guest sign-in
-- [ ] submission validation (url must be good)
 
 Expanding:
 
@@ -67,7 +82,7 @@ Expanding:
 - [X] Feed option: Top Staff picks
 - [X] Feed option: top liked videos (across entire site)
 - [X] add 'add-to-playlist' button onto thumbnails
-- [ ] *** Playback speed controls!
+- [ ] *** Playback speed controls! "document.getElement('video').playbackRate = 2"
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 - [ ] Search for users/playlists/posts by any fields (if time)
