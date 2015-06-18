@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613155525) do
+ActiveRecord::Schema.define(version: 20150618034337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 20150613155525) do
     t.string   "artist"
     t.text     "description"
     t.string   "album"
-    t.string   "year"
     t.boolean  "staff",       default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
