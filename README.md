@@ -8,6 +8,9 @@
 
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 
+*** Database resetting? Users only see seeds + their account?
+
+* post show page must show album, year, description.
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space

@@ -28,19 +28,34 @@ VMCApp.Views.PostForm = Backbone.View.extend({
 
   createPost: function (event) {
     event.preventDefault();
-    var that = this;
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs);
-    this.model.save({}, {
-      success: function () {
-        // what collection do I add it to? There are multiple 'post' collections.
-        // right now being added to "allPosts"
-        that.collection.add(that.model);
-        // that.addToPlaylist(playlistAttr, that.model.id)
-        that.removeModal();
-        Backbone.history.navigate("#/posts/" + that.model.id, { trigger: true });
-      }
-    });
+    this.validateModel();
+  },
+
+  validateModel: function () {
+    var that = this;
+    if ((this.model.vidSource() === 'Youtube' ||
+        this.model.vidSource() === 'Vevo' ||
+        this.model.vidSource() === 'Vimeo') &&
+        this.model.escape('title') !== "") {
+      this.model.save({}, {
+        success: function () {
+          // what collection do I add it to? There are multiple 'post' collections.
+          // right now being added to "allPosts"
+          that.collection.add(that.model);
+          // that.addToPlaylist(playlistAttr, that.model.id)
+          that.removeModal();
+          Backbone.history.navigate("#/posts/" + that.model.id, { trigger: true });
+        }
+      });
+    } else {
+      this.renderError();
+    }
+  },
+
+  renderError: function () {
+    this.$('.render-error').html("invalid submission<br>We support Youtube, Vevo, and Vimeo")
   },
 
   // addToPlaylist: function (playlistAttr, id) {
