@@ -23,6 +23,9 @@ Navbar will have HOME, YOU, EXPLORE
 home - your feed
 YOU - your posts, your followed playlists, your followed users, your likes
 EXPLORE - view all users, view all playlists, view all posts
+* add a subnavbar
+* dark inverted theme. maybe dark red + LIGHT COMES FROM ABOVE (gradient dark at bottom, cornered?)
+  + dribbble.com for inspiration
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space

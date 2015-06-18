@@ -4,7 +4,9 @@ u3 = User.create!(username: 'Ken', password: 'asdfasdf2')
 u4 = User.create!(username: 'Sasha', password: 'asdfasdf2')
 u5 = User.create!(username: 'AleXandra', password: 'asdfasdf2')
 u6 = User.create!(username: 'Carl', password: 'asdfasdf2')
-u7 = User.create!(username: 'Alllllan', password: 'asdfasdf2')
+u7 = User.create!(username: 'Allllan', password: 'asdfasdf2')
+u7 = User.create!(username: 'Alex', password: 'password2')
+u7 = User.create!(username: 'Allan', password: 'password2')
 u8 = User.create!(username: 'Axer', password: 'asdfasdf2')
 u9 = User.create!(username: 'Alex25', password: 'asdfasdf2')
 u10 = User.create!(username: 'MrMozo', password: 'asdfasdf2')
@@ -34,10 +36,43 @@ p8 = u2.posts.create(title: 'Hello', url: 'https://www.youtube.com/watch?v=c9thv
 p8 = u2.posts.create(title: 'Sun & Moon', url: 'https://www.youtube.com/watch?v=ll5ykbAumD4', artist: 'Above & Beyond')
 
 q1 = u3.posts.create(title: 'Sometimes I Feel So Deserted', url: 'https://www.youtube.com/watch?v=8OUqqsXVmlc', artist: 'The Chemical Brothers')
-q2 = u3.posts.create(
+q2 = u3.posts.create(title: 'Swoon', url: 'https://www.youtube.com/watch?v=CCp_3zw-CxA', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Escape Velocity', url: 'https://www.youtube.com/watch?v=efF8L9Jt_i8', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Out of Control', url: 'https://www.youtube.com/watch?v=6sOpbRL8R4g', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Galvanize', url: 'https://www.youtube.com/watch?v=Xu3FTEmN-eg', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Hey Boy Hey Girl', url: 'https://www.youtube.com/watch?v=tpKCqp9CALQ', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Do It Again', url: 'https://www.youtube.com/watch?v=UVrwzjtBHq0', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Star Guitar', url: 'https://www.youtube.com/watch?v=0S43IwBF0uM', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'Go', url: 'https://www.youtube.com/watch?v=LO2RPDZkY88', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(title: 'All The Single Ladies', url: 'http://www.vevo.com/watch/beyonce/single-ladies-(put-a-ring-on-it)/USSM20803009', artist: 'Beyonce')
+q2 = u3.posts.create(title: 'Run The World (Girls)', url: 'https://www.youtube.com/watch?v=VBmMU_iwe6U', artist: 'Beyonce')
+q2 = u3.posts.create(title: 'We Found Love', url: 'https://www.youtube.com/watch?v=tg00YEETFzg', artist: 'Rihanna', description: 'ft. Calvin Harris')
+q2 = u3.posts.create(title: 'Pour It Up', url: 'https://www.youtube.com/watch?v=ehcVomMexkY', artist: 'Rihanna')
+
+z1 = u3.posts.create(title: 'Blame', url: 'https://www.youtube.com/watch?v=6ACl8s_tBzE', artist: 'Calvin Harris', description: 'ft. John Newman')
+z1 = u3.posts.create(title: 'Summer', url: 'https://www.youtube.com/watch?v=ebXbLfLACGM', artist: 'Calvin Harris')
+z1 = u3.posts.create(title: 'Wrecking Ball', url: 'https://www.youtube.com/watch?v=My2FRPA3Gf8', artist: 'Miley Cyrus')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+z1 = u3.posts.create(title: '', url: '', artist: '')
+
+
+
+
+
+
 
 
 y1 = u4.posts.create(title: 'Phantasm', url: 'https://vimeo.com/90796762', artist: 'Flying Lotus')
+y2 = u4.posts.create(title: 'Zodiac Sh*t', url: 'https://vimeo.com/25737856', artist: 'Flying Lotus', staff: true, description: "featured on Adult Swim")
+y3 = u4.posts.create(title: "You're Dead", url: 'https://vimeo.com/103317489', artist: 'Flying Lotus')
+y4 = u4.posts.create(title: 'Kill Your Co-Workers', url: 'https://vimeo.com/15568767', artist: 'Flying Lotus')
 
 //chembros
 

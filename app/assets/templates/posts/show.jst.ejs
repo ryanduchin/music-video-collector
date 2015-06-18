@@ -17,12 +17,9 @@
   <div class='post-show-row-2 row'>
 
     <div class='col-md-5 col-md-offset-2'>
-
-      <% if (!!post.escape('artist')) { %>
-        <h3 class='post-show-artist'>
-          <%= post.escape('artist').toUpperCase() %>
-        </h3>
-      <% } %>
+      <h3 class='post-show-artist'>
+        <%= post.escape('artist').toUpperCase() %>
+      </h3>
     </div>
 
     <div class='col-md-2'>
