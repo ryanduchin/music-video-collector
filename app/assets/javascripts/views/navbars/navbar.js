@@ -1,7 +1,7 @@
 VMCApp.Views.NavView = Backbone.CompositeView.extend({
   tagName: 'nav',
   className: 'navbar',
-  template: JST['navbars/show'],
+  template: JST['navbars/navbar'],
 
   events: {
     "click a.upload-video" : "openPostForm",

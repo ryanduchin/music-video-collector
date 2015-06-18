@@ -16,7 +16,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   posts_index: function (filter) {
-    var _navFilter = filter || 'none';
     var _filter = filter || 'followed';
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
@@ -28,7 +27,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
 
     var newNavView = new VMCApp.Views.SubNavView({
-      filter: _subFilter,
+      filter: _filter,
       type: 'post',
     });
     this.swapNavView(newNavView);
@@ -76,7 +75,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
 
     var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'none',
+      filter: 'show',
       type: 'post',
     });
     this.swapNavView(newNavView);
@@ -91,7 +90,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
 
     var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'none',
+      filter: 'show',
       type: 'playlist',
     });
     this.swapNavView(newNavView);
@@ -106,7 +105,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
 
     var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'none',
+      filter: 'show',
       type: 'user',
     });
     this.swapNavView(newNavView);

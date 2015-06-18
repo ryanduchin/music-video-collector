@@ -3,15 +3,23 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   className: 'navbar subnav',
   template_explore: JST['navbars/explore'],
   template_you: JST['navbars/you'],
+  template_feed: JST['navbars/feed'],
+  template_none: '<div>&nbsp;</div>',
 
   initialize: function(options) {
     this.filter = options.filter;
+    this.type = options.type;
+    this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
+    this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
+    this.template = this.chooseTemplate();
+    // this.selectedTitle = this.chooseTitle();
   },
 
   chooseTemplate: function () {
-    if (this.filter === 'none') {
-      // return ('<div>&nbsp;</div>')
-      return;
+    if (this.filter === 'followed' && this.type === 'post') {
+      return this.template_feed();
+    } else if (this.filter === 'show') {
+      return this.template_none();
     } else if (this.filter === 'followed' ||
                this.filter === 'user' ||
                this.filter === 'liked') {
@@ -22,9 +30,53 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.chooseTemplate();
+    var content = this._template({
+      title: this.chooseTitle(),
+    });
     this.$el.html(content);
     return this;
   },
+
+  chooseID: function () {
+    if (this.filter === 'followed') {
+      if (this.type === 'playlist') {
+        return 'followed-playlists';
+      } else if (this.type === 'user') {
+        return 'followed-users';
+      }
+
+    } else if (this.filter === 'user') {
+      if (this.type === 'post') {
+        return 'your-posts';
+      } else if (this.type === 'playlist') {
+        return 'your-playlists';
+      }
+
+    } else if (this.filter === 'all') {
+      if (this.type === 'post') {
+        return 'all-posts';
+      } else if (this.type === 'user') {
+        return 'all-users';
+      }
+
+    } else if (this.filter === 'user') {
+      if (this.type === 'post') {
+        return 'your-posts';
+      } else if (this.type === 'playlist') {
+        return 'your-playlists';
+      }
+
+    } else if (this.filter === 'top') {
+      return 'top-liked';
+    } else if (this.filter === 'liked') {
+      return 'likes';
+    } else if (this.filter === 'staff') {
+      return 'staff';
+    } else if (this.filter === 'other') {
+      return 'all-playlists';
+    }
+    return;
+  },
+
 
 });
