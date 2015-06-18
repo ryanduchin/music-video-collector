@@ -1,21 +1,41 @@
-<h1><%= post.escape('title') %></h1>
-<h3><%= post.escape('artist').toUpperCase() %></h3>
+<div class='container-fluid'>
+  <div class='post-show-row-1 row'>
+    <div class='col-md-4 col-md-offset-2'>
+      <h1 class='post-show-title'>
+        <%= post.escape('title') %>
+      </h1>
+      <h3 class='post-show-title'>
+        <%= post.escape('artist').toUpperCase() %>
+      </h3>
+    </div>
+    <div class="col-md-4 col-md-offset-2">
+      <% if (isOwner) { %>
+        <button class='btn btn-delete btn-danger btn-sm show-delete'>Delete Video</button>
+      <% } %>
+    </div>
+  </div>
 
-<div class="like-button"></div>
 
-<div>
-  <iframe width="1100" height="614"
-    src='<%= post.vidEmbedSrc() + post.vidId() %>'
-    frameborder="0" allowfullscreen></iframe>
+  <div class="show-image post-show-row-2 row">
+    <div class='col-md-4 col-md-offset-2'>
+      <iframe width='1100' height='614'
+        src="<%= post.vidEmbedSrc() + post.vidId() %>"
+        frameborder='0' allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <div class='post-show-row-3 row'>
+    <div class='col-md-4 col-md-offset-2'>
+      <div class='like-button'></div>
+
+      <button class='btn add-post-to-playlist'>[+]</button>
+    </div>
+  </div>
+
+  <div class='post-show-row-4 row'>
+    <div class='col-md-4 col-md-offset-2'>
+      <h4>User: <%= post.escape('username') %></h4>
+      <h4><%= post.vidSource() %></h4>
+    </div>
+  </div>
 </div>
-
-<h4>User: <%= post.escape('username') %></h4>
-<h4><%= post.vidSource() %></h4>
-
-
-<% if (isOwner) { %>
-  <button class="btn btn-delete btn-danger btn-sm">Delete</button>
-<% } %>
-
-<button class="btn add-post-to-playlist">[+]</button>
-<div class="render-add-to-playlist-form"</div>
