@@ -30,30 +30,29 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     event.preventDefault();
     var that = this;
     var attrs = this.$el.serializeJSON();
-    var playlistAttr = $('.form-post-to-playlist').serializeJSON();
     this.model.set(attrs);
     this.model.save({}, {
       success: function () {
         // what collection do I add it to? There are multiple 'post' collections.
         // right now being added to "allPosts"
         that.collection.add(that.model);
-        that.addToPlaylist(playlistAttr, that.model.id)
+        // that.addToPlaylist(playlistAttr, that.model.id)
         that.removeModal();
         Backbone.history.navigate("#/posts/" + that.model.id, { trigger: true });
       }
     });
   },
 
-  addToPlaylist: function (playlistAttr, id) {
-    if (formAttr === "") { return; }
-    var attr = $.extend({}, playlistAttr, {post_id: id});
-    $.ajax({
-        type:'POST',
-        url: '/api/playlistposts.json',
-        data: attr,
-        dataType: 'json',
-    });
-  },
+  // addToPlaylist: function (playlistAttr, id) {
+  //   if (formAttr === "") { return; }
+  //   var attr = $.extend({}, playlistAttr, {post_id: id});
+  //   $.ajax({
+  //       type:'POST',
+  //       url: '/api/playlistposts.json',
+  //       data: attr,
+  //       dataType: 'json',
+  //   });
+  // },
 
   closeModal: function (event) {
     event.preventDefault();
