@@ -16,7 +16,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   posts_index: function (filter) {
-    var _subFilter = filter || 'none';
+    var _navFilter = filter || 'none';
     var _filter = filter || 'followed';
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
@@ -27,7 +27,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.SubNavView({ filter: _subFilter });
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: _subFilter,
+      type: 'post',
+    });
     this.swapNavView(newNavView);
   },
 
@@ -40,7 +43,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.SubNavView({ filter: filter });
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: _subFilter,
+      type: 'user',
+    });
     this.swapNavView(newNavView);
   },
 
@@ -53,7 +59,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.SubNavView({ filter: filter });
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: _subFilter,
+      type: 'playlist',
+    });
     this.swapNavView(newNavView);
   },
 
@@ -66,7 +75,10 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: 'none',
+      type: 'post',
+    });
     this.swapNavView(newNavView);
   },
 
@@ -77,7 +89,11 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: playlist,
     });
     this.swapView(newView);
-    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
+
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: 'none',
+      type: 'playlist',
+    });
     this.swapNavView(newNavView);
   },
 
@@ -88,7 +104,11 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: user,
     });
     this.swapView(newView);
-    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
+
+    var newNavView = new VMCApp.Views.SubNavView({
+      filter: 'none',
+      type: 'user',
+    });
     this.swapNavView(newNavView);
   },
 
