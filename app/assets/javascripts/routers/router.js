@@ -5,14 +5,14 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "" : "posts_index",
     ":filter/posts" : "posts_index",
     ":filter/playlists" : "playlists_index",
     ":filter/users" : "users_index",
 
     "posts/:id" : "post_show",
     "playlists/:id" : "playlist_show",
-    "users/:id" : "users_show"
+    "users/:id" : "users_show",
+    "" : "posts_index",
   },
 
   posts_index: function (filter) {
@@ -27,7 +27,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: _subFilter });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: _subFilter });
     this.swapNavView(newNavView);
   },
 
@@ -40,7 +40,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: filter });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: filter });
     this.swapNavView(newNavView);
   },
 
@@ -53,7 +53,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: filter });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: filter });
     this.swapNavView(newNavView);
   },
 
@@ -66,7 +66,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       });
     this.swapView(newView);
 
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
     this.swapNavView(newNavView);
   },
 
@@ -77,7 +77,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: playlist,
     });
     this.swapView(newView);
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
     this.swapNavView(newNavView);
   },
 
@@ -88,7 +88,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       model: user,
     });
     this.swapView(newView);
-    var newNavView = new VMCApp.Views.PostsIndex({ filter: 'none' });
+    var newNavView = new VMCApp.Views.SubNavView({ filter: 'none' });
     this.swapNavView(newNavView);
   },
 
@@ -102,7 +102,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   swapNavView: function (newNavView) {
     this._currentNavView && this._currentNavView.remove();
     this._currentNavView = newNavView;
-    this.$rootEl.html(this._currentNavView.$el);
+    $('#subnav').html(this._currentNavView.$el);
     this._currentNavView.render();
   },
 

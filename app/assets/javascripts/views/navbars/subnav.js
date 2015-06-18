@@ -6,23 +6,23 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
 
   initialize: function(options) {
     this.filter = options.filter;
-    this.chooseTemplate();
   },
 
   chooseTemplate: function () {
     if (this.filter === 'none') {
-      this.template = ('<div>&nbsp;</div>')
+      return ('<div>&nbsp;</div>')
     } else if (this.filter === 'followed' ||
-               this.filter === 'user') {
-      this.template = this.template_you;
+               this.filter === 'user' ||
+               this.filter === 'liked') {
+      return this.template_you();
     } else {
-      this.template = this.template_explore;
+      return this.template_explore();
     }
   },
 
   render: function () {
-    var renderedContent = this.template();
-    this.$el.html(renderedContent);
+    var content = this.chooseTemplate();
+    this.$el.html(content);
     return this;
   },
 
