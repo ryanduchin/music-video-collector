@@ -49,6 +49,7 @@ Expanding:
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 - [ ] Search for users/playlists/posts by any fields (if time)
+- [ ] link to user show page from post show page
 
 Optimization:
 - [ ] add to playlist toggle subview on/off
