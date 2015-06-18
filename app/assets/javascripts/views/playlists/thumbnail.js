@@ -26,10 +26,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     if (posts.length === 0) { return "none"; }
     var i = 0;
     var post = posts.at(i);
-    // while (post.vidSource() === "Vevo" && i < posts.length) {
-    //   i++;
-    //   post = posts.at(i);
-    // }
     return post;
   },
 

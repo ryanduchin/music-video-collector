@@ -24,14 +24,8 @@ VMCApp.Views.UserThumbnail = Backbone.CompositeView.extend({
   choosePost: function () {
     var posts = this.model.posts();
     if (posts.length === 0) { return 'none'; }
-    // var i = 0;
     var startInd = Math.floor(Math.random() * posts.length);
     var post = posts.at(startInd);
-    // while (post.vidSource() === 'Vevo' && i < posts.length) {
-    //   i++;
-    //   startInd++;
-    //   post = posts.at(startInd);
-    // }
     return post;
   },
 
