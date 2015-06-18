@@ -1,5 +1,16 @@
-u1 = User.create!(username: 'ryanduchin', password: 'asdfasdf')
-u2 = User.create!(username: 'asdf', password: 'asdfasdf')
+u1 = User.create!(username: 'guest', password: 'password')
+u2 = User.create!(username: 'ryanduchin', password: 'asdfasdf')
+u3 = User.create!(username: 'Ken', password: 'asdfasdf2')
+u4 = User.create!(username: 'Sasha', password: 'asdfasdf2')
+u5 = User.create!(username: 'AleXandra', password: 'asdfasdf2')
+u6 = User.create!(username: 'Carl', password: 'asdfasdf2')
+u7 = User.create!(username: 'Alllllan', password: 'asdfasdf2')
+u8 = User.create!(username: 'Axer', password: 'asdfasdf2')
+u9 = User.create!(username: 'Alex25', password: 'asdfasdf2')
+u10 = User.create!(username: 'MrMozo', password: 'asdfasdf2')
+u11 = User.create!(username: 'Steve', password: 'asdfasdf2')
+
+
 
 c1 = u1.playlists.create!(name: 'House')
 c2 = u1.playlists.create!(name: 'Trance')
@@ -8,7 +19,7 @@ c4 = u2.playlists.create!(name: 'Pop')
 
 
 
-p2 = u1.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watch?v=eilZug1R4Es', artist: 'Above & Beyond')
+p2 = u1.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watch?v=eilZug1R4Es', artist: 'Above & Beyond', album: 'Group Therapy')
 p3 = u1.posts.create!(title: 'Melba', url: 'https://www.youtube.com/watch?v=QYvZ8TUyn9w', artist: 'Sunny Lax')
 p4 = u1.posts.create!(title: 'Ruby', url: 'https://www.youtube.com/watch?v=LH_15HVH5Yc', artist: 'Cirez D')
 p5 = u1.posts.create!(title: 'Greyhound', url: 'https://vimeo.com/75755258', artist: 'Swedish House Mafia')
@@ -16,6 +27,22 @@ p1 = u1.posts.create!(title: 'Generate', url: 'http://www.vevo.com/watch/eric-pr
 p6 = u1.posts.create(title: 'Monument', url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI', artist: 'Royskopp & Robyn')
 p7 = u2.posts.create(title: 'Dancing On My Own', url: 'https://www.youtube.com/watch?v=SW05tcG3Fgw', artist: 'Robyn', staff: true)
 p8 = u2.posts.create(title: 'Chasing Time', url: 'https://www.youtube.com/watch?v=jtTjzDTpx8o', artist: 'Azelia Banks')
+p8 = u2.posts.create(title: 'We Are All We Need', url: 'https://www.youtube.com/watch?v=phXRX1p8woY', artist: 'Above & Beyond', album: 'Group Therapy')
+p8 = u2.posts.create(title: 'We Are All We Need', url: 'https://www.youtube.com/watch?v=phXRX1p8woY', artist: 'Above & Beyond', album: 'Group Therapy', description: 'feat. Alex Vargas')
+p8 = u2.posts.create(title: 'Sticky Fingers', url: 'https://www.youtube.com/watch?v=qbtbZUmljDI', artist: 'Above & Beyond', album: 'Group Therapy')
+p8 = u2.posts.create(title: 'Hello', url: 'https://www.youtube.com/watch?v=c9thvmIOdnQ', artist: 'Above & Beyond', album: 'Group Therapy')
+p8 = u2.posts.create(title: 'Sun & Moon', url: 'https://www.youtube.com/watch?v=ll5ykbAumD4', artist: 'Above & Beyond')
+
+q1 = u3.posts.create(title: 'Sometimes I Feel So Deserted', url: 'https://www.youtube.com/watch?v=8OUqqsXVmlc', artist: 'The Chemical Brothers')
+q2 = u3.posts.create(
+
+
+y1 = u4.posts.create(title: 'Phantasm', url: 'https://vimeo.com/90796762', artist: 'Flying Lotus')
+
+//chembros
+
+
+https://www.youtube.com/watch?v=qbtbZUmljDI
 
 
 

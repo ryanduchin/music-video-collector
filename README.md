@@ -13,13 +13,16 @@
 *** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
 
 ** horizontal scroll user show page
-
+** Edit post,playlist
 
 * make it more obvious what following does and what goes into your feed (help from allan)
-* video submission should say the supported types! not in error
 * seed db with more users so you can play around with the user index page and the user show page
 
-
+## Allan's Feedback
+Navbar will have HOME, YOU, EXPLORE
+home - your feed
+YOU - your posts, your followed playlists, your followed users, your likes
+EXPLORE - view all users, view all playlists, view all posts
 
 ## Styling
 -user show page -> help from Charlie. overflow-x and white-space
