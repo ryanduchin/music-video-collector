@@ -39,7 +39,12 @@
   <div class='post-show-row-4 row'>
     <div class='col-md-5 col-md-offset-2'>
 
-      <h4>User: <%= post.escape('username') %></h4>
+      <h4>User:
+        <a href="#/users/<%= post.escape('author_id') %>">
+          <%= post.escape('username') %>
+        </a>
+      </h4>
+
       <h4><%= post.vidSource() %></h4>
 
     </div>

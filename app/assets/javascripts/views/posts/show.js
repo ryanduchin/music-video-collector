@@ -26,7 +26,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
       // size: 'normal',
       isOwner: this.isOwner(),
     });
-    debugger;
     this.$el.html(content);
     this.attachSubviews();
     return this;
