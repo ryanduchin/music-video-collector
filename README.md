@@ -14,6 +14,7 @@
 
 ** horizontal scroll user show page
 ** Edit post,playlist
+* thumbnail links extend too far!!
 
 ## Feedback from Chris Review
 * artist validation on submission
