@@ -18,7 +18,10 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
     this.router = options.router;
     // this.listenTo(this.router, 'route', this.selectIcon);
 
-    this.listenTo(VMCApp.filterEvents, 'route', this.selectIcon);
+    this.listenTo(VMCApp.filterEvents, 'show_page', this.titleOnly);
+    this.listenTo(VMCApp.filterEvents, 'post', this.passArgOrSpecializedFunction);
+    this.listenTo(VMCApp.filterEvents, 'playlist', this.render);
+    this.listenTo(VMCApp.filterEvents, 'user', this.render);
   },
 
   selectIcon: function (event) {
@@ -61,5 +64,48 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
   },
+
+
+  chooseID: function () {
+    if (this.filter === 'followed') {
+      if (this.type === 'playlist') {
+        return 'followed-playlists';
+      } else if (this.type === 'user') {
+        return 'followed-users';
+      }
+
+    } else if (this.filter === 'user') {
+      if (this.type === 'post') {
+        return 'your-posts';
+      } else if (this.type === 'playlist') {
+        return 'your-playlists';
+      }
+
+    } else if (this.filter === 'all') {
+      if (this.type === 'post') {
+        return 'all-posts';
+      } else if (this.type === 'user') {
+        return 'all-users';
+      }
+
+    } else if (this.filter === 'user') {
+      if (this.type === 'post') {
+        return 'your-posts';
+      } else if (this.type === 'playlist') {
+        return 'your-playlists';
+      }
+
+    } else if (this.filter === 'top') {
+      return 'top-liked';
+    } else if (this.filter === 'liked') {
+      return 'likes';
+    } else if (this.filter === 'staff') {
+      return 'staff';
+    } else if (this.filter === 'other') {
+      return 'all-playlists';
+    }
+    return;
+  },
+
 
 });

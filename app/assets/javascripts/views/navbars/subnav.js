@@ -13,7 +13,8 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
     this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
     this.template = this.chooseTemplate();
     // this.selectedTitle = this.chooseTitle();
-    this.listenTo(VMCApp.filterEvents, 'filter', this.render);
+
+
   },
 
   chooseTemplate: function () {

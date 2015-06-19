@@ -15,8 +15,12 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "users/:id" : "users_show",
   },
 
+  // posts/home: function () {       ?????
+  //   this.posts_index('followed')
+  // },
+
   posts_index: function (filter) {
-    var _filter = filter || 'followed';
+    var _filter = filter || 'followed'; // for ""
     VMCApp.filterEvents.trigger('route', _filter, 'post')
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
@@ -29,7 +33,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_index: function(filter) {
-    VMCApp.filterEvents.trigger('user', filter);
+    VMCApp.filterEvents.trigger('route', filter, 'user')
 
     var users = new VMCApp.Collections.Users({ filter: filter })
     users.fetch();
@@ -41,7 +45,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlists_index: function (filter) {
-    VMCApp.filterEvents.trigger('playlist', filter);
+    VMCApp.filterEvents.trigger('route', filter, 'playlist');
 
     var playlists = new VMCApp.Collections.Playlists({ filter: filter })
     playlists.fetch();
@@ -54,7 +58,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
 
   post_show: function (id) {
-    VMCApp.filterEvents.trigger('post', filter);
+    VMCApp.filterEvents.trigger('route', filter, 'post');
 
     var posts = new VMCApp.Collections.Posts({ filter: 'all' })
     var post = posts.getOrFetch(id);
@@ -65,7 +69,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlist_show: function (id) {
-    VMCApp.filterEvents.trigger('playlist', 'show_page');
+    VMCApp.filterEvents.trigger('route', filter, 'playlist');
 
     var playlists = new VMCApp.Collections.Playlists({ filter: 'all' })
     var playlist = playlists.getOrFetch(id);
@@ -76,7 +80,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_show: function (id) {
-    VMCApp.filterEvents.trigger('user', 'show_page');
+    VMCApp.filterEvents.trigger('route', filter, 'user');
 
     var users = new VMCApp.Collections.Users({ filter: 'all' })
     var user = users.getOrFetch(id);
