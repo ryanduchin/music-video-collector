@@ -17,8 +17,6 @@
 
 ## Feedback from Chris Review
 * submissions clicking ENTER i dont know what happens (event listener was to 'submit')
-* fix profile link
-* posts not clear to user what those are -> change name
 * no playlist to add to on new user. maybe on user creation make an auto playlist?
 * follow button not obvious
 * grid spacing - more vertical margin to separate videos

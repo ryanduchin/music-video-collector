@@ -313,7 +313,7 @@ div.footer {
   letter-spacing: 8px;
 };
 
-#playlist-follow-button {
+#playlist-thumbnail-follow-button {
   position: absolute;
   // width: 400px;
   // right: 0px;
@@ -416,4 +416,9 @@ div.footer {
   font-size: 50px;
   margin-bottom: 100px;
   letter-spacing: 4px;
+};
+
+#playlist-show .follow-button {
+  margin-top: 20px;
+  float: right;
 };
