@@ -7,35 +7,34 @@
   </div>
 
   <div class="thumb-top-1 row">
-    <div class="thumb-title">
+    <div class="thumb-descr col-md-3">
       <a href="#/posts/<%= post.id %>">
+        <div class="thumb-title">
 
-        <h4 class="thumb-title">
-          <%= post.escape('title') %>
-        </h4>
-      </a>
-    </div>
+          <h4 class="thumb-title">
+            <%= post.escape('title') %>
+          </h4>
+        </div>
+
+        <div class="thumb-artist">
+          <h5 class="thumb-artist">
+            <%= post.escape('artist').toUpperCase() %>
+          </h5>
+        </div>
+        </a>
   </div>
+  <div class="thumb-buttons col-md-1">
 
-  <div class="thumb-top-2 row">
-    <div class="thumb-artist col-md-2">
-      <h5 class="thumb-artist">
-        <%= post.escape('artist').toUpperCase() %>
-      </h5>
-    </div>
+    <div class="like-button thumb-button"></div>
 
-    <div class="thumb-buttons col-md-2">
+    <button class="btn add-post-to-playlist btn-sm thumb-button">[+]</button>
+    <div class="render-add-to-playlist-form"></div>
 
-      <div class="like-button thumb-button"></div>
+    <% if (isOwner) { %>
+        <button class="btn remove-playlist btn-sm thumb-button">[x]</button>
+    <% } %>
 
-      <button class="btn add-post-to-playlist btn-sm thumb-button">[+]</button>
-      <div class="render-add-to-playlist-form"></div>
-
-      <% if (isOwner) { %>
-          <button class="btn remove-playlist btn-sm thumb-button">[x]</button>
-      <% } %>
-
-    </div>
   </div>
+</div>
 
 </div>
