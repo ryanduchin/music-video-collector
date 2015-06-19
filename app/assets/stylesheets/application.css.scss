@@ -85,9 +85,12 @@ li.nav-item {
   margin: 0px;
 };
 
-.nav-item>a:hover {
-  font-size: 25px;;
-};
+// .nav-item>a:hover {
+//   font-size: 25px;
+//   background-color: rgba(0, 0, 0, .85);
+//   color: white;
+//   // font-family: 'Roboto', sans-serif;
+// };
 
 // .nav-item>a.selected {
 //   font-size: 25px;;
@@ -101,18 +104,20 @@ li.nav-item {
 
 //subnav and titles
 
-.subnav-item>a {
+.subnav-item a {
   font-size: 16px;
   text-align: center;
   color: white;
+  float: left
 };
 
 
 
 .page-title {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
   color: white;
+  letter-spacing: 6px;
 };
 
 
@@ -349,7 +354,7 @@ div.footer {
   width: 250px;
   color: white;
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 7px;
 };
 
 #user-thumbnail .follow-button{

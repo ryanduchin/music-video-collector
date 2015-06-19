@@ -6,7 +6,6 @@
 
 ## Next actions and list of questions
 
-*** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 --> can't jquery select the video? not affecting the playback rate?
 
 * Database resetting? Users only see seeds + their account? heroku scheduler
@@ -17,7 +16,6 @@
 * thumbnail links extend too far!!
 
 ## Feedback from Chris Review
-* artist validation on submission
 * submissions clicking ENTER i dont know what happens (event listener was to 'submit')
 * fix profile link
 * posts not clear to user what those are -> change name

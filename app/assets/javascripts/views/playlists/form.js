@@ -9,6 +9,14 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
     'click .m-backdrop' : 'closeModal',
   },
 
+  initialize: function () {
+    this.$el.submit(function (event) {
+      debugger;
+      event.preventDefault();
+      this.createPlaylist();
+    });
+  },
+
   render: function () {
     var content = this.template();
     this.$el.html(content);
