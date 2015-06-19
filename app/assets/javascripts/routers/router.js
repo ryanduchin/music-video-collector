@@ -15,9 +15,14 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "users/:id" : "users_show",
   },
 
+  // posts/home: function () {       ?????
+  //   this.posts_index('followed')
+  // },
+
   posts_index: function (filter) {
-    var _filter = filter || 'followed';
-    VMCApp.filterEvents.trigger('filter', _filter)
+    var _filter = filter || 'followed'; // for ""
+    // this triggers an event, and doesnt listen
+    VMCApp.filterEvents.trigger('route', _filter, 'post')
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
     posts.fetch();
@@ -26,15 +31,11 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: _filter,
     });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: _filter,
-      type: 'post',
-    });
-    this.swapNavView(newNavView);
   },
 
   users_index: function(filter) {
+    VMCApp.filterEvents.trigger('route', filter, 'user')
+
     var users = new VMCApp.Collections.Users({ filter: filter })
     users.fetch();
     var newView = new VMCApp.Views.UsersIndex({
@@ -42,15 +43,11 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: filter,
     });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: _subFilter,
-      type: 'user',
-    });
-    this.swapNavView(newNavView);
   },
 
   playlists_index: function (filter) {
+    VMCApp.filterEvents.trigger('route', filter, 'playlist');
+
     var playlists = new VMCApp.Collections.Playlists({ filter: filter })
     playlists.fetch();
     var newView = new VMCApp.Views.PlaylistsIndex({
@@ -58,58 +55,40 @@ VMCApp.Routers.Router = Backbone.Router.extend({
       filter: filter,
     });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: filter,
-      type: 'playlist',
-    });
-    this.swapNavView(newNavView);
   },
 
 
   post_show: function (id) {
+    VMCApp.filterEvents.trigger('route', filter, 'post');
+
     var posts = new VMCApp.Collections.Posts({ filter: 'all' })
     var post = posts.getOrFetch(id);
     var newView = new VMCApp.Views.PostShow({
       model: post,
       });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'show',
-      type: 'post',
-    });
-    this.swapNavView(newNavView);
   },
 
   playlist_show: function (id) {
+    VMCApp.filterEvents.trigger('route', filter, 'playlist');
+
     var playlists = new VMCApp.Collections.Playlists({ filter: 'all' })
     var playlist = playlists.getOrFetch(id);
     var newView = new VMCApp.Views.PlaylistShow({
       model: playlist,
     });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'show',
-      type: 'playlist',
-    });
-    this.swapNavView(newNavView);
   },
 
   users_show: function (id) {
+    VMCApp.filterEvents.trigger('route', filter, 'user');
+
     var users = new VMCApp.Collections.Users({ filter: 'all' })
     var user = users.getOrFetch(id);
     var newView = new VMCApp.Views.UserShow({
       model: user,
     });
     this.swapView(newView);
-
-    var newNavView = new VMCApp.Views.SubNavView({
-      filter: 'show',
-      type: 'user',
-    });
-    this.swapNavView(newNavView);
   },
 
   swapView: function (newView) {
@@ -119,12 +98,12 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this._currentView.render();
   },
 
-  swapNavView: function (newNavView) {
-    this._currentNavView && this._currentNavView.remove();
-    this._currentNavView = newNavView;
-    $('#subnav').html(this._currentNavView.$el);
-    this._currentNavView.render();
-  },
+  // swapNavView: function (newNavView) {
+  //   this._currentNavView && this._currentNavView.remove();
+  //   this._currentNavView = newNavView;
+  //   $('#subnav').html(this._currentNavView.$el);
+  //   this._currentNavView.render();
+  // },
 
 
 });

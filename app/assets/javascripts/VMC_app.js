@@ -5,7 +5,9 @@ window.VMCApp = {
   Routers: {},
   Mixins: {},
   initialize: function() {
-    VMCApp.filterEvents = new Backbone.Events();
+    // VMCApp.filterEvents = new Backbone.Events();
+    VMCApp.filterEvents = {}
+    _.extend(VMCApp.filterEvents, Backbone.Events);
 
     var router = new VMCApp.Routers.Router({
       $rootEl: $("#main"),
@@ -16,9 +18,9 @@ window.VMCApp = {
     });
     $("#navbar").html(navbar.render().$el);
 
-    var subNavBar = new VMCApp.Views.SubNavView({
-      router: router,
-    });
+    // var subNavBar = new VMCApp.Views.SubNavView({
+    //   router: router,
+    // });
 
     Backbone.history.start();
   },

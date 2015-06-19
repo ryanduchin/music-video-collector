@@ -16,11 +16,13 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
     this.userPosts = new VMCApp.Collections.Posts({ filter: 'user' });
 
     this.router = options.router;
-    this.listenTo(this.router, 'route', this.selectIcon);
+    // this.listenTo(this.router, 'route', this.selectIcon);
+
+    this.listenTo(VMCApp.filterEvents, 'route', this.selectIcon);
   },
 
   selectIcon: function (event) {
-    // debugger;
+    debugger;
   },
 
   render: function () {

@@ -7,13 +7,13 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   template_none: '<div>&nbsp;</div>',
 
   initialize: function(options) {
-    this.listenTo(VMCApp.filterEvents, 'filter', this.render);
     this.filter = options.filter;
     this.type = options.type;
     this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
     this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
     this.template = this.chooseTemplate();
     // this.selectedTitle = this.chooseTitle();
+    this.listenTo(VMCApp.filterEvents, 'filter', this.render);
   },
 
   chooseTemplate: function () {
@@ -34,7 +34,7 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
     args._filter
     var template = this.chooseTemplate();
     var content = template();
-    this.$el.html(content);
+    this.$el.html('content');
     return this;
   },
 
