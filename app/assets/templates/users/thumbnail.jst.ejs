@@ -4,26 +4,59 @@
   <% var width = 250; %>
 <% } %>
 
-<a href="#/users/<%= user.id %>">
-  <h4 class="thumb-user-name">
-    <%= user.escape('username') %>
-  </h4>
 
-</a>
   <div class="follow-button"></div>
-<a href="#/users/<%= user.id %>">
 
-  <% if (post === "none") { %>
 
-    <div class="thumb blank-thumb">
-      <img width="<%= width %>" height="<%= 225 * width / 400 %>"
-        src='/images/headphones3.svg'></img>
-    </div>
 
-  <% } else { %>
+<div class="thumb-image row">
+  <a href="#/users/<%= user.id %>">
 
-    <%= JST['_renderThumbnail']({ post: post, size: size }) %>
+    <% if (post === "none") { %>
 
-  <% } %>
+      <div class="thumb blank-thumb">
+        <img width="<%= width %>" height="<%= 225 * width / 400 %>"
+          src='/images/headphones3.svg'></img>
+      </div>
 
-</a>
+    <% } else { %>
+
+      <%= JST['_renderThumbnail']({ post: post, size: size }) %>
+
+    <% } %>
+
+  </a>
+</div>
+
+<div class="thumb-top-1 row">
+  <div class="thumb-user-name">
+    <a href="#/users/<%= user.id %>">
+      <h4 class="thumb-user-name">
+        <%= user.escape('username') %>
+      </h4>
+    </a>
+  </div>
+</div>
+
+<div class="thumb-top-2 row">
+  <div class="thumb-artist col-md-2">
+    <h5 class="thumb-artist">
+      <%= post.escape('artist').toUpperCase() %>
+    </h5>
+  </div>
+
+  <div class="thumb-buttons col-md-2">
+
+    <div class="like-button thumb-button"></div>
+
+    <button class="btn add-post-to-playlist btn-sm thumb-button">[+]</button>
+    <div class="render-add-to-playlist-form"></div>
+
+    <% if (isOwner) { %>
+        <button class="btn remove-playlist btn-sm thumb-button">[x]</button>
+    <% } %>
+
+  </div>
+</div>
+
+</div>

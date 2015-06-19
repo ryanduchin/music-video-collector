@@ -36,6 +36,8 @@ a {
   font-family: 'Roboto', sans-serif;
 };
 
+// navbar
+
 ul, nav {
   list-style-type: none
 };
@@ -102,6 +104,10 @@ li.nav-item {
 .nav-dropdown-item>a {
 
 };
+
+
+
+//subnav and titles
 
 .subnav-item>a {
   font-size: 16px;
@@ -178,6 +184,9 @@ button.close {
   white-space: nowrap
 };
 
+
+//post thumbnail
+
 .thumb-button {
   position: relative;
   float: right;
@@ -198,6 +207,8 @@ button.close {
 .page-title {
   text-align: center;
 };
+
+//show page delete button
 
 .show-delete {
   margin-top: 20px;
