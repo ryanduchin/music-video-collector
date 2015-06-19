@@ -5,39 +5,29 @@
 <% } %>
 
 
+<div id="user-thumbnail">
+  <a href="#/users/<%= user.id %>">
 
+    <% if (post === "none") { %>
 
-<div class="container">
-  <div class="thumb-image row">
-    <a href="#/users/<%= user.id %>">
+      <div class="thumb blank-thumb">
+        <img width="<%= width %>" height="<%= 225 * width / 400 %>"
+          src='/images/headphones3.svg'></img>
+      </div>
 
-      <% if (post === "none") { %>
+    <% } else { %>
 
-        <div class="thumb blank-thumb">
-          <img width="<%= width %>" height="<%= 225 * width / 400 %>"
-            src='/images/headphones3.svg'></img>
-        </div>
+      <%= JST['_renderThumbnail']({ post: post, size: size }) %>
 
-      <% } else { %>
+    <% } %>
+  </a>
 
-        <%= JST['_renderThumbnail']({ post: post, size: size }) %>
-
-      <% } %>
-
-    </a>
+  <div class='row'>
+    <h4 id="thumb-user-name">
+      <%= user.escape('username') %>
+    </h4>
   </div>
-
-  <div class="thumb-top-1 row">
-    <div class="thumb-user-name col-md-1">
-      <a href="#/users/<%= user.id %>">
-        <h4 class="thumb-user-name">
-          <%= user.escape('username') %>
-        </h4>
-      </a>
-    </div>
-
-    <div class="thumb-buttons col-md-1">
-      <div class="follow-button"></div>
-    </div>
+  <div class='row'>
+    <div class="follow-button"></div>
   </div>
 </div>
