@@ -7,24 +7,22 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   template_none: '<div>&nbsp;</div>',
 
   initialize: function(options) {
-    this.filter = options.filter;
-    this.type = options.type;
-    this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
-    this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
-    this.template = this.chooseTemplate();
+    // this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
+    // this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
     // this.selectedTitle = this.chooseTitle();
-
-
+    this.listenTo(VMCApp.filterEvents, 'route', this.render);
   },
 
-  chooseTemplate: function () {
-    if (this.filter === 'followed' && this.type === 'post') {
+  chooseTemplate: function (arguments) {
+    var filter = arguments[0];
+    var type = arguments[1];
+    if (filter === 'followed' && type === 'post') {
       return this.template_feed;
-    } else if (this.filter === 'show') {
+    } else if (filter === 'show') {
       return this.template_none;
-    } else if (this.filter === 'followed' ||
-               this.filter === 'user' ||
-               this.filter === 'liked') {
+    } else if (filter === 'followed' ||
+               filter === 'user' ||
+               filter === 'liked') {
       return this.template_you;
     } else {
       return this.template_explore;
@@ -32,14 +30,17 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    args._filter
-    var template = this.chooseTemplate();
-    var content = template();
-    this.$el.html('content');
+    var activeElID = this.chooseID(arguments);
+    $(activeElID).addClass('selected');
+
+    var renderedContent = (this.chooseTemplate(arguments))();
+    this.$el.html(renderedContent);
     return this;
   },
 
-  chooseID: function () {
+  chooseID: function (arguments) {
+    var filter = arguments[0];
+    var type = arguments[1];
     if (this.filter === 'followed') {
       if (this.type === 'playlist') {
         return 'followed-playlists';
@@ -59,13 +60,6 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
         return 'all-posts';
       } else if (this.type === 'user') {
         return 'all-users';
-      }
-
-    } else if (this.filter === 'user') {
-      if (this.type === 'post') {
-        return 'your-posts';
-      } else if (this.type === 'playlist') {
-        return 'your-playlists';
       }
 
     } else if (this.filter === 'top') {

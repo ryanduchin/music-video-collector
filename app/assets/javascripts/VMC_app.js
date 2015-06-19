@@ -13,10 +13,11 @@ window.VMCApp = {
       $rootEl: $("#main"),
     });
 
-    var navbar = new VMCApp.Views.NavView({
-      router: router,
-    });
-    $("#navbar").html(navbar.render().$el);
+    var navBar = new VMCApp.Views.NavView();
+    var subNavBar = new VMCApp.Views.SubNavView();
+
+    $("#navbar").html(navBar.render().$el);
+    $("#subnav").html(subNavBar.render().$el);
 
     // var subNavBar = new VMCApp.Views.SubNavView({
     //   router: router,

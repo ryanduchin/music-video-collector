@@ -58,7 +58,6 @@ y8 = u11.posts.create!(title: 'Phantasm', url: 'https://vimeo.com/90796762', art
 y10 = u11.posts.create!(title: "You're Dead", url: 'https://vimeo.com/103317489', artist: 'Flying Lotus')
 y7 = u9.posts.create!(title: 'Lazy Eye', url: 'https://www.youtube.com/watch?v=Ekdq1jbZLFU', artist: 'Silversun Pickups')
 
-z1 = u2.posts.create!(title: 'Blame', url: 'https://www.youtube.com/watch?v=6ACl8s_tBzE', artist: 'Calvin Harris', description: 'ft. John Newman')
 z2 = u2.posts.create!(title: 'Summer', url: 'https://www.youtube.com/watch?v=ebXbLfLACGM', artist: 'Calvin Harris')
 z4 = u5.posts.create!(title: 'E.T.', url: 'https://www.youtube.com/watch?v=t5Sd5c4o9UM', artist: 'Katy Perry')
 z5 = u5.posts.create!(title: 'This Is How We Do', url: 'https://www.youtube.com/watch?v=7RMQksXpQSk', artist: 'Katy Perry')

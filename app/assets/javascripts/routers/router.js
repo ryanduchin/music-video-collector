@@ -58,7 +58,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
 
   post_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'post');
+    VMCApp.filterEvents.trigger('route', 'show_page', 'post');
 
     var posts = new VMCApp.Collections.Posts({ filter: 'all' })
     var post = posts.getOrFetch(id);
@@ -69,7 +69,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlist_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'playlist');
+    VMCApp.filterEvents.trigger('route', 'show_page', 'playlist');
 
     var playlists = new VMCApp.Collections.Playlists({ filter: 'all' })
     var playlist = playlists.getOrFetch(id);
@@ -80,7 +80,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'user');
+    VMCApp.filterEvents.trigger('route', 'show_page', 'user');
 
     var users = new VMCApp.Collections.Users({ filter: 'all' })
     var user = users.getOrFetch(id);

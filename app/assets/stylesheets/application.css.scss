@@ -84,6 +84,19 @@ li.nav-item {
   margin: 0px;
 };
 
+.nav-item>a:hover {
+  font-size: 25px;;
+};
+
+// .nav-item>a.selected {
+//   font-size: 25px;;
+// };
+//
+// .nav-item>a.sr-only {
+//   font-size: 25px;;
+// };
+
+
 
 
 .nav-dropdown-item>a {

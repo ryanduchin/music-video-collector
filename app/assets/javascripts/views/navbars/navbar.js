@@ -15,23 +15,14 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
     this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
     this.userPosts = new VMCApp.Collections.Posts({ filter: 'user' });
 
-    this.router = options.router;
-    // this.listenTo(this.router, 'route', this.selectIcon);
-
-    this.listenTo(VMCApp.filterEvents, 'show_page', this.titleOnly);
-    this.listenTo(VMCApp.filterEvents, 'post', this.passArgOrSpecializedFunction);
-    this.listenTo(VMCApp.filterEvents, 'playlist', this.render);
-    this.listenTo(VMCApp.filterEvents, 'user', this.render);
-  },
-
-  selectIcon: function (event) {
-    debugger;
+    this.listenTo(VMCApp.filterEvents, 'route', this.render);
   },
 
   render: function () {
-    var renderedContent = this.template({
-      posts: this.collection,
-    });
+    var activeElID = this.chooseID(arguments);
+    $(activeElID).addClass('selected');
+
+    var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
   },
@@ -66,46 +57,42 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
   },
 
 
-  chooseID: function () {
-    if (this.filter === 'followed') {
-      if (this.type === 'playlist') {
-        return 'followed-playlists';
-      } else if (this.type === 'user') {
-        return 'followed-users';
+  chooseID: function (arguments) {
+    var filter = arguments[0];
+    var type = arguments[1];
+    if (filter === 'followed') {
+      if (type === 'playlist') {
+        return '#you';
+      } else if (type === 'user') {
+        return '#you';
+      } else if (type === 'post') {
+        return '#feed';
       }
 
-    } else if (this.filter === 'user') {
-      if (this.type === 'post') {
-        return 'your-posts';
-      } else if (this.type === 'playlist') {
-        return 'your-playlists';
+    } else if (filter === 'user') {
+      if (type === 'post') {
+        return '#you';
+      } else if (type === 'playlist') {
+        return '#you';
       }
 
-    } else if (this.filter === 'all') {
-      if (this.type === 'post') {
-        return 'all-posts';
-      } else if (this.type === 'user') {
-        return 'all-users';
+    } else if (filter === 'all') {
+      if (type === 'post') {
+        return '#explore';
+      } else if (type === 'user') {
+        return '#explore';
       }
 
-    } else if (this.filter === 'user') {
-      if (this.type === 'post') {
-        return 'your-posts';
-      } else if (this.type === 'playlist') {
-        return 'your-playlists';
-      }
-
-    } else if (this.filter === 'top') {
-      return 'top-liked';
-    } else if (this.filter === 'liked') {
-      return 'likes';
-    } else if (this.filter === 'staff') {
-      return 'staff';
-    } else if (this.filter === 'other') {
-      return 'all-playlists';
+    } else if (filter === 'top') {
+      return '#explore';
+    } else if (filter === 'liked') {
+      return '#you';
+    } else if (filter === 'staff') {
+      return '#explore';
+    } else if (filter === 'other') {
+      return '#explore';
     }
     return;
   },
-
 
 });
