@@ -38,7 +38,8 @@ VMCApp.Views.PostForm = Backbone.View.extend({
     if ((this.model.vidSource() === 'Youtube' ||
         this.model.vidSource() === 'Vevo' ||
         this.model.vidSource() === 'Vimeo') &&
-        this.model.escape('title') !== "") {
+        this.model.escape('title') !== "" &&
+        this.model.escape('artist') !== "") {
       this.model.save({}, {
         success: function () {
           // what collection do I add it to? There are multiple 'post' collections.
