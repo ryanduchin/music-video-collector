@@ -187,9 +187,14 @@ button.close {
 
 //post thumbnail
 
+.thumb-buttons {
+  left: 10px;
+};
+
 .thumb-button {
   position: relative;
   float: right;
+  margin-left: 5px;
 };
 
 .thumb-buttons, .thumb-descr {
@@ -204,6 +209,7 @@ button.close {
 .page-title {
   text-align: center;
 };
+
 
 //playlist thumbnail
 
@@ -280,6 +286,7 @@ button.close {
   text-align: center;
   width: 250px;
 };
+
 
 
 //show page delete button
