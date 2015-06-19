@@ -1,4 +1,4 @@
-u100 = User.create!(username: 'guest', password: 'password')
+ux = User.create!(username: 'guest', password: 'password')
 u1 = User.create!(username: 'ryanduchin', password: 'asdfasdf')
 u2 = User.create!(username: 'Ken', password: 'asdfasdf2')
 u3 = User.create!(username: 'Sasha', password: 'asdfasdf2')
