@@ -23,8 +23,9 @@
 body {
   background-image: image-url('blurreddarkenedrave.png');
   background-repeat: no-repeat;
-  // background-size: cover;
-  background-color: rgba(14, 14, 48, .8);
+  background-size: cover;
+  background-color: #000324;
+  background-position: center top; //or right top
 };
 
 nav {
@@ -55,8 +56,6 @@ ul.navbar-right {
 #navbar-brand {
   color: #CE97FF;
 };
-
-
 
 .navbar-brand-container {
   font-size: 30px;
@@ -124,7 +123,7 @@ li.nav-item {
 };
 
 
-
+// general thumbnail
 
 ul.view-posts {
   clear: both;
@@ -213,8 +212,6 @@ div.footer {
   background-color: #CE97FF;
   color: white;
 };
-
-
 
 
 .m-backdrop.inactive {
@@ -354,7 +351,7 @@ button.close {
 
 
 
-//show page delete button
+//show page
 
 .show-delete {
   margin-top: 20px;
@@ -372,4 +369,23 @@ button.close {
 
 .post-show-title {
   margin-left: -3px;
+};
+
+#post-show * {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+};
+
+#post-show .post-show-btn {
+  padding: 0;
+};
+
+#post-show .post-show-title {
+  font-size: 50px;
+  margin-bottom: 12px;
+  letter-spacing: 4px;
+};
+
+#post-show .post-show-artist {
+  margin: 0px;
 };

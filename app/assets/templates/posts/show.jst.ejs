@@ -1,4 +1,4 @@
-<div class='container-fluid'>
+<div class='container-fluid' id='post-show'>
   <div class='post-show-row-1 row'>
 
     <div class='col-md-5 col-md-offset-2'>
@@ -15,14 +15,13 @@
 
   </div>
   <div class='post-show-row-2 row'>
-
     <div class='col-md-5 col-md-offset-2'>
       <h3 class='post-show-artist'>
         <%= post.escape('artist').toUpperCase() %>
       </h3>
     </div>
 
-    <div class='col-md-2'>
+    <div class='col-md-2 post-show-btn'>
       <div class='like-button post-show-btn'></div>
     </div>
 
@@ -39,13 +38,13 @@
   <div class='post-show-row-4 row'>
     <div class='col-md-5 col-md-offset-2'>
 
-      <h4>User:
-        <a href="#/users/<%= post.escape('author_id') %>">
+      <a href="#/users/<%= post.escape('author_id') %>">
+        <h3>User:
           <%= post.escape('username') %>
         </a>
-      </h4>
+      </h3>
 
-      <h4><%= post.vidSource() %></h4>
+      <h3><%= post.vidSource() %></h3>
 
     </div>
     <div class='col-md-2 post-show-btn'>
