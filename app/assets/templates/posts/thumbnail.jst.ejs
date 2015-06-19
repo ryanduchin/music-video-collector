@@ -1,13 +1,11 @@
-<div class="container">
+<div class="container" id='thumbnail-container'>
 
   <div class="thumb-image row">
-    <a href="#/posts/<%= post.id %>">
       <%= JST['_renderThumbnail']({ post: post, size: size }) %>
-    </a>
   </div>
 
   <div class="thumb-top-1 row">
-    <div class="thumb-descr col-md-3">
+    <div class="thumb-descr col-md-2">
       <a href="#/posts/<%= post.id %>">
         <div class="thumb-title">
 

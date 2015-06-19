@@ -25,7 +25,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #000324;
-  background-position: center top; //or right top
+  background-position: right top; //right or center
 };
 
 nav {
@@ -99,13 +99,6 @@ li.nav-item {
 
 
 
-
-.nav-dropdown-item>a {
-
-};
-
-
-
 //subnav and titles
 
 .subnav-item>a {
@@ -123,33 +116,7 @@ li.nav-item {
 };
 
 
-// general thumbnail
 
-ul.view-posts {
-  clear: both;
-};
-
-div.user-posts-index {
-  clear: both;
-};
-
-.thumbnail-container {
-  margin-bottom: 100px;
-};
-
-.user-thumbnail {
-  margin: 0px;
-  padding: 0px;
-};
-
-.thumb {
-  height: 225px;
-};
-
-div.footer {
-  display: block;
-  clear: both;
-};
 
 //modal create forms
 
@@ -228,15 +195,55 @@ button.close {
   font-size: 40px;
 };
 
-//
-
+//needed?
 .overflow-container {
   overflow-x: auto;
   white-space: nowrap
 };
 
+// general thumbnail
+
+ul.view-posts {
+  clear: both;
+};
+
+div.user-posts-index {
+  clear: both;
+};
+
+.thumbnail-container {
+  margin-bottom: 100px;
+};
+
+.user-thumbnail {
+  margin: 0px;
+  padding: 0px;
+};
+
+.thumb {
+  height: 225px;
+  width: 400px;
+};
+
+div.footer {
+  display: block;
+  clear: both;
+};
 
 //post thumbnail
+
+// #post-thumbnail-link {
+//   width: 400px;
+// };
+//
+// #post-thumbnail-link .thumb {
+//   width: 400px;
+// };
+//
+// .thumbnail-container.post-thumbnail > div#thumbail-container {
+//   width: 630px;
+// };
+
 
 .thumb-buttons {
   left: 10px;
@@ -274,6 +281,7 @@ button.close {
 
 
 //playlist thumbnail
+
 
 
 #playlist-thumbnail-overlay {
