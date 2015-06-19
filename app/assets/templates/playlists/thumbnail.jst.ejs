@@ -6,34 +6,39 @@
 
 
 
+<div id="playlist-follow-button" class='thumb-button'></div>
+
+
+
+
 <a href="#/playlists/<%= playlist.id %>">
-  <h2 class="thumb-playlist-title">
-    <%= playlist.escape('name') %>
-  </h2>
+  <div id="playlist-thumbnail-overlay">
+    <div class="overlay"></div>
 
+
+    <h2 class="thumb-playlist-title">
+      <br><br><%= playlist.escape('name').toUpperCase() %>
+    </h2>
+
+    <% if (post === "none") { %>
+      <div class="thumb blank-thumb">
+        <img width="<%= width %>" height="<%= 225 * width / 400 %>"
+          src='/images/headphones3.svg'></img>
+      </div>
+
+    <% } else { %>
+      <%= JST['_renderThumbnail']({ post: post, size: size }) %>
+    <% } %>
+
+  </div>
 </a>
-  <div class="follow-button"></div>
-<a href="#/playlists/<%= playlist.id %>">
 
 
 
-  <% if (post === "none") { %>
 
-    <h6 class="thumb-title">&nbsp;</h6>
 
-    <div class="thumb blank-thumb">
-      <img width="<%= width %>" height="<%= 225 * width / 400 %>"
-        src='/images/headphones3.svg'></img>
-    </div>
-
-  <% } else { %>
-
-    <h6 class="thumb-title">
-      <%= post.escape('title') + "/" + post.escape('artist') %>
-    </h6>
-
-    <%= JST['_renderThumbnail']({ post: post, size: size }) %>
-
-  <% } %>
-
-</a>
+<!--
+<h6 class="thumb-title">
+  <%= post.escape('title') + "/" + post.escape('artist') %>
+</h6>
+-->
