@@ -212,7 +212,7 @@ button.close {
 };
 
 #playlist-thumbnail-overlay > div.overlay {
-  opacity: .6;
+  opacity: .65;
   background-color: black;
   position: absolute;
   left: 0; top: 0; height: 225px; width: 400px;
@@ -230,9 +230,11 @@ button.close {
 };
 
 #playlist-follow-button {
-  // position: absolute;
+  position: absolute;
   // width: 400px;
   // right: 0px;
+  float: right;
+  // display: inline;
   // z-index: 10;
 };
 
