@@ -135,7 +135,7 @@ div.user-posts-index {
 };
 
 .thumbnail-container {
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 };
 
 .user-thumbnail {
@@ -207,6 +207,7 @@ button.close {
 
 //playlist thumbnail
 
+
 #playlist-thumbnail-overlay {
   position: relative;
 };
@@ -221,12 +222,13 @@ button.close {
 };
 
 #playlist-thumbnail-overlay .thumb-playlist-title {
-  font-size: 28px;
+  font-size: 30px;
   text-align: center;
   position: absolute;
   color: #9A84AD;
+  // color: white;
   width: 400px;
-  letter-spacing: 3px;
+  letter-spacing: 8px;
 };
 
 #playlist-follow-button {
