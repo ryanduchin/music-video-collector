@@ -1,13 +1,27 @@
-<h1><%= user.escape('username') %></h1><br>
+<div class='container-fluid' id='user-show'>
+  <div class='user-show-row-1 row'>
+    <div class='col-md-4 col-md-offset-4'>
+      <h1 class='user-show-title'>
+        <%= user.escape('username') %>
+      </h1>
+    </div>
+    <div class='col-md-2 col-md-offset-2'>
+      <div class="follow-button"></div>
+    </div>
+  </div>
 
-<div class="follow-button"></div>
+  <br><br>
 
-<div class="overflow-container">
-  <h2>Playlists</h2>
-  <ul class="view-user-playlists"></ul>
-</div>
-
-<div class="overflow-container">
-  <h2>Posts</h2>
-  <ul class="view-user-posts"></ul>
+  <div class='user-show-row-2 row'>
+    <div class="overflow-container">
+      <h2 class='user-show-subtitle'>Playlists</h2>
+      <ul class="view-user-playlists"></ul>
+    </div>
+  </div>
+  <div class='user-show-row-3 row'>
+    <div class="overflow-container">
+      <h2 class='user-show-subtitle'>Posts</h2>
+      <ul class="view-user-posts"></ul>
+    </div>
+  </div>
 </div>

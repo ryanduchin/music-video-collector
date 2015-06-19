@@ -55,7 +55,7 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     // debugger;
     var subView = new VMCApp.Views.PostThumbnail({
       model: post,
-      size: 'user'
+      size: 'normal' //user
     });
     this.addSubview('.view-user-posts', subView);
   },
@@ -64,7 +64,7 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     // debugger;
     var subView = new VMCApp.Views.PlaylistThumbnail({
       model: playlist,
-      size: 'user'
+      size: 'normal' //user
     });
     this.addSubview('.view-user-playlists', subView);
   },

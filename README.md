@@ -14,11 +14,15 @@
 ** horizontal scroll user show page
 ** Edit post,playlist
 * thumbnail links extend too far!!
+* sign-in and landing pages
+* user show view optimization (tile size, layout, side scroll)
+* Thumbnail spacing from each other!
+* like/follow icons broken on big views, why??
 
 ## Feedback from Chris Review
 * submissions clicking ENTER i dont know what happens (event listener was to 'submit')
 * no playlist to add to on new user. maybe on user creation make an auto playlist?
-* follow button not obvious
+* follow button not obvious (splash page explanation?)
 * grid spacing - more vertical margin to separate videos
 * if no posts, say something - add video (not just a blank page) (post index, playlist show)
 * followed button on user page must say 'follow', not just have the icon
@@ -26,29 +30,11 @@
 *** rendering errors on modals (ex. blank playlist title on add playlist)
 * background divs for each thumbnail (defines their space and allows background color)
 
-* likes/follows broken
 * broken follow button
 * make it more obvious what following does and what goes into your feed (help from allan)
 * seed db with more users so you can play around with the user index page and the user show page
 * seed db with likes, follows, playlistposts (ugh)
 * kaminari paging (infinite scroll)
-
-## Allan's Feedback
-Navbar will have HOME, YOU, EXPLORE
-home - your feed
-YOU - your posts, your followed playlists, your followed users, your likes
-EXPLORE - view all users, view all playlists, view all posts
-* add a subnavbar
-* dark inverted theme. maybe dark red + LIGHT COMES FROM ABOVE (gradient dark at bottom, cornered?)
-  + dribbble.com for inspiration
-
-## Styling
--user show page -> help from Charlie. overflow-x and white-space
-* sign-in and landing pages
-* user index and show view optimization (tile size, layout, side scroll)
-* https://github.com/ChanChar/unsplash_pictures + cloudinary = background images
-* icons within each thumbnail
-* Thumbnail spacing from each other!
 
 
 ## Minimum Viable Product
@@ -94,6 +80,7 @@ Not going to get to:
 - [ ] Edit profile with tagline
 - [ ] All videos have nested comments, users can add comments
 - [ ] Add friends, add a feed for posts from friends.
+- [ ] user show thumbnail size optimization
 
 
 ## Design Docs

@@ -85,11 +85,11 @@ li.nav-item {
   margin: 0px;
 };
 
-// .nav-item>a:hover {
+// .nav-item a:hover {
 //   font-size: 25px;
 //   background-color: rgba(0, 0, 0, .85);
 //   color: white;
-//   // font-family: 'Roboto', sans-serif;
+//   font-family: 'Roboto', sans-serif;
 // };
 
 // .nav-item>a.selected {
@@ -419,6 +419,30 @@ div.footer {
 };
 
 #playlist-show .follow-button {
+  margin-top: 20px;
+  float: right;
+};
+
+//user show page
+#user-show * {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+};
+
+#user-show .user-show-title {
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 4px;
+};
+
+#user-show .user-show-subtitle {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 4px;
+};
+
+
+#user-show .follow-button {
   margin-top: 20px;
   float: right;
 };
