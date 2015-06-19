@@ -1,20 +1,29 @@
 <button class='close'>&times;</button>
 
-<h3>Add <%= post.escape('title') %> to a playlist:</h3>
+<h1 class='form-title'>Add To Playlist</h1>
 
-<select class="playlist-dropdown">
-  <option value="">
+<div class='row'>
+  <h3 class='form-song'>Song: <%= post.escape('title') %></h3>
+</div><br>
 
-  <% userPlaylists.forEach(function (playlist) { %>
+<div class='required-fields'>
+  <div class='row'>
 
-    <option name="playlist_post[playlist_id]" value="<%= playlist.id %>">
-      <%= playlist.escape('name') %>
-    </option>
+    <label class="col-md-4" for="playlist-name">Playlist: </label>
+    <select class="playlist-dropdown col-md-8">
+      <option value="">
+      <% userPlaylists.forEach(function (playlist) { %>
+        <option name="playlist_post[playlist_id]" value="<%= playlist.id %>">
+          <%= playlist.escape('name') %>
+        </option>
+      <% }); %>
+    </select>
 
-  <% }); %>
+  </div>
+</div>
 
-</select>
+<br><br>
 
-
-<button class='submit-playlist btn btn-success'>Submit</button>
-<button class='cancel btn btn-danger'>Cancel</button>
+<div class='row'>
+  <button class='submit-playlist btn col-md-4 col-md-offset-4'>Submit</button>
+</div>
