@@ -15,13 +15,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "users/:id" : "users_show",
   },
 
-  // posts/home: function () {       ?????
-  //   this.posts_index('followed')
-  // },
-
   posts_index: function (filter) {
-    var _filter = filter || 'followed'; // for ""
-    // this triggers an event, and doesnt listen
+    var _filter = filter || 'followed';
     VMCApp.filterEvents.trigger('route', _filter, 'post')
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
@@ -34,7 +29,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_index: function(filter) {
-    VMCApp.filterEvents.trigger('route', filter, 'user')
+    VMCApp.filterEvents.trigger('user', filter);
 
     var users = new VMCApp.Collections.Users({ filter: filter })
     users.fetch();
@@ -46,7 +41,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlists_index: function (filter) {
-    VMCApp.filterEvents.trigger('route', filter, 'playlist');
+    VMCApp.filterEvents.trigger('playlist', filter);
 
     var playlists = new VMCApp.Collections.Playlists({ filter: filter })
     playlists.fetch();
@@ -59,7 +54,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
 
 
   post_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'post');
+    VMCApp.filterEvents.trigger('post', filter);
 
     var posts = new VMCApp.Collections.Posts({ filter: 'all' })
     var post = posts.getOrFetch(id);
@@ -70,7 +65,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   playlist_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'playlist');
+    VMCApp.filterEvents.trigger('playlist', 'show_page');
 
     var playlists = new VMCApp.Collections.Playlists({ filter: 'all' })
     var playlist = playlists.getOrFetch(id);
@@ -81,7 +76,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   users_show: function (id) {
-    VMCApp.filterEvents.trigger('route', filter, 'user');
+    VMCApp.filterEvents.trigger('user', 'show_page');
 
     var users = new VMCApp.Collections.Users({ filter: 'all' })
     var user = users.getOrFetch(id);
