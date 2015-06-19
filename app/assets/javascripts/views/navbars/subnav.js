@@ -17,22 +17,21 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
 
   chooseTemplate: function () {
     if (this.filter === 'followed' && this.type === 'post') {
-      return this.template_feed();
+      return this.template_feed;
     } else if (this.filter === 'show') {
-      return this.template_none();
+      return this.template_none;
     } else if (this.filter === 'followed' ||
                this.filter === 'user' ||
                this.filter === 'liked') {
-      return this.template_you();
+      return this.template_you;
     } else {
-      return this.template_explore();
+      return this.template_explore;
     }
   },
 
   render: function () {
-    var content = this._template({
-      title: this.chooseTitle(),
-    });
+    var template = this.chooseTemplate();
+    var content = template();
     this.$el.html(content);
     return this;
   },

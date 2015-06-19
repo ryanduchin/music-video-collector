@@ -5,6 +5,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
+    "" : "posts_index",
     ":filter/posts" : "posts_index",
     ":filter/playlists" : "playlists_index",
     ":filter/users" : "users_index",
@@ -12,7 +13,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "posts/:id" : "post_show",
     "playlists/:id" : "playlist_show",
     "users/:id" : "users_show",
-    "" : "posts_index",
   },
 
   posts_index: function (filter) {
@@ -59,7 +59,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.swapView(newView);
 
     var newNavView = new VMCApp.Views.SubNavView({
-      filter: _subFilter,
+      filter: filter,
       type: 'playlist',
     });
     this.swapNavView(newNavView);
