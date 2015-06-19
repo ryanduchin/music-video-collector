@@ -40,7 +40,7 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
 
   validateModel: function () {
     var that = this;
-    if (this.model.name !== "") {
+    if (this.model.escape('name') !== "") {
       this.model.save({}, {
         success: function () {
           that.collection.add(that.model);

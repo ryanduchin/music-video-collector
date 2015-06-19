@@ -6,11 +6,22 @@
   <div class="render-error"></div>
 </div><br>
 
-<label for="playlist-name">Title: </label><br>
-<input
-  type="text"
-  name="name"
-  id="playlist-name"
-></input><br>
+<div class='required-fields'>
+  <div class='row'>
 
-<button class="create-playlist">Submit</button>
+    <label class="col-md-4" for="playlist-name">Title: </label>
+    <input
+      type="text"
+      name="name"
+      id="playlist-name"
+      class="col-md-8"
+    ></input><br>
+
+  </div>
+</div>
+
+<br><br>
+
+<div class='row'>
+  <button class="create-playlist btn col-md-4 col-md-offset-4">Submit</button>
+</div>
