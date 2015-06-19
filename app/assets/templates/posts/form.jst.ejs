@@ -1,50 +1,83 @@
 <button class='close'>&times;</button>
 
-<h1>Submit a Video!</h1>
+<h1 class='form-title'>Add Video</h1><br>
 
-<div class="render-error"></div>
+<div class='row'>
+  <div class="render-error"></div>
+</div><br>
 
-<p>V|M|C supports Youtube, Vevo, and Vimeo</p>
 
-<div>Required fields:<br>
-  <label for="post-title">Title: </label><br>
-  <input
-    type="text"
-    name="title"
-    id="post-title"
-  ></input><br>
+<div class='required-fields'>
 
-  <label for="post-title">URL: </label><br>
-  <input
-    type="text"
-    name="url"
-    id="post-url"
-  ></input><br>
+  <div class='row'>
+    <label class="col-md-4" for="post-title">URL * </label>
+    <input
+      type="text"
+      name="url"
+      id="post-url"
+      class="col-md-8"
+    ></input><br>
 
-  <label for="post-artist">Artist: </label><br>
-  <input
-    type="text"
-    name="artist"
-    id="post-artist"
-  ></input><br>
+  </div>
+  <div class='row'>
+
+    <div class='url-instructions'>Paste a URL from Youtube, Vimeo, or Vevo</div><br>
+
+  </div>
+  <div class='row'>
+
+    <label class="col-md-4" for="post-title">Title * </label>
+    <input
+      type="text"
+      name="title"
+      id="post-title"
+      class="col-md-8"
+    ></input><br><br>
+
+  </div>
+  <div class='row'>
+
+    <label class="col-md-4" for="post-artist">Artist * </label>
+    <input
+      type="text"
+      name="artist"
+      id="post-artist"
+      class="col-md-8"
+    ></input><br><br>
+
+  </div>
 
 </div><br>
 
-<div>Optional fields:<br>
 
-  <label for="post-album">Album: </label><br>
-  <input
-    type="text"
-    name="album"
-    id="post-album"
-  ></input><br>
+<div class='optional-fields'>
 
-  <label for="post-description">Description: </label><br>
-  <textarea
-    name="description"
-    id="post-description"
-  ></textarea><br>
+  <div class='row'>
+
+    <label class="col-md-4" for="post-album">Album </label>
+    <input
+      type="text"
+      name="album"
+      id="post-album"
+      class="col-md-8"
+    ></input><br><br>
+
+  </div>
+  <div class='row'>
+
+    <label class="col-md-4" for="post-description">Description </label>
+    <textarea
+      name="description"
+      id="post-description"
+      class="col-md-8"
+    ></textarea><br><br>
+
+  </div>
 
 </div>
 
-<button class="create-post">Submit</button>
+<br><br>
+
+<div class='row'>
+  <button class="create-post btn col-md-4 col-md-offset-4">Submit</button>
+</div>

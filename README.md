@@ -9,7 +9,7 @@
 *** David - how do I get to these options in chrome? http://www.simonellistonball.com/technology/changing-video-playback-speed-in-vimeo/
 --> can't jquery select the video? not affecting the playback rate?
 
-*** Database resetting? Users only see seeds + their account?
+* Database resetting? Users only see seeds + their account? heroku scheduler
 *** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
 
 ** horizontal scroll user show page
@@ -91,6 +91,7 @@ Optimization:
 - [ ] add to playlist toggle subview on/off
 - [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
 - [ ] user show page has that user's likes (might be a bit hard with little payoff)
+- [ ] Vevo videos cant be played in index views
 
 Not going to get to:
 - [ ] Edit profile with tagline
