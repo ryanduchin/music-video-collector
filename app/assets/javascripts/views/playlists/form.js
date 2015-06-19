@@ -20,16 +20,9 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
 
   createPlaylist: function (event) {
     event.preventDefault();
-    var that = this;
     var attrs = this.$el.serializeJSON();
     this.model.set(attrs);
-    this.model.save({}, {
-      success: function () {
-        that.collection.add(that.model);
-        that.removeModal();
-        Backbone.history.navigate("#/playlists/" + that.model.id, { trigger: true });
-      }
-    });
+    this.validateModel();
   },
 
   closeModal: function (event) {
@@ -43,6 +36,25 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
     $('.m-content').removeClass('active');
     $('.m-backdrop').removeClass('inactive');
     this.remove();
+  },
+
+  validateModel: function () {
+    var that = this;
+    if (this.model.name !== "") {
+      this.model.save({}, {
+        success: function () {
+          that.collection.add(that.model);
+          that.removeModal();
+          Backbone.history.navigate("#/playlists/" + that.model.id, { trigger: true });
+        }
+      });
+    } else {
+      this.renderError();
+    }
+  },
+
+  renderError: function () {
+    this.$('.render-error').html("Invalid submission");
   },
 
 });

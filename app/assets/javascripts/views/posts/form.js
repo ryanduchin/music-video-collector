@@ -56,7 +56,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
   },
 
   renderError: function () {
-    this.$('.render-error').html("invalid submission")
+    this.$('.render-error').html("Invalid submission")
   },
 
   // addToPlaylist: function (playlistAttr, id) {
