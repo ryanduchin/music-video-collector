@@ -14,10 +14,14 @@
   </div>
 
 <% } else if (vidSource === "Vevo") { %>
+
+  <div id="vevo-overlay">
+  <div class="overlay"></div>
   <div class="thumb vevo-thumb">
     <iframe width="<%= width - 10 %>" height="<%= width * 225/400 %>"
       src='<%= post.vidEmbedSrc() + vidId %>'
       frameborder="0" allowfullscreen></iframe>
+  </div>
   </div>
 
 <% } else if (vidSource === "Vimeo") { %>
@@ -35,7 +39,6 @@
         }
     });
   </script>
-  <div class="vimeooverlay"></div>
   <div class="thumb vimeo-thumb" id="vimeo-<%= vidId %>"></div>
 
 <% } %>
