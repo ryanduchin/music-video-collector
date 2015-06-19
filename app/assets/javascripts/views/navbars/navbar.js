@@ -20,8 +20,7 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
   },
 
   selectIcon: function (event) {
-    debugger;
-    return 5;
+    // debugger;
   },
 
   render: function () {
