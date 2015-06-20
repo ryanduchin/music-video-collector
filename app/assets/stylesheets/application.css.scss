@@ -233,6 +233,11 @@ div.footer {
 };
 
 //post thumbnail
+.posts-index .post-thumbnail {
+  width: 400px;
+  margin-left: 40px;
+  margin-right: 40px;
+};
 
 #post-thumbnail-link {
   width: 400px;
@@ -245,8 +250,8 @@ div.footer {
 
 .container#thumbnail-container {
   width: 400px;
-  padding-left: 50px;
-  padding-right: 50px;
+  // padding-left: 50px;
+  // padding-right: 50px;
 };
 
 
@@ -278,14 +283,18 @@ div.footer {
   text-align: center;
 };
 
-#vevo-overlay {
+* #vevo-overlay {
   position: relative;
 };
 
-#playlist-thumbnail-overlay > div.vevo-overlay {
+* div.vevo-overlay {
   opacity: 0;
   position: absolute;
-  left: 0; top: 0; height: 225px; width: 400px;
+  left: 15px; top: 0; height: 225px; width: 400px;
+};
+
+.thumb-image {
+  height: 225px;
 };
 
 
