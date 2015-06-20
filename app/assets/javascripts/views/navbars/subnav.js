@@ -31,6 +31,8 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
 
   render: function () {
     var activeElID = this.chooseID(arguments);
+    debugger;
+
     $(activeElID).addClass('selected');
 
     var renderedContent = (this.chooseTemplate(arguments))();
@@ -41,35 +43,34 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   chooseID: function (arguments) {
     var filter = arguments[0];
     var type = arguments[1];
-    debugger;
-    if (this.filter === 'followed') {
-      if (this.type === 'playlist') {
+    if (filter === 'followed') {
+      if (type === 'playlist') {
         return 'followed-playlists';
-      } else if (this.type === 'user') {
+      } else if (type === 'user') {
         return 'followed-users';
       }
 
-    } else if (this.filter === 'user') {
-      if (this.type === 'post') {
-        return 'your-posts';
-      } else if (this.type === 'playlist') {
+    } else if (filter === 'user') {
+      if (type === 'post') {
+        return '.yourposts';
+      } else if (type === 'playlist') {
         return 'your-playlists';
       }
 
-    } else if (this.filter === 'all') {
-      if (this.type === 'post') {
+    } else if (filter === 'all') {
+      if (type === 'post') {
         return 'all-posts';
-      } else if (this.type === 'user') {
+      } else if (type === 'user') {
         return 'all-users';
       }
 
-    } else if (this.filter === 'top') {
+    } else if (filter === 'top') {
       return 'top-liked';
-    } else if (this.filter === 'liked') {
+    } else if (filter === 'liked') {
       return 'likes';
-    } else if (this.filter === 'staff') {
+    } else if (filter === 'staff') {
       return 'staff';
-    } else if (this.filter === 'other') {
+    } else if (filter === 'other') {
       return 'all-playlists';
     }
     return;
