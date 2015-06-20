@@ -13,7 +13,6 @@ u11 = User.create!(username: 'Steve', password: 'asdfasdf2')
 u12 = User.create!(username: 'Alex25', password: 'asdfasdf2')
 
 
-
 v1 = u1.playlists.create!(name: 'House')
 v2 = u1.playlists.create!(name: 'Trance')
 v3 = u1.playlists.create!(name: 'Techno')
