@@ -5,7 +5,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
 
   events: {
     'click button.create-post' : 'createPost',
-    'click button.close' : 'closeModal',
+    'click button.cancel-post' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
   },
 
