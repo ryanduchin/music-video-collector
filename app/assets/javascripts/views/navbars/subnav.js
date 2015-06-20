@@ -41,6 +41,7 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   chooseID: function (arguments) {
     var filter = arguments[0];
     var type = arguments[1];
+    debugger;
     if (this.filter === 'followed') {
       if (this.type === 'playlist') {
         return 'followed-playlists';
