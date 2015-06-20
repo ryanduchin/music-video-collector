@@ -5,7 +5,6 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
 
   events: {
     'click button.submit-playlist' : 'addToPlaylist',
-    'click button.close' : 'closeModal',
     'click button.cancel' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
 
