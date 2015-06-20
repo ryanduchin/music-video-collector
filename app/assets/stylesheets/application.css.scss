@@ -208,9 +208,6 @@ button.close {
 
 // general thumbnail
 
-ul.view-posts {
-  clear: both;
-};
 
 div.user-posts-index {
   clear: both;
@@ -241,18 +238,20 @@ div.footer {
   width: 400px;
   display: inline-block;
 };
-//
-// #post-thumbnail-link .thumb {
-//   width: 400px;
-// };
-//
-// .thumbnail-container.post-thumbnail > div#thumbail-container {
-//   width: 630px;
-// };
+
+.view-posts {
+  display: inline-block;
+};
+
+.container#thumbnail-container {
+  width: 400px;
+  padding-left: 50px;
+  padding-right: 50px;
+};
 
 
 .thumb-buttons {
-  left: 10px;
+  // left: 10px;
 };
 
 .thumb-button {
@@ -260,6 +259,11 @@ div.footer {
   float: right;
   margin-left: 5px;
 };
+
+#thumbnail-container .thumb-1 {
+  width: 400px;
+  padding: 0px;
+}
 
 .thumb-buttons, .thumb-descr {
   padding: 0px;
