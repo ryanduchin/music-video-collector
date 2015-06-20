@@ -125,6 +125,12 @@ li.nav-item {
 
 //modal create forms
 
+.close-form {
+  background-color: rgba(0, 0, 0, 0);
+  float: right;
+  font: black;
+};
+
 .m-content.active {
   z-index: 100;
   height: auto;

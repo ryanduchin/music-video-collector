@@ -8,7 +8,7 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
 
   events: {
     'click button.create-playlist' : 'createPlaylist',
-    'click a.close' : 'closeModal',
+    'click button.cancel-playlist' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
   },
 
