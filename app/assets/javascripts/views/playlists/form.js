@@ -2,19 +2,21 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
   tagName: 'form',
   className: 'playlist-form',
   template: JST['playlists/form'],
+  beforeSubmit: function (event) {
+    this.createPlaylist(event);
+  },
 
   events: {
     'click button.create-playlist' : 'createPlaylist',
-    'click button.close' : 'closeModal',
+    'click a.close' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
+    'keyup' : 'processKey',
   },
 
-  initialize: function () {
-    this.$el.submit(function (event) {
-      debugger;
-      event.preventDefault();
-      this.createPlaylist();
-    });
+  processKey: function (e) {
+    if(e.keyCode == 13) {
+      this.createPlaylist(e);
+    }
   },
 
   render: function () {
