@@ -6,11 +6,11 @@
 
 ## Next actions and list of questions
 
---> can't jquery select the video? not affecting the playback rate?
-
 * Database resetting? Users only see seeds + their account? heroku scheduler
 *** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
+  -> trial page with several VIMEO
 
+  
 ** horizontal scroll user show page
 ** Edit post,playlist
 * thumbnail links extend too far!!

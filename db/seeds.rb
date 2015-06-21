@@ -30,6 +30,8 @@ v14 = u8.playlists.create!(name: 'From Sarah')
 v15 = u9.playlists.create!(name: 'Best Songs')
 v16 = u11.playlists.create!(name: 'Poppin')
 v17 = u12.playlists.create!(name: 'Road Trip')
+v18 = u1.playlists.create!(name: 'Vimeo')
+v19 = u1.playlists.create!(name: 'Vevo')
 
 
 
@@ -120,6 +122,16 @@ k12 = PlaylistPost.create!(playlist_id: 14, post_id: z3.id)
 k13 = PlaylistPost.create!(playlist_id: 15, post_id: z10.id)
 k14 = PlaylistPost.create!(playlist_id: 16, post_id: y6.id)
 k15 = PlaylistPost.create!(playlist_id: 17, post_id: y3.id)
+
+l1 = PlaylistPost.create!(playlist_id: v18.id, post_id: p5.id)
+l1 = PlaylistPost.create!(playlist_id: v18.id, post_id: y11.id)
+l1 = PlaylistPost.create!(playlist_id: v18.id, post_id: y10.id)
+l1 = PlaylistPost.create!(playlist_id: v18.id, post_id: y9.id)
+l1 = PlaylistPost.create!(playlist_id: v19.id, post_id: q10.id)
+l1 = PlaylistPost.create!(playlist_id: v19.id, post_id: p9.id)
+
+
+
 
 
 # user 1 follows user 2
