@@ -14,6 +14,7 @@ High Priority
 * custom URL
 * good Readme
 * finish seeding
+* friendlyID on users (and videos?) is a good substitute for not having search
 
 Low Priority
 
@@ -81,6 +82,7 @@ Optimization:
 
 Not going to get to:
 - [ ] Edit profile with tagline
+- [ ] Button to watch next video in playlist
 - [ ] All videos have nested comments, users can add comments
 
 
