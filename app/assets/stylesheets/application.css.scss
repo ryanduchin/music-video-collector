@@ -68,6 +68,11 @@ ul.navbar-right {
   left: 205px;
 };
 
+.navbar-brand.page-scroll {
+  margin: 0px;
+  left: 25px;
+};
+
 li.nav-item {
   float: left;
   position: relative;
@@ -431,7 +436,7 @@ div.footer {
   margin-left: -3px;
 };
 
-#post-show * {
+#post-show *:not(.fa) {
   color: white;
   font-family: 'Roboto', sans-serif;
 };

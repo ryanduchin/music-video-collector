@@ -10,6 +10,7 @@
 Sun
 High Priority
 * Splash Page
+* user show page follow buttons are broken because they arent distinguished between playlist and user
 * custom URL
 * good Readme
 * finish seeding
@@ -18,7 +19,6 @@ Low Priority
 
 * Database resetting? Users only see seeds + their account? heroku scheduler
 * lots of errors in inspector - what are they? how do i deal with calling too much stuff?
-
 
 * kaminari paging (infinite scroll) posts index
 * horizontal scroll user show page
