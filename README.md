@@ -7,12 +7,14 @@
 ## Next actions and list of questions
 
 
-Sat
-* like/follow icons broken on big views, why??
-  -> trial page with VIMEO/VEVO playlists
-
-
 Sun
+High Priority
+* Splash Page
+* custom URL
+* good Readme
+* finish seeding
+
+Low Priority
 
 * Database resetting? Users only see seeds + their account? heroku scheduler
 * lots of errors in inspector - what are they? how do i deal with calling too much stuff?
