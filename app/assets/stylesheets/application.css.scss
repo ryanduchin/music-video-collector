@@ -57,13 +57,12 @@ ul.navbar-right {
 
 #navbar-brand {
   color: #CE97FF;
-};
-
-.navbar-brand-container {
-  font-size: 30px;
-  margin-top: 15px;
+  border: 5px solid #CE97FF;
+  padding: 5px;
+  font-size: 25px;
+  margin-top: 10px;
   position: relative;
-  left: 350px;
+  left: 205px;
 };
 
 li.nav-item {
