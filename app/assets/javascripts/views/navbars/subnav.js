@@ -30,9 +30,10 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    $('.subnav-item').removeClass('active')
     var activeElID = this.chooseID(arguments);
     setTimeout(function () {
-      $(activeElID).addClass('selected');
+      $(activeElID).addClass('active');
     }, 0);
     var renderedContent = (this.chooseTemplate(arguments))();
     this.$el.html(renderedContent);
