@@ -84,6 +84,7 @@ Not going to get to:
 - [ ] Edit profile with tagline
 - [ ] Button to watch next video in playlist
 - [ ] All videos have nested comments, users can add comments
+- [ ] Cookies
 
 
 ## Design Docs
