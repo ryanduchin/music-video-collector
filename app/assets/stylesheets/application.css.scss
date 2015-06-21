@@ -482,14 +482,48 @@ div.footer {
 };
 
 #user-show .user-show-subtitle {
-  text-align: center;
+  // text-align: center;
   font-size: 40px;
   letter-spacing: 4px;
 };
-
 
 #user-show .follow-button {
   margin-top: 20px;
   // float: right;
   text-align: center;
 };
+
+#user-show-row-2,
+#user-show-row-3 {
+  margin-top: 50px;
+};
+
+#user-show h2.user-show-subtitle {
+  margin-bottom: 10px;
+};
+
+
+#user-show .scroll-box {
+  // width: 600px;
+  margin: 0px;
+  height: 400px;
+  // margin: 100px auto;
+  background-color: #000324;
+  border: 2px solid #000;
+  overflow: auto;
+  box-shadow: 0 0 10px #000;
+}
+
+#user-show .scroll-box-list {
+  float: left;
+  margin-right: -999em;
+  white-space: nowrap;
+  list-style: none;
+}
+
+#user-show .scroll-box-list > li {
+  margin: 15px;
+  text-align: center;
+  float: left;
+  display: inline-block;
+}
