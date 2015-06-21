@@ -3,17 +3,13 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
   className: 'users-index',
 
   initialize: function (options) {
-    this.filter = options.filter
-    // this.renderUsers();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addUser);
   },
 
 
   render: function () {
-    var content = this.template({
-      title: this.getTitle(this.filter)
-    });
+    var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     return this;
@@ -33,13 +29,5 @@ VMCApp.Views.UsersIndex = Backbone.CompositeView.extend({
     });
     this.addSubview('.view-users', subView);
   },
-
-  getTitle: function (filter) {
-    var titles = {
-      'all' : 'All Users',
-      'followed' : 'Followed Users',
-    };
-    return titles[filter];
-  },
-
+  
 });

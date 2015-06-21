@@ -3,17 +3,13 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
   className: 'posts-index',
 
   initialize: function (options) {
-    this.filter = options.filter;
-    // this.renderPosts();
     this.listenTo(this.collection, "sync", this.render);
     this.listenTo(this.collection, "add", this.addPost);
   },
 
 
   render: function () {
-    var content = this.template({
-      title: this.getTitle(this.filter)
-    });
+    var content = this.template();
     this.$el.html(content);
     this.attachSubviews();
     return this;
@@ -31,18 +27,6 @@ VMCApp.Views.PostsIndex = Backbone.CompositeView.extend({
       size: 'normal',
     });
     this.addSubview('.view-posts', subView);
-  },
-
-  getTitle: function (filter) {
-    var titles = {
-      'all' : 'All Videos',
-      'top' : 'Top Videos',
-      'user' : 'Your Videos',
-      'liked' : 'Liked Videos',
-      'staff' : 'Staff Picks',
-      'followed' : 'Your Feed',
-    };
-    return titles[filter];
   },
 
 });

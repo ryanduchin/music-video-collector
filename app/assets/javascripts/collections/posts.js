@@ -5,8 +5,6 @@ VMCApp.Collections.Posts = Backbone.Collection.extend({
       this.user = options.user;
     } else if (options.filter) {
       this.filter = options.filter;
-    } else {
-      this.filter = 'all'; //needed?
     }
   },
 

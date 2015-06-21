@@ -27,7 +27,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     posts.fetch();
     var newView = new VMCApp.Views.PostsIndex({
       collection: posts,
-      filter: _filter,
     });
     this.swapView(newView);
   },
@@ -39,7 +38,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     users.fetch();
     var newView = new VMCApp.Views.UsersIndex({
       collection: users,
-      filter: filter,
     });
     this.swapView(newView);
   },
@@ -51,7 +49,6 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     playlists.fetch();
     var newView = new VMCApp.Views.PlaylistsIndex({
       collection: playlists,
-      filter: filter,
     });
     this.swapView(newView);
   },
@@ -64,7 +61,7 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     var post = posts.getOrFetch(id);
     var newView = new VMCApp.Views.PostShow({
       model: post,
-      });
+    });
     this.swapView(newView);
   },
 
