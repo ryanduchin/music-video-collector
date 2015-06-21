@@ -107,9 +107,11 @@ li.nav-item {
 
 .subnav-item a {
   font-size: 16px;
-  text-align: center;
+  // text-align: center;
   color: white;
-  float: left
+  float: left;
+  padding-left: 0px;
+  padding-right: 0px;
 };
 
 
@@ -121,16 +123,31 @@ li.nav-item {
   letter-spacing: 6px;
 };
 
+.subnav-selector {
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 8px;
+};
+
+.subnav-selector.active {
+  height: 10px;
+  width: auto;
+  background-color: #CE97FF;
+  // text-align: center;
+};
+
 
 
 
 //modal create forms
 
-.close-form {
-  background-color: rgba(0, 0, 0, 0);
-  float: right;
-  font: black;
-};
+// .close-form {
+//   background-color: rgba(0, 0, 0, 0);
+//   float: right;
+//   font: black;
+// };
 
 .m-content.active {
   z-index: 100;
@@ -156,7 +173,6 @@ li.nav-item {
 .m-content.active .required-fields label {
   color: #CE97FF;
   font-size: 16px;
-  // display: inline;
 };
 
 .m-content.active h3.form-song {
