@@ -42,7 +42,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   addFollow: function () {
     if (this.isOwner()) { return; }
-    // debugger;
     var followView = new VMCApp.Views.FollowShow({
       model: this.model,
       type: "Playlist",

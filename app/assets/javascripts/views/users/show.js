@@ -12,12 +12,12 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
 
     this._userPosts = this.model.posts();
     this._userPlaylists = this.model.playlists();
-
+    this._userPosts.fetch();
+    this._userPlaylists.fetch();
     // this.renderPlaylists(); //causing an extra box
     // this.renderPosts(); //causing an extra box
 
-    this._userPlaylists.fetch();
-    this._userPosts.fetch();
+
 
     this.listenTo(this.model, 'sync', this.render);
 
