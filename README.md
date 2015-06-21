@@ -6,15 +6,23 @@
 
 ## Next actions and list of questions
 
-* Database resetting? Users only see seeds + their account? heroku scheduler
-*** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
+
+Sat
+* like/follow icons broken on big views, why??
   -> trial page with VIMEO/VEVO playlists
 
 
-** horizontal scroll user show page
-* sign-in and landing pages
+Sun
+
+* Database resetting? Users only see seeds + their account? heroku scheduler
+* lots of errors in inspector - what are they? how do i deal with calling too much stuff?
+
+
+* kaminari paging (infinite scroll) posts index
+* horizontal scroll user show page
+* fancy guest sign-in button
+* about splash page ! (HUGE)
 * user show view optimization (tile size, layout, side scroll)
-* like/follow icons broken on big views, why??
 * playlist index broken
 
 ## Feedback from Chris Review
@@ -27,7 +35,9 @@
 
 * seed db with more users so you can play around with the user index page and the user show page
 * seed db with likes, follows, playlistposts (ugh)
-* kaminari paging (infinite scroll)
+
+
+
 
 
 ## Minimum Viable Product
@@ -57,23 +67,19 @@ Expanding:
 - [X] Feed option: Top Staff picks
 - [X] Feed option: top liked videos (across entire site)
 - [X] add 'add-to-playlist' button onto thumbnails
-- [ ] *** Playback speed controls! "document.getElement('video').playbackRate = 2"
+- [X] link to user show page from post show page
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 - [ ] Search for users/playlists/posts by any fields (if time)
-- [ ] link to user show page from post show page
 
 Optimization:
-- [ ] add to playlist toggle subview on/off
-- [ ] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
-- [ ] user show page has that user's likes (might be a bit hard with little payoff)
-- [ ] Vevo videos cant be played in index views
+- [X] Vevo videos cant be played in index views
+- [X] re-ordering/optimizing the feeds ordered-by (user/playlist/post)
+- [X] user show thumbnail size optimization
 
 Not going to get to:
 - [ ] Edit profile with tagline
 - [ ] All videos have nested comments, users can add comments
-- [ ] Add friends, add a feed for posts from friends.
-- [ ] user show thumbnail size optimization
 
 
 ## Design Docs
