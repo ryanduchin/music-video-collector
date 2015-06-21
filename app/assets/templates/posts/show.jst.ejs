@@ -14,18 +14,21 @@
     </div>
 
   </div>
+
   <div class='post-show-row-2 row'>
     <div class='col-md-5 col-md-offset-2'>
+      <div id='post-show-artist-buffer'></div>
       <h3 class='post-show-artist'>
         <%= post.escape('artist').toUpperCase() %>
       </h3>
     </div>
 
-    <div class='col-md-2 post-show-btn'>
+    <div class='col-md-2 post-show-btn post-like'>
       <div class='like-button post-show-btn'></div>
     </div>
 
   </div>
+
   <div class="post-show-row-3 show-image row">
 
     <div class='col-md-8 col-md-offset-2'>
@@ -35,11 +38,12 @@
     </div>
 
   </div>
+
   <div class='post-show-row-4 row'>
     <div class='col-md-5 col-md-offset-2'>
 
       <a href="#/users/<%= post.escape('author_id') %>">
-        <h3>User:
+        <h3 class='post-show-info'>User:
           <%= post.escape('username') %>
         </a>
       </h3>

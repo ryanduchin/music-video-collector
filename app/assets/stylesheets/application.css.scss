@@ -429,14 +429,29 @@ div.footer {
   padding: 0;
 };
 
+#post-show .post-like {
+  // float: right;
+  position: relative;
+  bottom: 15px;
+  right: 3px;
+};
+
 #post-show .post-show-title {
   font-size: 50px;
   margin-bottom: 12px;
   letter-spacing: 4px;
 };
 
-#post-show .post-show-artist {
+#post-show .post-show-row-2 #post-show-artist-buffer {
+  height: 5px;
+};
+
+#post-show .post-show-row-2 .post-show-artist {
   margin: 0px;
+};
+
+#post-show > .post-show-row-4 h3.post-show-info {
+  margin-top: 0px;
 };
 
 //playlist show page
