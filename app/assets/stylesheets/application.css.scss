@@ -58,14 +58,23 @@ ul.navbar-right {
   right: 0px;
 };
 
-.navbar-brand {
-  color: #CE97FF;
+.navbar-header .navbar-brand-container {
   border: 5px solid #CE97FF;
-  padding: 5px;
-  font-size: 25px;
   margin-top: 10px;
   position: relative;
   left: 205px;
+};
+
+.navbar-header .navbar-brand-buffer {
+  height: 20%;
+};
+
+.navbar-header > .navbar-brand-container > .navbar-brand {
+  margin: 2px;
+
+  color: #CE97FF;
+  // padding-bottom: 20px;
+  font-size: 25px;
 };
 
 .navbar-brand.page-scroll {
