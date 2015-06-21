@@ -81,9 +81,34 @@ li.nav-item {
   right: 0px;
 };
 
-.nav-item>a {
+nav .nav-item a {
   font-size: 18px;
   margin: 0px;
+};
+
+nav .nav-item > a:hover,
+nav .dropdown.nav-item > a:active,
+nav .dropdown.nav-item > a:focus {
+  background-color: rgba(0, 0, 0, .75);
+  color: #CE97FF;
+};
+
+nav .nav-item.active a {
+  color: #CE97FF;
+};
+
+nav .dropdown.nav-item > .dropdown-menu {
+  background-color: #000324;
+};
+
+nav .dropdown.nav-item > .dropdown-menu > li > a {
+  background-color: #000324;
+  font-size: 14px;
+  color: white;
+};
+
+nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
+  color: #CE97FF;
 };
 
 // .nav-item a:hover {
