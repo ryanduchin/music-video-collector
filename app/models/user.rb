@@ -35,10 +35,6 @@ class User < ActiveRecord::Base
             foreign_key: :follower_id,
             source_type: 'Playlist'
 
-  # Association through user_follows to playlist_posts
-  # Association through playlist_follows to posts
-
-  # someone else follows user / Follow:followable
   has_many :followings,
             as: :followable,
             class_name: "Follow"
@@ -50,6 +46,15 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   after_initialize :ensure_session_token
+
+  def self.get_collection(filter, current_user)
+    case filter
+    when 'all'
+      return User.all
+    when 'followed'
+      return current_user.user_follows.order(:username)
+    end
+  end
 
   def self.find_by_credentials(params)
     user = User.find_by(username: params[:username])
