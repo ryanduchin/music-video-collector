@@ -124,8 +124,6 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
 
 };
 
-
-
 .page-title {
   font-size: 28px;
   text-align: center;
@@ -146,12 +144,6 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
 
 
 //modal create forms
-
-// .close-form {
-//   background-color: rgba(0, 0, 0, 0);
-//   float: right;
-//   font: black;
-// };
 
 .m-content.active {
   z-index: 100;
@@ -223,18 +215,14 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
   background-color: rgba(0, 0, 0, 0.6);
 };
 
-button.close {
-  font-size: 40px;
-};
-
 //needed?
 .overflow-container {
   overflow-x: auto;
   white-space: nowrap
 };
 
-// general thumbnail
 
+// general thumbnail
 
 div.user-posts-index {
   clear: both;
@@ -263,6 +251,7 @@ div.footer {
   clear: both;
 };
 
+
 //post thumbnail
 .posts-index .post-thumbnail {
   width: 400px;
@@ -283,11 +272,6 @@ div.footer {
   width: 400px;
   // padding-left: 50px;
   // padding-right: 50px;
-};
-
-
-.thumb-buttons {
-  // left: 10px;
 };
 
 .thumb-button {
@@ -331,7 +315,6 @@ div.footer {
 
 
 //playlist thumbnail
-
 
 
 #playlist-thumbnail-overlay {

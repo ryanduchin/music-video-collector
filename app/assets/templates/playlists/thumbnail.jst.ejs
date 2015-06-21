@@ -1,23 +1,25 @@
-<a href="#/playlists/<%= playlist.id %>" id="playlist-thumbnail-link">
-  <div id="playlist-thumbnail-overlay">
-    <div class="overlay"></div>
+<div class='col-md-10 col-md-offset-1'>
+  <a href="#/playlists/<%= playlist.id %>" id="playlist-thumbnail-link">
+    <div id="playlist-thumbnail-overlay">
+      <div class="overlay"></div>
 
 
-    <h2 class="thumb-playlist-title">
-      <br><br><%= playlist.escape('name').toUpperCase() %>
-    </h2>
+      <h2 class="thumb-playlist-title">
+        <br><br><%= playlist.escape('name').toUpperCase() %>
+      </h2>
 
-    <% if (post === "none") { %>
-      <div class="thumb blank-thumb">
-        <img width="400" height="225"
-          src='/images/headphones3.svg'></img>
-      </div>
+      <% if (post === "none") { %>
+        <div class="thumb blank-thumb">
+          <img width="400" height="225"
+            src='/images/headphones3.svg'></img>
+        </div>
 
-    <% } else { %>
-      <%= JST['_renderThumbnail']({ post: post }) %>
-    <% } %>
+      <% } else { %>
+        <%= JST['_renderThumbnail']({ post: post }) %>
+      <% } %>
 
-  </div>
-</a>
+    </div>
+  </a>
 
-<div id="playlist-thumbnail-follow-button" class='follow-button'></div>
+  <div id="playlist-thumbnail-follow-button" class='follow-button'></div>
+</div>
