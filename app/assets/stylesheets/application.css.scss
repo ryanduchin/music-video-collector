@@ -39,12 +39,38 @@ a {
   font-family: 'Roboto', sans-serif;
 };
 
-landing
+// landing page
+
+#landing-page *:not(.fa) {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+};
+
+#landingNav {
+  background-color: rgba(0, 0, 0, 75);
+};
+
+#landingNav .navbar-header {
+  border: 3px solid #CE97FF;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 100px;
+};
+
+#landingNav .navbar-header > .navbar-brand {
+  margin: 1px;
+  color: #CE97FF;
+  font-size: 20px;
+  letter-spacing: 2px;
+};
 
 
 
 
-navbar
+
+// navbar
 
 ul, nav {
   list-style-type: none
@@ -67,15 +93,9 @@ ul.navbar-right {
   left: 205px;
 };
 
-.navbar-header .navbar-brand-buffer {
-  height: 20%;
-};
-
 .navbar-header > .navbar-brand-container > .navbar-brand {
   margin: 2px;
-
   color: #CE97FF;
-  // padding-bottom: 20px;
   font-size: 25px;
 };
 
