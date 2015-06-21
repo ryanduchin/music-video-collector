@@ -238,10 +238,6 @@ div.user-posts-index {
   margin-bottom: 100px;
 };
 
-.user-thumbnail {
-  margin: 0px;
-  padding: 0px;
-};
 
 .thumb {
   height: 225px;
@@ -280,6 +276,7 @@ div.footer {
   position: relative;
   float: right;
   margin-left: 5px;
+  margin-top: 10px;
 };
 
 #thumbnail-container .thumb-1 {
@@ -294,6 +291,7 @@ div.footer {
 
 .thumb-title, .thumb-user-name {
   margin-bottom: 0px;
+  margin-top: 10px;
 };
 
 .page-title {
@@ -359,6 +357,11 @@ div.footer {
 
 
 // user thumbnail
+
+.user-thumbnail {
+  margin: 0px;
+  padding: 0px;
+};
 
 #user-thumbnail {
   width: 220px;
@@ -510,11 +513,6 @@ div.footer {
   text-align: center;
 };
 
-// #user-show-row-2,
-// #user-show-row-3 {
-//   margin-top: 50px;
-//   margin-bottom: 50px;
-// };
 
 #user-show h2.user-show-subtitle {
   margin-bottom: 40px;
