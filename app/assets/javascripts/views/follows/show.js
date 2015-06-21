@@ -45,6 +45,7 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   },
 
   setButton: function () {
+    debugger;
     if (this.model.isFollowed()) {
       this.$('button.btn-follow').addClass('btn-primary');
       // if (this.btnSm) {

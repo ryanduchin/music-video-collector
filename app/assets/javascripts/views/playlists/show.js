@@ -11,8 +11,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     this.renderPosts();
 
     this.listenTo(this.model, 'sync', this.render);
-    this.listenToOnce(this.model, 'sync', this.addFollow);
     this.listenTo(this.playlistPosts, "add", this.addPost);
+    this.listenToOnce(this.model, 'sync', this.addFollow);
   },
 
   render: function () {
