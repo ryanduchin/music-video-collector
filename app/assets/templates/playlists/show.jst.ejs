@@ -5,15 +5,25 @@
       <h1 class="playlist-show-title">
         <%= playlist.escape('name') %>
       </h1>
+
+      <% if (!isOwner) { %>
+        <div class="follow-button"></div>
+      <% } else { %>
+        </div>
+        <div class="col-md-4 delete-btn-div">
+          <button class="btn btn-delete btn-danger show-delete">Delete Playlist</button>
+        </div>
+      <% } %>
     </div>
 
-    <div class="col-md-4">
+<!--    <div class="col-md-4">
       <% if (!isOwner) { %>
         <div class="follow-button"></div>
       <% } else { %>
         <button class="btn btn-delete btn-danger show-delete">Delete Playlist</button>
       <% } %>
-    </div>
+    </div> -->
+
   </div>
 
   <div class="playlist-show-row-2 row">

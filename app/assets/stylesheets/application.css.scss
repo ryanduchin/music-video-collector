@@ -447,13 +447,26 @@ div.footer {
 #playlist-show .playlist-show-title {
   text-align: center;
   font-size: 50px;
-  margin-bottom: 100px;
   letter-spacing: 4px;
+  margin-bottom: 25px;
 };
 
 #playlist-show .follow-button {
   margin-top: 20px;
+  text-align: center;
+};
+
+#playlist-show .playlist-show-row-1 {
+  margin-bottom: 75px;
+};
+
+#playlist-show .show-delete {
+  margin-top: 20px;
   float: right;
+};
+
+#playlist-show .show-delete:hover {
+  margin-top: 20px;
 };
 
 //user show page
