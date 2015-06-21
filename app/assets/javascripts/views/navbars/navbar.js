@@ -19,9 +19,11 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
   },
 
   render: function () {
+    $('.nav-item').removeClass('active')
     var activeElID = this.chooseID(arguments);
-    $(activeElID).addClass('selected');
-
+    setTimeout(function () {
+      $(activeElID).addClass('active');
+    }, 0);
     var renderedContent = this.template();
     this.$el.html(renderedContent);
     return this;
@@ -62,35 +64,35 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
     var type = arguments[1];
     if (filter === 'followed') {
       if (type === 'playlist') {
-        return '#you';
+        return '.you';
       } else if (type === 'user') {
-        return '#you';
+        return '.you';
       } else if (type === 'post') {
-        return '#feed';
+        return '.feed';
       }
 
     } else if (filter === 'user') {
       if (type === 'post') {
-        return '#you';
+        return '.you';
       } else if (type === 'playlist') {
-        return '#you';
+        return '.you';
       }
 
     } else if (filter === 'all') {
       if (type === 'post') {
-        return '#explore';
+        return '.explore';
       } else if (type === 'user') {
-        return '#explore';
+        return '.explore';
       }
 
     } else if (filter === 'top') {
-      return '#explore';
+      return '.explore';
     } else if (filter === 'liked') {
-      return '#you';
+      return '.you';
     } else if (filter === 'staff') {
-      return '#explore';
+      return '.explore';
     } else if (filter === 'other') {
-      return '#explore';
+      return '.explore';
     }
     return;
   },
