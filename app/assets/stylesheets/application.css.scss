@@ -220,7 +220,11 @@ div.user-posts-index {
   clear: both;
 };
 
-.thumbnail-container {
+.post-index .thumbnail-container {
+  margin-bottom: 60px;
+};
+
+.playlist-index .thumbnail-container {
   margin-bottom: 100px;
 };
 
@@ -353,7 +357,7 @@ div.footer {
 
 #user-thumbnail {
   width: 220px;
-  height: 270px;
+  height: 290px;
 };
 
 #user-thumbnail .thumb {
