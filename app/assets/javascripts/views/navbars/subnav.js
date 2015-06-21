@@ -17,14 +17,14 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
     var type = arguments[1];
     if (filter === 'followed' && type === 'post') {
       return this.template_feed;
-    } else if (filter === 'show') {
+    } else if (filter === 'show_page') {
       return this.template_none;
     } else if (filter === 'followed' ||
                filter === 'user' ||
                filter === 'liked') {
       return this.template_you;
     } else {
-      return this.template_none;
+      return this.template_explore;
     }
   },
 
