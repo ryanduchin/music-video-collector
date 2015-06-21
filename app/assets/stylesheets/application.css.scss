@@ -86,14 +86,14 @@ nav .nav-item a {
   margin: 0px;
 };
 
+nav .nav-item.active a {
+  color: #CE97FF;
+};
+
 nav .nav-item > a:hover,
 nav .dropdown.nav-item > a:active,
 nav .dropdown.nav-item > a:focus {
   background-color: rgba(0, 0, 0, .75);
-  color: #CE97FF;
-};
-
-nav .nav-item.active a {
   color: #CE97FF;
 };
 
@@ -111,32 +111,17 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
   color: #CE97FF;
 };
 
-// .nav-item a:hover {
-//   font-size: 25px;
-//   background-color: rgba(0, 0, 0, .85);
-//   color: white;
-//   font-family: 'Roboto', sans-serif;
-// };
-
-// .nav-item>a.selected {
-//   font-size: 25px;;
-// };
-//
-// .nav-item>a.sr-only {
-//   font-size: 25px;;
-// };
-
-
 
 //subnav and titles
 
 .subnav-item a {
-  font-size: 16px;
-  // text-align: center;
+  font-size: 18px;
+  text-align: center;
   color: white;
   float: left;
   padding-left: 0px;
   padding-right: 0px;
+
 };
 
 
@@ -148,6 +133,16 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
   letter-spacing: 6px;
 };
 
+.navbar.subnav .subnav-item a:hover {
+  color: #CE97FF;
+  text-decoration: none;
+};
+
+.navbar.subnav .subnav-item.active a {
+  color: #CE97FF;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #CE97FF;
+};
 
 
 //modal create forms

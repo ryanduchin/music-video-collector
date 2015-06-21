@@ -1,5 +1,4 @@
 VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
-  tagName: 'subnav',
   className: 'navbar subnav',
   template_explore: JST['navbars/explore'],
   template_you: JST['navbars/you'],
