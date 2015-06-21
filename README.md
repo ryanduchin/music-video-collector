@@ -8,30 +8,23 @@
 
 * Database resetting? Users only see seeds + their account? heroku scheduler
 *** lots of errors in inspector - what are they? how do i deal with calling too much stuff?
-  -> trial page with several VIMEO
+  -> trial page with VIMEO/VEVO playlists
 
-  
+
 ** horizontal scroll user show page
-** Edit post,playlist
-* thumbnail links extend too far!!
 * sign-in and landing pages
 * user show view optimization (tile size, layout, side scroll)
-* Thumbnail spacing from each other!
 * like/follow icons broken on big views, why??
+* playlist index broken
 
 ## Feedback from Chris Review
-* submissions clicking ENTER i dont know what happens (event listener was to 'submit')
 * no playlist to add to on new user. maybe on user creation make an auto playlist?
-* follow button not obvious (splash page explanation?)
-* grid spacing - more vertical margin to separate videos
 * if no posts, say something - add video (not just a blank page) (post index, playlist show)
-* followed button on user page must say 'follow', not just have the icon
-* specify 'full url' or something
-*** rendering errors on modals (ex. blank playlist title on add playlist)
-* background divs for each thumbnail (defines their space and allows background color)
 
-* broken follow button
-* make it more obvious what following does and what goes into your feed (help from allan)
+* follow button not obvious (splash page explanation?)
+
+* make it more obvious what following does and what goes into your feed (splash)
+
 * seed db with more users so you can play around with the user index page and the user show page
 * seed db with likes, follows, playlistposts (ugh)
 * kaminari paging (infinite scroll)
