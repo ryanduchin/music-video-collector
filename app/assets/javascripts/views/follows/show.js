@@ -9,11 +9,11 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
   initialize: function (options) {
     this.type = options.type;
     this.btnSm = options.btnSm;
-    // this.listenTo(this.model, 'sync change', this.render);
     this.listenTo(this.model.follow(), 'change', this.render);
   },
 
   render: function () {
+    console.log('rendering');
     var content = this.template({
       model: this.model,
       btnSm: this.btnSm,
@@ -25,8 +25,10 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
 
   toggleFollow: function () {
     if (this.model.isFollowed()) {
+      console.log('unfollowing');
       this.unfollow();
     } else {
+      console.log('following');
       this.follow();
     }
   },
@@ -35,34 +37,41 @@ VMCApp.Views.FollowShow = Backbone.View.extend({
     this.model.follow().save({
       followable_id: this.model.id,
       followable_type: this.type,
+      success: function() {
+        console.log('successfully saved follow');
+        console.log(this.model.attributes);
+
+      }
     });
   },
 
   unfollow: function () {
     var follow = this.model.follow();
-    follow.destroy();
+    follow.destroy({
+      success: function() {
+        console.log('successfully saved UN_follow');
+        // console.log(this.model.attributes);
+
+      }
+    });
     follow.clear();
   },
 
   setButton: function () {
-    debugger;
+    //why is this rendering '2,1' for follow->unfollow?
     if (this.model.isFollowed()) {
+      console.log('1 - is followed');
+      console.log(this.model.attributes);
+      // debugger;
       this.$('button.btn-follow').addClass('btn-primary');
-      // if (this.btnSm) {
-        this.$('button.btn-follow').html("Followed");
-      // } else {
-        // this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'> Followed!</i>");
-      // }
+      this.$('button.btn-follow').html("Followed");
     } else {
+      console.log('2 - not followed');
+      console.log(this.model.attributes);
+      // debugger;
       this.$('button.btn-follow').removeClass('btn-primary');
-      // if (this.btnSm) {
-        this.$('button.btn-follow').html("Follow");
-      // } else {
-        // this.$('button.btn-follow').html("<i class='fa fa-caret-square-o-right'> Follow</i>");
-      // }
+      this.$('button.btn-follow').html("Follow");
     }
   },
 
-// need to copy view adding subview of button (copy postshow->like to playlist/user->follow)
-// follow's save function needs to save the type
 });

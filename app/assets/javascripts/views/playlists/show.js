@@ -50,14 +50,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     this.addSubview('.follow-button', followView);
   },
 
-  isOwner: function () {
-    if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-
   openDeleteForm: function (event) {
     event.preventDefault();
     // this.userPlaylists.fetch();
@@ -72,5 +64,13 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
+  },
+
+  isOwner: function () {
+    if (this.model.escape('owner_id') && this.model.escape('owner_id') === CURRENT_USER_ID) {
+      return true;
+    } else {
+      return false;
+    }
   },
 });
