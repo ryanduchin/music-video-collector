@@ -3,7 +3,7 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   template_explore: JST['navbars/explore'],
   template_you: JST['navbars/you'],
   template_feed: JST['navbars/feed'],
-  template_none: '<div>&nbsp;</div>',
+  template_none: JST['navbars/none'],
 
   initialize: function(options) {
     // this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
@@ -24,7 +24,7 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
                filter === 'liked') {
       return this.template_you;
     } else {
-      return this.template_explore;
+      return this.template_none;
     }
   },
 
