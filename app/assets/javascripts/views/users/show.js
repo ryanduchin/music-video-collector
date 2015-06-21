@@ -16,7 +16,6 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     // this.renderPlaylists(); //causing an extra box
     // this.renderPosts(); //causing an extra box
 
-    // this.model.fetch();
     this._userPlaylists.fetch();
     this._userPosts.fetch();
 
@@ -38,7 +37,6 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
 
   renderPlaylists: function () {
     if (this._userPlaylists.length === 0) { return; }
-    // debugger;
     this._userPlaylists.forEach(function (playlist) {
       this.addPlaylist(playlist);
     }.bind(this));
@@ -52,19 +50,15 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
   },
 
   addPost: function (post) {
-    // debugger;
     var subView = new VMCApp.Views.PostThumbnail({
       model: post,
-      size: 'normal' //user
     });
     this.addSubview('.view-user-posts', subView);
   },
 
   addPlaylist: function (playlist) {
-    // debugger;
     var subView = new VMCApp.Views.PlaylistThumbnail({
       model: playlist,
-      size: 'normal' //user
     });
     this.addSubview('.view-user-playlists', subView);
   },
