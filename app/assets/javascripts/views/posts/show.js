@@ -14,9 +14,7 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
     this.userPlaylists.fetch();
 
-    setTimeout(function () {
-      this.addLike();
-    }.bind(this), 0);
+    this.addLike();
 
     this.listenTo(this.model, 'sync', this.render);
   },
