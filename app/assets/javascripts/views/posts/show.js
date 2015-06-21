@@ -61,7 +61,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
     event.preventDefault();
     var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
-      // collection: this.userPosts, //
       type: 'post',
     });
     this.renderModal(modal);

@@ -42,10 +42,7 @@ VMCApp.Views.PostForm = Backbone.View.extend({
         this.model.escape('artist') !== "") {
       this.model.save({}, {
         success: function () {
-          // what collection do I add it to? There are multiple 'post' collections.
-          // right now being added to "allPosts"
           that.collection.add(that.model);
-          // that.addToPlaylist(playlistAttr, that.model.id)
           that.removeModal();
           Backbone.history.navigate("#/posts/" + that.model.id, { trigger: true });
         }
@@ -58,17 +55,6 @@ VMCApp.Views.PostForm = Backbone.View.extend({
   renderError: function () {
     this.$('.render-error').html("Invalid submission")
   },
-
-  // addToPlaylist: function (playlistAttr, id) {
-  //   if (formAttr === "") { return; }
-  //   var attr = $.extend({}, playlistAttr, {post_id: id});
-  //   $.ajax({
-  //       type:'POST',
-  //       url: '/api/playlistposts.json',
-  //       data: attr,
-  //       dataType: 'json',
-  //   });
-  // },
 
   closeModal: function (event) {
     event.preventDefault();
