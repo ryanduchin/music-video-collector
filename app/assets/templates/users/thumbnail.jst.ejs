@@ -1,23 +1,16 @@
-<% if (size === "normal") { %>
-  <% var width = 400; %>
-<% } else { %>
-  <% var width = 250; %>
-<% } %>
-
-
 <div id="user-thumbnail">
   <a href="#/users/<%= user.id %>">
 
     <% if (post === "none") { %>
 
       <div class="thumb blank-thumb">
-        <img width="<%= width %>" height="<%= 225 * width / 400 %>"
+        <img width="400" height="225"
           src='/images/headphones3.svg'></img>
       </div>
 
     <% } else { %>
 
-      <%= JST['_renderThumbnail']({ post: post, size: size }) %>
+      <%= JST['_renderThumbnail']({ post: post }) %>
 
     <% } %>
   </a>

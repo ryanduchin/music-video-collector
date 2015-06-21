@@ -10,7 +10,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
 
   initialize: function (options) {
     this.playlist = options.playlist; //if exists
-    this.size = options.size;
 
     this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
     this.userPlaylists.fetch();
@@ -24,7 +23,6 @@ VMCApp.Views.PostThumbnail = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({
       post: this.model,
-      size: this.size,
       playlist: this.playlist,
       isOwner: this.isOwner(),
     });

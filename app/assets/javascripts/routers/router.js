@@ -15,12 +15,8 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     "users/:id" : "users_show",
   },
 
-  // posts/home: function () {       ?????
-  //   this.posts_index('followed')
-  // },
-
   posts_index: function (filter) {
-    var _filter = filter || 'followed'; // for ""
+    var _filter = filter || 'followed'; // for home
     VMCApp.filterEvents.trigger('route', _filter, 'post')
 
     var posts = new VMCApp.Collections.Posts({ filter: _filter })
@@ -93,13 +89,5 @@ VMCApp.Routers.Router = Backbone.Router.extend({
     this.$rootEl.html(this._currentView.$el);
     this._currentView.render();
   },
-
-  // swapNavView: function (newNavView) {
-  //   this._currentNavView && this._currentNavView.remove();
-  //   this._currentNavView = newNavView;
-  //   $('#subnav').html(this._currentNavView.$el);
-  //   this._currentNavView.render();
-  // },
-
 
 });

@@ -4,7 +4,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
   template: JST['playlists/thumbnail'],
 
   initialize: function (options) {
-    this.size = options.size;
     this.featuredPost = this.choosePost();
     this.addFollow();
   },
@@ -13,7 +12,6 @@ VMCApp.Views.PlaylistThumbnail = Backbone.CompositeView.extend({
     var content = this.template({
       playlist: this.model,
       post: this.featuredPost,
-      size: this.size,
     });
 
     this.$el.html(content);
