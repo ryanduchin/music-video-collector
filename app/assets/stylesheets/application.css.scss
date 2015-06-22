@@ -156,7 +156,11 @@ a {
   margin-bottom: 45px;
 };
 
-#landing-page #login .form-signin input,
+#landing-page #login .form-signin input {
+  margin-bottom: 7px;
+  color: black;
+};
+
 #landing-page #login .form-signin button {
   margin-bottom: 7px;
 };
