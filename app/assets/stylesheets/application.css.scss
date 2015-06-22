@@ -77,23 +77,20 @@ a {
 
 // landing page content
 
-#landing-page .header-content {
-  background-color: rgba(78, 58, 95, 0.85);
-};
-
 #landing-page section div:first-child {
   margin-top: 25px;
   margin-bottom: 45px;
 };
 
+#landing-page .header-content {
+  background-color: rgba(78, 58, 95, 0.85);
+  margin-top: 10px;
+  margin-bottom: 20px;
+};
+
 #landing-page section > .container > .row {
   margin-top: 0px;
   margin-bottom: 0px;
-};
-
-#landing-page .header-content-inner > h1,
-#landing-page .header-content-inner > h2 {
-  margin-top: 80px;
 };
 
 #landing-page hr {
@@ -109,16 +106,18 @@ a {
   font-size: 18px;
 };
 
-#landing-page a.find-out-button {
-  margin-bottom: 90px;
-  // background-color: rgba(78, 58, 95, 0.85);
-};
-
 #landing-page a.sign-in-button {
   background-color: rgba(38, 83, 165, 0.83);
   margin-top: 30px;
-  margin-bottom: 40px;
+  // margin-bottom: 0px;
 };
+
+// #landing-page a.find-out-button {
+//   margin-bottom: 90px;
+//   // background-color: rgba(78, 58, 95, 0.85);
+// };
+
+
 
 #landing-page .btn-primary,
 #landing-page .fa, {
