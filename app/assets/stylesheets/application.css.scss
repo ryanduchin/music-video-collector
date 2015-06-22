@@ -39,12 +39,17 @@ a {
   font-family: 'Roboto', sans-serif;
 };
 
-// landing page
+
+// landing page nav
 
 #landing-page *:not(.fa) {
   color: white;
   font-family: 'Roboto', sans-serif;
   text-align: center;
+};
+
+#landing-page i.fa {
+  background-color: rgba(0, 0, 0, 0);
 };
 
 #landingNav {
@@ -70,25 +75,18 @@ a {
   margin-top: 14px;
 };
 
-#landing-page section {
-  // margin-top: 150px;
-  // margin-bottom: 150px;
-};
+// landing page content
 
 #landing-page .header-content {
   background-color: rgba(78, 58, 95, 0.85);
 };
 
 #landing-page section div:first-child {
-  // padding-top: 60px;
-  // padding-bottom: 60px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 25px;
+  margin-bottom: 45px;
 };
 
 #landing-page section > .container > .row {
-  // padding-top: 60px;
-  // padding-bottom: 60px;
   margin-top: 0px;
   margin-bottom: 0px;
 };
@@ -111,14 +109,17 @@ a {
   font-size: 18px;
 };
 
-#landing-page a {
-  margin-bottom: 50px;
+#landing-page a.find-out-button {
+  margin-bottom: 90px;
   // background-color: rgba(78, 58, 95, 0.85);
 };
 
 #landing-page a.sign-in-button {
   background-color: rgba(38, 83, 165, 0.93);
+  margin-top: 30px;
+  margin-bottom: 40px;
 };
+
 
 
 #landing-page .btn-primary,
@@ -129,13 +130,25 @@ a {
 
 #landing-page #buffer-header {
   background-color: rgba(0, 0, 0, 0);
-  height: 350px;
+  height: 480px;
 };
 
 
 #landing-page #about {
   background-color: rgba(0, 0, 0, 0);
 };
+
+#landing-page .section-heading {
+  font-size: 18px;
+};
+
+#landing-page section#about ul.text-faded > li.text-faded {
+  text-align: left;
+  color: blue;
+};
+
+
+
 
 #landing-page #login {
   // margin-top: 50px;
@@ -153,6 +166,10 @@ a {
   margin-bottom: 7px;
 };
 
+#landing-page #services div.text-center {
+  margin-top: 0px;
+  margin-bottom: 0px;
+};
 
 
 
