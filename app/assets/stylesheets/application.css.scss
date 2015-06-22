@@ -80,10 +80,6 @@ a {
 };
 
 
-#landing-page #main-container {
-  // margin-top: 78px;
-};
-
 #landing-page #buffer-header {
   background-color: rgba(0, 0, 0, 0);
   height: 450px;
@@ -124,11 +120,6 @@ a {
   // margin-bottom: 0px;
 };
 
-// #landing-page a.find-out-button {
-//   margin-bottom: 90px;
-//   // background-color: rgba(78, 58, 95, 0.85);
-// };
-
 
 
 #landing-page .btn-primary,
@@ -164,6 +155,24 @@ a {
 #landing-page #services div.text-center {
   margin-top: 0px;
   margin-bottom: 0px;
+};
+
+#landing-page #services .service-box > i {
+  font-size: 100px;
+};
+
+#landing-page #services .service-box > h3 {
+  font-size: 30px;
+  margin-top: 40px;
+  margin-bottom: 55px;
+};
+
+#landing-page #services .service-box > h3.explore {
+  margin-bottom: 22px;
+};
+
+#landing-page #services .service-box > p {
+  font-size: 14px;
 };
 
 #landing-page #login .login-inactive {
