@@ -138,13 +138,13 @@ a {
   background-color: rgba(0, 0, 0, 0);
 };
 
-#landing-page .section-heading {
+#landing-page #about > .container > .row h2.section-heading {
   font-size: 18px;
 };
 
-#landing-page section#about ul.text-faded > li.text-faded {
+#landing-page #about > .container > .row ul.text-faded > li.text-faded {
   text-align: left;
-  color: blue;
+  font-size: 14px;
 };
 
 
