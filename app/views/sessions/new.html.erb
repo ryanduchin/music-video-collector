@@ -1,39 +1,40 @@
 <body id="landing-page">
+  <nav id="landingNav" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="#landing-page">Music Video Collector</a>
+          </div>
 
-    <nav id="landingNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Music Video Collector</a>
-            </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                  <li>
+                      <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#login">Sign In</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="#services">Services</a>
+                  </li>
+                  <!-- <li>
+                      <a class="page-scroll" href="#contact">Contact</a>
+                  </li> -->
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#login">Sign In</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+  <!-- <div id='main-container'> -->
 
     <section>
       <div id='buffer-header' class='col-md-12'></div>
@@ -47,12 +48,12 @@
               <hr>
               <p>With MVC you can discover the best music videos on the web and create playlists of your favorites. Get started and watch your favorites!</p>
               <br><br>
-              <a href="#" class="btn btn-primary btn-xl sign-in-button">Sign In!</a>
+              <a href="#login" class="btn btn-primary btn-xl sign-in-button">Sign In!</a>
           </div>
       </div>
     </section>
 
-    <section class="bg-primary" id="about">
+    <section class="bg-primary anchor" id="about">
       <div class="container-span">
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -72,7 +73,7 @@
       </div>
     </section>
 
-    <section id='login'>
+    <section class='anchor' id='login'>
 
       <div class="container login-active">
         <div class="row">
@@ -126,7 +127,7 @@
     </script>
 
 
-    <section id="services">
+    <section class='anchor' id="services">
       <div class="container">
         <div class="row">
         <div class="col-lg-12 text-center">
@@ -169,7 +170,7 @@
         </div>
     </section>
 
-    <section id="contact">
+    <section class='anchor' id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -185,5 +186,5 @@
             </div>
         </div>
     </section>
-
+  <!-- </div> -->
 </body>
