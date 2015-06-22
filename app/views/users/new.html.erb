@@ -1,20 +1,35 @@
-<h1>Sign Up</h1>
 
-<form action="<%= users_url %>" method="post">
+<!-- <h1>@@Sign Up</h1>
+
+<form action="<%= @users_url %>" method="post">
   <%= csrf %>
 
   <label>Username
-    <input type="text" name="user[username]" value="">
+    <input type="text" name="user[username]" value="user[username]">
   </label>
 
   <label>Password
     <input type="password" name="user[password]" value="">
   </label>
 
-  <input type="submit", value="Create Account!">
+  <input type="submit", value="@@Create Account!">
 </form>
 
 <hr>
-<%= link_to "Sign In", new_session_url %>
+<%= link_to "Sign In", new_session_url %> //changes
 
-<%= render "layouts/landing" %>
+
+
+
+
+new session
+
+  <input type="submit", value="Log In!">
+</form>
+
+<hr>
+<%= link_to "Sign Up", new_user_url %>
+
+<%= link_to "Sign In", new_session_url %> -->
+
+<%= render "layouts/landing", type: :user %>

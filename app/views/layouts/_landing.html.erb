@@ -70,26 +70,55 @@
       </div>
     </section>
 
+    <!-- <% form_title = (type == :session ? 'Sign in' : 'Sign up') %> -->
+    <% alt_title = (type == :session ? 'Sign Up' : 'Sign In') %>
+    <% form_action = (type == :session ? 'session_url' : 'users_url') %>
+    <!-- <% alt_action = (type == :session ? 'session_url' : 'users_url') %> -->
+    <% form_input_val = (type == :session ? 'Sign In!' : 'Create Account') %>
+    <!-- <%= link_to "Sign Up", new_user_url %> -->
+
     <section id='login'>
       <div class="container">
         <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
-          <h1 class="text-center login-title">Sign in to continue to MVC</h1>
+          <h1 class="text-center login-title">Continue to the Music Video Collector!</h1>
           <div class="account-wall">
-            <form class="form-signin" action="<%= session_url %>" method="post">
+            <form class="form-signin" action="<%= form_action %>" method="post">
               <%= csrf %>
               <input type="text" class="form-control" placeholder="Username" name="user[username]" required autofocus>
               <input type="password" class="form-control" placeholder="Password" name="user[password]" required>
               <button class="btn btn-lg btn-primary btn-block" type="submit">
-                  Sign in</button>
+                  <%= form_input_val %>
+                </button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">
+                  <%= alt_title %>
+                </button>
             </form>
           </div>
-          <!-- <a href="#" class="text-center new-account">Create an account </a> -->
-          <%= link_to "Sign Up", new_user_url %>
+          <a href="#" class="text-center switch-login-type"><%= alt_title %></a>
+          <!-- <%= link_to "Sign Up", new_user_url %> -->
           </div>
         </div>
       </div>
     </section>
+
+    <script src="jquery.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.switch-login-type').click(function () {
+        
+
+        $('#contact-form').submit(function() {
+            var action = $(this).attr('action');
+            var data = $(this).serialize();
+            $.post(action, data, function(response) {
+                $('#response').html(response);
+            });
+            return false;
+        });
+    });
+</script>
+
 
     <section id="services">
       <div class="container">
