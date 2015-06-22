@@ -75,10 +75,15 @@ a {
   letter-spacing: 2px;
 };
 
-.navbar-nav.navbar-right {
+#landing-page .navbar-nav.navbar-right {
   margin-top: 14px;
 };
 
+#landing-page .navbar-right > li > a {
+  font-size: 16px;
+  padding-left: 40px;
+  padding-right: 40px;
+};
 
 #landing-page #buffer-header {
   background-color: rgba(0, 0, 0, 0);
@@ -130,6 +135,10 @@ a {
 
 #landing-page #about {
   background-color: rgba(0, 0, 0, 0);
+};
+
+#landing-page ul.about-list {
+  list-style-type: square;
 };
 
 #landing-page #about ul.text-faded li.text-faded.pull-left {
