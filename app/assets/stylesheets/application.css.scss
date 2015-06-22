@@ -71,35 +71,88 @@ a {
 };
 
 #landing-page section {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  // margin-top: 150px;
+  // margin-bottom: 150px;
 };
 
-#landing-page .bg-primary {
+#landing-page .header-content {
   background-color: rgba(78, 58, 95, 0.85);
 };
 
-#landing-page header {
-  margin-top: 78px;
+#landing-page section div:first-child {
+  // padding-top: 60px;
+  // padding-bottom: 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 };
 
-#landing-page .header-content-inner > h1 {
-  margin-top: 250px;
+#landing-page section > .container > .row {
+  // padding-top: 60px;
+  // padding-bottom: 60px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 };
 
-#landing-page .header-content-inner > hr {
+#landing-page .header-content-inner > h1,
+#landing-page .header-content-inner > h2 {
+  margin-top: 80px;
+};
+
+#landing-page hr {
   height: 5px;
   width: 300px;
-  margin-top: 40px;
-  margin-bottom: 70px;
+  margin-top: 45x;
+  margin-bottom: 55px;
   color: rgba(78, 58, 95, 0.85);
 
 };
+
+#landing-page .header-content-inner > p {
+  font-size: 18px;
+};
+
+#landing-page a {
+  margin-bottom: 50px;
+  // background-color: rgba(78, 58, 95, 0.85);
+};
+
+#landing-page a.sign-in-button {
+  background-color: rgba(38, 83, 165, 0.93);
+};
+
 
 #landing-page .btn-primary,
 #landing-page .fa, {
   background-color: #CE97FF;
 };
+
+
+#landing-page #buffer-header {
+  background-color: rgba(0, 0, 0, 0);
+  height: 350px;
+};
+
+
+#landing-page #about {
+  background-color: rgba(0, 0, 0, 0);
+};
+
+#landing-page #login {
+  // margin-top: 50px;
+  // padding-top: 50px;
+  // padding-bottom: 50px;
+  background-color: rgba(38, 83, 165, 0.93); //blue
+};
+
+#landing-page #login h1.login-title {
+  margin-bottom: 45px;
+};
+
+#landing-page #login .form-signin input,
+#landing-page #login .form-signin button {
+  margin-bottom: 7px;
+};
+
 
 
 
