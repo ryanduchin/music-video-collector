@@ -1,6 +1,7 @@
 # Music Video Collector App
 
-[Heroku link][http://music-video-collector.herokuapp.com/]
+[Direct link][music-video-collector.com](http://music-video-collector.com)
+[Heroku link][music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)
 
 
 ## Next actions and list of questions
@@ -26,7 +27,7 @@ Site Functionality
 - [X] View other users (and their list of liked videos) ('Explore')
 - [X] Add and Remove posts to playlists
 - [X] submission validation (url must be good)
-- [ ] Guest sign-in
+- [X] Guest sign-in
 - [X] Users can create channels (aka collections/playists)
 - [X] View other channels (of users) (like playlists)
 - [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)

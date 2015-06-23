@@ -1,5 +1,6 @@
 # View Wireframes
 see wireframes.key for an easier to view presentation (emailed to instructors)
+wireframes uploaded here were large images and removed for space concerns
 
 ##subviews
 ./wireframes/subviews_video
@@ -18,7 +19,7 @@ two version of 'video' subview - with info underneath (compact) and info to the 
 ./wireframes/video_normal (and video_cinema)
 
 ## New Video Form
-!!
+
 
 ## Search Results
 ./wireframes/search
