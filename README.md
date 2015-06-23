@@ -6,9 +6,6 @@ Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.
 
 
 ## Next actions and list of questions
-* guest login
-* user show page follow buttons are broken because they arent distinguished between playlist and user
-* custom URL
 * good Readme
 * finish seeding
 * Database resetting? Users only see seeds + their account? heroku scheduler

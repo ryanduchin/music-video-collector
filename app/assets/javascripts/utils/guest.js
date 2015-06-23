@@ -30,7 +30,7 @@ window.GuestLogin = {
 				clearInterval(typing);
 				callback();
 			}
-		}, 70);
+		}, 125);
 	}
 
 };
