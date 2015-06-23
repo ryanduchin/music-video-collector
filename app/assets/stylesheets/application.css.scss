@@ -88,18 +88,27 @@ a {
 
 #landing-page #buffer-header {
   background-color: rgba(0, 0, 0, 0);
-  height: 450px;
+  height: 560px;
+  padding-left: 0px;
+  padding-right: 0px;
+};
+
+#landing-page #buffer-header div {
+  padding-left: 0px;
+  padding-right: 0px;
 };
 
 #landing-page #buffer-header video {
-  // height: 100%;
   width: 100%;
 };
 
 #landing-page #buffer-header video > source {
-  // height: 100%;
   width: 100%;
 };
+
+// #landing-page section {
+//   display: block;
+// };
 
 #landing-page section div:first-child {
   margin-top: 25px;
@@ -107,7 +116,7 @@ a {
 };
 
 #landing-page .header-content {
-  background-color: rgba(78, 58, 95, 0.85);
+  background-color: rgba(78, 58, 95, 0.5);
   margin-top: 10px;
   margin-bottom: 20px;
 };
