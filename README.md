@@ -11,36 +11,35 @@ Primary focus of the site is displaying music videos embedded from Youtube,
   Vimeo, and Vevo, by user-submitted URLs.
 
 Site Features:
-- Watch videos
-- Like videos
-- Create playlists
-- Create videos (by entering links) ('posts')
-- View a collection of all your liked videos
-- Follow other users or playlists
-- View a feed of posts from your followed users and playlists
-- Explore other user profiles
-- User profiles includes horizontal scrolling of their posts and playlists
-- Add and remove posts to playlists
-- Guest sign-in
-- View top staff picks
-- Feed option: top liked videos (across entire site)
-- add 'add-to-playlist' button onto thumbnails
-- Site shows thumbnail index views of videos
-
-- Post thumbnails are fetched from the source
-- User and Playlist thumbnails are fetched from a video in the model's posts
-- Guest-account login feature
+- [x] Watch videos
+- [x] Like videos
+- [x] Create playlists
+- [x] Create videos (by entering links) ('posts')
+- [x] View a collection of all your liked videos
+- [x] Follow other users or playlists
+- [x] View a feed of posts from your followed users and playlists
+- [x] Explore other user profiles
+- [x] User profiles includes horizontal scrolling of their posts and playlists
+- [x] Add and remove posts to playlists
+- [x] Add-to-playlist form button on thumbnails and video show page
+- [x] Guest sign-in
+- [x] View top staff picks
+- [x] Feed option: top liked videos (across entire site)
+- [x] Site shows thumbnail index views of videos
+- [x] Post thumbnails are fetched from the source
+- [x] User and Playlist thumbnails are fetched from a video in the model's posts
+- [x] Guest-account login
 
 ### Potentail future features
-- link to user show page from post show page
-- Advanced video views - cinema view(background dark)
-- Index views have an alternate mode - render videos instead of thumbnails
+- [x] link to user show page from post show page
+- [x] Advanced video views - cinema view (dark background)
+- [x] Index views have an alternate mode - render videos instead of thumbnails
     ability to play videos directly from index view
-- Search for users/playlists/posts by any fields
-- Button to watch next video in a playlist/view from the video show page
-- FriendlyID for user (and post/playlist) names
-- Kaminari scrolling
-- Nested comments for videos
+- [x] Search for users/playlists/posts by any fields
+- [x] Button to watch next video in a playlist/view from the video show page
+- [x] FriendlyID for user (and post/playlist) names
+- [x] Kaminari scrolling
+- [x] Nested comments for videos
 
 
 

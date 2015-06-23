@@ -18,4 +18,3 @@
 * Playback Settings Subview for PostShow (changes HTML playback speed?)
 
 ## Gems/Libraries
-JQuery UI?
