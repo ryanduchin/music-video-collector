@@ -19,7 +19,6 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     var content = this.template({
       playlist: this.model,
       isOwner: this.isOwner(),
-      isEmpty: this.isEmpty(),
     });
     this.$el.html(content);
     this.attachSubviews();
