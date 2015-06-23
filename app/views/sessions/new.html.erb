@@ -83,9 +83,10 @@
         <div class="account-wall">
           <form class="form-signin" action="<%= session_url %>" method="post">
             <%= csrf %>
+            <button class="btn btn-primary guest-login">Guest Login</button>
             <input type="text" class="form-control" placeholder="Username" name="user[username]" required>
             <input type="password" class="form-control" placeholder="Password" name="user[password]" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
+            <button class="btn btn-lg btn-primary btn-block submit session-submit" type="submit">
                 Enter
               </button>
           </form>
@@ -102,9 +103,9 @@
         <div class="account-wall">
           <form class="form-signin" action="<%= users_url %>" method="post">
             <%= csrf %>
-            <input type="text" class="form-control" placeholder="Username" name="user[username]" required>
-            <input type="password" class="form-control" placeholder="Password" name="user[password]" required>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
+            <input type="text" class="form-control form-username" placeholder="Username" name="user[username]" required>
+            <input type="password" class="form-control form-password" placeholder="Password" name="user[password]" required>
+            <button class="btn btn-lg btn-primary btn-block submit" type="submit">
                 Create Account
               </button>
           </form>
@@ -116,13 +117,19 @@
 
   </section>
 
-  <script src="jquery.js"></script>
   <script>
     $(document).ready(function() {
       $('.switch-login-type').click(function () {
         $('.login-active').removeClass('login-active').addClass('login-temp');
         $('.login-inactive').removeClass('login-inactive').addClass('login-active');
         $('.login-temp').removeClass('login-temp').addClass('login-inactive');
+      });
+
+      $('.guest-login').click(function () {
+        // debugger;
+        $('.form-username').val('guest');
+        $('.form-password').val('password');
+        $('.session-submit')
       });
     })
   </script>
@@ -181,8 +188,10 @@
               </div>
 
               <div class="col-lg-4 col-lg-offset-4 text-center">
-                  <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                  <p><a href="mailto:ryanduchin@gmail.com">ryanduchin@gmail.com</a></p>
+                <a href="mailto:ryanduchin@gmail.com">
+                  <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i><br><br>
+                  <p>ryanduchin@gmail.com</p>
+                </a>
               </div>
           </div>
       </div>

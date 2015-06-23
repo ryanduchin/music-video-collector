@@ -18,8 +18,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-
-
 body {
   background-image: url('https://res.cloudinary.com/dwpmjcdhz/image/upload/v1435013015/blurreddarkenedrave_r9yfi4.png');
   background-repeat: no-repeat;
@@ -131,6 +129,8 @@ a {
 
 #landing-page .header-content-inner > p {
   font-size: 18px;
+  line-spacing: 5px;
+  letter-spacing: 2px;
 };
 
 #landing-page a.sign-in-button {
@@ -173,7 +173,7 @@ a {
 };
 
 #landing-page #login h1.login-title {
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 };
 
 #landing-page #login .form-signin input {
@@ -181,8 +181,13 @@ a {
   color: black;
 };
 
-#landing-page #login .form-signin button {
+#landing-page #login .form-signin button.submit {
   margin-bottom: 7px;
+};
+
+#landing-page #login .form-signin button.guest-login {
+  background-color :#52055F;
+  margin-bottom: 25px;
 };
 
 #landing-page #services div.text-center {
