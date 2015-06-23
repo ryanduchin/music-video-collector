@@ -73,6 +73,8 @@ Expanding:
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 - [ ] Search for users/playlists/posts by any fields (if time)
+- [ ] friendlyID for user (and post/playlist) names
+- [ ] kaminari scrolling
 
 Optimization:
 - [X] Vevo videos cant be played in index views

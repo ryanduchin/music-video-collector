@@ -50,9 +50,9 @@ class User < ActiveRecord::Base
   def self.get_collection(filter, current_user)
     case filter
     when 'all'
-      return User.all
+      return User.all.limit(100)
     when 'followed'
-      return current_user.user_follows.order(:username)
+      return current_user.user_follows.order(:username).limit(100)
     end
   end
 

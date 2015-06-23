@@ -38,27 +38,24 @@ class Post < ActiveRecord::Base
   def self.get_collection(filter, current_user)
     case filter
     when 'all'
-      return Post.all.order(created_at: :desc)#.limit(30)
+      return Post.all.order(created_at: :desc).limit(60)
     when 'top'
-      return Post.joins(:likes).group("posts.id").order('count(likes.id) desc')#.limit(30)
+      return Post.joins(:likes).group("posts.id").order('count(likes.id) desc').limit(60)
     when 'user'
-      return current_user.posts.order(created_at: :desc)#.limit(30)
+      return current_user.posts.order(created_at: :desc).limit(60)
     when 'liked'
       return Post.joins(:likes)
         .where('likes.user_id=?', current_user.id)
         .order('likes.created_at desc') # .limit(30)
     when 'staff'
-      return Post.all.where(staff: true).order(created_at: :desc)#.limit(30)
+      return Post.all.where(staff: true).order(created_at: :desc).limit(60)
     when 'followed'
       posts = []
       users = current_user.user_follows.order(created_at: :desc)
       playlists = current_user.playlist_follows.order(created_at: :desc)
       users.each { |item| posts.concat(item.posts) }
       playlists.each { |item| posts.concat(item.posts) }
-      return posts #.order(created_at: :desc)
-
-      # not ordering!
-      # duplicate posts?
+      return posts
     end
   end
 

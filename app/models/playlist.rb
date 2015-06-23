@@ -44,15 +44,16 @@ class Playlist < ActiveRecord::Base
   def self.get_collection(filter, current_user)
     case filter
     when 'all'
-      @playlists = Playlist.all.order(:name)
+      @playlists = Playlist.all.order(:name).limit(60)
     when 'other'
       @playlists = Playlist.all
                            .where('owner_id != ?', current_user.id)
                            .order(created_at: :desc)
+                           .limit(60)
     when 'user'
-      @playlists = current_user.playlists.order(:name)
+      @playlists = current_user.playlists.order(:name).limit(60)
     when 'followed'
-      @playlists = current_user.playlist_follows.order(:name) #or .order(follow_created_at)
+      @playlists = current_user.playlist_follows.order(:name).limit(60)
     end
   end
 end
