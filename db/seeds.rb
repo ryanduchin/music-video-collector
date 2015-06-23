@@ -28,7 +28,7 @@ v6 = u3.playlists.create!(name: 'My Songs')
 v7 = u4.playlists.create!(name: 'My Favorite Songs')
 v8 = u5.playlists.create!(name: 'Cool Songs')
 v9 = u6.playlists.create!(name: 'Favorite Songs')
-v10 = u7.playlists.create!(name: 'Fav Songs')
+v10 = ux.playlists.create!(name: 'Fav Songs')
 v11 = u7.playlists.create!(name: 'For George')
 v12 = u2.playlists.create!(name: 'Road Tripping')
 v13 = u6.playlists.create!(name: 'LA Songs')
@@ -47,7 +47,7 @@ p1 = u4.posts.create!(title: 'Sun & Moon', url: 'https://www.youtube.com/watch?v
 q1 = u1.posts.create!(title: 'Sometimes I Feel So Deserted', url: 'https://www.youtube.com/watch?v=8OUqqsXVmlc', artist: 'The Chemical Brothers')
 q2 = u4.posts.create!(title: 'Swoon', url: 'https://www.youtube.com/watch?v=CCp_3zw-CxA', artist: 'The Chemical Brothers')
 q12 = u8.posts.create!(title: 'We Found Love', url: 'https://www.youtube.com/watch?v=tg00YEETFzg', artist: 'Rihanna', description: 'ft. Calvin Harris')
-q13 = u12.posts.create!(title: 'Pour It Up', url: 'https://www.youtube.com/watch?v=ehcVomMexkY', artist: 'Rihanna')
+q13 = u2.posts.create!(title: 'Pour It Up', url: 'https://www.youtube.com/watch?v=ehcVomMexkY', artist: 'Rihanna')
 y8 = u11.posts.create!(title: 'Phantasm', url: 'https://vimeo.com/90796762', artist: 'Flying Lotus')
 
 y10 = u11.posts.create!(title: "You're Dead", url: 'https://vimeo.com/103317489', artist: 'Flying Lotus')
@@ -256,7 +256,7 @@ Follow.create!(follower_id: 16, followable_id: 2, followable_type: "User")
 Follow.create!(follower_id: 17, followable_id: 3, followable_type: "User")
 Follow.create!(follower_id: 18, followable_id: 4, followable_type: "User")
 Follow.create!(follower_id: 1, followable_id: 5, followable_type: "User")
-Follow.create!(follower_id: 1, followable_id: 3, followable_type: "User")
+Follow.create!(follower_id: 5, followable_id: 3, followable_type: "User")
 
 
 
