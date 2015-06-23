@@ -9,8 +9,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
 
 
   initialize: function (options) {
-    // this.userPlaylists = options.userPlaylists;
-
     this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
     this.userPlaylists.fetch();
 
@@ -22,8 +20,6 @@ VMCApp.Views.PostShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({
       post: this.model,
-      // userPlaylists: this.userPlaylists,
-      // size: 'normal',
       isOwner: this.isOwner(),
     });
     this.$el.html(content);

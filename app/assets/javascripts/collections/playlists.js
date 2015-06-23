@@ -1,4 +1,5 @@
 VMCApp.Collections.Playlists = Backbone.Collection.extend({
+
   initialize: function (options) {
     if (options.user) {
       this.user = options.user;

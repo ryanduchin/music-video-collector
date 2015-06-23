@@ -86,7 +86,7 @@ y9 = u11.posts.create!(title: 'Zodiac Sh*t', url: 'https://vimeo.com/25737856', 
 q8 = ux.posts.create!(title: 'Star Guitar', url: 'https://www.youtube.com/watch?v=0S43IwBF0uM', artist: 'The Chemical Brothers', staff: true)
 
 p10 = u15.posts.create!(title: 'We Are All We Need', url: 'https://www.youtube.com/watch?v=phXRX1p8woY', artist: 'Above & Beyond', album: 'Group Therapy', description: 'feat. Alex Vargas')
-p2 = u16.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watch?v=eilZug1R4Es', artist: 'Above & Beyond', album: 'Group Therapy')
+p2 = u16.posts.create!(title: 'Peace of Mind', url: 'https://www.youtube.com/watch?v=eilZug1R4Es', artist: 'Above & Beyond', album: 'Group Therapy', staff: true)
 p3 = u15.posts.create!(title: 'Melba', url: 'https://www.youtube.com/watch?v=QYvZ8TUyn9w', artist: 'Sunny Lax')
 p5 = ux.posts.create!(title: 'Greyhound', url: 'https://vimeo.com/75755258', artist: 'Swedish House Mafia')
 p6 = u3.posts.create!(title: 'Monument', url: 'https://www.youtube.com/watch?v=6c-RbGZBnBI', artist: 'Royskopp & Robyn')

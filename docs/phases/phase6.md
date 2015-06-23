@@ -1,4 +1,4 @@
-# Phase 5: Search and Explore
+# Phase 5: Explore
 
 ## Rails
 ### Models
@@ -15,7 +15,6 @@ Api::PostsController (search)
 ### Collections
 
 ### Views
-* SearchView (composite view)
 * ExploreIndex (composite view)
 
 

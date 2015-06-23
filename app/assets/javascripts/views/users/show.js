@@ -13,7 +13,6 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this._userPosts, "add", this.addPost);
     this.listenTo(this._userPlaylists, "add", this.addPlaylist);
-    // this.listenTo(this.model, 'sync', this.addFollow);
   },
 
   render: function () {

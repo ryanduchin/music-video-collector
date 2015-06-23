@@ -5,34 +5,33 @@ Direct link: [music-video-collector.com](http://music-video-collector.com)
 Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)
 
 
-## Next actions and list of questions
-* good Readme
-* Database resetting? Users only see seeds + their account? heroku scheduler
-* delete comments
+## App Description & Features
+Music Collector is an app built on Rails and Backbone.
+Primary focus of the site is displaying music videos embedded from Youtube,
+  Vimeo, and Vevo, by user-submitted URLs.
 
-## Minimum Viable Product
-Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
-Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
+Site Features:
+- Watch videos
+- Like videos
+- Create playlists
+- Create videos (by entering links)
+- View a collection of all your liked videos
+- Follow other users or playlists
+- View a feed of posts from your followed users and playlists
+- Explore other user profiles
+- User profiles includes horizontal scrolling of their posts and playlists
+- Add and remove posts to playlists
+- Guest sign-in
+- View top staff picks
+- Feed option: top liked videos (across entire site)
+- add 'add-to-playlist' button onto thumbnails
+- Site shows thumbnail index views of videos
 
-Users can:
-Site Functionality
-- [x] Create accounts (sign up)
-- [x] Create sessions (log in)
-- [X] Watch videos!
-- [X] "Upload" Videos (=enter links)
-- [X] Like Videos
-- [X] View collection of all your liked videos
-- [X] View other users (and their list of liked videos) ('Explore')
-- [X] Add and Remove posts to playlists
-- [X] submission validation (url must be good)
-- [X] Guest sign-in
-- [X] Users can create channels (aka collections/playists)
-- [X] View other channels (of users) (like playlists)
-- [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
-- [X] Feed option: Top Staff picks
-- [X] Feed option: top liked videos (across entire site)
-- [X] add 'add-to-playlist' button onto thumbnails
-- [X] link to user show page from post show page
+- Post thumbnails are fetched from the source
+- User and Playlist thumbnails are fetched from a video in the model's posts
+- Guest-account login feature
+
+- link to user show page from post show page
 - [ ] *** Advanced video views - cinema view(background dark)
 - [ ] *** Advanced video views - INDEX ALL VIDEO RENDERS view (no images)
 - [ ] Search for users/playlists/posts by any fields (if time)

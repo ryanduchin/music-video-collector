@@ -46,7 +46,7 @@ class Post < ActiveRecord::Base
     when 'liked'
       return Post.joins(:likes)
         .where('likes.user_id=?', current_user.id)
-        .order('likes.created_at desc') # .limit(30)
+        .order('likes.created_at desc').limit(60)
     when 'staff'
       return Post.all.where(staff: true).order(created_at: :desc).limit(60)
     when 'followed'

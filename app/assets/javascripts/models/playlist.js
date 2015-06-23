@@ -1,7 +1,6 @@
 VMCApp.Models.Playlist = Backbone.Model.extend({
   urlRoot: '/api/playlists',
 
-
   parse: function (response) {
     if (response.posts) {
       this.posts().set(response.posts, { parse: true });

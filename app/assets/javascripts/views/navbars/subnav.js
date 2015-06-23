@@ -6,9 +6,6 @@ VMCApp.Views.SubNavView = Backbone.CompositeView.extend({
   template_none: JST['navbars/none'],
 
   initialize: function(options) {
-    // this.explore_options = ['Posts', 'Top Liked', 'Staff Picks', 'Playlists', 'Users'];
-    // this.you_options = ['Posts', 'Likes', 'Playlists', 'Followed Playlists', 'Followed Users'];
-    // this.selectedTitle = this.chooseTitle();
     this.listenTo(VMCApp.filterEvents, 'route', this.render);
   },
 
