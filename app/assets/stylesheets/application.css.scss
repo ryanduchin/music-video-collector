@@ -297,9 +297,9 @@ nav .dropdown.nav-item > a:focus {
   color: #CE97FF;
 };
 
-nav .nav-item li.nav-item:hover,
-nav .nav-item li.nav-item:active,
-nav .nav-item li.nav-item:focus {
+nav .nav-item > li.nav-item:hover,
+nav .nav-item > li.nav-item:active,
+nav .nav-item > li.nav-item:focus {
   background-color: rgba(0, 0, 0, .75);
 };
 
