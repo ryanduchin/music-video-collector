@@ -21,14 +21,12 @@
 
 
 body {
-  // background-image: image-url('blurreddarkenedrave.png');
   background-image: url('https://res.cloudinary.com/dwpmjcdhz/image/upload/v1435013015/blurreddarkenedrave_r9yfi4.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #000324;
   background-position: right top; //right or center
   min-height: 100%;
-  // height: 100%;
 };
 
 nav {
@@ -105,10 +103,6 @@ a {
 #landing-page #buffer-header video > source {
   width: 100%;
 };
-
-// #landing-page section {
-//   display: block;
-// };
 
 #landing-page section div:first-child {
   margin-top: 25px;

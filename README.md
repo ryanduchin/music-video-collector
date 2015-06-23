@@ -9,7 +9,6 @@
 
 Sun
 High Priority
-* Splash Page
 * user show page follow buttons are broken because they arent distinguished between playlist and user
 * custom URL
 * good Readme
