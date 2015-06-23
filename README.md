@@ -1,7 +1,8 @@
 # Music Video Collector App
 
-[Direct link][music-video-collector.com](http://music-video-collector.com)
-[Heroku link][music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)
+Direct link: [music-video-collector.com](http://music-video-collector.com)
+
+Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)
 
 
 ## Next actions and list of questions
