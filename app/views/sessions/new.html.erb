@@ -83,10 +83,10 @@
         <div class="account-wall">
           <form class="form-signin" action="<%= session_url %>" method="post">
             <%= csrf %>
-            <button class="btn btn-primary guest-login">Guest Login</button>
-            <input type="text" class="form-control" placeholder="Username" name="user[username]" required>
-            <input type="password" class="form-control" placeholder="Password" name="user[password]" required>
-            <button class="btn btn-lg btn-primary btn-block submit session-submit" type="submit">
+            <button class="btn btn-primary" id="guest-login">Guest Login</button>
+            <input type="text" class="form-control" id="form-username" placeholder="Username" name="user[username]" required>
+            <input type="password" class="form-control" id="form-password" placeholder="Password" name="user[password]" required>
+            <button class="btn btn-lg btn-primary btn-block submit" id="session-submit" type="submit">
                 Enter
               </button>
           </form>
@@ -103,8 +103,8 @@
         <div class="account-wall">
           <form class="form-signin" action="<%= users_url %>" method="post">
             <%= csrf %>
-            <input type="text" class="form-control form-username" placeholder="Username" name="user[username]" required>
-            <input type="password" class="form-control form-password" placeholder="Password" name="user[password]" required>
+            <input type="text" class="form-control" placeholder="Username" name="user[username]" required>
+            <input type="password" class="form-control" placeholder="Password" name="user[password]" required>
             <button class="btn btn-lg btn-primary btn-block submit" type="submit">
                 Create Account
               </button>
@@ -125,12 +125,7 @@
         $('.login-temp').removeClass('login-temp').addClass('login-inactive');
       });
 
-      $('.guest-login').click(function () {
-        // debugger;
-        $('.form-username').val('guest');
-        $('.form-password').val('password');
-        $('.session-submit')
-      });
+      GuestLogin.initialize();
     })
   </script>
 
