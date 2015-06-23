@@ -3,7 +3,7 @@ window.GuestLogin = {
 		$("#guest-login").on( "click", this.guestLogin.bind(this) );
 	},
 
-	guestLogin: function(){
+	guestLogin: function(event){
 		event.preventDefault();
 		var that = this;
 		$username = $('#form-username');
@@ -30,7 +30,7 @@ window.GuestLogin = {
 				clearInterval(typing);
 				callback();
 			}
-		}, 125);
+		}, 120);
 	}
 
 };
