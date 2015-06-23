@@ -1,68 +1,32 @@
-# Video Music Collector App
+# Music Video Collector App
 
-[Heroku link][http://video-music-collector.herokuapp.com/]
+[Heroku link][http://music-video-collector.herokuapp.com/]
 
-[heroku]: TBD
 
 ## Next actions and list of questions
-
-
-Sun
-High Priority
+* guest login
 * user show page follow buttons are broken because they arent distinguished between playlist and user
 * custom URL
 * good Readme
 * finish seeding
-* friendlyID on users (and videos?) is a good substitute for not having search
-
-Low Priority
-
 * Database resetting? Users only see seeds + their account? heroku scheduler
-* lots of errors in inspector - what are they? how do i deal with calling too much stuff?
-
-* kaminari paging (infinite scroll) posts index
-* horizontal scroll user show page
-* fancy guest sign-in button
-* about splash page ! (HUGE)
-* user show view optimization (tile size, layout, side scroll)
-* playlist index broken
-
-## Feedback from Chris Review
-* no playlist to add to on new user. maybe on user creation make an auto playlist?
-* if no posts, say something - add video (not just a blank page) (post index, playlist show)
-
-* follow button not obvious (splash page explanation?)
-
-* make it more obvious what following does and what goes into your feed (splash)
-
-* seed db with more users so you can play around with the user index page and the user show page
-* seed db with likes, follows, playlistposts (ugh)
-
-
-
-
 
 ## Minimum Viable Product
 Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.
 Primary focus of the site is on posting **music videos** (or just music on youtube/vimeo)
+
 Users can:
-
-
-
-MVP:
+Site Functionality
 - [x] Create accounts (sign up)
 - [x] Create sessions (log in)
 - [X] Watch videos!
 - [X] "Upload" Videos (=enter links)
 - [X] Like Videos
 - [X] View collection of all your liked videos
-- [optimizing] View other users (and their list of liked videos) ('Explore') (skeleton done, debug)
+- [X] View other users (and their list of liked videos) ('Explore')
 - [X] Add and Remove posts to playlists
 - [X] submission validation (url must be good)
 - [ ] Guest sign-in
-
-Expanding:
-
 - [X] Users can create channels (aka collections/playists)
 - [X] View other channels (of users) (like playlists)
 - [X] Feed option: Subscribe to channels AND/OR users, gets fed into your feed (your channels)
@@ -86,7 +50,6 @@ Not going to get to:
 - [ ] Button to watch next video in playlist
 - [ ] All videos have nested comments, users can add comments
 - [ ] Cookies
-
 
 ## Design Docs
 * [View Wireframes][views] ./docs/wireframes/#
@@ -171,8 +134,3 @@ I might add the ability to change the playback speed and other possibilities
 [phase-five]: ./docs/phases/phase5.md
 [phase-six]: ./docs/phases/phase6.md
 [phase-seven]: ./docs/phases/phase7.md
-
-
-Later to-do-s
--scope of uniqueness for posts
--privacy settings for JSON rendering (playlist/post owner != current_user)

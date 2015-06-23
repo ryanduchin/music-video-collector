@@ -13,8 +13,6 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    //only add to your own playlists
-    //later, filter so its only playlists without this post
     this.userPlaylists = options.userPlaylists;
     this.playlistID = "";
   },
@@ -63,7 +61,5 @@ VMCApp.Views.AddToPlaylistForm = Backbone.CompositeView.extend({
     playlistPost.save();
     this.removeModal();
   },
-
-
 
 });

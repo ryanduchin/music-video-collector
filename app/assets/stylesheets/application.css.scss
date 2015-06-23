@@ -395,19 +395,13 @@ nav .dropdown.nav-item > .dropdown-menu > li > a:hover {
 
 
 .m-backdrop.inactive {
-  z-index: 80;
+  z-index: -1;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
-};
-
-//needed?
-.overflow-container {
-  overflow-x: auto;
-  white-space: nowrap
 };
 
 
@@ -730,7 +724,6 @@ div.footer {
 
 #user-show .scroll-box-list > li {
   margin: 15px;
-  // text-align: center;
   float: left;
   display: inline-block;
   height: 300px;
