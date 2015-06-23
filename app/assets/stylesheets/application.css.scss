@@ -178,7 +178,8 @@ a {
 
 #landing-page #login .render-errors {
   text-align: center;
-  font-size: 20px;
+  font-size: 21px;
+  color: red;
 };
 
 #landing-page #login .form-signin input {
@@ -194,6 +195,7 @@ a {
 #landing-page #login button#guest-login {
   background-color :#52055F;
   margin-bottom: 25px;
+  border-radius: 6px;
 };
 
 #landing-page #services div.text-center {

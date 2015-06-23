@@ -260,7 +260,8 @@ Follow.create!(follower_id: 5, followable_id: 3, followable_type: "User")
 
 
 
-
+Like.create!(post_id: 2, user_id: 1)
+Like.create!(post_id: 29, user_id: 1)
 Like.create!(post_id: 1, user_id: 2)
 Like.create!(post_id: 1, user_id: 12)
 Like.create!(post_id: 1, user_id: 13)
