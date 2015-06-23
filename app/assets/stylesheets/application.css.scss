@@ -152,17 +152,23 @@ a {
 };
 
 #landing-page ul.about-list {
-  list-style-type: square;
+  // list-style-type: square;
 };
 
 #landing-page #about ul.text-faded li.text-faded.pull-left {
   font-size: 19px;
 };
 
+#landing-page #about li p.highlight {
+  color: #EA93F9;
+};
+
+#landing-page #about li p {
+  display: inline;
+  float: left;
+};
+
 #landing-page #login {
-  // margin-top: 50px;
-  // padding-top: 50px;
-  // padding-bottom: 50px;
   background-color: rgba(38, 83, 165, 0.88); //blue
 };
 
