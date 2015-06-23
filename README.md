@@ -31,15 +31,15 @@ Site Features:
 - [x] Guest-account login
 
 ### Potentail future features
-- [x] link to user show page from post show page
-- [x] Advanced video views - cinema view (dark background)
-- [x] Index views have an alternate mode - render videos instead of thumbnails
+- [ ] link to user show page from post show page
+- [ ] Advanced video views - cinema view (dark background)
+- [ ] Index views have an alternate mode - render videos instead of thumbnails
     ability to play videos directly from index view
-- [x] Search for users/playlists/posts by any fields
-- [x] Button to watch next video in a playlist/view from the video show page
-- [x] FriendlyID for user (and post/playlist) names
-- [x] Kaminari scrolling
-- [x] Nested comments for videos
+- [ ] Search for users/playlists/posts by any fields
+- [ ] Button to watch next video in a playlist/view from the video show page
+- [ ] FriendlyID for user (and post/playlist) names
+- [ ] Kaminari scrolling
+- [ ] Nested comments for videos
 
 
 
@@ -75,8 +75,6 @@ Site Features:
 
 ### Phase 7: Advanced Views (~2 days)
 [Details][phase-seven]
-
-
 
 
 [phase-one]: ./docs/phases/phase1.md
