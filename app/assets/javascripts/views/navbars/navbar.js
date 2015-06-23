@@ -9,8 +9,8 @@ VMCApp.Views.NavView = Backbone.CompositeView.extend({
   },
 
   initialize: function (options) {
-    $('m-content').removeClass('active');
-    $('m-backdrop').removeClass('inactive');
+    $('.m-content').removeClass('active');
+    $('.m-backdrop').removeClass('inactive');
 
     this.userPlaylists = new VMCApp.Collections.Playlists({ filter: 'user' });
     this.userPosts = new VMCApp.Collections.Posts({ filter: 'user' });

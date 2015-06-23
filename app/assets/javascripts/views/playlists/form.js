@@ -48,8 +48,8 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
 
 
   removeModal: function () {
-    $('.m-content').removeClass('active');
     $('.m-backdrop').removeClass('inactive');
+    $('.m-content').removeClass('active');
     this.remove();
   },
 
