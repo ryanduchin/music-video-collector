@@ -7,8 +7,8 @@ Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.
 
 ## Next actions and list of questions
 * good Readme
-* finish seeding
 * Database resetting? Users only see seeds + their account? heroku scheduler
+* delete comments
 
 ## Minimum Viable Product
 Music Collector is a clone of Vimeo/Youtube/Mozi built on Rails and Backbone.

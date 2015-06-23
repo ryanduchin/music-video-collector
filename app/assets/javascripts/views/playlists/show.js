@@ -18,7 +18,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({
       playlist: this.model,
-      isOwner: this.isOwner()
+      isOwner: this.isOwner(),
+      isEmpty: this.isEmpty(),
     });
     this.$el.html(content);
     this.attachSubviews();
@@ -26,7 +27,7 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
   },
 
   renderPosts: function () {
-    if (this.playlistPosts.length === 0) { return; }
+    if (this.isEmpty()) { return; }
     this.playlistPosts.forEach(function (post) {
       this.addPost(post);
     }.bind(this));
@@ -52,11 +53,8 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
 
   openDeleteForm: function (event) {
     event.preventDefault();
-    // this.userPlaylists.fetch();
-
     var modal = new VMCApp.Views.DeleteForm({
       model: this.model,
-      // collection: this.userPlaylists,
       type: 'playlist',
     });
 
@@ -64,6 +62,11 @@ VMCApp.Views.PlaylistShow = Backbone.CompositeView.extend({
     $('.m-backdrop').addClass('inactive');
     $('.m-content').addClass('active');
     $('.m-content').html(modalContent.$el);
+  },
+
+
+  isEmpty: function () {
+    return (this.playlistPosts.length === 0);
   },
 
   isOwner: function () {
