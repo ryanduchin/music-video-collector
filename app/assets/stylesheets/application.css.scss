@@ -632,11 +632,25 @@ div.footer {
 };
 
 #post-show .post-like {
-  // float: right;
   position: relative;
   bottom: 15px;
-  right: 3px;
+  left: 37px;
 };
+
+#post-show .post-like .like-button {
+  float: right;
+};
+
+#post-show .post-show-btn {
+//   position: relative;
+//   bottom: 15px;
+  left: 37px;
+};
+//
+// #post-show .post-show-btn .add-post-to-playlist {
+//   float: right;
+// };
+
 
 #post-show .post-show-title {
   font-size: 50px;
