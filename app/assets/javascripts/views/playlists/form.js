@@ -7,7 +7,7 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
   },
 
   events: {
-    'click button.create-playlist' : 'createPlaylist',
+    'click button.submit-playlist' : 'createPlaylist',
     'click button.cancel-playlist' : 'closeModal',
     'click .m-backdrop' : 'closeModal',
   },
@@ -38,6 +38,10 @@ VMCApp.Views.PlaylistForm = Backbone.View.extend({
     } else {
       this.renderError();
     }
+  },
+
+  renderError: function () {
+    this.$('.render-error').html("Invalid submission")
   },
 
   closeModal: function (event) {
