@@ -8,13 +8,12 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
     this._userPosts.fetch();
     this._userPlaylists.fetch();
 
-    // this.renderPlaylists(); //causing an extra box
-    // this.renderPosts(); //causing an extra box
+    this.addFollow();
 
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this._userPosts, "add", this.addPost);
     this.listenTo(this._userPlaylists, "add", this.addPlaylist);
-    this.listenTo(this.model, 'sync', this.addFollow);
+    // this.listenTo(this.model, 'sync', this.addFollow);
   },
 
   render: function () {
@@ -61,7 +60,7 @@ VMCApp.Views.UserShow = Backbone.CompositeView.extend({
       type: "User",
       btnSm: false,
     });
-    this.addSubview('.follow-button', followView);
+    this.addSubview('.user-follow-button', followView);
   },
 
 });
