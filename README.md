@@ -6,13 +6,20 @@ Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.
 
 ## App Description & Features
 Music Collector is an app built on Rails and Backbone.  
-Primary focus of the site is displaying music videos embedded from Youtube, Vimeo, and Vevo, by user-submitted URLs.  
+Primary focus of the site is displaying music videos embedded from Youtube, Vimeo, and Vevo (via user-submitted URLs).
 
-The site embeds videos in a clean interface, and fetches thumbnails from the video's source to display pictorial index of available videos.  
-Allows users to create playlists, like videos, and follow other users or playlists (with a polymorphic association)
-Uses custom Rails routes with a filter variable to create several unique feeds of videos for the user
+The site:
+- embeds videos in a clean interface  
+- fetches thumbnails from the video's source
+- displays a pictorial index of available videos
+- uses custom Rails routes with a filter variable to create several unique feeds of videos for the user
+- allows users to create playlists and like videos
+- allows users to follow other users or playlists (using a polymorphic association)
 
-# Site Features:
+
+
+
+### Site Features List:
 - [x] Watch videos
 - [x] Like videos
 - [x] Create playlists
@@ -32,7 +39,8 @@ Uses custom Rails routes with a filter variable to create several unique feeds o
 - [x] User and Playlist thumbnails are fetched from a video in the model's posts
 - [x] Guest-account login
 
-# Potentail future features
+
+### Potential future features
 - [ ] Advanced video views - cinema view (dark background)
 - [ ] Index views have an alternate mode - render videos instead of thumbnails
     ability to play videos directly from index view
@@ -43,12 +51,7 @@ Uses custom Rails routes with a filter variable to create several unique feeds o
 - [ ] Nested comments for videos
 
 
-
-## Design Docs
-[views]: ./docs/views.md
-[schema]: ./docs/schema.md
-
-## Implementation Timeline
+### Implementation Timeline
 
 Phase 1: User Authentication, Blog Creation (~1 day)  
 Phase 2: Viewing Channels and Posts (~1 days)  
