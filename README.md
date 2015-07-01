@@ -1,16 +1,18 @@
 # Music Video Collector App
 
-Direct link: [music-video-collector.com](http://music-video-collector.com)
-
-Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)
+Direct link: [music-video-collector.com](http://www.music-video-collector.com)  
+Heroku link: [music-video-collector.herokuapp.com](http://music-video-collector.herokuapp.com)  
 
 
 ## App Description & Features
-Music Collector is an app built on Rails and Backbone.
-Primary focus of the site is displaying music videos embedded from Youtube,
-  Vimeo, and Vevo, by user-submitted URLs.
+Music Collector is an app built on Rails and Backbone.  
+Primary focus of the site is displaying music videos embedded from Youtube, Vimeo, and Vevo, by user-submitted URLs.  
 
-Site Features:
+The site embeds videos in a clean interface, and fetches thumbnails from the video's source to display pictorial index of available videos.  
+Allows users to create playlists, like videos, and follow other users or playlists (with a polymorphic association)
+Uses custom Rails routes with a filter variable to create several unique feeds of videos for the user
+
+# Site Features:
 - [x] Watch videos
 - [x] Like videos
 - [x] Create playlists
@@ -30,8 +32,7 @@ Site Features:
 - [x] User and Playlist thumbnails are fetched from a video in the model's posts
 - [x] Guest-account login
 
-### Potentail future features
-- [ ] link to user show page from post show page
+# Potentail future features
 - [ ] Advanced video views - cinema view (dark background)
 - [ ] Index views have an alternate mode - render videos instead of thumbnails
     ability to play videos directly from index view
@@ -44,43 +45,16 @@ Site Features:
 
 
 ## Design Docs
-* [View Wireframes][views] ./docs/wireframes/#
-* [DB schema][schema]
-
 [views]: ./docs/views.md
 [schema]: ./docs/schema.md
 
 ## Implementation Timeline
 
-### Phase 1: User Authentication, Blog Creation (~1 day)
-[Details][phase-one]
-
-### Phase 2: Viewing Channels and Posts (~1 days)
-[Details][phase-two]
-
-### Phase 3: Youtube API + Vimeo API (~2 days)
-[Details][phase-three]
-
-### Phase 3.5: Feeds, Users (1 day)
-[Details][phase-three]
-
-### Phase 4: Liking Videos and Channels (~1 days)
-[Details][phase-four]
-
-### Phase 5: User Views (~2 days)
-[Details][phase-five]
-
-### Phase 6: Search and Explore (~2 days)
-[Details][phase-six]
-
-### Phase 7: Advanced Views (~2 days)
-[Details][phase-seven]
-
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
-[phase-six]: ./docs/phases/phase6.md
-[phase-seven]: ./docs/phases/phase7.md
+Phase 1: User Authentication, Blog Creation (~1 day)  
+Phase 2: Viewing Channels and Posts (~1 days)  
+Phase 3: Youtube API + Vimeo API (~2 days)  
+Phase 4: Feeds, Users (1 day)  
+Phase 5: Liking Videos and Channels (~1 days)  
+Phase 6: User Views (~2 days)  
+Phase 7: Search and Explore (~2 days)  
+Phase 8: Advanced Views (~2 days)  
