@@ -15,7 +15,7 @@ The site:
 - uses custom Rails routes with a filter variable to create several unique feeds of videos for the user
 - allows users to create playlists and like videos
 - allows users to follow other users or playlists (using a polymorphic association)
-
+- shows a user page with side-scrolling playlists and posts
 
 
 
