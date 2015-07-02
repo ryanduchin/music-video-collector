@@ -24,4 +24,8 @@ task reset_database: :environment do
     end
   end
 
+  def build_command(cmd)
+    "heroku #{cmd}"
+  end
+
 end
