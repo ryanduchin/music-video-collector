@@ -1,9 +1,11 @@
-User.destroy_all
-Playlist.destroy_all
-Post.destroy_all
-PlaylistPost.destroy_all
-Like.destroy_all
-Follow.destroy_all
+# User.destroy_all
+# Playlist.destroy_all
+# Post.destroy_all
+# PlaylistPost.destroy_all
+# Like.destroy_all
+# Follow.destroy_all
+
+# problem right now is your IDs are being added onto the end before the destroy takes place
 
 ux = User.create!(username: 'guest', password: 'password')
 u1 = User.create!(username: 'rbot', password: 'asdfasdf')
