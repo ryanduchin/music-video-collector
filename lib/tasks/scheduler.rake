@@ -12,7 +12,7 @@ task reset_database: :environment do
     puts 'Generating database migration...'
     Rake::Task["heroku:migrate"]
     puts 'Seeding database...'
-    Rake::Task["heroku::seed"]
+    Rake::Task["heroku:seed"]
     puts 'done.'
   end
 end
