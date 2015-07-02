@@ -1,14 +1,17 @@
 namespace :heroku do
 
   task :migrate, :app_name do
+    puts 'Generating database migration...'
     run_command("rake db:migrate")
   end
 
   task :seed, :app_name do
+    puts 'Seeding database...'
     run_command("rake db:seed")
   end
 
   task :resetdb do
+    puts 'Dropping database...'
     run_command("pg:reset DATABASE --confirm music-video-collector")
   end
 
@@ -23,7 +26,3 @@ namespace :heroku do
   end
 
 end
-
-# heroku pg:reset DATABASE
-# heroku run rake db:migrate
-# heroku run rake db:seed

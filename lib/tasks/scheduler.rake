@@ -7,11 +7,8 @@ task reset_database: :environment do
     #   end
     #   Rails.application.load_seed
     # end
-    puts 'Dropping database...'
     Rake::Task["heroku:resetdb"]
-    puts 'Generating database migration...'
     Rake::Task["heroku:migrate"]
-    puts 'Seeding database...'
     Rake::Task["heroku:seed"]
     puts 'done.'
   end
