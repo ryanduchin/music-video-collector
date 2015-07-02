@@ -18,6 +18,14 @@ The site:
 - shows a user page with side-scrolling playlists and posts
 
 
+Feed View  
+![Image](./docs/screenshots/feed.png)
+
+Playlists View  
+![Image](./docs/screenshots/playlists.png)
+
+Users View  
+![Image](./docs/screenshots/users.png)
 
 ### Site Features List:
 - [x] Watch videos
