@@ -1,13 +1,13 @@
 namespace :heroku do
 
-  task :migrate, :app_name do
+  task :migrate do
     puts 'Generating database migration...'
-    run_command("rake db:migrate")
+    run_command("run rake db:migrate")
   end
 
-  task :seed, :app_name do
+  task :seed do
     puts 'Seeding database...'
-    run_command("rake db:seed")
+    run_command("run rake db:seed")
   end
 
   task :resetdb do
