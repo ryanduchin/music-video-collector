@@ -1,15 +1,11 @@
 namespace :heroku do
 
-  task :migrate, :app_name do |t, args|
-    run_command("rake db:migrate --trace", args.app_name)
+  task :migrate, :app_name do
+    run_command("rake db:migrate")
   end
 
-  task :seed, :app_name do |t, args|
-    run_command("rake db:seed --trace", args.app_name)
-  end
-
-  task :restart, :app_name do |t, args|
-    run_command("restart", args.app_name)
+  task :seed, :app_name do
+    run_command("rake db:seed")
   end
 
   task :resetdb do
