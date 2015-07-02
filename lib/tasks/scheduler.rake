@@ -14,18 +14,27 @@ task reset_database: :environment do
     run_command("run rake db:migrate")
     run_command("run rake db:seed")
     puts 'done.'
-  end
 
-
-
-  def run_command(cmd)
-    Bundler.with_clean_env do
-      sh build_command(cmd)
+    def run_command(cmd)
+      Bundler.with_clean_env do
+        sh build_command(cmd)
+      end
     end
+
+    def build_command(cmd)
+      "heroku #{cmd}"
+    end
+
   end
 
-  def build_command(cmd)
-    "heroku #{cmd}"
-  end
+end
 
+def run_command(cmd)
+  Bundler.with_clean_env do
+    sh build_command(cmd)
+  end
+end
+
+def build_command(cmd)
+  "heroku #{cmd}"
 end
