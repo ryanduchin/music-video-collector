@@ -12,18 +12,18 @@ namespace :heroku do
     run_command("restart", args.app_name)
   end
 
-  task :resetdb, :app_name do |t, args|
-    run_command("pg:reset DATABASE", args.app_name)
+  task :resetdb do
+    run_command("pg:reset DATABASE --confirm music-video-collector")
   end
 
-  def run_command(cmd, app_name)
+  def run_command(cmd)
     Bundler.with_clean_env do
-      sh build_command(cmd, app_name)
+      sh build_command(cmd)
     end
   end
 
-  def build_command(cmd, app_name)
-    "heroku #{cmd} --app #{app_name}"
+  def build_command(cmd)
+    "heroku #{cmd}"
   end
 
 end
