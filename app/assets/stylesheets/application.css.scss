@@ -94,13 +94,14 @@ a {
   padding-right: 0px;
 };
 
-#landing-page #buffer-header video {
+#landing-page #buffer-header img {
   width: 100%;
+  bottom: 200px;
 };
 
-#landing-page #buffer-header video > source {
-  width: 100%;
-};
+// #landing-page #buffer-header video > source {
+//   width: 100%;
+// };
 
 #landing-page section div:first-child {
   margin-top: 25px;
