@@ -1,3 +1,10 @@
+User.destroy_all
+Playlist.destroy_all
+Post.destroy_all
+PlaylistPost.destroy_all
+Like.destroy_all
+Follow.destroy_all
+
 ux = User.create!(username: 'guest', password: 'password')
 u1 = User.create!(username: 'rbot', password: 'asdfasdf')
 u2 = User.create!(username: 'Ken', password: 'asdfasdf2')
