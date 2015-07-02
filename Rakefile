@@ -16,7 +16,10 @@ namespace :heroku do
   end
 
   task :restart, :app_name do |t, args|
-    # run_command("restart", args.app_name)
+    run_command("restart", args.app_name)
+  end
+
+  task :resetdb, :app_name do |t, args|
     run_command("pg:reset DATABASE", args.app_name)
   end
 
