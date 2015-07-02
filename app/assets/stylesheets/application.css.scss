@@ -617,11 +617,6 @@ div.footer {
   float: right;
 };
 
-
-.post-show-title {
-  margin-left: -3px;
-};
-
 #post-show *:not(.fa) {
   color: white;
   font-family: 'Roboto', sans-serif;
@@ -646,8 +641,9 @@ div.footer {
 };
 
 #post-show .post-show-title {
-  font-size: 50px;
-  margin-bottom: 12px;
+  margin-left: -3px;
+  font-size: 40px;
+  margin-bottom: -7px;
   letter-spacing: 4px;
 };
 
