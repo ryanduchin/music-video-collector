@@ -8,9 +8,9 @@ task reset_database: :environment do
     #   end
     #   Rails.application.load_seed
     # end
-    Rake::Task["heroku:resetdb"]
-    Rake::Task["heroku:migrate"]
-    Rake::Task["heroku:seed"]
+    Rake::Task["heroku:resetdb"].invoke
+    Rake::Task["heroku:migrate"].invoke
+    Rake::Task["heroku:seed"].invoke
     # run_command("pg:reset DATABASE --confirm music-video-collector")
     # run_command("run rake db:migrate")
     # run_command("run rake db:seed")
