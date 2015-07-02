@@ -284,6 +284,7 @@ nav .nav-item.active a {
 };
 
 nav .nav-item > a:hover,
+nav .nav-item > a:focus,
 nav .dropdown.nav-item > a:active,
 nav .dropdown.nav-item > a:focus {
   background-color: rgba(0, 0, 0, 0);
