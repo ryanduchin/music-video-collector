@@ -49,7 +49,6 @@
                 <li class='text-faded pull-left'><p>See the</p><p class='highlight'>&nbsp;most popular videos</p><p>&nbsp;across the web</p></li><br><br>
                 <li class='text-faded pull-left'><p>Create your </p><p class='highlight'>&nbsp;favorite playlists</p><p>&nbsp;and keep track of your </p><p class='highlight'>&nbsp;most liked songs</p></li><br><br>
                 <li class='text-faded pull-left'><p>Follow other users and/or playlists to get a </p><p class='highlight'>&nbsp;fresh new feed of videos</p><p>&nbsp;to watch</p></li><br><br>
-              <a id='login-link'></a>
               </ul>
             </div>
         </div>
@@ -57,48 +56,48 @@
     </div>
   </section>
 
-
   <section class='anchor' id="services">
     <div class="container">
       <div class="row">
-      <div class="col-md-12 text-center">
-                <h2 class="section-heading">At Your Fingertips</h2>
-                <hr class="primary">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-youtube-play wow bounceIn text-primary"></i>
-                    <h3 class='explore'>Explore Music Videos</h3>
-                    <p class="text-muted">Browse our collections of the hottest music videos</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-th-large wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                    <h3>Create your feed</h3>
-                    <p class="text-muted">Start following users and playlists to get a fresh funky feed of their videos.</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                    <h3>Like Videos</h3>
-                    <p class="text-muted">Keep track of your favorites and rewatch them later.</p>
-                </div>
-            </div>
-            <div class="col-md-3 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-headphones wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                    <h3>Curate Playlists</h3>
-                    <p class="text-muted">Make playlists of your favorites or check out </p>
-                </div>
-            </div>
+        <div class="col-md-12 text-center">
+          <h2 class="section-heading">At Your Fingertips</h2>
+          <hr class="primary">
         </div>
       </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-youtube-play wow bounceIn text-primary"></i>
+            <h3 class='explore'>Explore Music Videos</h3>
+            <p class="text-muted">Browse our collections of the hottest music videos</p>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-th-large wow bounceIn text-primary" data-wow-delay=".2s"></i>
+            <h3>Create your feed</h3>
+            <p class="text-muted">Start following users and playlists to get a fresh funky feed of their videos.</p>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+            <h3>Like Videos</h3>
+            <p class="text-muted">Keep track of your favorites and rewatch them later.</p>
+          </div>
+        </div>
+        <div class="col-md-3 text-center">
+          <div class="service-box">
+            <i class="fa fa-4x fa-headphones wow bounceIn text-primary" data-wow-delay=".1s"></i>
+            <h3>Curate Playlists</h3>
+            <p class="text-muted">Make playlists of your favorites or check out </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a id='login-link'></a>
   </section>
 
   <section class='anchor' id='login'>
@@ -154,6 +153,17 @@
       });
 
       GuestLogin.initialize();
+
+      $('a[href="#login-link"]').on('click',function (e) {
+  	    e.preventDefault();
+
+  	    var target = this.hash;
+  	    var $target = $(target);
+
+  	    $('html, body').stop().animate({
+  	        'scrollTop': $target.offset().top
+  	    }, 900, 'swing');
+    	});
     })
   </script>
 
