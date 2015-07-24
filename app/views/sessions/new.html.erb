@@ -39,10 +39,10 @@
   <section class="bg-primary anchor" id="about">
     <div class="container-span">
       <div class="row">
-        <div class="col-lg-12 text-center">
+        <div class="col-lg-12 text-center we-do-section">
             <h2 class="section-heading">We do music videos:</h2>
             <hr class="light">
-            <div class="col-lg-8 col-lg-offset-4">
+            <div class="col-md-8 col-md-offset-2">
               <ul class="text-faded about-list">
                 <li class='text-faded pull-left'><p>Watch</p><p class='highlight'>&nbsp;embedded music videos</p><p>&nbsp;from </p><p class='highlight'>&nbsp;Youtube, Vimeo, and Vevo</p></li><br><br>
                 <li class='text-faded pull-left'><p class='highlight'>Upload</p><p>&nbsp;your own videos with just a </p><p class='highlight'>&nbsp;URL</p></li><br><br>
@@ -57,33 +57,77 @@
     </div>
   </section>
 
+
+  <section class='anchor' id="services">
+    <div class="container">
+      <div class="row">
+      <div class="col-md-12 text-center">
+                <h2 class="section-heading">At Your Fingertips</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-youtube-play wow bounceIn text-primary"></i>
+                    <h3 class='explore'>Explore Music Videos</h3>
+                    <p class="text-muted">Browse our collections of the hottest music videos</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-th-large wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                    <h3>Create your feed</h3>
+                    <p class="text-muted">Start following users and playlists to get a fresh funky feed of their videos.</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
+                    <h3>Like Videos</h3>
+                    <p class="text-muted">Keep track of your favorites and rewatch them later.</p>
+                </div>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="service-box">
+                    <i class="fa fa-4x fa-headphones wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                    <h3>Curate Playlists</h3>
+                    <p class="text-muted">Make playlists of your favorites or check out </p>
+                </div>
+            </div>
+        </div>
+      </div>
+  </section>
+
   <section class='anchor' id='login'>
     <div class="container login-active">
       <div class="row">
-      <div class="col-sm-6 col-md-4 col-md-offset-4">
-        <h1 class="text-center login-title">Sign in to the Music Video Collector!</h1>
-        <div class="account-wall">
-          <div class='render-errors'><%= render "layouts/errors" %></div>
-          <button class="btn btn-primary" id="guest-login">Guest Login</button>
-          <form class="form-signin" action="<%= session_url %>" method="post">
-            <%= csrf %>
-            <input type="text" class="form-control" id="form-username" placeholder="Username" name="user[username]" required>
-            <input type="password" class="form-control" id="form-password" placeholder="Password" name="user[password]" required>
-            <button class="btn btn-lg btn-primary btn-block submit" id="session-submit" type="submit">
-                Enter
-              </button>
-          </form>
-        </div>
-        <a href="#login-link" class="text-center switch-login-type">Sign Up</a>
+        <div class="col-md-6 col-md-offset-3">
+          <h1 class="text-center login-title">Sign in to the <br>Music Video Collector!</h1>
+          <div class="account-wall col-md-8 col-md-offset-2">
+            <div class='render-errors'><%= render "layouts/errors" %></div>
+            <button class="btn btn-primary" id="guest-login">Guest Login</button>
+            <form class="form-signin" action="<%= session_url %>" method="post">
+              <%= csrf %>
+              <input type="text" class="form-control" id="form-username" placeholder="Username" name="user[username]" required>
+              <input type="password" class="form-control" id="form-password" placeholder="Password" name="user[password]" required>
+              <button class="btn btn-lg btn-primary btn-block submit" id="session-submit" type="submit">
+                  Enter
+                </button>
+            </form>
+          </div>
         </div>
       </div>
+      <a href="#login-link" class="text-center switch-login-type">Sign Up</a>
     </div>
 
     <div class="container login-inactive">
       <div class="row">
-      <div class="col-sm-6 col-md-4 col-md-offset-4">
-        <h1 class="text-center login-title">Sign Up for the Music Video Collector!</h1>
-        <div class="account-wall">
+      <div class="col-md-6 col-md-offset-3">
+        <h1 class="text-center login-title">Sign up for the <br>Music Video Collector!</h1>
+        <div class="account-wall col-md-8 col-md-offset-2">
           <div class='render-errors'><%= render "layouts/errors" %></div>
           <form class="form-signin" action="<%= users_url %>" method="post">
             <%= csrf %>
@@ -94,9 +138,9 @@
               </button>
           </form>
         </div>
-        <a href="#login-link" class="text-center switch-login-type">Sign In</a>
         </div>
       </div>
+      <a href="#login-link" class="text-center switch-login-type">Sign In</a>
     </div>
 
   </section>
@@ -114,48 +158,6 @@
   </script>
 
 
-  <section class='anchor' id="services">
-    <div class="container">
-      <div class="row">
-      <div class="col-lg-12 text-center">
-                <h2 class="section-heading">At Your Fingertips</h2>
-                <hr class="primary">
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-1 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-youtube-play wow bounceIn text-primary"></i>
-                    <h3 class='explore'>Explore Music Videos</h3>
-                    <p class="text-muted">Browse our collections of the hottest music videos</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-1 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-th-large wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                    <h3>Create your feed</h3>
-                    <p class="text-muted">Start following users and playlists to get a fresh funky feed of their videos.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-1 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                    <h3>Like Videos</h3>
-                    <p class="text-muted">Keep track of your favorites and rewatch them later.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-1 text-center">
-                <div class="service-box">
-                    <i class="fa fa-4x fa-headphones wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                    <h3>Curate Playlists</h3>
-                    <p class="text-muted">Make playlists of your favorites or check out </p>
-                </div>
-            </div>
-        </div>
-      </div>
-  </section>
 
   <section class='anchor' id="contact">
       <div class="container">

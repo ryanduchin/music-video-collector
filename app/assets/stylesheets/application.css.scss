@@ -181,6 +181,8 @@ a {
 #landing-page #about {
   background-color: rgba(0, 0, 0, 0);
   position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
 };
 
 #landing-page #about ul.text-faded li.text-faded.pull-left {
@@ -198,6 +200,8 @@ a {
 
 #landing-page #login {
   background-color: rgba(38, 83, 165, 0.5);
+  padding-top: 60px;
+  padding-bottom: 60px;
 };
 
 #landing-page #login h1.login-title {
@@ -224,6 +228,16 @@ a {
   background-color :#52055F;
   margin-bottom: 25px;
   border-radius: 6px;
+};
+
+#landing-page #services {
+  margin-top: 50px;
+  margin-bottom: 50px;
+};
+
+#landing-page #contact {
+  margin-top: 50px;
+  margin-bottom: 50px;
 };
 
 #landing-page #services div.text-center {
