@@ -1,4 +1,4 @@
-# doesn't currently work
+# not currently implemented
 desc 'This task is called by the Heroku scheduler add-on'
 task reset_database: :environment do
   if Time.now.thursday?

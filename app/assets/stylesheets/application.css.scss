@@ -82,37 +82,63 @@ a {
   padding-right: 40px;
 };
 
-#landing-page #buffer-header {
+#landing-page #container-header {
+  margin-top: 79px;
+  position: relative;
+  height: auto;
+}
+
+#landing-page #container-header .header-img {
   background-color: rgba(0, 0, 0, 0);
-  height: 270px;
-  padding-left: 0px;
-  padding-right: 0px;
+  // height: 270px;
+  // padding-left: 0px;
+  // padding-right: 0px;
+
+  // width: 100%;
+  // height: 100%;
+  // position: absolute;
+  top: 0;
+  left: 0;
 };
 
-#landing-page #buffer-header div {
-  padding-left: 0px;
-  padding-right: 0px;
-};
-
-#landing-page #buffer-header img {
+#landing-page #container-header .header-img img {
   width: 100%;
-  bottom: 200px;
 };
+
+#landing-page #container-header .header-content {
+  background-color: rgba(78, 58, 95, 0.5);
+  // height: 270px;
+  // padding-left: 0px;
+  // padding-right: 0px;
+
+  // width: 100%;
+  // height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+};
+
+// #landing-page #container-header .header-content-inner {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+// };
 
 // #landing-page #buffer-header video > source {
 //   width: 100%;
 // };
 
-#landing-page section div:first-child {
-  margin-top: 25px;
-  margin-bottom: 45px;
-};
+// #landing-page section div:first-child {
+  // margin-top: 25px;
+  // margin-bottom: 45px;
+// };
 
-#landing-page .header-content {
-  background-color: rgba(78, 58, 95, 0.5);
-  margin-top: 10px;
-  margin-bottom: 20px;
-};
+// #landing-page .header-content {
+//   background-color: rgba(78, 58, 95, 0.5);
+//   bottom: 0;
+//   // margin-top: 10px;
+//   // margin-bottom: 20px;
+// };
 
 #landing-page section > .container > .row {
   margin-top: 0px;
@@ -126,6 +152,10 @@ a {
   margin-bottom: 25px;
   color: rgba(78, 58, 95, 0.85);
 
+};
+
+#landing-page .header-content-inner {
+  padding-bottom: 20px;
 };
 
 #landing-page .header-content-inner > p {
@@ -144,9 +174,13 @@ a {
   background-color: #CE97FF;
 };
 
+#landing-page #container-section {
+  position: relative;
+};
 
 #landing-page #about {
   background-color: rgba(0, 0, 0, 0);
+  position: relative;
 };
 
 #landing-page #about ul.text-faded li.text-faded.pull-left {
